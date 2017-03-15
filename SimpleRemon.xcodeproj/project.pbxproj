@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D7B0F641E78C8F100B2001C /* remonios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; };
+		6D7B0F651E78C8F100B2001C /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; };
+		6D7B0F661E78C8F700B2001C /* remonios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; };
+		6D7B0F671E78C8F700B2001C /* remonios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D7B0F681E78C8F700B2001C /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; };
+		6D7B0F691E78C8F700B2001C /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6DA09F3F1E41EF3E00D9B9EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA09F3E1E41EF3E00D9B9EC /* AppDelegate.swift */; };
+		6DA09F411E41EF3E00D9B9EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA09F401E41EF3E00D9B9EC /* ViewController.swift */; };
+		6DA09F441E41EF3E00D9B9EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA09F421E41EF3E00D9B9EC /* Main.storyboard */; };
+		6DA09F471E41EF3E00D9B9EC /* SimpleRemon2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DA09F451E41EF3E00D9B9EC /* SimpleRemon2.xcdatamodeld */; };
+		6DA09F491E41EF3E00D9B9EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DA09F481E41EF3E00D9B9EC /* Assets.xcassets */; };
+		6DA09F4C1E41EF3E00D9B9EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA09F4A1E41EF3E00D9B9EC /* LaunchScreen.storyboard */; };
+		6DF9BA9A1E5F2FF0008D1B7A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF9BA991E5F2FF0008D1B7A /* libc++.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6DA09F5B1E41EFE500D9B9EC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6D7B0F671E78C8F700B2001C /* remonios.framework in Embed Frameworks */,
+				6D7B0F691E78C8F700B2001C /* WebRTC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6D7B0F621E78C8F100B2001C /* remonios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = remonios.framework; sourceTree = "<group>"; };
+		6D7B0F631E78C8F100B2001C /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
+		6DA09F3B1E41EF3E00D9B9EC /* SimpleRemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleRemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DA09F3E1E41EF3E00D9B9EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6DA09F401E41EF3E00D9B9EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6DA09F431E41EF3E00D9B9EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6DA09F461E41EF3E00D9B9EC /* SimpleRemon2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleRemon2.xcdatamodel; sourceTree = "<group>"; };
+		6DA09F481E41EF3E00D9B9EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6DA09F4B1E41EF3E00D9B9EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6DA09F4D1E41EF3E00D9B9EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DF9BA991E5F2FF0008D1B7A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6DA09F381E41EF3E00D9B9EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7B0F641E78C8F100B2001C /* remonios.framework in Frameworks */,
+				6DF9BA9A1E5F2FF0008D1B7A /* libc++.tbd in Frameworks */,
+				6D7B0F661E78C8F700B2001C /* remonios.framework in Frameworks */,
+				6D7B0F681E78C8F700B2001C /* WebRTC.framework in Frameworks */,
+				6D7B0F651E78C8F100B2001C /* WebRTC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6DA09F321E41EF3E00D9B9EC = {
+			isa = PBXGroup;
+			children = (
+				6DA09F3D1E41EF3E00D9B9EC /* SimpleRemon */,
+				6DA09F3C1E41EF3E00D9B9EC /* Products */,
+				6DC908B51E41F99800D7F58E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6DA09F3C1E41EF3E00D9B9EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6DA09F3B1E41EF3E00D9B9EC /* SimpleRemon.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6DA09F3D1E41EF3E00D9B9EC /* SimpleRemon */ = {
+			isa = PBXGroup;
+			children = (
+				6DA09F3E1E41EF3E00D9B9EC /* AppDelegate.swift */,
+				6DA09F401E41EF3E00D9B9EC /* ViewController.swift */,
+				6DA09F421E41EF3E00D9B9EC /* Main.storyboard */,
+				6DA09F481E41EF3E00D9B9EC /* Assets.xcassets */,
+				6DA09F4A1E41EF3E00D9B9EC /* LaunchScreen.storyboard */,
+				6DA09F4D1E41EF3E00D9B9EC /* Info.plist */,
+				6DA09F451E41EF3E00D9B9EC /* SimpleRemon2.xcdatamodeld */,
+			);
+			name = SimpleRemon;
+			path = SimpleRemon2;
+			sourceTree = "<group>";
+		};
+		6DC908B51E41F99800D7F58E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D7B0F621E78C8F100B2001C /* remonios.framework */,
+				6D7B0F631E78C8F100B2001C /* WebRTC.framework */,
+				6DF9BA991E5F2FF0008D1B7A /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6DA09F3A1E41EF3E00D9B9EC /* SimpleRemon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DA09F501E41EF3E00D9B9EC /* Build configuration list for PBXNativeTarget "SimpleRemon" */;
+			buildPhases = (
+				6DA09F371E41EF3E00D9B9EC /* Sources */,
+				6DA09F381E41EF3E00D9B9EC /* Frameworks */,
+				6DA09F391E41EF3E00D9B9EC /* Resources */,
+				6DA09F5B1E41EFE500D9B9EC /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleRemon;
+			productName = SimpleRemon2;
+			productReference = 6DA09F3B1E41EF3E00D9B9EC /* SimpleRemon.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6DA09F331E41EF3E00D9B9EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Remote Monster";
+				TargetAttributes = {
+					6DA09F3A1E41EF3E00D9B9EC = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4P4GA387TV;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6DA09F361E41EF3E00D9B9EC /* Build configuration list for PBXProject "SimpleRemon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6DA09F321E41EF3E00D9B9EC;
+			productRefGroup = 6DA09F3C1E41EF3E00D9B9EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6DA09F3A1E41EF3E00D9B9EC /* SimpleRemon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6DA09F391E41EF3E00D9B9EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DA09F4C1E41EF3E00D9B9EC /* LaunchScreen.storyboard in Resources */,
+				6DA09F491E41EF3E00D9B9EC /* Assets.xcassets in Resources */,
+				6DA09F441E41EF3E00D9B9EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6DA09F371E41EF3E00D9B9EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DA09F411E41EF3E00D9B9EC /* ViewController.swift in Sources */,
+				6DA09F471E41EF3E00D9B9EC /* SimpleRemon2.xcdatamodeld in Sources */,
+				6DA09F3F1E41EF3E00D9B9EC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6DA09F421E41EF3E00D9B9EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DA09F431E41EF3E00D9B9EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6DA09F4A1E41EF3E00D9B9EC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DA09F4B1E41EF3E00D9B9EC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6DA09F4E1E41EF3E00D9B9EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6DA09F4F1E41EF3E00D9B9EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6DA09F511E41EF3E00D9B9EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4P4GA387TV;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = SimpleRemon2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = calmglow.SimpleRemon2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6DA09F521E41EF3E00D9B9EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4P4GA387TV;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = SimpleRemon2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = calmglow.SimpleRemon2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6DA09F361E41EF3E00D9B9EC /* Build configuration list for PBXProject "SimpleRemon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DA09F4E1E41EF3E00D9B9EC /* Debug */,
+				6DA09F4F1E41EF3E00D9B9EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DA09F501E41EF3E00D9B9EC /* Build configuration list for PBXNativeTarget "SimpleRemon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DA09F511E41EF3E00D9B9EC /* Debug */,
+				6DA09F521E41EF3E00D9B9EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6DA09F451E41EF3E00D9B9EC /* SimpleRemon2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6DA09F461E41EF3E00D9B9EC /* SimpleRemon2.xcdatamodel */,
+			);
+			currentVersion = 6DA09F461E41EF3E00D9B9EC /* SimpleRemon2.xcdatamodel */;
+			path = SimpleRemon2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6DA09F331E41EF3E00D9B9EC /* Project object */;
+}
