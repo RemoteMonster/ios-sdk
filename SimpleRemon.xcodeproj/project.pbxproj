@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D7B0F641E78C8F100B2001C /* remonios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; };
-		6D7B0F651E78C8F100B2001C /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; };
-		6D7B0F661E78C8F700B2001C /* remonios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; };
-		6D7B0F671E78C8F700B2001C /* remonios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6D7B0F681E78C8F700B2001C /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; };
-		6D7B0F691E78C8F700B2001C /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B7D71691F4AB370004D7BCB /* WebRTC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B7D716A1F4AB390004D7BCB /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; };
+		0B7D716B1F4AB39C004D7BCB /* remonios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; };
+		0B7D716C1F4AB3EE004D7BCB /* remonios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B7D716D1F4AB3F3004D7BCB /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B7D716E1F4AB3FC004D7BCB /* remonios.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6DA09F3F1E41EF3E00D9B9EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA09F3E1E41EF3E00D9B9EC /* AppDelegate.swift */; };
 		6DA09F411E41EF3E00D9B9EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA09F401E41EF3E00D9B9EC /* ViewController.swift */; };
 		6DA09F441E41EF3E00D9B9EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA09F421E41EF3E00D9B9EC /* Main.storyboard */; };
@@ -23,14 +23,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0B7D71681F4AB366004D7BCB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0B7D71691F4AB370004D7BCB /* WebRTC.framework in CopyFiles */,
+				0B7D716E1F4AB3FC004D7BCB /* remonios.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6DA09F5B1E41EFE500D9B9EC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6D7B0F671E78C8F700B2001C /* remonios.framework in Embed Frameworks */,
-				6D7B0F691E78C8F700B2001C /* WebRTC.framework in Embed Frameworks */,
+				0B7D716C1F4AB3EE004D7BCB /* remonios.framework in Embed Frameworks */,
+				0B7D716D1F4AB3F3004D7BCB /* WebRTC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,11 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D7B0F641E78C8F100B2001C /* remonios.framework in Frameworks */,
 				6DF9BA9A1E5F2FF0008D1B7A /* libc++.tbd in Frameworks */,
-				6D7B0F661E78C8F700B2001C /* remonios.framework in Frameworks */,
-				6D7B0F681E78C8F700B2001C /* WebRTC.framework in Frameworks */,
-				6D7B0F651E78C8F100B2001C /* WebRTC.framework in Frameworks */,
+				0B7D716A1F4AB390004D7BCB /* WebRTC.framework in Frameworks */,
+				0B7D716B1F4AB39C004D7BCB /* remonios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +129,7 @@
 				6DA09F381E41EF3E00D9B9EC /* Frameworks */,
 				6DA09F391E41EF3E00D9B9EC /* Resources */,
 				6DA09F5B1E41EFE500D9B9EC /* Embed Frameworks */,
+				0B7D71681F4AB366004D7BCB /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -142,7 +152,7 @@
 				TargetAttributes = {
 					6DA09F3A1E41EF3E00D9B9EC = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 4P4GA387TV;
+						DevelopmentTeam = 5JQ6TYMKLC;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -308,15 +318,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4P4GA387TV;
+				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SimpleRemon2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = calmglow.SimpleRemon2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.remonvideochat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -326,15 +337,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4P4GA387TV;
+				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SimpleRemon2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = calmglow.SimpleRemon2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.remonvideochat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

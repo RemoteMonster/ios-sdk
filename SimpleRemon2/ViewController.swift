@@ -44,7 +44,7 @@ class ViewController: UIViewController , RemonDelegate{
     }
     
     func close(){
-        remon?.disconnect()
+        remon?.close()
         if let rvt = self.remoteVideoTrack{
             if (rvt.accessibilityElementCount())>0{
                 rvt.remove(remoteView)
