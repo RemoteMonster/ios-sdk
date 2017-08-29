@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B7D71691F4AB370004D7BCB /* WebRTC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0B7D716A1F4AB390004D7BCB /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; };
-		0B7D716B1F4AB39C004D7BCB /* remonios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; };
-		0B7D716C1F4AB3EE004D7BCB /* remonios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0B7D716D1F4AB3F3004D7BCB /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0B7D716E1F4AB3FC004D7BCB /* remonios.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B596AD61F4E6977005F03B7 /* remonios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; };
+		0B596AD71F4E6977005F03B7 /* remonios.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D7B0F621E78C8F100B2001C /* remonios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B6155211F4D4892000331BF /* WebRTC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B7D71761F4D4128004D7BCB /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7B0F631E78C8F100B2001C /* WebRTC.framework */; };
+		0BD61F011F55276900F1E6D3 /* remon_icon_4276.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD61F001F55276900F1E6D3 /* remon_icon_4276.png */; };
+		0BD61F031F55293700F1E6D3 /* remon_icon_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD61F021F55293700F1E6D3 /* remon_icon_1024.png */; };
+		0BD61F051F55374F00F1E6D3 /* hamburger-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD61F041F55374F00F1E6D3 /* hamburger-01.png */; };
 		6DA09F3F1E41EF3E00D9B9EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA09F3E1E41EF3E00D9B9EC /* AppDelegate.swift */; };
 		6DA09F411E41EF3E00D9B9EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA09F401E41EF3E00D9B9EC /* ViewController.swift */; };
 		6DA09F441E41EF3E00D9B9EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA09F421E41EF3E00D9B9EC /* Main.storyboard */; };
@@ -23,32 +24,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0B7D71681F4AB366004D7BCB /* CopyFiles */ = {
+		0B61551F1F4D488B000331BF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0B7D71691F4AB370004D7BCB /* WebRTC.framework in CopyFiles */,
-				0B7D716E1F4AB3FC004D7BCB /* remonios.framework in CopyFiles */,
+				0B596AD71F4E6977005F03B7 /* remonios.framework in CopyFiles */,
+				0B6155211F4D4892000331BF /* WebRTC.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6DA09F5B1E41EFE500D9B9EC /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0B7D716C1F4AB3EE004D7BCB /* remonios.framework in Embed Frameworks */,
-				0B7D716D1F4AB3F3004D7BCB /* WebRTC.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0BD61F001F55276900F1E6D3 /* remon_icon_4276.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remon_icon_4276.png; sourceTree = "<group>"; };
+		0BD61F021F55293700F1E6D3 /* remon_icon_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remon_icon_1024.png; sourceTree = "<group>"; };
+		0BD61F041F55374F00F1E6D3 /* hamburger-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hamburger-01.png"; sourceTree = "<group>"; };
 		6D7B0F621E78C8F100B2001C /* remonios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = remonios.framework; sourceTree = "<group>"; };
 		6D7B0F631E78C8F100B2001C /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
 		6DA09F3B1E41EF3E00D9B9EC /* SimpleRemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleRemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,9 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B596AD61F4E6977005F03B7 /* remonios.framework in Frameworks */,
 				6DF9BA9A1E5F2FF0008D1B7A /* libc++.tbd in Frameworks */,
-				0B7D716A1F4AB390004D7BCB /* WebRTC.framework in Frameworks */,
-				0B7D716B1F4AB39C004D7BCB /* remonios.framework in Frameworks */,
+				0B7D71761F4D4128004D7BCB /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +88,9 @@
 		6DA09F3D1E41EF3E00D9B9EC /* SimpleRemon */ = {
 			isa = PBXGroup;
 			children = (
+				0BD61F041F55374F00F1E6D3 /* hamburger-01.png */,
+				0BD61F021F55293700F1E6D3 /* remon_icon_1024.png */,
+				0BD61F001F55276900F1E6D3 /* remon_icon_4276.png */,
 				6DA09F3E1E41EF3E00D9B9EC /* AppDelegate.swift */,
 				6DA09F401E41EF3E00D9B9EC /* ViewController.swift */,
 				6DA09F421E41EF3E00D9B9EC /* Main.storyboard */,
@@ -128,8 +123,7 @@
 				6DA09F371E41EF3E00D9B9EC /* Sources */,
 				6DA09F381E41EF3E00D9B9EC /* Frameworks */,
 				6DA09F391E41EF3E00D9B9EC /* Resources */,
-				6DA09F5B1E41EFE500D9B9EC /* Embed Frameworks */,
-				0B7D71681F4AB366004D7BCB /* CopyFiles */,
+				0B61551F1F4D488B000331BF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -181,7 +175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DA09F4C1E41EF3E00D9B9EC /* LaunchScreen.storyboard in Resources */,
+				0BD61F031F55293700F1E6D3 /* remon_icon_1024.png in Resources */,
+				0BD61F011F55276900F1E6D3 /* remon_icon_4276.png in Resources */,
 				6DA09F491E41EF3E00D9B9EC /* Assets.xcassets in Resources */,
+				0BD61F051F55374F00F1E6D3 /* hamburger-01.png in Resources */,
 				6DA09F441E41EF3E00D9B9EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +327,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.remonvideochat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -349,6 +347,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.remonvideochat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
