@@ -10,11 +10,43 @@ import UIKit
 import WebRTC
 import remonios
 
-class ViewController: UIViewController , RemonDelegate{
+public protocol RemonChCellDelegate{
+    func onJoinRemonCh(_ item:Any)
+}
+
+class RemonChCell: UITableViewCell {
+    
+    var delegate:RemonChCellDelegate?
+    
+    @IBOutlet weak var chIDLabel: UILabel!
+    @IBOutlet weak var joinBtn: UIButton!
+    
+    @IBAction func touchJoinButtn(_ sender: Any) {
+        if delegate != nil {
+            delegate?.onJoinRemonCh(self)
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+}
+
+class ViewController: UIViewController , RemonDelegate, UITableViewDelegate, UITableViewDataSource, RemonChCellDelegate{
 
     var remon:Remon?
     var localVideoTrack:RTCVideoTrack?
     var remoteVideoTrack:RTCVideoTrack?
+    
+    var channels:Array<Any>?
     
     var backImageView:UIImageView?
     var localVideoBackView:UIView?
@@ -31,6 +63,8 @@ class ViewController: UIViewController , RemonDelegate{
     @IBOutlet weak var dropBox: UIView!
     @IBOutlet weak var naviItem: UINavigationItem!
     
+    @IBOutlet weak var channelTableView: UITableView!
+    
 //    MARK: IBAction 설정
     @IBAction func onDisconnectButton(_ sender: Any) {
         self.touchNaviLeftItem(self)
@@ -43,7 +77,7 @@ class ViewController: UIViewController , RemonDelegate{
         let rand:String! = String(arc4random_uniform(99999))
         chIdField.text = rand
         chIdView.alpha = 1.0
-        dropBox.alpha = 0.0
+        touchNaviLeftItem(self)
         self.view.endEditing(true)
     }
     
@@ -54,21 +88,34 @@ class ViewController: UIViewController , RemonDelegate{
     
     @IBAction func onConnectButton(_ sender: Any) {
         chIdView.alpha = 0.0
-        let config = RemonConfig()
-        config.key = "e3ee6933a7c88446ba196b2c6eeca6762c3fdceaa6019f03"
-        config.serviceId = "simpleapp"
-        //config.videoCall=false
-        remon = Remon(delegate: self, config: config)
         self.view.endEditing(true)
+        
+        var chId:String! = chIdField.text
+        if chId == nil || chId.characters.count == 0 {
+            let rand:String! = String(arc4random_uniform(99999))
+            chId = rand
+        }
+        remon?.connectChannel(chId: chId)
+        self.navigationItem.title = chId
+    }
+    
+    @IBAction func touchSearchButton (_ sender: Any) {
+        remon?.search(query: "")
     }
     
     @IBAction func touchNaviLeftItem(_ sender: Any) {
+        remon?.search(query: "")
         UIView.animate(withDuration: 0.3) {
+//            let closeX:CGFloat = -200.0
+//            let openX:CGFloat = 0.0
+//            if(self.dropBox.frame.origin.x == openX || self.dropBox.frame.origin.x == closeX){
             if(self.dropBox.alpha == 1.0 || self.dropBox.alpha == 0.0){
                 if self.dropBox.alpha == 1.0 {
                     self.dropBox.alpha = 0.0
-                } else {
+//                    self.dropBox.frame.origin.x = closeX
+                } else{
                     self.dropBox.alpha = 1.0
+//                    self.dropBox.frame.origin.x = openX
                 }
             }else {
                 return
@@ -79,10 +126,12 @@ class ViewController: UIViewController , RemonDelegate{
 //    MARK: UIView life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        initRemon()
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.25, green:0.32, blue:0.71, alpha:1.00)
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.titleTextAttributes = (titleDict as! [String : Any])
         self.navigationItem.title = "Remon Video Chat"
-        
         
         backImageView = UIImageView(frame: self.view.frame)
         backImageView?.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.00)
@@ -109,11 +158,16 @@ class ViewController: UIViewController , RemonDelegate{
         makeShadow(chIdView)
         dropBox.alpha = 0.0
         chIdView.alpha = 0.0
-
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+//            self.dropBox.alpha = 1.0
+//            self.dropBox.frame = CGRect(x: -200, y: self.dropBox.frame.origin.y, width: self.dropBox.frame.size.width, height: self.dropBox.frame.size.height)
+//        })
         
     }
 
@@ -124,6 +178,14 @@ class ViewController: UIViewController , RemonDelegate{
     
     
 //    MARK: Util func
+    func initRemon() {
+        let config = RemonConfig()
+        config.key = "e3ee6933a7c88446ba196b2c6eeca6762c3fdceaa6019f03"
+        config.serviceId = "simpleapp"
+        //config.videoCall=false
+        remon = Remon(delegate: self, config: config)
+    }
+    
     func close(){
         remon?.close()
         if let rvt = self.remoteVideoTrack{
@@ -152,27 +214,21 @@ class ViewController: UIViewController , RemonDelegate{
         switch state{
         case RemonState.WAIT:
             log(msg: "Waiting for connection")
+            localVideoBackView?.isHidden = true
         case RemonState.CLOSE:
             close()
         case RemonState.FAIL:
             close()
         case RemonState.INIT:
-            var chId:String! = chIdField.text
-            if chId == nil || chId.characters.count == 0 {
-                let rand:String! = String(arc4random_uniform(99999))
-                chId = rand
-            }
-            remon?.connectChannel(chId: chId)
-            self.navigationItem.title = chId
-            //remon?.search(query:"")
+            print ("Init")
         case RemonState.CONNECT:
             print ("Connecting")
             backImageView?.isHidden = true
-            localVideoBackView?.isHidden = false
+            localVideoBackView?.isHidden = true
         case RemonState.COMPLETE:
             print ("Connected")
             backImageView?.isHidden = true
-            localVideoBackView?.isHidden = false
+            localVideoBackView?.isHidden = true
         case RemonState.EXIT:
             print ("Exit")
     
@@ -202,12 +258,13 @@ class ViewController: UIViewController , RemonDelegate{
         localVideoBackView?.isHidden = false
         self.navigationItem.title = "Remon Video Chat"
         //close()
+        initRemon()
     }
     
     func onError(_ error:RemonError){
         print ("onError is called")
         log (msg: "Error: \(error.localizedDescription)")
-        
+        initRemon()
     }
     
     func onMessage(_ message:String){
@@ -215,9 +272,11 @@ class ViewController: UIViewController , RemonDelegate{
     }
     
     func onSearch(_ result:Array<[String:String]>){
-        for ch in result{
-            print(ch["id"]!)
-        }
+//        for ch in result{
+//            print(ch["id"]!)
+//        }
+        self.channels = result
+        self.channelTableView.reloadData()
     }
     
     func onClose(){
@@ -225,6 +284,41 @@ class ViewController: UIViewController , RemonDelegate{
         localVideoBackView?.isHidden = false
         self.navigationItem.title = "Remon Video Chat"
         log(msg:"Close")
+        initRemon()
+    }
+    
+    
+    
+//    MARK:UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.channels != nil && (self.channels?.count)! > 0 {
+            return (self.channels?.count)!;
+        }
+        
+        return 0;
+        
+    }
+    
+    
+    
+    @available(iOS 2.0, *)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "remonChCell", for: indexPath)
+        let chDict:Dictionary<String, Any> = self.channels?[indexPath.row] as! Dictionary<String, Any>
+        
+        let remonCell:RemonChCell = cell as! RemonChCell
+        remonCell.chIDLabel?.text =  chDict["id"] as? String
+        remonCell.delegate = self as RemonChCellDelegate
+        
+        return cell
+    }
+    
+    func onJoinRemonCh(_ item:Any){
+        let remonCell:RemonChCell = item as! RemonChCell
+        remon?.connectChannel(chId: remonCell.chIDLabel.text!)
+        self.navigationItem.title = remonCell.chIDLabel.text!
+        
+        touchNaviLeftItem(self)
     }
     
 }

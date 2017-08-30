@@ -14,6 +14,8 @@
 		0BD61F011F55276900F1E6D3 /* remon_icon_4276.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD61F001F55276900F1E6D3 /* remon_icon_4276.png */; };
 		0BD61F031F55293700F1E6D3 /* remon_icon_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD61F021F55293700F1E6D3 /* remon_icon_1024.png */; };
 		0BD61F051F55374F00F1E6D3 /* hamburger-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD61F041F55374F00F1E6D3 /* hamburger-01.png */; };
+		0BF45A2C1F56769C005C0821 /* remon_identity.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BF45A2B1F56769C005C0821 /* remon_identity.png */; };
+		0BF45A321F56894E005C0821 /* remon_identityL.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BF45A311F56894E005C0821 /* remon_identityL.png */; };
 		6DA09F3F1E41EF3E00D9B9EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA09F3E1E41EF3E00D9B9EC /* AppDelegate.swift */; };
 		6DA09F411E41EF3E00D9B9EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA09F401E41EF3E00D9B9EC /* ViewController.swift */; };
 		6DA09F441E41EF3E00D9B9EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA09F421E41EF3E00D9B9EC /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 		0BD61F001F55276900F1E6D3 /* remon_icon_4276.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remon_icon_4276.png; sourceTree = "<group>"; };
 		0BD61F021F55293700F1E6D3 /* remon_icon_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remon_icon_1024.png; sourceTree = "<group>"; };
 		0BD61F041F55374F00F1E6D3 /* hamburger-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hamburger-01.png"; sourceTree = "<group>"; };
+		0BF45A2B1F56769C005C0821 /* remon_identity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remon_identity.png; sourceTree = "<group>"; };
+		0BF45A311F56894E005C0821 /* remon_identityL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remon_identityL.png; sourceTree = "<group>"; };
 		6D7B0F621E78C8F100B2001C /* remonios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = remonios.framework; sourceTree = "<group>"; };
 		6D7B0F631E78C8F100B2001C /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
 		6DA09F3B1E41EF3E00D9B9EC /* SimpleRemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleRemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +92,8 @@
 		6DA09F3D1E41EF3E00D9B9EC /* SimpleRemon */ = {
 			isa = PBXGroup;
 			children = (
+				0BF45A2B1F56769C005C0821 /* remon_identity.png */,
+				0BF45A311F56894E005C0821 /* remon_identityL.png */,
 				0BD61F041F55374F00F1E6D3 /* hamburger-01.png */,
 				0BD61F021F55293700F1E6D3 /* remon_icon_1024.png */,
 				0BD61F001F55276900F1E6D3 /* remon_icon_4276.png */,
@@ -178,7 +184,9 @@
 				0BD61F031F55293700F1E6D3 /* remon_icon_1024.png in Resources */,
 				0BD61F011F55276900F1E6D3 /* remon_icon_4276.png in Resources */,
 				6DA09F491E41EF3E00D9B9EC /* Assets.xcassets in Resources */,
+				0BF45A321F56894E005C0821 /* remon_identityL.png in Resources */,
 				0BD61F051F55374F00F1E6D3 /* hamburger-01.png in Resources */,
+				0BF45A2C1F56769C005C0821 /* remon_identity.png in Resources */,
 				6DA09F441E41EF3E00D9B9EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
