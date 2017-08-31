@@ -143,7 +143,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @interface NSNumber (SWIFT_EXTENSION(remonios))
 @end
 
-@class RTCCameraPreviewView;
 
 /// RemoteMonster API를 사용하기 위한 가장 기본이 되는 클래스. Remon클래스를 통해 서버와 연결하고 명령을 보내고 종료한다. 서버로부터 메시지를 받는 것은 주로 RemonDelegate를 통해 처리한다.
 SWIFT_CLASS("_TtC8remonios5Remon")
@@ -170,8 +169,6 @@ SWIFT_CLASS("_TtC8remonios5Remon")
 /// </ul>
 - (void)close;
 - (void)softclose;
-/// RemonConfig에 설정된 영상 정보를 바탕으로 영상 캡쳐를 시작 한다.
-- (void)startVideoCapturer:(RTCCameraPreviewView * _Nonnull)previewView;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
