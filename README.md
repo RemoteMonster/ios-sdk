@@ -8,7 +8,20 @@
 - Remon 클래스와 RemonDelegate, 그리고 RemonConfig 세가지 클래스만 사용법을 알고 있으면 어렵지 않게 영상통신 앱을 개발할 수 있습니다.
 - - - -
 # 1. Install
+## manual
 [iOS SDK Getting Started · RemoteMonster Documents](https://docs.remotemonster.com/ko/GettingStartedIosSDK.html)
+
+## cocoapods
+SDK 설치를 원하는 프로젝트의 Podfile에  `pod 'Remon-iOS-SDK', '~> 0.1`을
+추가 하거나
+```
+target 'MyApp' do
+  pod 'Remon-iOS-SDK', '~> 0.1'
+end
+```
+을 추가 합니다.
+그리고 터미널에서 *pod install* 를 실행 합니다.
+만약  *pod install* 이 동작하지 않는 다면 *pod update*를 실행 합니다.
 - - - -
 # 2. Interface
 ## Remon
@@ -209,4 +222,3 @@ preview에서 영상 캡쳐가 시작 된 후 호출
 
 ## 4. Example
 작성 중
-
