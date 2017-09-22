@@ -9,7 +9,6 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <AVFoundation/AVFoundation.h>
 
 #import <WebRTC/RTCMacros.h>
 #import <WebRTC/RTCVideoCapturer.h>
