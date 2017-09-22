@@ -9,7 +9,7 @@
 - - - -
 # 1. Install
 ## manual
-[iOS SDK Getting Started · RemoteMonster Documents](https://docs.remotemonster.com/ko/GettingStartedIosSDK.html)
+[iOS SDK Getting Started · RemoteMonster Documents](https://docs.remotemonster.com/ko/GettingStarted-IosSDK.html)
 
 ## cocoapods
 SDK 설치를 원하는 프로젝트의 Podfile에  `pod 'Remon-iOS-SDK', '~> 0.1`을
