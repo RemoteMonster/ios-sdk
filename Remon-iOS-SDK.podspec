@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/RemoteMonster/ios-sdk.git', :tag => '0.1.161' }
   s.platform     = :ios, '9.1'
 
-  s.vendored_frameworks = 'remonios.0.1.16/remonios.framework'
+  s.vendored_frameworks = 'remonios.framework'
   #s.dependency 'WebRTC', '~> 60.10.18252'
-  s.dependency 'Remon-WebRTC-iOS', '~> 1.0115'
+  s.dependency 'Remon-WebRTC-iOS', '~> 1.0116'
 end
