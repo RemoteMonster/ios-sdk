@@ -7,4 +7,5 @@ framework module remonios {
 
 module remonios.Swift {
     header "remonios-Swift.h"
+    requires objc
 }
