@@ -40,6 +40,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B341AB11F9987400020229F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0B341AB21F9987750020229F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0BD61F001F55276900F1E6D3 /* remon_icon_4276.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remon_icon_4276.png; sourceTree = "<group>"; };
 		0BD61F021F55293700F1E6D3 /* remon_icon_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remon_icon_1024.png; sourceTree = "<group>"; };
 		0BD61F041F55374F00F1E6D3 /* hamburger-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hamburger-01.png"; sourceTree = "<group>"; };
@@ -112,6 +114,8 @@
 		6DC908B51E41F99800D7F58E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0B341AB21F9987750020229F /* CoreTelephony.framework */,
+				0B341AB11F9987400020229F /* CFNetwork.framework */,
 				6D7B0F621E78C8F100B2001C /* remonios.framework */,
 				6D7B0F631E78C8F100B2001C /* WebRTC.framework */,
 				6DF9BA991E5F2FF0008D1B7A /* libc++.tbd */,
@@ -153,7 +157,7 @@
 					6DA09F3A1E41EF3E00D9B9EC = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5JQ6TYMKLC;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -323,9 +327,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -336,8 +340,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.remonvideochat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5f5e96c0-afa4-4931-bfb9-0e6031b9bd17";
-				PROVISIONING_PROFILE_SPECIFIER = RemonVChat;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
@@ -348,9 +352,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -361,8 +365,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.remonvideochat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5f5e96c0-afa4-4931-bfb9-0e6031b9bd17";
-				PROVISIONING_PROFILE_SPECIFIER = RemonVChat;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
