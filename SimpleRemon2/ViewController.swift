@@ -10,6 +10,8 @@ import UIKit
 import WebRTC
 import remonios
 
+import CoreTelephony
+
 public protocol RemonChCellDelegate{
     func onJoinRemonCh(_ item:Any)
 }
@@ -100,11 +102,11 @@ class ViewController: UIViewController , RemonDelegate, UITableViewDelegate, UIT
     }
     
     @IBAction func touchSearchButton (_ sender: Any) {
-        remon?.search(query: "")
+//        remon?.search(query: "")
     }
     
     @IBAction func touchNaviLeftItem(_ sender: Any) {
-        remon?.search(query: "")
+//        remon?.search(query: "")
         UIView.animate(withDuration: 0.3) {
 //            let closeX:CGFloat = -200.0
 //            let openX:CGFloat = 0.0
@@ -126,6 +128,13 @@ class ViewController: UIViewController , RemonDelegate, UITableViewDelegate, UIT
 //    MARK: UIView life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let telephonyInfo = CTTelephonyNetworkInfo();
+        let carrier = telephonyInfo.subscriberCellularProvider;
+        var countryCode:String! = "KR"
+        if (carrier!.isoCountryCode != nil) {
+            countryCode = String(describing:carrier!.isoCountryCode!).uppercased();
+        }
         initRemon()
         
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0.25, green:0.32, blue:0.71, alpha:1.00)
@@ -176,12 +185,20 @@ class ViewController: UIViewController , RemonDelegate, UITableViewDelegate, UIT
         // Dispose of any resources that can be recreated.
     }
     
+    func initRemonA() {
+    }
+    
+    func initRemonB() {
+    }
     
 //    MARK: Util func
     func initRemon() {
         let config = RemonConfig()
-        config.key = "e3ee6933a7c88446ba196b2c6eeca6762c3fdceaa6019f03"
-        config.serviceId = "simpleapp"
+                config.key = "e3ee6933a7c88446ba196b2c6eeca6762c3fdceaa6019f03"
+                config.serviceId = "simpleapp"
+//        config.restUrl = "http://172.30.1.47:8081/rest/init"
+//        config.wsUrl = "ws://172.30.1.47:8081/ws"
+//        config.sendonly = "true"
         //config.videoCall=false
         remon = Remon(delegate: self, config: config)
     }
@@ -225,13 +242,17 @@ class ViewController: UIViewController , RemonDelegate, UITableViewDelegate, UIT
             print ("Connecting")
             backImageView?.isHidden = true
             localVideoBackView?.isHidden = true
+        case RemonState.CREATE:
+            localVideoBackView?.isHidden = true
+            print ("Created")
+            localVideoBackView?.isHidden = true
+//            remon?.dummysdp()
         case RemonState.COMPLETE:
             print ("Connected")
             backImageView?.isHidden = true
             localVideoBackView?.isHidden = true
         case RemonState.EXIT:
             print ("Exit")
-    
         }
         
         

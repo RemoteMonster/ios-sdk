@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a8L-HW-2ry">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a8L-HW-2ry">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -61,7 +61,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nte-UF-NJd">
-                                <rect key="frame" x="68" y="270" width="240" height="175"/>
+                                <rect key="frame" x="68" y="100" width="240" height="175"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpf-fS-W28">
                                         <rect key="frame" x="0.0" y="24" width="240" height="21"/>
@@ -224,7 +224,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Nte-UF-NJd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="24" id="48A-0e-DfY"/>
+                            <constraint firstItem="Nte-UF-NJd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-146" id="48A-0e-DfY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1bo-lm-ZhH" secondAttribute="bottom" id="7H0-1f-f22"/>
                             <constraint firstAttribute="trailing" secondItem="uNn-NI-m0Q" secondAttribute="trailing" id="BFH-52-9O3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uNn-NI-m0Q" secondAttribute="bottom" id="FC7-ib-Ee4"/>
@@ -272,7 +272,7 @@
             <objects>
                 <navigationController id="a8L-HW-2ry" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vca-2n-9wc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
