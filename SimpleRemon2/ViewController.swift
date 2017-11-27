@@ -132,7 +132,7 @@ class ViewController: UIViewController , RemonDelegate, UITableViewDelegate, UIT
         let telephonyInfo = CTTelephonyNetworkInfo();
         let carrier = telephonyInfo.subscriberCellularProvider;
         var countryCode:String! = "KR"
-        if (carrier!.isoCountryCode != nil) {
+        if (carrier != nil && carrier!.isoCountryCode != nil) {
             countryCode = String(describing:carrier!.isoCountryCode!).uppercased();
         }
         initRemon()
