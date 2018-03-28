@@ -28,7 +28,7 @@
 - deprecated createBroadcast(chID)
 - remove pauseRemoteVideo()
 
-# RemonDelegate
+## RemonDelegate
 - add didReceiveLocalVideoCapture(localVideoCaptur)
 - add didReceiveRemoteAudioTrack(remoteAudioTrack)
 - add onCreateChannel(channelID)
@@ -69,6 +69,23 @@ RemoteMonster API를 사용하기 위한 가장 기본이 되는 클래스. Remo
 	접속 혹은 생성 하려는 Channel ID 값.
 	Channel ID가 존재 하는 경우 해당 채널로 접속을 시도 하고, 
 	Channel ID가 존재 하지 않을 경우 새로운 채널을 생성 한다.
+	
+#### startLocalVideoCapture()
+로컬 영상 캡쳐를 시작 합니다.
+RemonConfig.autoCaptureStart가 true 일 경우 자동으로 캡쳐를 시작 합니다.
+RemonConfig.autoCaptureStart가 false 일 경우 수동으로 캡쳐를 시작 하여야 하며 RemonState가 COMPLETE 이후에 호출 하여야 합니다.
+
+#### startLocalVideoCapture()
+로컬 영상 캡쳐를 정지 합니다.
+
+#### createRoom()
+방송을 생성 합니다
+
+#### joinRoom(chID:)
+방송에 진입 합니다.
+- param
+	- chld:String
+	접속 혹은 생성 하려는 방송의 Channel ID 값.
 
 #### getRemonState()
 현재 연결 상태를 나타내는 RemonState값을 얻어 온다. (RemonState 참조)
@@ -80,7 +97,7 @@ RemoteMonster API를 사용하기 위한 가장 기본이 되는 클래스. Remo
 	- pause:Bool
 	음소거 여부를 나타내는 Boolean 값.
 
-#### pauseLocalVideo(pause:)
+#### pauseLocalVideo(pause:) @deprecated
 자신(로컬)의 음성을 소거 한다.
 - param
 	- pause
@@ -99,12 +116,6 @@ RemoteMonster API를 사용하기 위한 가장 기본이 되는 클래스. Remo
 채널이 연결된 상태에서 상대편에게 메시지를 전달한다.
 - param
 	- message:String
-
-#### startVideoCapturer(previewView:)
-RemonConfig에 설정된 영상 정보를 바탕으로 영상 캡쳐를 시작 한다.
-- param
-	- previewView:RTCCameraPreviewView
-	영상 캡쳐을 위한 WebRTC의 RTCCameraPreviewView 객체
 
 #### close()
 연결을 종료하고 모든 Remon과 관련된 자원을 해제한다.
@@ -142,8 +153,17 @@ Remon객체를 생성하면 서버와 인증 후 받게 되는 일회성 용도�
 #### videoFps:Int
 송출할 비디오의 frames per second. 기본값은 30
 
-#### useFrontCamara:Bool
+#### useFrontCamera:Bool
 전면 카메라 사용 여부
+
+#### autoCaptureStart:Bool
+연결이 완료된 후 자동 로컬 영상 캡쳐 여부. 기본값 true
+
+#### debugMode:Bool
+WebRTC 디버깅 로그 노출 여부. 기본값 false
+
+#### debugLevel:RTCLoggingSeverity
+WebRTC 디버깅 로그 레벨. 기본값 .error
 
 #### remoteAudioMuted:Bool (draft)
 원격 대상의 음성 소거 여부를 나타내는 Boolean 값.
@@ -215,10 +235,22 @@ preview에서 영상 캡쳐가 시작 된 후 호출
 	WebRTC의 RTCVideoTrack 객체
 
 #### didReceiveRemoteVideoTrack(remoteVideoTrack:)
-원격의 음성/영상 자원을 받았을 때 호출됨
+원격의 영상 자원을 받았을 때 호출됨
 - param
 	- remoteVideoTrack:RTCVideoTrack
 	WebRTC의 RTCVideoTrack 객체
+
+#### didReceiveLocalVideoCapture(localVideoCapture:)
+로컬 비디오 챕쳐 자원을 받았을 때 호출 됨
+- param
+	- localVideoCapture:RTCVideoCapture
+	WebRTC의 RTCVideoCapture 객체
+
+#### didReceiveRemoteAudioTrack(remoteAudioTrack:)
+원격의 음성 자원을 받았을 때 호출됨
+- param
+	- remoteAudioTrack:RTCAudioTrack
+	WebRTC의 RTCAudioTrack 객체
 
 #### onError(error:)
 에러가 발생할 때 호출됨
@@ -237,7 +269,10 @@ preview에서 영상 캡쳐가 시작 된 후 호출
 - param
 	- result:Array
 	검색 결과 리스트
-	
+
+#### func onCreateChannel(channelID)
+채널이 생성 되었을 경우 발생함.
+
 #### func onDisconnectChannel()
 채널과 나와의 연결이 완전히 종료 되었을 경우 발생함.
 
