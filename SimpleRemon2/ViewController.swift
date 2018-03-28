@@ -43,7 +43,6 @@ class RemonChCell: UITableViewCell {
 }
 
 class ViewController: UIViewController , RemonDelegate, UITableViewDelegate, UITableViewDataSource, RemonChCellDelegate{
-
     var remon:Remon?
     var localVideoTrack:RTCVideoTrack?
     var remoteVideoTrack:RTCVideoTrack?
@@ -248,9 +247,10 @@ class ViewController: UIViewController , RemonDelegate, UITableViewDelegate, UIT
             localVideoBackView?.isHidden = true
 //            remon?.dummysdp()
         case RemonState.COMPLETE:
-            print ("Connected")
+            print ("Complete")
             backImageView?.isHidden = true
             localVideoBackView?.isHidden = true
+            self.remoteVideoTrack?.add(remoteView)
         case RemonState.EXIT:
             print ("Exit")
         }
@@ -268,8 +268,16 @@ class ViewController: UIViewController , RemonDelegate, UITableViewDelegate, UIT
     func didReceiveRemoteVideoTrack(_ remoteVideoTrack:RTCVideoTrack){
         print ("********************* Remote Video Track is occured *********************")
         self.remoteVideoTrack = remoteVideoTrack
-        self.remoteVideoTrack?.add(remoteView)
-        //self.remon?.switchCamera()
+///     self.remoteVideoTrack?.add(remoteView)를 onStateChange()에서 RemonState.COMPLETE 상태가 된 이후에 호출 하여야 합니다.
+//        self.remoteVideoTrack?.add(remoteView)
+    }
+    
+    func didReceiveLocalVideoCapture(_ localVideoCaptur: RTCCameraVideoCapturer) {
+        
+    }
+    
+    func didReceiveRemoteAudioTrack(_ remoteAudioTrack: RTCAudioTrack) {
+        
     }
     
     func onDisconnectChannel() {
@@ -306,6 +314,14 @@ class ViewController: UIViewController , RemonDelegate, UITableViewDelegate, UIT
         self.navigationItem.title = "Remon Video Chat"
         log(msg:"Close")
         initRemon()
+    }
+    
+    func onCreateChannel(channelID: String) {
+        
+    }
+    
+    func onDisconnectChannel(_ chID: String?) {
+        
     }
     
     
