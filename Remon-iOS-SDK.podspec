@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Remon-iOS-SDK'
-  s.version          = '0.1.182'
+  s.version          = '0.2.01'
   s.summary          = 'RemoteMonster Broadcast library with WebRTC'
   s.homepage         = 'https://remotemonster.com'
   s.license          = 'BSD'
@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks = 'remonios.framework'
   #s.dependency 'WebRTC', '~> 60.10.18252'
-  s.dependency 'Remon-WebRTC-iOS', '~> 1.0116'
+  # s.dependency 'Remon-WebRTC-iOS', '~> 1.0116'
 end
