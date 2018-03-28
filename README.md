@@ -7,6 +7,33 @@
 - bitcode를 지원하여 좀 더 쉽고 가벼운 개발이 가능합니다.
 - Remon 클래스와 RemonDelegate, 그리고 RemonConfig 세가지 클래스만 사용법을 알고 있으면 어렵지 않게 영상통신 앱을 개발할 수 있습니다.
 - - - -
+# $. 0.1.18 >>> 0.2.01 변경 사항
+## RemonConfig
+- add autoCaptureStart
+	- 커넥션이 완료된 이후 자동으로 로컬 영상 캡쳐를 시작 합니다. (default: true)
+- add debugMode
+	- webRTC의 디버그 로그를 활성화 합니다. (default: false)
+- add debugLevel
+	- webRTC의 디버그 로그 레벨
+- add useFrontCame
+	- 전면 카메라 사용 여부 (default: true)
+	
+## Remon
+- add startLocalVideoCapture()
+- add stopLocalVideoCapture()
+- add createRoom()
+	- createBroadcast(chID) 대신 createRoom() 사용을 권장 합니다.
+- add joinRoom(chID)
+	- createBroadcast(chID) 대신 joinRoom(chID) 사용을 권장 합니다.
+- deprecated createBroadcast(chID)
+- remove pauseRemoteVideo()
+
+# RemonDelegate
+- add didReceiveLocalVideoCapture(localVideoCaptur)
+- add didReceiveRemoteAudioTrack(remoteAudioTrack)
+- add onCreateChannel(channelID)
+- add onDisconnectChannel(chID)
+- - - -
 # 1. Install
 ## manual
 [iOS SDK Getting Started · RemoteMonster Documents](https://docs.remotemonster.com/ko/GettingStarted-IosSDK.html)
