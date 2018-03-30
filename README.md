@@ -121,7 +121,7 @@ RemonConfig.autoCaptureStart가 false 일 경우 수동으로 캡쳐를 시작 �
 #### close()
 연결을 종료하고 모든 Remon과 관련된 자원을 해제한다.
 
-### mediaTrackStats(track, level, completionHandler)
+#### mediaTrackStats(track, level, completionHandler)
 전달 받은 트랙의 상태 정보를 얻어 옵니다.
 - param
 	- track:RTCMediaStreamTrack
