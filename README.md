@@ -121,6 +121,15 @@ RemonConfig.autoCaptureStart가 false 일 경우 수동으로 캡쳐를 시작 �
 #### close()
 연결을 종료하고 모든 Remon과 관련된 자원을 해제한다.
 
+### mediaTrackStats(track, level, completionHandler)
+전달 받은 트랙의 상태 정보를 얻어 옵니다.
+- param
+	- track:RTCMediaStreamTrack
+	정보를 얻어 올 대상 트랙
+	- level:RTCStatsOutputLevel
+	정보 레벨 .debug .standard
+	- completionHandler: ([RTCStatsOutputLevel]) -> Void
+	완료 헨들러
 
 ## RemonConfig
 Remon을 실행하기 전에 여러가지 통신/방송 상태를 미리 설정할 필요가 있음. 필수적으로 key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우 videoCall = false로 해야하며 비디오 코덱등도 수정이 가능하다.
