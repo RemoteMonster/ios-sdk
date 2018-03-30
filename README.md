@@ -19,6 +19,7 @@
 	- 전면 카메라 사용 여부 (default: true)
 	
 ## Remon
+- add mediaTrackStats(track, level, completionHandler)
 - add startLocalVideoCapture()
 - add stopLocalVideoCapture()
 - add createRoom()
