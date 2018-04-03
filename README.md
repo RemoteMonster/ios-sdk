@@ -8,9 +8,34 @@
 - Remon 클래스와 RemonDelegate, 그리고 RemonConfig 세가지 클래스만 사용법을 알고 있으면 어렵지 않게 영상통신 앱을 개발할 수 있습니다.
 - - - -
 # $. 0.1.18 >>> 0.2.01 변경 사항
+### 0.2X 버전 이후 부터는 연결이 완료된 이후에 로컬 영상 캡쳐와 리모트 영상 랜더링을 시작 하여야 합니다.
+### 연결 상태는 RemonDelegate의 onStateChange()를 이용하여 확인 할 수 있습니다.
+#### 만얀 상대방의 영상이 안나오는 문제가 발생 한다면 아래와 수정 하여 보시기를 바랍니다.
+```
+//  이전
+func didReceiveRemoteVideoTrack(_ remoteVideoTrack:RTCVideoTrack){
+    self.remoteVideoTrack = remoteVideoTrack
+    self.remoteVideoTrack?.add(self.remoteView) //remoteVideoTrack을 얻는 시점에 비디오 랜더링 시작
+}
+
+// 0.2X 버전 이후
+func didReceiveRemoteVideoTrack(_ remoteVideoTrack:RTCVideoTrack){
+    self.remoteVideoTrack = remoteVideoTrack
+}
+
+func onStateChange(_ state:RemonState){
+	switch state {
+		case RemonState.COMPLETE:
+		self.remoteVideoTrack?.add(mainVideoView) //연결이 완료 되는 시점에 비디오 랜더링 시작
+		// remon?.startLocalVideoCapture() // RemonConfig의 autoCaptureStart가 false 일 경우
+	}
+}
+```
+
 ## RemonConfig
 - add autoCaptureStart
 	- 커넥션이 완료된 이후 자동으로 로컬 영상 캡쳐를 시작 합니다. (default: true)
+	- false로 설정 하였을 경우 사용자가 직접 Remon객체의 startLocalVideoCapture()를 호출 하여야 합니다.
 - add debugMode
 	- webRTC의 디버그 로그를 활성화 합니다. (default: false)
 - add debugLevel
@@ -20,20 +45,35 @@
 	
 ## Remon
 - add mediaTrackStats(track, level, completionHandler)
+	- 전달 받은 track:RTCMediaStreamTrack 인자의 상태값을 얻어 옵니다.
 - add startLocalVideoCapture()
+	- 로컬 비디오의 캡쳐를 시작 합니다.
+	- 비디오 캡쳐 정보는 RemonConfig의 값에 따라 변경 됩니다.
 - add stopLocalVideoCapture()
+	- 로컬 비디오의 캡쳐를 정지 합니다.
+	- 정지 상태에서 startLocalVideoCapture()를 호출 하시면 캡쳐가 재시작 됩니다.
 - add createRoom()
+	- 방송 모드에서 방을 생성하는데 이용됩니다.
 	- createBroadcast(chID) 대신 createRoom() 사용을 권장 합니다.
 - add joinRoom(chID)
+	- 방송 모드에서 chID에 해당하는 방에 들어가는데 이용 됩니다.
 	- createBroadcast(chID) 대신 joinRoom(chID) 사용을 권장 합니다.
 - deprecated createBroadcast(chID)
 - remove pauseRemoteVideo()
 
 ## RemonDelegate
 - add didReceiveLocalVideoCapture(localVideoCaptur)
+- localVideoCapturer 객체이 생성 되었을 때 호출 됩니다.
+ 	- RTCCameraPreviewView 객체의 captureSession를 RTCCameraVideoCapturer객체의 captureSession으로 설정 하면 미리보기 화면을 구현할 수 있습니다.
+	- 새로 추가된 RemonConfig의 autoCaptureStart 값이 true(default) 일 경우 통신 연결이 완료된 후 자동으로 캡쳐가 시작 됩니다.
+ 	- 만약 RemonConfig의 autoCaptureStart 값이 false로 설정 되었을 경우 통신 연결이 완료된 이후 수동으로 캡쳐를 시작 할 수 있습니다.
+ 	- # 수동 캡쳐 시작은 onStateChange(state:RemonState) 델리게이트의 state 값이 COMPLETE가 된 이후에 이용 하시길 권장 합니다.
 - add didReceiveRemoteAudioTrack(remoteAudioTrack)
+	- remoteAudioTrack 객체가 생성 되었을 때 호출 됩니다.
 - add onCreateChannel(channelID)
+	- 채널이 생성 되었을 떄 채널 아이디를 얻기 위하여 사용 됩니다.
 - add onDisconnectChannel(chID)
+	- 채널의 연결이 끊겼을때 호출 됩니다.
 - - - -
 # 1. Install
 ## manual
