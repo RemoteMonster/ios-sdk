@@ -20,15 +20,15 @@ func didReceiveRemoteVideoTrack(_ remoteVideoTrack:RTCVideoTrack){
 
 // 0.2X 버전 이후
 func didReceiveRemoteVideoTrack(_ remoteVideoTrack:RTCVideoTrack){
-    self.remoteVideoTrack = remoteVideoTrack
+  self.remoteVideoTrack = remoteVideoTrack
 }
 
 func onStateChange(_ state:RemonState){
-	switch state {
-		case RemonState.COMPLETE:
-		self.remoteVideoTrack?.add(mainVideoView) //연결이 완료 되는 시점에 비디오 랜더링 시작
-		// remon?.startLocalVideoCapture() // RemonConfig의 autoCaptureStart가 false 일 경우
-	}
+  switch state {
+    case RemonState.COMPLETE:
+      self.remoteVideoTrack?.add(mainVideoView) //연결이 완료 되는 시점에 비디오 랜더링 시작
+      // remon?.startLocalVideoCapture() // RemonConfig의 autoCaptureStart가 false 일 경우
+  }
 }
 ```
 
@@ -80,11 +80,11 @@ func onStateChange(_ state:RemonState){
 [iOS SDK Getting Started · RemoteMonster Documents](https://docs.remotemonster.com/ko/GettingStarted-IosSDK.html)
 
 ## cocoapods
-SDK 설치를 원하는 프로젝트의 Podfile에  `pod 'Remon-iOS-SDK', '~> 0.1`을
+SDK 설치를 원하는 프로젝트의 Podfile에  `pod 'Remon-iOS-SDK', '~> 0.2`을
 추가 하거나
 ```
 target 'MyApp' do
-  pod 'Remon-iOS-SDK', '~> 0.1'
+  pod 'Remon-iOS-SDK', '~> 0.2'
 end
 ```
 을 추가 합니다.
