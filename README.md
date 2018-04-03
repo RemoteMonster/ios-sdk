@@ -67,7 +67,7 @@ func onStateChange(_ state:RemonState){
  	- RTCCameraPreviewView 객체의 captureSession를 RTCCameraVideoCapturer객체의 captureSession으로 설정 하면 미리보기 화면을 구현할 수 있습니다.
 	- 새로 추가된 RemonConfig의 autoCaptureStart 값이 true(default) 일 경우 통신 연결이 완료된 후 자동으로 캡쳐가 시작 됩니다.
  	- 만약 RemonConfig의 autoCaptureStart 값이 false로 설정 되었을 경우 통신 연결이 완료된 이후 수동으로 캡쳐를 시작 할 수 있습니다.
- 	- # 수동 캡쳐 시작은 onStateChange(state:RemonState) 델리게이트의 state 값이 COMPLETE가 된 이후에 이용 하시길 권장 합니다.
+ 	- @수동 캡쳐 시작은 onStateChange(state:RemonState) 델리게이트의 state 값이 COMPLETE가 된 이후에 이용 하시길 권장 합니다.
 - add didReceiveRemoteAudioTrack(remoteAudioTrack)
 	- remoteAudioTrack 객체가 생성 되었을 때 호출 됩니다.
 - add onCreateChannel(channelID)
