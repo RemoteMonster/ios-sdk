@@ -26,11 +26,20 @@ public class RemonCast: RemonIBController, RemonControllBlockSettable {
         }
     }
     
+    override public init() {
+        super.init()
+        self.boardcasted = true
+    }
+    
     override public func joinRoom(chID: String, _ config:RemonConfig? = nil) {
         super.joinRoom(chID: chID, config)
     }
     
     override public func createRoom(_ config:RemonConfig? = nil) {
         super.createRoom(config)
+    }
+    
+    public func search(complete: @escaping (RemonError?, Array<[String : String]>?) -> Void) {
+        super.search(type: .cast, complete: complete)
     }
 }
