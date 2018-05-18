@@ -1,0 +1,11 @@
+framework module Remon {
+  umbrella header "Remon.h"
+
+  export *
+  module * { export * }
+}
+
+module Remon.Swift {
+    header "Remon-Swift.h"
+    requires objc
+}
