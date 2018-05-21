@@ -7,20 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B5CB5D820B27F6600FB2BFE /* SimpleCastViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB5D720B27F6500FB2BFE /* SimpleCastViewer.swift */; };
+		0B5CB5DA20B27F6D00FB2BFE /* SimpleVideoCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB5D920B27F6D00FB2BFE /* SimpleVideoCast.swift */; };
+		0B5CB5DC20B288B000FB2BFE /* SampleSerchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB5DB20B288B000FB2BFE /* SampleSerchTableViewController.swift */; };
 		0BA0AF9420A9700700DEA203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0AF9320A9700700DEA203 /* AppDelegate.swift */; };
 		0BA0AF9620A9700700DEA203 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0AF9520A9700700DEA203 /* ViewController.swift */; };
 		0BA0AF9920A9700700DEA203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA0AF9720A9700700DEA203 /* Main.storyboard */; };
 		0BA0AF9B20A9700900DEA203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BA0AF9A20A9700900DEA203 /* Assets.xcassets */; };
 		0BA0AF9E20A9700900DEA203 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA0AF9C20A9700900DEA203 /* LaunchScreen.storyboard */; };
 		0BA0AFAA20A9726200DEA203 /* VTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0AFA520A9726200DEA203 /* VTableViewController.swift */; };
-		0BA0AFAB20A9726200DEA203 /* VViwerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0AFA620A9726200DEA203 /* VViwerViewController.swift */; };
-		0BA0AFAC20A9726200DEA203 /* VViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0AFA720A9726200DEA203 /* VViewController.swift */; };
-		0BA0AFAD20A9726200DEA203 /* VCasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0AFA820A9726200DEA203 /* VCasterViewController.swift */; };
+		0BA0AFAD20A9726200DEA203 /* SimpleVoiceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0AFA820A9726200DEA203 /* SimpleVoiceCast.swift */; };
 		0BA0AFAE20A9726200DEA203 /* SimpleCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0AFA920A9726200DEA203 /* SimpleCallViewController.swift */; };
 		5DD5EF375F3007BC204E0EA9 /* Pods_SampleV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9B747C5E4BCE850BCA6B22 /* Pods_SampleV2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B5CB5D720B27F6500FB2BFE /* SimpleCastViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCastViewer.swift; sourceTree = "<group>"; };
+		0B5CB5D920B27F6D00FB2BFE /* SimpleVideoCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleVideoCast.swift; sourceTree = "<group>"; };
+		0B5CB5DB20B288B000FB2BFE /* SampleSerchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSerchTableViewController.swift; sourceTree = "<group>"; };
 		0BA0AF9020A9700700DEA203 /* SampleV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA0AF9320A9700700DEA203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BA0AF9520A9700700DEA203 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,9 +33,7 @@
 		0BA0AF9D20A9700900DEA203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BA0AF9F20A9700900DEA203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BA0AFA520A9726200DEA203 /* VTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTableViewController.swift; sourceTree = "<group>"; };
-		0BA0AFA620A9726200DEA203 /* VViwerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VViwerViewController.swift; sourceTree = "<group>"; };
-		0BA0AFA720A9726200DEA203 /* VViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VViewController.swift; sourceTree = "<group>"; };
-		0BA0AFA820A9726200DEA203 /* VCasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCasterViewController.swift; sourceTree = "<group>"; };
+		0BA0AFA820A9726200DEA203 /* SimpleVoiceCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleVoiceCast.swift; sourceTree = "<group>"; };
 		0BA0AFA920A9726200DEA203 /* SimpleCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCallViewController.swift; sourceTree = "<group>"; };
 		8E2495D96555C2933C432F85 /* Pods-SampleV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleV2/Pods-SampleV2.debug.xcconfig"; sourceTree = "<group>"; };
 		8E9B747C5E4BCE850BCA6B22 /* Pods_SampleV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,17 +73,18 @@
 		0BA0AF9220A9700700DEA203 /* SampleV2 */ = {
 			isa = PBXGroup;
 			children = (
-				0BA0AFA820A9726200DEA203 /* VCasterViewController.swift */,
+				0BA0AFA820A9726200DEA203 /* SimpleVoiceCast.swift */,
+				0B5CB5D720B27F6500FB2BFE /* SimpleCastViewer.swift */,
+				0B5CB5D920B27F6D00FB2BFE /* SimpleVideoCast.swift */,
 				0BA0AFA920A9726200DEA203 /* SimpleCallViewController.swift */,
 				0BA0AFA520A9726200DEA203 /* VTableViewController.swift */,
-				0BA0AFA720A9726200DEA203 /* VViewController.swift */,
-				0BA0AFA620A9726200DEA203 /* VViwerViewController.swift */,
 				0BA0AF9320A9700700DEA203 /* AppDelegate.swift */,
 				0BA0AF9520A9700700DEA203 /* ViewController.swift */,
 				0BA0AF9720A9700700DEA203 /* Main.storyboard */,
 				0BA0AF9A20A9700900DEA203 /* Assets.xcassets */,
 				0BA0AF9C20A9700900DEA203 /* LaunchScreen.storyboard */,
 				0BA0AF9F20A9700900DEA203 /* Info.plist */,
+				0B5CB5DB20B288B000FB2BFE /* SampleSerchTableViewController.swift */,
 			);
 			path = SampleV2;
 			sourceTree = "<group>";
@@ -236,11 +239,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BA0AF9620A9700700DEA203 /* ViewController.swift in Sources */,
-				0BA0AFAD20A9726200DEA203 /* VCasterViewController.swift in Sources */,
+				0BA0AFAD20A9726200DEA203 /* SimpleVoiceCast.swift in Sources */,
+				0B5CB5DA20B27F6D00FB2BFE /* SimpleVideoCast.swift in Sources */,
+				0B5CB5D820B27F6600FB2BFE /* SimpleCastViewer.swift in Sources */,
 				0BA0AFAA20A9726200DEA203 /* VTableViewController.swift in Sources */,
+				0B5CB5DC20B288B000FB2BFE /* SampleSerchTableViewController.swift in Sources */,
 				0BA0AF9420A9700700DEA203 /* AppDelegate.swift in Sources */,
-				0BA0AFAC20A9726200DEA203 /* VViewController.swift in Sources */,
-				0BA0AFAB20A9726200DEA203 /* VViwerViewController.swift in Sources */,
 				0BA0AFAE20A9726200DEA203 /* SimpleCallViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -37,7 +37,10 @@ class SimpleCallViewController: UIViewController {
             }
         }
         
-        remonCall.onComplete {
+        remonCall.onComplete { () in
+            DispatchQueue.main.async {
+                self.chLabel.text = self.remonCall.channelID
+            }
         }
         
         remonCall.onClose {

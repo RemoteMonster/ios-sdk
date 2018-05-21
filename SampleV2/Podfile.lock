@@ -4,12 +4,12 @@ PODS:
     - GoogleWebRTC (= 1.1.22700)
 
 DEPENDENCIES:
-  - RemoteMonster (~> 2.0)
+  - RemoteMonster (= 2.0)
 
 SPEC CHECKSUMS:
   GoogleWebRTC: 34bafb658881a38db4c8198f6195f2794019684a
   RemoteMonster: 0e167687e36abccb039ce40d660b826bcb30dc5e
 
-PODFILE CHECKSUM: ab01d2b4ba5fb2adaf630e8f90208de4aba81c75
+PODFILE CHECKSUM: 39d79d2964a09ca61342281ddbc20daa9e3b830e
 
 COCOAPODS: 1.4.0

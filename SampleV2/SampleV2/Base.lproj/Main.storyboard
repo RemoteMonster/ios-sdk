@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="-5530" y="-156"/>
         </scene>
-        <!--View Controller-->
+        <!--Sample Serch Table View Controller-->
         <scene sceneID="f9E-2M-28j">
             <objects>
-                <viewController id="4sd-6v-QtQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SampleSerchTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4sd-6v-QtQ" customClass="SampleSerchTableViewController" customModule="SampleV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Por-HF-GIo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,12 +72,41 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tD9-5i-ZYH">
                                 <rect key="frame" x="0.0" y="114" width="375" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="ZEy-Ev-Jr9">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZEy-Ev-Jr9" id="qKc-oq-jQE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4sd-6v-QtQ" id="gog-D9-Rjo"/>
+                                    <outlet property="delegate" destination="4sd-6v-QtQ" id="hRl-Ph-1ua"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibe-IW-mwD">
                                 <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7B7-t3-99g">
+                                        <rect key="frame" x="285" y="10" width="60" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="2nH-eF-cZE"/>
+                                        </constraints>
+                                        <state key="normal" title="Reload"/>
+                                        <connections>
+                                            <action selector="reloadAction:" destination="4sd-6v-QtQ" eventType="touchUpInside" id="DzP-zk-odi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.87091159330000001" green="0.87091159330000001" blue="0.87091159330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7B7-t3-99g" secondAttribute="trailing" constant="30" id="24v-Tb-cQp"/>
+                                    <constraint firstItem="7B7-t3-99g" firstAttribute="top" secondItem="ibe-IW-mwD" secondAttribute="top" constant="10" id="DVc-eh-cv2"/>
                                     <constraint firstAttribute="height" constant="50" id="XCY-W7-64v"/>
+                                    <constraint firstAttribute="bottom" secondItem="7B7-t3-99g" secondAttribute="bottom" constant="10" id="c73-1f-Icj"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ji3-x2-LKh">
@@ -103,100 +133,95 @@
                         <viewLayoutGuide key="safeArea" id="xi5-ia-tXU"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="reloadBtn" destination="7B7-t3-99g" id="hcl-po-Ktw"/>
+                        <outlet property="remonCast" destination="RdH-we-KqM" id="yhH-Nm-CFC"/>
+                        <outlet property="searchTableView" destination="tD9-5i-ZYH" id="fjF-Go-L0i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfJ-kz-YJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="RdH-we-KqM" customClass="RemonCast" customModule="Remon">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="broardcast" value="NO"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://signal.remotemonster.com/rest/init"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
-            <point key="canvasLocation" x="-4842" y="-158"/>
+            <point key="canvasLocation" x="-4825" y="-167"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="P0F-kK-3EH">
-            <objects>
-                <viewController id="LTF-wy-tkw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0RE-GW-EsX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSB-N7-FUH">
-                                <rect key="frame" x="40" y="115" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYG-n4-dRG">
-                                <rect key="frame" x="43" y="152" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISz-RJ-lAO">
-                                <rect key="frame" x="64" y="183" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O64-2E-Spr">
-                                <rect key="frame" x="67" y="220" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvL-bw-uVR">
-                                <rect key="frame" x="45" y="292" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdh-4z-81v">
-                                <rect key="frame" x="57" y="334" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGN-si-EQM">
-                                <rect key="frame" x="60" y="371" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8v-CM-hzM">
-                                <rect key="frame" x="37" y="418" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="s7Y-MQ-q8k"/>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rw5-gk-8kr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4255" y="-720"/>
-        </scene>
-        <!--View Controller-->
+        <!--Simple Voice Cast-->
         <scene sceneID="aYI-gG-zNd">
             <objects>
-                <viewController id="eTy-W4-tCw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleVoiceCast" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eTy-W4-tCw" customClass="SimpleVoiceCast" customModule="SampleV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sc9-Fq-6en">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnU-9h-ITC">
+                                <rect key="frame" x="293" y="84" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NLS-Zq-IcX"/>
+                                    <constraint firstAttribute="width" constant="62" id="OHF-IO-eOK"/>
+                                </constraints>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="closeRemonManager:" destination="eTy-W4-tCw" eventType="touchUpInside" id="xWE-US-0nj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="GW3-up-pgg">
+                                <rect key="frame" x="20" y="144" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="au0-h8-dfo">
+                                <rect key="frame" x="20" y="84" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5ca-XG-9Rt"/>
+                                    <constraint firstAttribute="width" constant="62" id="YuS-wS-0n3"/>
+                                </constraints>
+                                <state key="normal" title="create"/>
+                                <connections>
+                                    <action selector="createBoardcast:" destination="eTy-W4-tCw" eventType="touchUpInside" id="FRU-9M-tzO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3se-Fm-K61" firstAttribute="trailing" secondItem="LnU-9h-ITC" secondAttribute="trailing" constant="20" id="3Lk-eF-Jnp"/>
+                            <constraint firstItem="LnU-9h-ITC" firstAttribute="top" secondItem="3se-Fm-K61" secondAttribute="top" constant="20" id="KUM-ej-vvX"/>
+                            <constraint firstItem="GW3-up-pgg" firstAttribute="leading" secondItem="3se-Fm-K61" secondAttribute="leading" constant="20" id="Q8f-tR-fng"/>
+                            <constraint firstItem="au0-h8-dfo" firstAttribute="leading" secondItem="3se-Fm-K61" secondAttribute="leading" constant="20" id="nwH-3u-Rqn"/>
+                            <constraint firstItem="GW3-up-pgg" firstAttribute="top" secondItem="LnU-9h-ITC" secondAttribute="bottom" constant="30" id="rDp-yo-2Ne"/>
+                            <constraint firstItem="3se-Fm-K61" firstAttribute="trailing" secondItem="GW3-up-pgg" secondAttribute="trailing" constant="20" id="sPh-ka-8mE"/>
+                            <constraint firstItem="au0-h8-dfo" firstAttribute="top" secondItem="3se-Fm-K61" secondAttribute="top" constant="20" id="uv6-k4-v6R"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3se-Fm-K61"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="chLabel" destination="GW3-up-pgg" id="yr8-1d-iyD"/>
+                        <outlet property="closeBtn" destination="LnU-9h-ITC" id="RaY-Nm-e9f"/>
+                        <outlet property="createBtn" destination="au0-h8-dfo" id="eqv-fO-k1d"/>
+                        <outlet property="remonCast" destination="e24-BT-l5I" id="QFM-CI-Isq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57x-ht-Wfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="e24-BT-l5I" customClass="RemonCast" customModule="Remon">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="broardcast" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://signal.remotemonster.com/rest/init"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
-            <point key="canvasLocation" x="-4042" y="304"/>
+            <point key="canvasLocation" x="-4476" y="-880.20989505247383"/>
         </scene>
         <!--Simple Call View Controller-->
         <scene sceneID="l94-Q4-T5P">
@@ -285,6 +310,8 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://signal.remotemonster.com/rest/init"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="localView" destination="gZE-2N-Za8" id="Dct-Oa-dV0"/>
@@ -293,6 +320,162 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="-6129" y="-1001"/>
+        </scene>
+        <!--Simple Video Cast-->
+        <scene sceneID="8uJ-dk-kUd">
+            <objects>
+                <viewController storyboardIdentifier="SimpleVideoCast" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RrD-LM-PxO" customClass="SimpleVideoCast" customModule="SampleV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vCz-f3-d4Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPb-wq-i63">
+                                <rect key="frame" x="293" y="84" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="Y9X-Sx-1Gb"/>
+                                    <constraint firstAttribute="height" constant="30" id="wBu-8T-8Lu"/>
+                                </constraints>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="closeRemonManager:" destination="RrD-LM-PxO" eventType="touchUpInside" id="FR0-RK-OjI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hrG-Zr-VOo">
+                                <rect key="frame" x="20" y="144" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEn-9k-Gds">
+                                <rect key="frame" x="20" y="84" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="552-cO-pA5"/>
+                                    <constraint firstAttribute="height" constant="30" id="IE8-qo-Kwc"/>
+                                </constraints>
+                                <state key="normal" title="create"/>
+                                <connections>
+                                    <action selector="createBoardcast:" destination="RrD-LM-PxO" eventType="touchUpInside" id="Cdw-Ak-6Z9"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MtZ-cD-LEa">
+                                <rect key="frame" x="20.5" y="185" width="335" height="462"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MtZ-cD-LEa" secondAttribute="height" multiplier="163:225" id="d78-MR-aFk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HEn-9k-Gds" firstAttribute="leading" secondItem="eC2-L7-TiI" secondAttribute="leading" constant="20" id="8Gk-9f-nl9"/>
+                            <constraint firstItem="hrG-Zr-VOo" firstAttribute="leading" secondItem="eC2-L7-TiI" secondAttribute="leading" constant="20" id="GHU-ZE-UMk"/>
+                            <constraint firstItem="MtZ-cD-LEa" firstAttribute="top" secondItem="hrG-Zr-VOo" secondAttribute="bottom" constant="20" id="IM8-hk-kUo"/>
+                            <constraint firstItem="MtZ-cD-LEa" firstAttribute="centerX" secondItem="vCz-f3-d4Q" secondAttribute="centerX" id="OYi-jf-Ery"/>
+                            <constraint firstItem="HEn-9k-Gds" firstAttribute="top" secondItem="eC2-L7-TiI" secondAttribute="top" constant="20" id="RpQ-l2-ko5"/>
+                            <constraint firstItem="eC2-L7-TiI" firstAttribute="trailing" secondItem="wPb-wq-i63" secondAttribute="trailing" constant="20" id="grE-hh-yze"/>
+                            <constraint firstItem="eC2-L7-TiI" firstAttribute="trailing" secondItem="hrG-Zr-VOo" secondAttribute="trailing" constant="20" id="nuh-Vb-OwF"/>
+                            <constraint firstItem="eC2-L7-TiI" firstAttribute="bottom" secondItem="MtZ-cD-LEa" secondAttribute="bottom" constant="20" id="tPl-LH-zhh"/>
+                            <constraint firstItem="wPb-wq-i63" firstAttribute="top" secondItem="eC2-L7-TiI" secondAttribute="top" constant="20" id="wFU-kx-vRJ"/>
+                            <constraint firstItem="hrG-Zr-VOo" firstAttribute="top" secondItem="wPb-wq-i63" secondAttribute="bottom" constant="30" id="yKz-5C-bJL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eC2-L7-TiI"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="chLabel" destination="hrG-Zr-VOo" id="KBv-2k-wOw"/>
+                        <outlet property="closeBtn" destination="wPb-wq-i63" id="ZrX-6n-HhM"/>
+                        <outlet property="createBtn" destination="HEn-9k-Gds" id="nVq-6z-TVg"/>
+                        <outlet property="remonCast" destination="GFp-WE-Lod" id="CS4-ZY-ev2"/>
+                        <outlet property="remonLocalView" destination="MtZ-cD-LEa" id="SZp-LC-YCQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nXQ-b4-uGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="GFp-WE-Lod" customClass="RemonCast" customModule="Remon">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="broardcast" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://signal.remotemonster.com/rest/init"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="localView" destination="MtZ-cD-LEa" id="oOs-aK-6YJ"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="-5170.3999999999996" y="-876.61169415292363"/>
+        </scene>
+        <!--Simple Cast Viewer-->
+        <scene sceneID="cGW-F1-bhp">
+            <objects>
+                <viewController storyboardIdentifier="SimpleCastViewer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oPA-nA-pub" customClass="SimpleCastViewer" customModule="SampleV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="341-x6-OEV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5W1-ev-NV8">
+                                <rect key="frame" x="20" y="144" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wb5-i8-4uF">
+                                <rect key="frame" x="293" y="84" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="W3w-aP-C5j"/>
+                                    <constraint firstAttribute="height" constant="30" id="YT5-J3-2x2"/>
+                                </constraints>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="closeRemonManager:" destination="eTy-W4-tCw" eventType="touchUpInside" id="emt-XT-Xnv"/>
+                                    <action selector="closeRemonManager:" destination="oPA-nA-pub" eventType="touchUpInside" id="wn6-mj-gSZ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkG-kZ-Xdi">
+                                <rect key="frame" x="28.5" y="185" width="318" height="462"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fkG-kZ-Xdi" secondAttribute="height" multiplier="303:440" id="cQd-FX-WqP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5W1-ev-NV8" firstAttribute="leading" secondItem="zr3-5t-i8L" secondAttribute="leading" constant="20" id="6AS-gp-yLw"/>
+                            <constraint firstItem="fkG-kZ-Xdi" firstAttribute="top" secondItem="5W1-ev-NV8" secondAttribute="bottom" constant="20" id="B4I-1U-per"/>
+                            <constraint firstItem="5W1-ev-NV8" firstAttribute="top" secondItem="Wb5-i8-4uF" secondAttribute="bottom" constant="30" id="Su8-bV-Px2"/>
+                            <constraint firstItem="fkG-kZ-Xdi" firstAttribute="centerX" secondItem="341-x6-OEV" secondAttribute="centerX" id="XNz-3H-Wyr"/>
+                            <constraint firstItem="zr3-5t-i8L" firstAttribute="trailing" secondItem="Wb5-i8-4uF" secondAttribute="trailing" constant="20" id="d28-8D-wDS"/>
+                            <constraint firstItem="Wb5-i8-4uF" firstAttribute="top" secondItem="zr3-5t-i8L" secondAttribute="top" constant="20" id="mco-hS-GRI"/>
+                            <constraint firstItem="zr3-5t-i8L" firstAttribute="trailing" secondItem="5W1-ev-NV8" secondAttribute="trailing" constant="20" id="nDt-Qk-3Xb"/>
+                            <constraint firstItem="zr3-5t-i8L" firstAttribute="bottom" secondItem="fkG-kZ-Xdi" secondAttribute="bottom" constant="20" id="oib-Ae-tDE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zr3-5t-i8L"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="chLabel" destination="5W1-ev-NV8" id="A3P-3P-mYk"/>
+                        <outlet property="closeBtn" destination="Wb5-i8-4uF" id="Rz1-IE-hQM"/>
+                        <outlet property="remonCast" destination="7C3-x6-6Mx" id="uaH-IH-4Bn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJb-N7-OqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="7C3-x6-6Mx" customClass="RemonCast" customModule="Remon">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="broardcast" value="NO"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://signal.remotemonster.com/rest/init"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="remoteView" destination="fkG-kZ-Xdi" id="XHJ-FO-deJ"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="-4156" y="-179.46026986506749"/>
         </scene>
     </scenes>
 </document>
