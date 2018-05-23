@@ -308,7 +308,6 @@ SWIFT_CLASS("_TtC5Remon9RemonCall")
 
 SWIFT_CLASS("_TtC5Remon9RemonCast")
 @interface RemonCast : RemonIBController
-@property (nonatomic) BOOL broardcast;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

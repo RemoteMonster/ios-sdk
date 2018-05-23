@@ -9,7 +9,7 @@
 import UIKit
 
 public class RemonCast: RemonIBController, RemonControllBlockSettable {
-    @IBInspectable public var broardcast:Bool {
+    private var broardcast:Bool {
         get {
             if self.channelType_ == 2 {
                 return true
@@ -32,10 +32,12 @@ public class RemonCast: RemonIBController, RemonControllBlockSettable {
     }
     
     override public func joinRoom(chID: String, _ config:RemonConfig? = nil) {
+        self.broardcast = false
         super.joinRoom(chID: chID, config)
     }
     
     override public func createRoom(_ config:RemonConfig? = nil) {
+        self.broardcast = true
         super.createRoom(config)
     }
     

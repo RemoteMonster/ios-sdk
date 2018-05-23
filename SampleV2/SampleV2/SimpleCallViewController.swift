@@ -31,6 +31,7 @@ class SimpleCallViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         remonCall.onInit {
             DispatchQueue.main.async {
                 self.boxView.isHidden = true
