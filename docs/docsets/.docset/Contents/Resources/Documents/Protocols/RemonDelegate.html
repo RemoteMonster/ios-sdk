@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RemonDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/RemonDelegate" class="dashAnchor"></a>
+    <a title="RemonDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (72% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RemonDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../readme.html">README</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Remon.html">Remon</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RemonConfig.html">RemonConfig</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RemonState.html">RemonState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RemonDelegate.html">RemonDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RemonDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RemonDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>서비스 개발자가 처리해야할 콜백함수들</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP8remonios13RemonDelegate13onStateChangeFOS_10RemonStateT_"></a>
+                    <a name="//apple_ref/swift/Method/onStateChange(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP8remonios13RemonDelegate13onStateChangeFOS_10RemonStateT_">onStateChange(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>채널의 RemonState 상태가 변경되었을 때 발생</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">onStateChange</span><span class="p">(</span><span class="n">_</span> <span class="nv">state</span><span class="p">:</span><span class="kt"><a href="../Enums/RemonState.html">RemonState</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP8remonios13RemonDelegate25didReceiveLocalVideoTrackFCSo13RTCVideoTrackT_"></a>
+                    <a name="//apple_ref/swift/Method/didReceiveLocalVideoTrack(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP8remonios13RemonDelegate25didReceiveLocalVideoTrackFCSo13RTCVideoTrackT_">didReceiveLocalVideoTrack(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>로컬의 음성,영상 자원을 받았을 때 호출됨</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">didReceiveLocalVideoTrack</span><span class="p">(</span><span class="n">_</span> <span class="nv">localVideoTrack</span><span class="p">:</span><span class="kt">RTCVideoTrack</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP8remonios13RemonDelegate26didReceiveRemoteVideoTrackFCSo13RTCVideoTrackT_"></a>
+                    <a name="//apple_ref/swift/Method/didReceiveRemoteVideoTrack(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP8remonios13RemonDelegate26didReceiveRemoteVideoTrackFCSo13RTCVideoTrackT_">didReceiveRemoteVideoTrack(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>원격의 음성/영상 자원을 받았을 때 호출됨</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">didReceiveRemoteVideoTrack</span><span class="p">(</span><span class="n">_</span> <span class="nv">remoteVideoTrack</span><span class="p">:</span><span class="kt">RTCVideoTrack</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP8remonios13RemonDelegate7onErrorFOS_10RemonErrorT_"></a>
+                    <a name="//apple_ref/swift/Method/onError(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP8remonios13RemonDelegate7onErrorFOS_10RemonErrorT_">onError(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>에러가 발생할 때 호출됨</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">onError</span><span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span><span class="kt">RemonError</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP8remonios13RemonDelegate9onMessageFSST_"></a>
+                    <a name="//apple_ref/swift/Method/onMessage(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP8remonios13RemonDelegate9onMessageFSST_">onMessage(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>채널이 연결된 상태에서 상대방에게서 메시지를 받았을 경우 호출</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">onMessage</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP8remonios13RemonDelegate8onSearchFGSaGVs10DictionarySSSS__T_"></a>
+                    <a name="//apple_ref/swift/Method/onSearch(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP8remonios13RemonDelegate8onSearchFGSaGVs10DictionarySSSS__T_">onSearch(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>remon.search 메소드에 대한 결과가 호출됨. Array&lt;[String:String]&gt;의 결과값</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">onSearch</span><span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span><span class="kt">Array</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">String</span><span class="p">:</span><span class="kt">String</span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP8remonios13RemonDelegate19onDisconnectChannelFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/onDisconnectChannel()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP8remonios13RemonDelegate19onDisconnectChannelFT_T_">onDisconnectChannel()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>상대편의 연결이 종료되었을 경우 발생</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">onDisconnectChannel</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP8remonios13RemonDelegate7onCloseFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/onClose()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP8remonios13RemonDelegate7onCloseFT_T_">onClose()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>나의 연결이 완전히 종료되었을 경우 발생함.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">onClose</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external">JinhoChoi</a>. All rights reserved. (Last updated: 2017-06-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

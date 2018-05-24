@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Remon Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/Remon" class="dashAnchor"></a>
+    <a title="Remon Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (72% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Remon Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../readme.html">README</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Remon.html">Remon</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RemonConfig.html">RemonConfig</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RemonState.html">RemonState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RemonDelegate.html">RemonDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Remon</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Remon</span><span class="p">:</span><span class="kt">NSObject</span><span class="p">,</span> <span class="kt">RemonWebSocketChannelDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>RemoteMonster API를 사용하기 위한 가장 기본이 되는 클래스. Remon클래스를 통해 서버와 연결하고 명령을 보내고 종료한다. 서버로부터 메시지를 받는 것은 주로 RemonDelegate를 통해 처리한다.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8remonios5RemoncFT8delegatePS_13RemonDelegate_6configCS_11RemonConfig_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(delegate:config:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8remonios5RemoncFT8delegatePS_13RemonDelegate_6configCS_11RemonConfig_S0_">init(delegate:config:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegate와 config정보를 받아 서버와 연결하고 로컬 영상도 가져와서 화면에 출력한다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">delegate</span><span class="p">:</span><span class="kt"><a href="../Protocols/RemonDelegate.html">RemonDelegate</a></span><span class="p">,</span> <span class="nv">config</span><span class="p">:</span><span class="kt"><a href="../Classes/RemonConfig.html">RemonConfig</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8remonios5Remon14connectChannelFT4chIdSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/connectChannel(chId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8remonios5Remon14connectChannelFT4chIdSS_T_">connectChannel(chId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>주어진 채널 이름으로 채널에 연결하거나 채널이 없으면 생성한다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">connectChannel</span><span class="p">(</span><span class="nv">chId</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8remonios5Remon13getRemonStateFT_OS_10RemonState"></a>
+                    <a name="//apple_ref/swift/Method/getRemonState()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8remonios5Remon13getRemonStateFT_OS_10RemonState">getRemonState()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>채널 연결의 상태를 가져온다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getRemonState</span><span class="p">()</span><span class="o">-&gt;</span><span class="kt"><a href="../Enums/RemonState.html">RemonState</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8remonios5Remon16pauseRemoteAudioFT5pauseSb_T_"></a>
+                    <a name="//apple_ref/swift/Method/pauseRemoteAudio(pause:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8remonios5Remon16pauseRemoteAudioFT5pauseSb_T_">pauseRemoteAudio(pause:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>원격 음성을 안들리게 한다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pauseRemoteAudio</span><span class="p">(</span><span class="nv">pause</span><span class="p">:</span><span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8remonios5Remon15pauseLocalVideoFT5pauseSb_T_"></a>
+                    <a name="//apple_ref/swift/Method/pauseLocalVideo(pause:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8remonios5Remon15pauseLocalVideoFT5pauseSb_T_">pauseLocalVideo(pause:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>로컬 영상을 보이거나 안보이게 한다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pauseLocalVideo</span><span class="p">(</span><span class="nv">pause</span><span class="p">:</span><span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8remonios5Remon12switchCameraFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/switchCamera()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8remonios5Remon12switchCameraFT_T_">switchCamera()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>토글 방식으로 전면 카메라와 후면카메라를 변경한다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">switchCamera</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8remonios5Remon6searchFT5querySS_T_"></a>
+                    <a name="//apple_ref/swift/Method/search(query:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8remonios5Remon6searchFT5querySS_T_">search(query:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>주어진 이름으로 채널 이름을 검새한다. 부분 검색이 가능하다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="nv">query</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8remonios5Remon11sendMessageFT7messageSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/sendMessage(message:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8remonios5Remon11sendMessageFT7messageSS_T_">sendMessage(message:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>채널이 연결된 상태에서 상대편에게 메시지를 전달한다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendMessage</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8remonios5Remon5closeFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/close()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8remonios5Remon5closeFT_T_">close()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>연결을 종료하고 모든 Remon과 관련된 자원을 해제한다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">close</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external">JinhoChoi</a>. All rights reserved. (Last updated: 2017-06-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
