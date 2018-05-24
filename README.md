@@ -12,6 +12,7 @@ RemoteMonster - Livecast Management in the Cloud
 
 ```
 // Podfile
+
 target 'MyApp' do
   pod 'RemoteMonster', '~> 2.0'
 end
