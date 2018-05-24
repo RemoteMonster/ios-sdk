@@ -34,7 +34,7 @@ pod install
 ## Documents
 
 * [Guides](https://docs.remotemonster.com/)
-* [API Reference](https://remotemonster.github.io/remon-ios-sdk/)
+* [API Reference](https://remotemonster.github.io/ios-sdk/)
 
 ## Changelog
 

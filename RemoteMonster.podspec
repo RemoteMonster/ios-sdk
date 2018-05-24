@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.author           = { 'RemoteMonster' => 'remotemonster@remotemonster.com' }
   s.source           = { :git => 'https://github.com/RemoteMonster/ios-sdk.git', :tag => '2.0.4' }
   s.platform     = :ios, '9.1'
+  s.documentation_url = 'https://remotemonster.github.io/ios-sdk/'
 
   s.vendored_frameworks = 'Remon.framework'
   s.dependency 'GoogleWebRTC', '1.1.22700'
