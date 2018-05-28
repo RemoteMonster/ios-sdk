@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Remon
+import RemoteMonster
 
 class SimpleVideoCast:UIViewController {
     @IBOutlet weak var createBtn: UIButton!

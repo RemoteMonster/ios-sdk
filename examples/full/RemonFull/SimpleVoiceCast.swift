@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Remon
+import RemoteMonster
 
 class SimpleVoiceCast:UIViewController {
     @IBOutlet weak var createBtn: UIButton!

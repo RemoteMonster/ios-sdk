@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Remon
+import RemoteMonster
 
 class SimpleCastViewer: UIViewController {
     @IBOutlet weak var closeBtn: UIButton!

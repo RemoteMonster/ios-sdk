@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '9.1'
   s.documentation_url = 'https://remotemonster.github.io/ios-sdk/'
 
-  s.vendored_frameworks = 'Remon.framework'
+  s.vendored_frameworks = 'RemoteMonster.framework'
   s.dependency 'GoogleWebRTC', '1.1.22700'
 end

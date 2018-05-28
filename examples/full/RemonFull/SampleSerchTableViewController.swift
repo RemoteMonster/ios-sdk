@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Remon
+import RemoteMonster
 
 class SampleSerchTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
