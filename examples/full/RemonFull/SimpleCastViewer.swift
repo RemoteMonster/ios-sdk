@@ -27,6 +27,7 @@ class SimpleCastViewer: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let chID = self.toChID {
+            //config is nilable
             self.remonCast.joinRoom(chID: chID, customConfig)
         }
         

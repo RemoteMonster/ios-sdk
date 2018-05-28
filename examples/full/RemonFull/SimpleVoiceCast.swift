@@ -18,6 +18,7 @@ class SimpleVoiceCast:UIViewController {
     var customConfig:RemonConfig?
     
     @IBAction func createBoardcast(_ sender: Any) {
+        //config is nilable
         self.remonCast.createRoom(customConfig)
     }
     
