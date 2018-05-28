@@ -16,8 +16,10 @@ class SimpleVideoCast:UIViewController {
     @IBOutlet weak var chLabel: UILabel!
     @IBOutlet var remonCast: RemonCast!
     
+    var customConfig:RemonConfig?
+    
     @IBAction func createBoardcast(_ sender: Any) {
-        self.remonCast.createRoom()
+        self.remonCast.createRoom(customConfig)
     }
     
     

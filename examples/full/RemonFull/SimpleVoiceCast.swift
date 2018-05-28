@@ -15,8 +15,10 @@ class SimpleVoiceCast:UIViewController {
     @IBOutlet var remonCast: RemonCast!
     @IBOutlet weak var chLabel: UILabel!
     
+    var customConfig:RemonConfig?
+    
     @IBAction func createBoardcast(_ sender: Any) {
-        self.remonCast.createRoom()
+        self.remonCast.createRoom(customConfig)
     }
     
     
