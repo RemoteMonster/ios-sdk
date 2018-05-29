@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Remon
+import RemoteMonster
 
 class SimpleCastViewer: UIViewController {
     @IBOutlet weak var closeBtn: UIButton!
@@ -15,7 +15,7 @@ class SimpleCastViewer: UIViewController {
     @IBOutlet var remonCast: RemonCast!
     
     var toChID:String?
-    
+    var customConfig:RemonConfig?
     
     @IBAction func closeRemonManager(_ sender: Any) {
         self.dismiss(animated: true, completion: {
@@ -27,7 +27,8 @@ class SimpleCastViewer: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let chID = self.toChID {
-            self.remonCast.joinRoom(chID: chID)
+            //config is nilable
+            self.remonCast.joinRoom(chID: chID, customConfig)
         }
         
         self.remonCast.onComplete {
@@ -48,6 +49,8 @@ class SimpleCastViewer: UIViewController {
                 self.chLabel.text = "connect..."
             }
         }
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

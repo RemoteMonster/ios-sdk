@@ -30,7 +30,7 @@
         <!--Table View Controller-->
         <scene sceneID="wbN-in-m8g">
             <objects>
-                <tableViewController id="Iao-xj-gVv" customClass="VTableViewController" customModule="SampleV2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Iao-xj-gVv" customClass="VTableViewController" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yvZ-Cv-Y7k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +64,7 @@
         <!--Sample Serch Table View Controller-->
         <scene sceneID="f9E-2M-28j">
             <objects>
-                <viewController storyboardIdentifier="SampleSerchTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4sd-6v-QtQ" customClass="SampleSerchTableViewController" customModule="SampleV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SampleSerchTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4sd-6v-QtQ" customClass="SampleSerchTableViewController" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Por-HF-GIo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,7 +140,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfJ-kz-YJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="RdH-we-KqM" customClass="RemonCast" customModule="Remon">
+                <customObject id="RdH-we-KqM" customClass="RemonCast" customModule="RemoteMonster">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="broardcast" value="NO"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
@@ -155,7 +155,7 @@
         <!--Simple Voice Cast-->
         <scene sceneID="aYI-gG-zNd">
             <objects>
-                <viewController storyboardIdentifier="SimpleVoiceCast" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eTy-W4-tCw" customClass="SimpleVoiceCast" customModule="SampleV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleVoiceCast" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eTy-W4-tCw" customClass="SimpleVoiceCast" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sc9-Fq-6en">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,7 +210,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57x-ht-Wfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="e24-BT-l5I" customClass="RemonCast" customModule="Remon">
+                <customObject id="e24-BT-l5I" customClass="RemonCast" customModule="RemoteMonster">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="broardcast" value="YES"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
@@ -226,7 +226,7 @@
         <!--Simple Call View Controller-->
         <scene sceneID="l94-Q4-T5P">
             <objects>
-                <viewController storyboardIdentifier="VSimpleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LTh-fj-XDA" customClass="SimpleCallViewController" customModule="SampleV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleCallViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LTh-fj-XDA" customClass="SimpleCallViewController" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C6y-yO-VSK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -306,7 +306,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5T-cc-pvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="H4j-Ry-nSQ" customClass="RemonCall" customModule="Remon">
+                <customObject id="H4j-Ry-nSQ" customClass="RemonCall" customModule="RemoteMonster">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
@@ -319,12 +319,12 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="-6129" y="-1001"/>
+            <point key="canvasLocation" x="-6247" y="-1961"/>
         </scene>
         <!--Simple Video Cast-->
         <scene sceneID="8uJ-dk-kUd">
             <objects>
-                <viewController storyboardIdentifier="SimpleVideoCast" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RrD-LM-PxO" customClass="SimpleVideoCast" customModule="SampleV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleVideoCast" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RrD-LM-PxO" customClass="SimpleVideoCast" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vCz-f3-d4Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -390,7 +390,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXQ-b4-uGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="GFp-WE-Lod" customClass="RemonCast" customModule="Remon">
+                <customObject id="GFp-WE-Lod" customClass="RemonCast" customModule="RemoteMonster">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="broardcast" value="YES"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
@@ -409,7 +409,7 @@
         <!--Simple Cast Viewer-->
         <scene sceneID="cGW-F1-bhp">
             <objects>
-                <viewController storyboardIdentifier="SimpleCastViewer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oPA-nA-pub" customClass="SimpleCastViewer" customModule="SampleV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleCastViewer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oPA-nA-pub" customClass="SimpleCastViewer" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="341-x6-OEV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -461,7 +461,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJb-N7-OqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="7C3-x6-6Mx" customClass="RemonCast" customModule="Remon">
+                <customObject id="7C3-x6-6Mx" customClass="RemonCast" customModule="RemoteMonster">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="broardcast" value="NO"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
@@ -476,6 +476,209 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="-4156" y="-179.46026986506749"/>
+        </scene>
+        <!--Config View Controller-->
+        <scene sceneID="Fbh-sx-zjU">
+            <objects>
+                <viewController storyboardIdentifier="ConfigViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j5l-ZV-2VD" customClass="ConfigViewController" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JfW-9i-cmE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="172" affinity="minY"/>
+                            <userLayoutGuide location="154" affinity="minX"/>
+                        </userGuides>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ServiceID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYu-Dz-ZoO">
+                                <rect key="frame" x="19" y="108" width="74" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ServiceKey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CB-j8-dtD">
+                                <rect key="frame" x="19" y="145" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VoiceCall" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dvv-Zt-erR">
+                                <rect key="frame" x="19" y="408" width="71" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoCodec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv5-aE-PfR">
+                                <rect key="frame" x="19" y="222" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoWidth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDv-vo-ABR">
+                                <rect key="frame" x="19" y="258" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoHeight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmS-Fz-q08">
+                                <rect key="frame" x="19" y="295" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoFps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvP-wI-hog">
+                                <rect key="frame" x="19" y="336" width="72" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AutoCaptureStart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fC3-Zc-0f0">
+                                <rect key="frame" x="19" y="372" width="135" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ChannelType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBz-7e-1gP">
+                                <rect key="frame" x="19" y="184" width="101" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UseFrontCamera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oir-qc-yP6">
+                                <rect key="frame" x="19" y="444" width="130" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZhX-9x-DOS">
+                                <rect key="frame" x="158" y="104" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XZX-I3-96t">
+                                <rect key="frame" x="158" y="141" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="H264" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f6P-f0-lrb">
+                                <rect key="frame" x="158" y="218" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="640" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qhc-vE-T54">
+                                <rect key="frame" x="158" y="254" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="480" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s2r-im-5eH">
+                                <rect key="frame" x="158" y="290" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IK1-SF-PUm">
+                                <rect key="frame" x="158" y="331" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bBW-HU-6WZ">
+                                <rect key="frame" x="158" y="179" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gdO-bv-LiO">
+                                <rect key="frame" x="158" y="368" width="144" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="on"/>
+                                    <segment title="off"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0WO-vI-cWE">
+                                <rect key="frame" x="158" y="440" width="144" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="front"/>
+                                    <segment title="back"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="C69-1T-VUs">
+                                <rect key="frame" x="158" y="404" width="144" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="on"/>
+                                    <segment title="off"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uxa-Mp-Doo">
+                                <rect key="frame" x="208" y="71" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="next:" destination="j5l-ZV-2VD" eventType="touchUpInside" id="4QJ-jq-O56"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFj-7P-VDX">
+                                <rect key="frame" x="19" y="71" width="104" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="keyboarHidden"/>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="j5l-ZV-2VD" eventType="touchUpInside" id="4bc-oR-Cwo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Config" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twf-UK-28U">
+                                <rect key="frame" x="141" y="71" width="59" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="twf-UK-28U" firstAttribute="top" secondItem="u6H-4i-XqB" secondAttribute="top" constant="7" id="Ecj-dK-YKb"/>
+                            <constraint firstItem="twf-UK-28U" firstAttribute="centerX" secondItem="JfW-9i-cmE" secondAttribute="centerX" constant="-17" id="qaW-rs-29b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u6H-4i-XqB"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="autoCaptureStartSegment" destination="gdO-bv-LiO" id="k7g-Al-Jl6"/>
+                        <outlet property="channelTypeField" destination="bBW-HU-6WZ" id="K9b-PW-74y"/>
+                        <outlet property="codecField" destination="f6P-f0-lrb" id="r2t-kK-IkR"/>
+                        <outlet property="fpsField" destination="IK1-SF-PUm" id="NgT-0S-aC3"/>
+                        <outlet property="heightField" destination="s2r-im-5eH" id="pxW-kf-N1M"/>
+                        <outlet property="serviceIDField" destination="ZhX-9x-DOS" id="Fsv-xa-6kZ"/>
+                        <outlet property="serviceKeyField" destination="XZX-I3-96t" id="6sT-aL-bbX"/>
+                        <outlet property="userFrontCamaraSegment" destination="0WO-vI-cWE" id="8Nc-WW-HFC"/>
+                        <outlet property="videoCallSegment" destination="C69-1T-VUs" id="H8l-Li-Sfc"/>
+                        <outlet property="widthField" destination="qhc-vE-T54" id="ZrE-8G-B1D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hT3-0x-eBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3514.4000000000001" y="-179.46026986506749"/>
         </scene>
     </scenes>
 </document>

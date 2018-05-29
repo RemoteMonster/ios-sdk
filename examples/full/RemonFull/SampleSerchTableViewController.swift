@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Remon
+import RemoteMonster
 
 class SampleSerchTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -15,7 +15,14 @@ class SampleSerchTableViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var reloadBtn: UIButton!
     
+    var customConfig:RemonConfig?
+    
     @IBAction func reloadAction(_ sender: Any) {
+        if customConfig != nil && customConfig?.serviceId != nil { // && customConfig?.key != nil {
+            remonCast.serviceId = customConfig?.serviceId
+//            remonCast.serviceKey = customConfig?.key
+        }
+        
         remonCast.search { (err, results) in
             guard let rs = results
                 else { return}
@@ -42,6 +49,7 @@ class SampleSerchTableViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc:SimpleCastViewer? = self.storyboard?.instantiateViewController(withIdentifier: "SimpleCastViewer") as? SimpleCastViewer
         let item = self.items[indexPath.row]
+        vc?.customConfig = customConfig
         vc?.toChID = item.id
         if vc != nil {
             self.show(vc!, sender: self)

@@ -9,7 +9,7 @@
 import UIKit
 
 class VTableViewController: UITableViewController {
-    var items:Array<String> = ["SimpleCall", "SimpleVoiceCast", "SimpleVideoCast", "SimpleCastViewer"]
+    var items:Array<String> = ["SimpleCall", "SimpleVoiceCast", "SimpleVideoCast", "SimpleCastViewer", "CustomConfig"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,13 +43,15 @@ class VTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var vc:UIViewController?
         if indexPath.row == 0 {
-           vc = self.storyboard?.instantiateViewController(withIdentifier: "VSimpleViewController")
+           vc = self.storyboard?.instantiateViewController(withIdentifier: "SimpleCallViewController")
         } else if indexPath.row == 1 {
             vc = self.storyboard?.instantiateViewController(withIdentifier: "SimpleVoiceCast")
         } else if indexPath.row == 2 {
             vc = self.storyboard?.instantiateViewController(withIdentifier: "SimpleVideoCast")
         } else if indexPath.row == 3 {
            vc = self.storyboard?.instantiateViewController(withIdentifier: "SampleSerchTableViewController")
+        } else if indexPath.row == 4 {
+            vc = self.storyboard?.instantiateViewController(withIdentifier: "ConfigViewController")
         }
 
         if vc != nil {

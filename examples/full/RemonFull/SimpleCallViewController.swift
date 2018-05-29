@@ -1,5 +1,5 @@
 //
-//  VSimpleViewController.swift
+//  SimpleCallViewController.swift
 //  verySimpleRemon
 //
 //  Created by hyounsiklee on 2018. 4. 27..
@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Remon
+import RemoteMonster
 
 class SimpleCallViewController: UIViewController {
     
@@ -16,15 +16,19 @@ class SimpleCallViewController: UIViewController {
     @IBOutlet weak var chField: UITextField!
     @IBOutlet weak var chLabel: UILabel!
     
+    var customConfig:RemonConfig?
+    
     @IBAction func touchConnectButton(_ sender: Any) {
         self.view.endEditing(true)
         let chid = self.chField.text
         if chid != nil && chid!.count > 0 {
-            remonCall.connectChannel(chid!)
+            //config is nilable
+            remonCall.connectChannel(chid!, customConfig)
             self.chLabel.text = chid
         } else {
             let rand:String! = String(arc4random_uniform(9999))
-            remonCall.connectChannel(rand)
+            //config is nilable
+            remonCall.connectChannel(rand, customConfig)
             self.chLabel.text = rand
         }
     }

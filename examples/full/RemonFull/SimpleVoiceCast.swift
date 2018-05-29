@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Remon
+import RemoteMonster
 
 class SimpleVoiceCast:UIViewController {
     @IBOutlet weak var createBtn: UIButton!
@@ -15,8 +15,11 @@ class SimpleVoiceCast:UIViewController {
     @IBOutlet var remonCast: RemonCast!
     @IBOutlet weak var chLabel: UILabel!
     
+    var customConfig:RemonConfig?
+    
     @IBAction func createBoardcast(_ sender: Any) {
-        self.remonCast.createRoom()
+        //config is nilable
+        self.remonCast.createRoom(customConfig)
     }
     
     

@@ -20,6 +20,7 @@
 		0B5CB60E20B5563B00FB2BFE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B5CB60220B5563B00FB2BFE /* Info.plist */; };
 		0B5CB60F20B5563B00FB2BFE /* SimpleVoiceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB60320B5563B00FB2BFE /* SimpleVoiceCast.swift */; };
 		0B5CB61120B5566500FB2BFE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B5CB61020B5566400FB2BFE /* Info.plist */; };
+		0BD78A5420BB9B760017E2F0 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */; };
 		754AF784A248CF1A28D8E29D /* Pods_RemonFull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,12 +39,10 @@
 		0B5CB60220B5563B00FB2BFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B5CB60320B5563B00FB2BFE /* SimpleVoiceCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleVoiceCast.swift; sourceTree = "<group>"; };
 		0B5CB61020B5566400FB2BFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		41FA9D86BC59C24ECE49B567 /* Pods-RemonFull.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonFull.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull.release.xcconfig"; sourceTree = "<group>"; };
 		509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemonFull.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA5660B94705913FE97BC3C /* Pods-RemonFull.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonFull.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull.debug.xcconfig"; sourceTree = "<group>"; };
-		8E2495D96555C2933C432F85 /* Pods-SampleV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleV2/Pods-SampleV2.debug.xcconfig"; sourceTree = "<group>"; };
-		8E9B747C5E4BCE850BCA6B22 /* Pods_SampleV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DED9FC084CB8DE23D5A00362 /* Pods-SampleV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleV2/Pods-SampleV2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +72,7 @@
 				0B5CB60120B5563B00FB2BFE /* SimpleVideoCast.swift */,
 				0B5CB60220B5563B00FB2BFE /* Info.plist */,
 				0B5CB60320B5563B00FB2BFE /* SimpleVoiceCast.swift */,
+				0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */,
 			);
 			path = RemonFull;
 			sourceTree = "<group>";
@@ -99,7 +99,6 @@
 		61506248230B4EAB7E317792 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8E9B747C5E4BCE850BCA6B22 /* Pods_SampleV2.framework */,
 				509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */,
 			);
 			name = Frameworks;
@@ -108,8 +107,6 @@
 		8322D69B4586F7A47D8D4D87 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8E2495D96555C2933C432F85 /* Pods-SampleV2.debug.xcconfig */,
-				DED9FC084CB8DE23D5A00362 /* Pods-SampleV2.release.xcconfig */,
 				7CA5660B94705913FE97BC3C /* Pods-RemonFull.debug.xcconfig */,
 				41FA9D86BC59C24ECE49B567 /* Pods-RemonFull.release.xcconfig */,
 			);
@@ -253,6 +250,7 @@
 				0B5CB60B20B5563B00FB2BFE /* VTableViewController.swift in Sources */,
 				0B5CB60820B5563B00FB2BFE /* SimpleCallViewController.swift in Sources */,
 				0B5CB60620B5563B00FB2BFE /* SimpleCastViewer.swift in Sources */,
+				0BD78A5420BB9B760017E2F0 /* ConfigViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
