@@ -26,7 +26,7 @@ pod install
 
 ### Downloads
 
-* [Download latest](https://github.com/RemoteMonster/ios-sdk/archive/master.zip)
+* [Download](https://github.com/RemoteMonster/ios-sdk/releases/)
 
 ## Examples
 
