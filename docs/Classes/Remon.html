@@ -14,7 +14,8 @@
     <a title="Remon Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (72% documented)</p>
+        <p><a href="../index.html"> Docs</a> (48% documented)</p>
+        <p class="header-right"><a href="https://github.com/remotemonster/ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -28,14 +29,6 @@
       <nav class="sidebar">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="../Guides.html">Guides</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../readme.html">README</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -47,7 +40,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enums</a>
+            <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/RemonState.html">RemonState</a>
@@ -70,7 +63,7 @@
             <h1>Remon</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Remon</span><span class="p">:</span><span class="kt">NSObject</span><span class="p">,</span> <span class="kt">RemonWebSocketChannelDelegate</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Remon</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">RemonWebSocketChannelDelegate</span></code></pre>
 
                 </div>
               </div>
@@ -83,9 +76,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8remonios5RemoncFT8delegatePS_13RemonDelegate_6configCS_11RemonConfig_S0_"></a>
+                    <a name="/s:13RemoteMonster5RemonCAcA0C8Delegate_p8delegate_AA0C6ConfigC6configtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(delegate:config:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8remonios5RemoncFT8delegatePS_13RemonDelegate_6configCS_11RemonConfig_S0_">init(delegate:config:)</a>
+                    <a class="token" href="#/s:13RemoteMonster5RemonCAcA0C8Delegate_p8delegate_AA0C6ConfigC6configtcfc">init(delegate:config:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -100,7 +93,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">delegate</span><span class="p">:</span><span class="kt"><a href="../Protocols/RemonDelegate.html">RemonDelegate</a></span><span class="p">,</span> <span class="nv">config</span><span class="p">:</span><span class="kt"><a href="../Classes/RemonConfig.html">RemonConfig</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RemonDelegate.html">RemonDelegate</a></span><span class="p">,</span> <span class="nv">config</span><span class="p">:</span> <span class="kt"><a href="../Classes/RemonConfig.html">RemonConfig</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -110,9 +103,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8remonios5Remon14connectChannelFT4chIdSS_T_"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)Remon(im)connectChannelWithChId:"></a>
                     <a name="//apple_ref/swift/Method/connectChannel(chId:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8remonios5Remon14connectChannelFT4chIdSS_T_">connectChannel(chId:)</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)Remon(im)connectChannelWithChId:">connectChannel(chId:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -127,7 +120,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">connectChannel</span><span class="p">(</span><span class="nv">chId</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">connectChannel</span><span class="p">(</span><span class="nv">chId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -137,9 +130,64 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8remonios5Remon13getRemonStateFT_OS_10RemonState"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)Remon(im)createBroadcastWithChId:"></a>
+                    <a name="//apple_ref/swift/Method/createBroadcast(chId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)Remon(im)createBroadcastWithChId:">createBroadcast(chId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>주어진 채널 이름으로 채널에 연결하거나 채널이 없으면 생성한다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">createBroadcast</span><span class="p">(</span><span class="nv">chId</span><span class="p">:</span><span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RemoteMonster@objc(cs)Remon(im)mediaTrackStatsWithTrack:level:completionHandler:"></a>
+                    <a name="//apple_ref/swift/Method/mediaTrackStats(track:level:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)Remon(im)mediaTrackStatsWithTrack:level:completionHandler:">mediaTrackStats(track:level:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>트랙 상태를 가져온다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">mediaTrackStats</span><span class="p">(</span><span class="nv">track</span><span class="p">:</span> <span class="kt">RTCMediaStreamTrack</span><span class="p">?,</span> <span class="nv">level</span><span class="p">:</span> <span class="kt">RTCStatsOutputLevel</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">([</span><span class="kt">RTCLegacyStatsReport</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13RemoteMonster5RemonC03getC5StateAA0cE0OyF"></a>
                     <a name="//apple_ref/swift/Method/getRemonState()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8remonios5Remon13getRemonStateFT_OS_10RemonState">getRemonState()</a>
+                    <a class="token" href="#/s:13RemoteMonster5RemonC03getC5StateAA0cE0OyF">getRemonState()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -154,7 +202,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getRemonState</span><span class="p">()</span><span class="o">-&gt;</span><span class="kt"><a href="../Enums/RemonState.html">RemonState</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getRemonState</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/RemonState.html">RemonState</a></span></code></pre>
 
                         </div>
                       </div>
@@ -164,9 +212,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8remonios5Remon16pauseRemoteAudioFT5pauseSb_T_"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)Remon(im)pauseRemoteAudioWithPause:"></a>
                     <a name="//apple_ref/swift/Method/pauseRemoteAudio(pause:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8remonios5Remon16pauseRemoteAudioFT5pauseSb_T_">pauseRemoteAudio(pause:)</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)Remon(im)pauseRemoteAudioWithPause:">pauseRemoteAudio(pause:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -181,7 +229,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pauseRemoteAudio</span><span class="p">(</span><span class="nv">pause</span><span class="p">:</span><span class="kt">Bool</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pauseRemoteAudio</span><span class="p">(</span><span class="nv">pause</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -191,9 +239,63 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8remonios5Remon15pauseLocalVideoFT5pauseSb_T_"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)Remon(im)pauseRemoteVideoWithPause:"></a>
+                    <a name="//apple_ref/swift/Method/pauseRemoteVideo(pause:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)Remon(im)pauseRemoteVideoWithPause:">pauseRemoteVideo(pause:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>원격 영상을 안들리게 한다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pauseRemoteVideo</span><span class="p">(</span><span class="nv">pause</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RemoteMonster@objc(cs)Remon(im)pauseLocalAudioWithPause:"></a>
+                    <a name="//apple_ref/swift/Method/pauseLocalAudio(pause:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)Remon(im)pauseLocalAudioWithPause:">pauseLocalAudio(pause:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>로컬 음성을 안들리게 한다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pauseLocalAudio</span><span class="p">(</span><span class="nv">pause</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RemoteMonster@objc(cs)Remon(im)pauseLocalVideoWithPause:"></a>
                     <a name="//apple_ref/swift/Method/pauseLocalVideo(pause:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8remonios5Remon15pauseLocalVideoFT5pauseSb_T_">pauseLocalVideo(pause:)</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)Remon(im)pauseLocalVideoWithPause:">pauseLocalVideo(pause:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -208,7 +310,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pauseLocalVideo</span><span class="p">(</span><span class="nv">pause</span><span class="p">:</span><span class="kt">Bool</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pauseLocalVideo</span><span class="p">(</span><span class="nv">pause</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -218,9 +320,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8remonios5Remon12switchCameraFT_T_"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)Remon(im)switchCamera"></a>
                     <a name="//apple_ref/swift/Method/switchCamera()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8remonios5Remon12switchCameraFT_T_">switchCamera()</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)Remon(im)switchCamera">switchCamera()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -235,7 +337,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">switchCamera</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">switchCamera</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -245,9 +347,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8remonios5Remon6searchFT5querySS_T_"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)Remon(im)searchWithQuery:"></a>
                     <a name="//apple_ref/swift/Method/search(query:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8remonios5Remon6searchFT5querySS_T_">search(query:)</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)Remon(im)searchWithQuery:">search(query:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -262,7 +364,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="nv">query</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="nv">query</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -272,9 +374,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8remonios5Remon11sendMessageFT7messageSS_T_"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)Remon(im)sendMessageWithMessage:"></a>
                     <a name="//apple_ref/swift/Method/sendMessage(message:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8remonios5Remon11sendMessageFT7messageSS_T_">sendMessage(message:)</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)Remon(im)sendMessageWithMessage:">sendMessage(message:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -289,7 +391,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendMessage</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendMessage</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -299,9 +401,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8remonios5Remon5closeFT_T_"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)Remon(im)close"></a>
                     <a name="//apple_ref/swift/Method/close()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8remonios5Remon5closeFT_T_">close()</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)Remon(im)close">close()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -316,7 +418,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">close</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">close</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -328,8 +430,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external">JinhoChoi</a>. All rights reserved. (Last updated: 2017-06-05)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2018-05-31)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
