@@ -143,8 +143,8 @@
                 <customObject id="RdH-we-KqM" customClass="RemonCast" customModule="RemoteMonster">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="broardcast" value="NO"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://matiz.remotemonster.com/ws"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://matiz.remotemonster.com/rest/init"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://signal.remotemonster.com/rest/init"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                     </userDefinedRuntimeAttributes>
@@ -464,8 +464,8 @@
                 <customObject id="7C3-x6-6Mx" customClass="RemonCast" customModule="RemoteMonster">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="broardcast" value="NO"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://matiz.remotemonster.com/ws"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://matiz.remotemonster.com/rest/init"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://signal.remotemonster.com/rest/init"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
