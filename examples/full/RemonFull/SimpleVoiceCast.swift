@@ -19,7 +19,7 @@ class SimpleVoiceCast:UIViewController {
     
     @IBAction func createBoardcast(_ sender: Any) {
         //config is nilable
-        self.remonCast.createRoom(customConfig)
+        self.remonCast.create(customConfig)
     }
     
     
@@ -34,10 +34,10 @@ class SimpleVoiceCast:UIViewController {
             self.createBtn.isEnabled = false
         }
         
-        self.remonCast.onComplete {
+        self.remonCast.onCreate { (chid) in
             DispatchQueue.main.async {
                 self.closeBtn.isEnabled = true
-                self.chLabel.text = self.remonCast.channelID
+                self.chLabel.text = chid
             }
         }
         

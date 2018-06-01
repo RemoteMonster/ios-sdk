@@ -8,8 +8,11 @@
 
 import UIKit
 
+/***/
 @objc(RemonIBController) @IBDesignable public class RemonIBController: RemonController {
 //    @IBInspectable
+    
+    /***/
     public var channelType:Int {
         get {
             return channelType_
@@ -20,6 +23,8 @@ import UIKit
         
     }
     
+    
+    /***/
     @IBInspectable
     public var autoReJoin:Bool {
         get {
@@ -30,6 +35,7 @@ import UIKit
         }
     }
     
+    /***/
     @IBInspectable
     public var onlyAudio:Bool {
         get {
@@ -43,6 +49,7 @@ import UIKit
     //    @IBInspectable
     //    public var autoInit:Bool = false
     
+    /***/
     @IBInspectable
     public var videoWidth:Int {
         get {
@@ -53,7 +60,7 @@ import UIKit
         }
     }
     
-    
+    /***/
     @IBInspectable
     public var videoHeight:Int{
         get {
@@ -65,6 +72,7 @@ import UIKit
         }
     }
     
+    /***/
     @IBInspectable
     public var fps:Int {
         get {
@@ -78,6 +86,7 @@ import UIKit
     //    @IBInspectable
     //    public var remoteViewMirroring:Bool = true
     
+    /***/
     @IBInspectable
     public var serviceId:String? {
         get {
@@ -88,6 +97,7 @@ import UIKit
         }
     }
     
+    /***/
     @IBInspectable
     public var serviceKey:String? {
         get {
@@ -98,6 +108,7 @@ import UIKit
         }
     }
     
+    /***/
     @IBInspectable
     public var wsUrl:String {
         get {
@@ -109,6 +120,7 @@ import UIKit
         }
     }
     
+    /***/
     @IBInspectable
     public var restUrl:String {
         get {
@@ -120,17 +132,7 @@ import UIKit
         }
     }
     
-    @IBInspectable
-    public var autoCaptureStart:Bool {
-        get {
-            return self.autoCaptureStart_
-        }
-        
-        set(isAuto) {
-            self.autoCaptureStart_ = isAuto
-        }
-    }
-    
+    /***/
     @IBInspectable
     public var useFrontCamera:Bool {
         get {
@@ -143,16 +145,21 @@ import UIKit
     }
     
     //    IBOutlet
+    /***/
     @IBOutlet weak var remoteView:UIView? {
         didSet (rv) {
             self.remoteView_ = rv
         }
     }
+    
+    /***/
     @IBOutlet weak var localView:UIView? {
         didSet {
             self.localView_ = localView
         }
     }
+    
+    /***/
     @IBOutlet weak var localPreView:UIView? {
         didSet {
             self.localPreView_ = localPreView

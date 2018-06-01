@@ -23,12 +23,12 @@ class SimpleCallViewController: UIViewController {
         let chid = self.chField.text
         if chid != nil && chid!.count > 0 {
             //config is nilable
-            remonCall.connectChannel(chid!, customConfig)
+            remonCall.connect(chid!, customConfig)
             self.chLabel.text = chid
         } else {
             let rand:String! = String(arc4random_uniform(9999))
             //config is nilable
-            remonCall.connectChannel(rand, customConfig)
+            remonCall.connect(rand, customConfig)
             self.chLabel.text = rand
         }
     }

@@ -28,10 +28,10 @@ class SimpleCastViewer: UIViewController {
         super.viewDidLoad()
         if let chID = self.toChID {
             //config is nilable
-            self.remonCast.joinRoom(chID: chID, customConfig)
+            self.remonCast.join(chId: chID, customConfig)
         }
         
-        self.remonCast.onComplete {
+        self.remonCast.onJoin { (chid) in
             DispatchQueue.main.async {
                 self.closeBtn.isEnabled = true
                 self.chLabel.text = self.toChID
@@ -44,11 +44,6 @@ class SimpleCastViewer: UIViewController {
             }
         }
         
-        self.remonCast.onConnect {
-            DispatchQueue.main.async {
-                self.chLabel.text = "connect..."
-            }
-        }
         
         
     }
