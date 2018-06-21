@@ -144,6 +144,19 @@ import UIKit
         }
     }
     
+    /*
+    @IBInspectable
+    public var audioType:RemonAudioMode {
+        get {
+            return self.audioType_
+        }
+        
+        set(isFrontCamere) {
+            self.audioType_ = audioType
+        }
+    }
+    */
+    
     //    IBOutlet
     /***/
     @IBOutlet weak var remoteView:UIView? {

@@ -105,4 +105,12 @@ public class RemonCast: RemonIBController, RemonControllBlockSettable, RemonCast
     public func onFetch(block: @escaping RemonArrayBlock) {
         self.onFetchChannels(block: block)
     }
+    
+//    public func startCap(_ path:String) {
+//        RTCStartInternalCapture(path)
+//    }
+//    
+//    public func stopCap() {
+//        RTCStopInternalCapture()
+//    }
 }

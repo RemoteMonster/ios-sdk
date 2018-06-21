@@ -17,9 +17,7 @@
 		0B5CB60B20B5563B00FB2BFE /* VTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB5FF20B5563B00FB2BFE /* VTableViewController.swift */; };
 		0B5CB60C20B5563B00FB2BFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB60020B5563B00FB2BFE /* AppDelegate.swift */; };
 		0B5CB60D20B5563B00FB2BFE /* SimpleVideoCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB60120B5563B00FB2BFE /* SimpleVideoCast.swift */; };
-		0B5CB60E20B5563B00FB2BFE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B5CB60220B5563B00FB2BFE /* Info.plist */; };
 		0B5CB60F20B5563B00FB2BFE /* SimpleVoiceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB60320B5563B00FB2BFE /* SimpleVoiceCast.swift */; };
-		0B5CB61120B5566500FB2BFE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B5CB61020B5566400FB2BFE /* Info.plist */; };
 		0BD78A5420BB9B760017E2F0 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */; };
 		754AF784A248CF1A28D8E29D /* Pods_RemonFull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */; };
 /* End PBXBuildFile section */
@@ -169,10 +167,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B5CB60E20B5563B00FB2BFE /* Info.plist in Resources */,
 				0B5CB60A20B5563B00FB2BFE /* Main.storyboard in Resources */,
 				0B5CB60720B5563B00FB2BFE /* Assets.xcassets in Resources */,
-				0B5CB61120B5566500FB2BFE /* Info.plist in Resources */,
 				0B5CB60920B5563B00FB2BFE /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,8 +279,11 @@
 				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.SampleV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -301,8 +300,11 @@
 				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.SampleV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
