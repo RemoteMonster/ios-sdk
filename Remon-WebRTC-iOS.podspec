@@ -8,9 +8,9 @@ Pod::Spec.new do |s|
     APIs. The WebRTC components have been optimized to best serve this purpose.
                    DESC
   s.homepage     = "http://webrtc.org/"
-  # s.license      = "BSD"
+  s.license      = "BSD"
   s.author       = "Google Inc."
-  s.source       = { :git => "https://github.com/RemoteMonster/ios-sdk.git", :tag => "0.1.161" }
+  s.source       = { :git => "https://github.com/RemoteMonster/ios-sdk.git", :tag => "2.1.0_w" }
   s.platform     = :ios, "9.1"
 
 
