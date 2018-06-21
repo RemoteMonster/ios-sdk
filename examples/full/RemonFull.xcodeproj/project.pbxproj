@@ -19,6 +19,7 @@
 		0B5CB60D20B5563B00FB2BFE /* SimpleVideoCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB60120B5563B00FB2BFE /* SimpleVideoCast.swift */; };
 		0B5CB60F20B5563B00FB2BFE /* SimpleVoiceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB60320B5563B00FB2BFE /* SimpleVoiceCast.swift */; };
 		0BD78A5420BB9B760017E2F0 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */; };
+		60B27F6820DB94BD00BB97C8 /* RemonSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60B27F6720DB94BD00BB97C8 /* RemonSettings.plist */; };
 		754AF784A248CF1A28D8E29D /* Pods_RemonFull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		41FA9D86BC59C24ECE49B567 /* Pods-RemonFull.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonFull.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull.release.xcconfig"; sourceTree = "<group>"; };
 		509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemonFull.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60B27F6720DB94BD00BB97C8 /* RemonSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RemonSettings.plist; sourceTree = "<group>"; };
 		7CA5660B94705913FE97BC3C /* Pods-RemonFull.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonFull.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 		0BA0AF8720A9700700DEA203 = {
 			isa = PBXGroup;
 			children = (
+				60B27F6720DB94BD00BB97C8 /* RemonSettings.plist */,
 				0B5CB5F520B5563B00FB2BFE /* RemonFull */,
 				0BA0AF9120A9700700DEA203 /* Products */,
 				8322D69B4586F7A47D8D4D87 /* Pods */,
@@ -123,7 +126,6 @@
 				0B5CB5E820B555BE00FB2BFE /* Frameworks */,
 				0B5CB5EA20B555BE00FB2BFE /* Resources */,
 				0B5CB5EE20B555BE00FB2BFE /* [CP] Embed Pods Frameworks */,
-				0B5CB5EF20B555BE00FB2BFE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,6 +172,7 @@
 				0B5CB60A20B5563B00FB2BFE /* Main.storyboard in Resources */,
 				0B5CB60720B5563B00FB2BFE /* Assets.xcassets in Resources */,
 				0B5CB60920B5563B00FB2BFE /* LaunchScreen.storyboard in Resources */,
+				60B27F6820DB94BD00BB97C8 /* RemonSettings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +204,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull-frameworks.sh",
-				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
+				"${PODS_ROOT}/Remon-WebRTC-iOS/WebRTC.framework",
 				"${PODS_ROOT}/RemoteMonster/RemoteMonster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -212,21 +215,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0B5CB5EF20B555BE00FB2BFE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

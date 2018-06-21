@@ -29,6 +29,7 @@ class SimpleVoiceCast:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.remonCast.debugMode = true
         
         self.remonCast.onInit {
             self.createBtn.isEnabled = false
