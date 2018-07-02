@@ -260,7 +260,6 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @property (nonatomic) BOOL showRemoteVideoStat SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.showRemoteVideoStat' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 @property (nonatomic) BOOL showLocalVideoStat SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.showLocalVideoStat' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 @property (nonatomic, copy) NSString * _Nullable channelID SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.channelID' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
-+ (void)forceLinkerLoad_ SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.forceLinkerLoad_()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 - (void)closeRemon:(BOOL)tryReJoin SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.closeRemon(_:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
