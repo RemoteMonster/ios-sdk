@@ -16,9 +16,19 @@ class SimpleCallViewController: UIViewController {
     @IBOutlet weak var chField: UITextField!
     @IBOutlet weak var chLabel: UILabel!
     
-    var customConfig:RemonConfig?
+    @IBOutlet weak var iuputGainSlider: UISlider!
     
-    let simpleRouteChangeObserver:SimpleAudioSessionObserver = SimpleAudioSessionObserver()
+//    change output!!!
+    @IBAction func builtInReceiverOverideToSpeaker(_ sender: Any) {
+        self.remonCall.builtInReceiverOverideToSpeaker = !self.remonCall.builtInReceiverOverideToSpeaker
+    }
+    
+    @IBAction func changeInputSliderValue(_ sender: UISlider) {
+        
+        self.remonCall.setInpuGain(sender.value)
+    }
+    
+    var customConfig:RemonConfig?
     
     @IBAction func touchConnectButton(_ sender: Any) {
         self.view.endEditing(true)
@@ -37,7 +47,7 @@ class SimpleCallViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.iuputGainSlider.isEnabled = self.remonCall.inputGainSettable()
         remonCall.onInit {
             DispatchQueue.main.async {
                 self.boxView.isHidden = true
@@ -48,13 +58,7 @@ class SimpleCallViewController: UIViewController {
             DispatchQueue.main.async {
                 self.chLabel.text = self.remonCall.channelID
             }
-            
-            do {
-                try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.none)
-            } catch let err {
-                print(err.localizedDescription)
-            }
-            NotificationCenter.default.removeObserver(self.remonCall, name: .AVAudioSessionRouteChange, object: nil)
+            print("zzz", AVAudioSession.sharedInstance().currentRoute)
         }
         
         remonCall.onClose {

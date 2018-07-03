@@ -39,6 +39,7 @@ class SimpleVideoCast:UIViewController {
             DispatchQueue.main.async {
                 self.closeBtn.isEnabled = true
                 self.chLabel.text = chid
+                
             }
         }
         

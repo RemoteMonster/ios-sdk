@@ -19,8 +19,10 @@ class ConfigViewController: UIViewController {
     @IBOutlet weak var heightField: UITextField!
     @IBOutlet weak var fpsField: UITextField!
     @IBOutlet weak var autoCaptureStartSegment: UISegmentedControl!
-    @IBOutlet weak var channelTypeField: UITextField!
+    @IBOutlet weak var channelTypeSegment: UISegmentedControl!
     @IBOutlet weak var userFrontCamaraSegment: UISegmentedControl!
+    @IBOutlet weak var audioModeSegment: UISegmentedControl!
+    @IBOutlet weak var debugModeSegment: UISegmentedControl!
     
     @IBAction func hideKeyboard(_ sender: Any) {
         self.view.endEditing(true)
@@ -37,8 +39,10 @@ class ConfigViewController: UIViewController {
             let height:Int = Int(self.heightField.text!),
             let fps:Int = Int(self.fpsField.text!),
             let autoCapture:Bool = self.autoCaptureStartSegment.selectedSegmentIndex == 0,
-            let chType:Int = Int(self.channelTypeField.text!),
-            let frontCametra:Bool = self.userFrontCamaraSegment.selectedSegmentIndex == 0
+            let chType:Int = self.channelTypeSegment.selectedSegmentIndex,
+            let frontCametra:Bool = self.userFrontCamaraSegment.selectedSegmentIndex == 0,
+            let audioMode:RemonAudioMode = self.audioModeSegment.selectedSegmentIndex == 0 ? .voice : .music,
+            let debugMode:Bool = self.debugModeSegment.selectedSegmentIndex == 0
             else {
                 let al = UIAlertController(title: nil, message: "모든 값을 입력해 주세요", preferredStyle: .alert)
                 let ac = UIAlertAction(title: "OK", style: .cancel) { (ac) in}
@@ -56,7 +60,10 @@ class ConfigViewController: UIViewController {
         config.videoFps = fps
         config.autoCaptureStart = autoCapture
         config.useFrontCamera = frontCametra
-        
+//        config.audioType = audioMode
+        config.restUrl = "https://matiz.remotemonster.com/rest/init"
+        config.wsUrl = "wss://matiz.remotemonster.com/ws"
+        config.debugMode = debugMode
         switch chType {
         case 0:
             config.channelType = .p2p
@@ -89,7 +96,6 @@ class ConfigViewController: UIViewController {
             } else {
                 let castVC:SimpleVoiceCast = self.storyboard?.instantiateViewController(withIdentifier: "SimpleVoiceCast") as! SimpleVoiceCast
                 castVC.customConfig = config
-                self.present(castVC, animated: true, completion: nil)
                 self.show(castVC, sender: self)
             }
         }

@@ -20,7 +20,7 @@ class SampleSerchTableViewController: UIViewController, UITableViewDataSource, U
     @IBAction func reloadAction(_ sender: Any) {
         if customConfig != nil && customConfig?.serviceId != nil { // && customConfig?.key != nil {
             remonCast.serviceId = customConfig?.serviceId
-            //            remonCast.serviceKey = customConfig?.key
+//            remonCast.serviceKey = customConfig?.key
         }
         
         remonCast.fetchCasts { (err, results) in
@@ -55,17 +55,17 @@ class SampleSerchTableViewController: UIViewController, UITableViewDataSource, U
             self.show(vc!, sender: self)
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.reloadAction(self.reloadBtn)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
+
 }

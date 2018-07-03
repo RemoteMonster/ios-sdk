@@ -11,11 +11,19 @@ import RemoteMonster
 
 class SimpleCastViewer: UIViewController {
     @IBOutlet weak var closeBtn: UIButton!
+    
     @IBOutlet weak var chLabel: UILabel!
     @IBOutlet var remonCast: RemonCast!
     
+    
+    
     var toChID:String?
     var customConfig:RemonConfig?
+
+    
+    @IBAction func showStat(_ sender: Any) {
+        self.remonCast.showRemoteVideoStat = true
+    }
     
     @IBAction func closeRemonManager(_ sender: Any) {
         self.dismiss(animated: true, completion: {
@@ -24,8 +32,12 @@ class SimpleCastViewer: UIViewController {
         self.chLabel.text = "closing..."
     }
     
+    @IBAction func test(_ sender: Any) {
+        self.remonCast.vpio()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let chID = self.toChID {
             //config is nilable
             self.remonCast.join(chId: chID, customConfig)
@@ -43,9 +55,6 @@ class SimpleCastViewer: UIViewController {
                 self.chLabel.text = "init..."
             }
         }
-        
-        
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
