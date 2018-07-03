@@ -19,6 +19,7 @@
 		0B5CB60D20B5563B00FB2BFE /* SimpleVideoCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB60120B5563B00FB2BFE /* SimpleVideoCast.swift */; };
 		0B5CB60F20B5563B00FB2BFE /* SimpleVoiceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB60320B5563B00FB2BFE /* SimpleVoiceCast.swift */; };
 		0BD78A5420BB9B760017E2F0 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */; };
+		6069E4E120EB4526000B3AA5 /* SimpleAudioSessionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6069E4E020EB4526000B3AA5 /* SimpleAudioSessionObserver.swift */; };
 		60B27F6820DB94BD00BB97C8 /* RemonSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60B27F6720DB94BD00BB97C8 /* RemonSettings.plist */; };
 		754AF784A248CF1A28D8E29D /* Pods_RemonFull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		41FA9D86BC59C24ECE49B567 /* Pods-RemonFull.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonFull.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull.release.xcconfig"; sourceTree = "<group>"; };
 		509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemonFull.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6069E4E020EB4526000B3AA5 /* SimpleAudioSessionObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAudioSessionObserver.swift; sourceTree = "<group>"; };
 		60B27F6720DB94BD00BB97C8 /* RemonSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RemonSettings.plist; sourceTree = "<group>"; };
 		7CA5660B94705913FE97BC3C /* Pods-RemonFull.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonFull.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 				0B5CB60220B5563B00FB2BFE /* Info.plist */,
 				0B5CB60320B5563B00FB2BFE /* SimpleVoiceCast.swift */,
 				0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */,
+				6069E4E020EB4526000B3AA5 /* SimpleAudioSessionObserver.swift */,
 			);
 			path = RemonFull;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				0B5CB60B20B5563B00FB2BFE /* VTableViewController.swift in Sources */,
 				0B5CB60820B5563B00FB2BFE /* SimpleCallViewController.swift in Sources */,
 				0B5CB60620B5563B00FB2BFE /* SimpleCastViewer.swift in Sources */,
+				6069E4E120EB4526000B3AA5 /* SimpleAudioSessionObserver.swift in Sources */,
 				0BD78A5420BB9B760017E2F0 /* ConfigViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,6 +18,8 @@ class SimpleCallViewController: UIViewController {
     
     var customConfig:RemonConfig?
     
+    let simpleRouteChangeObserver:SimpleAudioSessionObserver = SimpleAudioSessionObserver()
+    
     @IBAction func touchConnectButton(_ sender: Any) {
         self.view.endEditing(true)
         let chid = self.chField.text
