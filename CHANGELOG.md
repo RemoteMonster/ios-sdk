@@ -3,5 +3,6 @@
   - default is true
   - If you want to change the output device
   ```
+  // in runtime!!!
   remonCall.builtInReceiverOverideToSpeaker = !remonCall.builtInReceiverOverideToSpeaker
   ```
