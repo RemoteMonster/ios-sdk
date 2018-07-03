@@ -48,6 +48,13 @@ class SimpleCallViewController: UIViewController {
             DispatchQueue.main.async {
                 self.chLabel.text = self.remonCall.channelID
             }
+            
+            do {
+                try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.none)
+            } catch let err {
+                print(err.localizedDescription)
+            }
+            NotificationCenter.default.removeObserver(self.remonCall, name: .AVAudioSessionRouteChange, object: nil)
         }
         
         remonCall.onClose {
