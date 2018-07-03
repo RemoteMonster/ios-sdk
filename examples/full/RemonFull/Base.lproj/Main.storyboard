@@ -177,14 +177,14 @@
                                     <action selector="createBoardcast:" destination="eTy-W4-tCw" eventType="touchUpInside" id="FRU-9M-tzO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNK-Zh-e9D">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNK-Zh-e9D">
                                 <rect key="frame" x="202" y="76" width="51" height="30"/>
                                 <state key="normal" title="stopRC"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="eTy-W4-tCw" eventType="touchUpInside" id="9ng-Ke-kRx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNg-70-tfM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNg-70-tfM">
                                 <rect key="frame" x="122" y="64" width="61" height="42"/>
                                 <state key="normal" title="RCRCRC">
                                     <color key="titleColor" red="1" green="0.0" blue="0.034920876080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -193,7 +193,7 @@
                                     <action selector="recording:" destination="eTy-W4-tCw" eventType="touchUpInside" id="EeI-2J-X0F"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cgp-ch-sMf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cgp-ch-sMf">
                                 <rect key="frame" x="284" y="144" width="51" height="54"/>
                                 <state key="normal" title="TEST"/>
                                 <connections>
@@ -237,15 +237,21 @@
                             <constraint firstItem="3se-Fm-K61" firstAttribute="trailing" secondItem="LnU-9h-ITC" secondAttribute="trailing" constant="35" id="3Lk-eF-Jnp"/>
                             <constraint firstItem="4rc-y6-3h6" firstAttribute="leading" secondItem="yVV-h4-imn" secondAttribute="trailing" constant="28" id="48J-F9-XUt"/>
                             <constraint firstItem="4rc-y6-3h6" firstAttribute="top" secondItem="nNK-Zh-e9D" secondAttribute="bottom" constant="1" id="Coa-sz-xky"/>
+                            <constraint firstItem="Cgp-ch-sMf" firstAttribute="leading" secondItem="3se-Fm-K61" secondAttribute="leading" constant="284" id="H1A-X8-P0i"/>
                             <constraint firstItem="LnU-9h-ITC" firstAttribute="top" secondItem="3se-Fm-K61" secondAttribute="top" constant="2" id="KUM-ej-vvX"/>
+                            <constraint firstItem="Cgp-ch-sMf" firstAttribute="centerX" secondItem="LnU-9h-ITC" secondAttribute="centerX" id="NiL-f1-E3q"/>
                             <constraint firstItem="4rc-y6-3h6" firstAttribute="leading" secondItem="bNg-70-tfM" secondAttribute="leading" id="ORZ-WA-75d"/>
                             <constraint firstItem="GW3-up-pgg" firstAttribute="leading" secondItem="3se-Fm-K61" secondAttribute="leading" constant="20" id="Q8f-tR-fng"/>
                             <constraint firstItem="yVV-h4-imn" firstAttribute="leading" secondItem="3se-Fm-K61" secondAttribute="leading" constant="20" id="Qak-AY-0De"/>
                             <constraint firstItem="3se-Fm-K61" firstAttribute="trailing" secondItem="4rc-y6-3h6" secondAttribute="trailing" constant="27" id="SBx-ad-CbF"/>
                             <constraint firstItem="GW3-up-pgg" firstAttribute="top" secondItem="4rc-y6-3h6" secondAttribute="bottom" constant="8" symbolic="YES" id="d1q-Tb-lfo"/>
+                            <constraint firstItem="bNg-70-tfM" firstAttribute="bottom" secondItem="nNK-Zh-e9D" secondAttribute="bottom" id="m16-US-Hw4"/>
+                            <constraint firstItem="nNK-Zh-e9D" firstAttribute="leading" secondItem="bNg-70-tfM" secondAttribute="trailing" constant="19" id="nbF-xL-w9o"/>
                             <constraint firstItem="au0-h8-dfo" firstAttribute="leading" secondItem="3se-Fm-K61" secondAttribute="leading" constant="20" id="nwH-3u-Rqn"/>
                             <constraint firstItem="GW3-up-pgg" firstAttribute="top" secondItem="LnU-9h-ITC" secondAttribute="bottom" constant="41" id="rDp-yo-2Ne"/>
                             <constraint firstItem="3se-Fm-K61" firstAttribute="trailing" secondItem="GW3-up-pgg" secondAttribute="trailing" constant="20" id="sPh-ka-8mE"/>
+                            <constraint firstItem="3se-Fm-K61" firstAttribute="bottom" secondItem="Cgp-ch-sMf" secondAttribute="bottom" constant="469" id="skX-Ds-VEg"/>
+                            <constraint firstItem="bNg-70-tfM" firstAttribute="top" secondItem="3se-Fm-K61" secondAttribute="top" id="tbG-Ft-v3Q"/>
                             <constraint firstItem="au0-h8-dfo" firstAttribute="top" secondItem="3se-Fm-K61" secondAttribute="top" constant="2" id="uv6-k4-v6R"/>
                             <constraint firstItem="Cgp-ch-sMf" firstAttribute="top" secondItem="4rc-y6-3h6" secondAttribute="bottom" constant="8" symbolic="YES" id="yMi-LD-DBF"/>
                         </constraints>
