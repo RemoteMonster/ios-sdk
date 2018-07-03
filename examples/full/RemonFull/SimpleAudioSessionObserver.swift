@@ -47,5 +47,7 @@ class SimpleAudioSessionObserver: NSObject {
             
         default: ()
         }
+        
+        print("현재 디바이스", AVAudioSession.sharedInstance().currentRoute)
     }
 }
