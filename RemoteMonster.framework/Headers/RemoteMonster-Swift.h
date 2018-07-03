@@ -245,6 +245,9 @@ typedef SWIFT_ENUM(NSInteger, RemonAudioMode) {
 SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @interface RemonController : NSObject <RTCAudioSessionDelegate>
 - (void)vpio SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.vpio()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (BOOL)inputGainSettable SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.inputGainSettable()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (void)setInpuGain:(float)value SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.setInpuGain(_:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (void)setPolarPatter SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.setPolarPatter()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 @property (nonatomic) BOOL firstInit SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.firstInit' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 /// 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부
 @property (nonatomic) BOOL autoCaptureStart SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.autoCaptureStart' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
@@ -260,6 +263,7 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @property (nonatomic) BOOL showRemoteVideoStat SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.showRemoteVideoStat' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 @property (nonatomic) BOOL showLocalVideoStat SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.showLocalVideoStat' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 @property (nonatomic, copy) NSString * _Nullable channelID SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.channelID' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+@property (nonatomic, readonly) float remonDefultMusicModeInputGain SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.remonDefultMusicModeInputGain' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 - (void)closeRemon:(BOOL)tryReJoin SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.closeRemon(_:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
@@ -310,6 +314,7 @@ SWIFT_CLASS_NAMED("RemonIBController")
 @property (nonatomic, copy) NSString * _Nonnull restUrl;
 ///
 @property (nonatomic) BOOL useFrontCamera;
+@property (nonatomic) BOOL builtInReceiverOverideToSpeaker;
 @end
 
 
