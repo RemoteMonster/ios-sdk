@@ -235,6 +235,16 @@ typedef SWIFT_ENUM(NSInteger, RemonAudioMode) {
   RemonAudioModeMusic = 1,
 };
 
+
+SWIFT_CLASS("_TtC13RemoteMonster18RemonAudioRecorder")
+@interface RemonAudioRecorder : NSObject
+- (NSURL * _Nonnull)URLFor:(NSString * _Nonnull)filename SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_OBJC("Swift method 'RemonAudioRecorder.URLFor(_:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (void)initializeAudioEngine SWIFT_DEPRECATED_OBJC("Swift method 'RemonAudioRecorder.initializeAudioEngine()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (void)startRecording SWIFT_DEPRECATED_OBJC("Swift method 'RemonAudioRecorder.startRecording()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (void)stopRecording SWIFT_DEPRECATED_OBJC("Swift method 'RemonAudioRecorder.stopRecording()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class RTCVideoTrack;
 @class RTCAudioTrack;
 @class RTCCameraVideoCapturer;
@@ -244,10 +254,8 @@ typedef SWIFT_ENUM(NSInteger, RemonAudioMode) {
 /// RemonController를 사용하면 Remon를 직접 사용하는 것보다 더욱 쉽게 Remon의 기능으르 사용 할 수 있으며 Remon를 직접 사용하는 것과 거의 같은 기능을 이용 할 수 있습니다.
 SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @interface RemonController : NSObject <RTCAudioSessionDelegate>
-- (void)vpio SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.vpio()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
-- (BOOL)inputGainSettable SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.inputGainSettable()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
-- (void)setInpuGain:(float)value SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.setInpuGain(_:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
-- (void)setPolarPatter SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.setPolarPatter()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (void)startDumpWithFilePath:(NSString * _Nonnull)withFilePath maxSizeInBytes:(int64_t)maxSizeInBytes SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.startDump(withFilePath:maxSizeInBytes:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (void)stopDump SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.stopDump()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 @property (nonatomic) BOOL firstInit SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.firstInit' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 /// 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부
 @property (nonatomic) BOOL autoCaptureStart SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.autoCaptureStart' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
@@ -263,9 +271,9 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @property (nonatomic) BOOL showRemoteVideoStat SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.showRemoteVideoStat' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 @property (nonatomic) BOOL showLocalVideoStat SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.showLocalVideoStat' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 @property (nonatomic, copy) NSString * _Nullable channelID SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.channelID' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
-@property (nonatomic, readonly) float remonDefultMusicModeInputGain SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.remonDefultMusicModeInputGain' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+- (void)sendHealthDataWithCom:(void (^ _Nonnull)(NSError * _Nullable, NSData * _Nullable))com SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.sendHealthData(com:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 - (void)closeRemon:(BOOL)tryReJoin SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.closeRemon(_:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (void)muteRemoteAudioWithMute:(BOOL)mute SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.muteRemoteAudio(mute:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
@@ -314,7 +322,6 @@ SWIFT_CLASS_NAMED("RemonIBController")
 @property (nonatomic, copy) NSString * _Nonnull restUrl;
 ///
 @property (nonatomic) BOOL useFrontCamera;
-@property (nonatomic) BOOL builtInReceiverOverideToSpeaker;
 @end
 
 
@@ -450,6 +457,29 @@ typedef SWIFT_ENUM(NSInteger, WebSocketReadyState) {
 /// The connection is closed or couldn’t be opened.
   WebSocketReadyStateClosed = 3,
 };
+
+@class NSInputStream;
+@class NSOutputStream;
+
+SWIFT_CLASS("_TtC13RemoteMonster9aecunpack")
+@interface aecunpack : NSObject
+@property (nonatomic, copy) NSString * _Nullable filename SWIFT_DEPRECATED_OBJC("Swift property 'aecunpack.filename' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+@property (nonatomic) int32_t STREAM_numChannels SWIFT_DEPRECATED_OBJC("Swift property 'aecunpack.STREAM_numChannels' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+@property (nonatomic) int32_t REVERSE_numChannels SWIFT_DEPRECATED_OBJC("Swift property 'aecunpack.REVERSE_numChannels' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+@property (nonatomic, strong) NSInputStream * _Nullable input SWIFT_DEPRECATED_OBJC("Swift property 'aecunpack.input' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+@property (nonatomic, strong) NSOutputStream * _Nonnull STREAM_inputStreamBytes SWIFT_DEPRECATED_OBJC("Swift property 'aecunpack.STREAM_inputStreamBytes' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+@property (nonatomic, strong) NSOutputStream * _Nonnull REVERSE_inputStreamBytes SWIFT_DEPRECATED_OBJC("Swift property 'aecunpack.REVERSE_inputStreamBytes' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+@property (nonatomic, copy) NSData * _Nonnull STREAM_inputStreamData SWIFT_DEPRECATED_OBJC("Swift property 'aecunpack.STREAM_inputStreamData' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+@property (nonatomic, copy) NSData * _Nonnull REVERSE_inputStreamData SWIFT_DEPRECATED_OBJC("Swift property 'aecunpack.REVERSE_inputStreamData' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+@property (nonatomic, copy) NSData * _Nonnull MIX_Data SWIFT_DEPRECATED_OBJC("Swift property 'aecunpack.MIX_Data' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+@property (nonatomic) int32_t STREAM_frameCount SWIFT_DEPRECATED_OBJC("Swift property 'aecunpack.STREAM_frameCount' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+@property (nonatomic) int32_t REVERSE_frameCount SWIFT_DEPRECATED_OBJC("Swift property 'aecunpack.REVERSE_frameCount' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+@property (nonatomic) BOOL isRuning SWIFT_DEPRECATED_OBJC("Swift property 'aecunpack.isRuning' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (NSInteger)byteToIntegerWithB:(uint8_t * _Nonnull)b SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_OBJC("Swift method 'aecunpack.byteToInteger(b:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (uint16_t)byteToShortWithBytes:(NSArray<NSNumber *> * _Nonnull)bytes SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_OBJC("Swift method 'aecunpack.byteToShort(bytes:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (NSArray<NSNumber *> * _Nonnull)shortToByteWithA:(uint16_t)a SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_OBJC("Swift method 'aecunpack.shortToByte(a:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

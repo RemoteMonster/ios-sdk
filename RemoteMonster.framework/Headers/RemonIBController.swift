@@ -144,18 +144,6 @@ import UIKit
         }
     }
     
-    
-    @IBInspectable
-    public var builtInReceiverOverideToSpeaker:Bool {
-        get {
-            return self.builtInReceiverOverideToSpeaker_
-        }
-        
-        set(isBuiltInReceiverOverideToSpeaker) {
-            self.builtInReceiverOverideToSpeaker_ = isBuiltInReceiverOverideToSpeaker
-        }
-    }
-    
     /*
     @IBInspectable
     public var audioType:RemonAudioMode {

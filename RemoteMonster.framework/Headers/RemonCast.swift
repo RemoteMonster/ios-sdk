@@ -77,6 +77,10 @@ public class RemonCast: RemonIBController, RemonControllBlockSettable, RemonCast
         self.fetchChannel(type: .cast, complete: complete)
     }
     
+    public func fetchCasts(restUrl:String?, complete: @escaping (RemonError?, Array<RemonSearchResult>?) -> Void) {
+        self.fetchChannel(type: .cast, restUrl:restUrl, complete: complete)
+    }
+    
     public func onCreate(block: @escaping RemonStringBlock) {
         self.onComplete {
             var chType = self.channelTypeE

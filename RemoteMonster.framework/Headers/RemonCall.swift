@@ -32,6 +32,10 @@ public class RemonCall: RemonIBController, RemonControllBlockSettable, RemonCall
         self.fetchChannel(type: .call, complete: complete)
     }
     
+    public func fetchCalls(restUrl:String?, complete: @escaping (RemonError?, Array<RemonSearchResult>?) -> Void) {
+        self.fetchChannel(type: .call, restUrl:restUrl, complete: complete)
+    }
+    
     /***/
     public func onConnect(block: @escaping RemonStringBlock) {
         self.onCreate(block_: block)
