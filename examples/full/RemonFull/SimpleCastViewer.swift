@@ -32,9 +32,7 @@ class SimpleCastViewer: UIViewController {
         self.chLabel.text = "closing..."
     }
     
-    @IBAction func test(_ sender: Any) {
-        self.remonCast.vpio()
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

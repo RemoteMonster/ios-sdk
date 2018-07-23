@@ -18,16 +18,6 @@ class SimpleCallViewController: UIViewController {
     
     @IBOutlet weak var iuputGainSlider: UISlider!
     
-//    change output!!!
-    @IBAction func builtInReceiverOverideToSpeaker(_ sender: Any) {
-        self.remonCall.builtInReceiverOverideToSpeaker = !self.remonCall.builtInReceiverOverideToSpeaker
-    }
-    
-    @IBAction func changeInputSliderValue(_ sender: UISlider) {
-        
-        self.remonCall.setInpuGain(sender.value)
-    }
-    
     var customConfig:RemonConfig?
     
     @IBAction func touchConnectButton(_ sender: Any) {
@@ -47,7 +37,6 @@ class SimpleCallViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.iuputGainSlider.isEnabled = self.remonCall.inputGainSettable()
         remonCall.onInit {
             DispatchQueue.main.async {
                 self.boxView.isHidden = true

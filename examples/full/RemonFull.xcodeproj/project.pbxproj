@@ -209,11 +209,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull-frameworks.sh",
 				"${PODS_ROOT}/Remon-WebRTC-iOS/WebRTC.framework",
 				"${PODS_ROOT}/RemoteMonster/RemoteMonster.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RemoteMonster.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

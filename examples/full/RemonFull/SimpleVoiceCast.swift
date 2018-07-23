@@ -18,7 +18,6 @@ class SimpleVoiceCast:UIViewController {
     
     @IBAction func changeInputSliderValue(_ sender: UISlider) {
         
-        self.remonCast.setInpuGain(sender.value)
     }
     
     var customConfig:RemonConfig?
@@ -72,9 +71,6 @@ class SimpleVoiceCast:UIViewController {
         self.remonCast.create(customConfig)
     }
     
-    @IBAction func stopVpio(_ sender: Any) {
-        self.remonCast.vpio()
-    }
     
     @IBAction func closeRemonManager(_ sender: Any) {
         self.remonCast.closeRemon()
@@ -82,8 +78,6 @@ class SimpleVoiceCast:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.iuputGainSlider.isEnabled = self.remonCast.inputGainSettable()
         
 //        self.remonCast.debugMode = true
 
