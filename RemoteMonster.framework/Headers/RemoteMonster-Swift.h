@@ -254,7 +254,7 @@ SWIFT_CLASS("_TtC13RemoteMonster18RemonAudioRecorder")
 /// RemonController를 사용하면 Remon를 직접 사용하는 것보다 더욱 쉽게 Remon의 기능으르 사용 할 수 있으며 Remon를 직접 사용하는 것과 거의 같은 기능을 이용 할 수 있습니다.
 SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @interface RemonController : NSObject <RTCAudioSessionDelegate>
-- (void)startDumpWithFilePath:(NSString * _Nonnull)withFilePath maxSizeInBytes:(int64_t)maxSizeInBytes SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.startDump(withFilePath:maxSizeInBytes:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (void)startDumpWithFileName:(NSString * _Nonnull)withFileName maxSizeInBytes:(int64_t)maxSizeInBytes SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.startDump(withFileName:maxSizeInBytes:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 - (void)stopDump SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.stopDump()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 @property (nonatomic) BOOL firstInit SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.firstInit' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 /// 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부
