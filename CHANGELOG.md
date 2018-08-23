@@ -6,3 +6,6 @@
   // in runtime!!!
   remonCall.builtInReceiverOverideToSpeaker = !remonCall.builtInReceiverOverideToSpeaker
   ```
+
+## 2.1.6
+- fix! onComplete() Duplicate invocation 
