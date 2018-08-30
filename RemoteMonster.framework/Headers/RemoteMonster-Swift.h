@@ -273,7 +273,7 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @property (nonatomic, copy) NSString * _Nullable channelID SWIFT_DEPRECATED_OBJC("Swift property 'RemonController.channelID' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
-- (void)sendHealthDataWithCom:(void (^ _Nonnull)(NSError * _Nullable, NSData * _Nullable))com SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.sendHealthData(com:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
+- (void)sendHealthData:(NSDictionary<NSString *, id> * _Nonnull)data com:(void (^ _Nonnull)(NSError * _Nullable, NSData * _Nullable))com SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.sendHealthData(_:com:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 - (void)closeRemon:(BOOL)tryReJoin SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.closeRemon(_:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (void)muteRemoteAudioWithMute:(BOOL)mute SWIFT_DEPRECATED_OBJC("Swift method 'RemonController.muteRemoteAudio(mute:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
@@ -302,8 +302,6 @@ SWIFT_CLASS_NAMED("RemonIBController")
 @interface RemonIBController : RemonController
 ///
 @property (nonatomic) NSInteger channelType SWIFT_DEPRECATED_OBJC("Swift property 'RemonIBController.channelType' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
-///
-@property (nonatomic) BOOL autoReJoin;
 ///
 @property (nonatomic) BOOL onlyAudio;
 ///

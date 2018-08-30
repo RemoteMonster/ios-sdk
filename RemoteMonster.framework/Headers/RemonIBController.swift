@@ -25,15 +25,15 @@ import UIKit
     
     
     /***/
-    @IBInspectable
-    public var autoReJoin:Bool {
-        get {
-            return self.autoReJoin_
-        }
-        set(isAuto) {
-            self.autoReJoin_ = isAuto
-        }
-    }
+//    @IBInspectable
+//    public var autoReJoin:Bool {
+//        get {
+//            return self.autoReJoin_
+//        }
+//        set(isAuto) {
+//            self.autoReJoin_ = isAuto
+//        }
+//    }
     
     /***/
     @IBInspectable
