@@ -48,6 +48,25 @@ class SimpleCallViewController: UIViewController {
                 self.chLabel.text = self.remonCall.channelID
             }
             print("zzz", AVAudioSession.sharedInstance().currentRoute)
+            RTCDispatcher.dispatchAsync(on: .typeAudioSession) {
+                let con = RTCAudioSessionConfiguration.webRTC()
+                print(con)
+                con.mode = AVAudioSessionModeVoiceChat
+                
+                let session = RTCAudioSession.sharedInstance()
+                session.lockForConfiguration()
+                do {
+                    if session.isActive {
+                        try session.setConfiguration(con)
+                    } else {
+                        try session.setConfiguration(con, active: true)
+                    }
+                } catch let error as NSError {
+                    print("** Error RTCAudioSessionConfiguration", error.localizedDescription)
+                }
+                session.unlockForConfiguration()
+                
+            }
         }
         
         remonCall.onClose {
