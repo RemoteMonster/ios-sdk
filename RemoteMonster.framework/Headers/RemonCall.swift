@@ -9,21 +9,21 @@
 import UIKit
 
 /***/
-public protocol RemonCallBlockSettable {
+@objc public protocol RemonCallBlockSettable {
     func onConnect(block:@escaping RemonStringBlock)
     func onComplete(block:@escaping RemonVoidBlock)
     func onFetch(block:@escaping RemonArrayBlock)
 }
 
 /***/
-public class RemonCall: RemonIBController, RemonControllBlockSettable, RemonCallBlockSettable {
+@objc public class RemonCall: RemonIBController, RemonControllBlockSettable, RemonCallBlockSettable {
     override public init() {
         super.init()
         self.channelType = 0
     }
     
     /***/
-    public func connect(_ ch: String, _ config:RemonConfig? = nil) {
+    @objc public func connect(_ ch: String, _ config:RemonConfig? = nil) {
         self.connectCall(ch, config)
     }
     
@@ -37,16 +37,16 @@ public class RemonCall: RemonIBController, RemonControllBlockSettable, RemonCall
     }
     
     /***/
-    public func onConnect(block: @escaping RemonStringBlock) {
+    @objc public func onConnect(block: @escaping RemonStringBlock) {
         self.onCreate(block_: block)
     }
     
     /***/
-    public func onFetch(block: @escaping RemonArrayBlock) {
+    @objc public func onFetch(block: @escaping RemonArrayBlock) {
         self.onFetchChannels(block: block)
     }
     
-    override public func onComplete(block: @escaping RemonVoidBlock) {
+    @objc override public func onComplete(block: @escaping RemonVoidBlock) {
         super.onComplete(block: block)
     }
 }

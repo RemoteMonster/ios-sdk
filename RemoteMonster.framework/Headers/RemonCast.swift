@@ -61,6 +61,11 @@ public class RemonCast: RemonIBController, RemonControllBlockSettable, RemonCast
         self.broardcast = false
         self.joinCast(chID: chId, config)
     }
+    @objc(joinWithChId:)
+    public func objc_join(chId: String) {
+        self.broardcast = false
+        self.joinCast(chID: chId, nil)
+    }
     
     /**방송을 생성 합니다.
      - Parameter config: 이 인자를 전달 하면 RemonCast의 설정이 무시 되고, config의 설정 값을 따릅니다.
@@ -81,7 +86,7 @@ public class RemonCast: RemonIBController, RemonControllBlockSettable, RemonCast
         self.fetchChannel(type: .cast, restUrl:restUrl, complete: complete)
     }
     
-    public func onCreate(block: @escaping RemonStringBlock) {
+    @objc public func onCreate(block: @escaping RemonStringBlock) {
         self.onComplete {
             var chType = self.channelTypeE
             if let config = self.remonConfig {
@@ -93,7 +98,7 @@ public class RemonCast: RemonIBController, RemonControllBlockSettable, RemonCast
         }
     }
     
-    public func onJoin(block: @escaping RemonStringBlock) {
+    @objc public func onJoin(block: @escaping RemonStringBlock) {
         self.onComplete {
             var chType = self.channelTypeE
             if let config = self.remonConfig {
@@ -106,7 +111,7 @@ public class RemonCast: RemonIBController, RemonControllBlockSettable, RemonCast
     }
     
     
-    public func onFetch(block: @escaping RemonArrayBlock) {
+    @objc public func onFetch(block: @escaping RemonArrayBlock) {
         self.onFetchChannels(block: block)
     }
     
