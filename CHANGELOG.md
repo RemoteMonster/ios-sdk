@@ -19,3 +19,6 @@
 
 ## 2.2.0
 - bugfix objc에서 2.0를 사용이 안되는 문제 수정.
+
+## 2.2.1
+- objc supported
