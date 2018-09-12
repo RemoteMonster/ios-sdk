@@ -22,3 +22,6 @@
 
 ## 2.2.1
 - objc supported
+
+## 2.2.2
+- objc supported (RemonStatReport)

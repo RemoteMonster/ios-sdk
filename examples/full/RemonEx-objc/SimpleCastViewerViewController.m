@@ -35,7 +35,7 @@
     }];
     
     [self.remonCast onRemonStatReportWithBlock:^(RemonStatReport * _Nonnull stat) {
-        NSLog(@"stat");
+        
     }];
     
 }
@@ -48,6 +48,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.remonCast closeRemon:YES];
+    
 }
 
 @end

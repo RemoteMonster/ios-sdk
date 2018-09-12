@@ -27,6 +27,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
     [self.remonCast create:self.customConfig];
     
     [self.remonCast onCreateWithBlock:^(NSString * _Nullable chId) {

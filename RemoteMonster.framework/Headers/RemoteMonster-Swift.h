@@ -186,6 +186,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 SWIFT_CLASS("_TtC13RemoteMonster12FractionLost")
 @interface FractionLost : NSObject
+@property (nonatomic) NSInteger level;
+@property (nonatomic) float max;
+@property (nonatomic) float min;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
@@ -195,6 +198,8 @@ SWIFT_CLASS("_TtC13RemoteMonster12FractionLost")
 
 SWIFT_CLASS("_TtC13RemoteMonster11RatingValue")
 @interface RatingValue : NSObject
+@property (nonatomic) NSInteger level;
+@property (nonatomic) float value;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
@@ -372,6 +377,28 @@ SWIFT_CLASS("_TtC13RemoteMonster17RemonSearchResult")
 
 SWIFT_CLASS("_TtC13RemoteMonster15RemonStatReport")
 @interface RemonStatReport : NSObject
+@property (nonatomic, copy) NSString * _Nonnull localCandidate;
+@property (nonatomic, copy) NSString * _Nonnull remoteCandidate;
+@property (nonatomic) NSInteger localFrameWidth;
+@property (nonatomic) NSInteger localFrameHeight;
+@property (nonatomic) NSInteger remoteFrameWidth;
+@property (nonatomic) NSInteger remoteFrameHeight;
+@property (nonatomic) NSInteger localFrameRate;
+@property (nonatomic) NSInteger remoteFrameRate;
+@property (nonatomic) NSInteger availableSendBandwidth;
+@property (nonatomic) NSInteger availableReceiveBandwidth;
+@property (nonatomic) float rtt;
+@property (nonatomic) float localAudioFractionLost;
+@property (nonatomic) float localVideoFractionLost;
+@property (nonatomic) float remoteAudioFractionLost;
+@property (nonatomic) float remoteVideoFractionLost;
+@property (nonatomic) float bytesReceived;
+@property (nonatomic, copy) NSString * _Nonnull fullStatReport;
+- (RatingValue * _Nonnull)getRemoteAudioFractionLost SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getLocalAudioFractionLost SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getRemoteVideoFractionLost SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getLoaclVideoFractionLost SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getRttRating SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
