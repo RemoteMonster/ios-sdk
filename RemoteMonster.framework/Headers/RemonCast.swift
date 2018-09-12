@@ -28,7 +28,7 @@ public protocol RemonCastBlockSettable {
 }
 
 /***/
-public class RemonCast: RemonIBController, RemonControllBlockSettable, RemonCastBlockSettable {
+@objc public class RemonCast: RemonIBController, RemonControllBlockSettable, RemonCastBlockSettable {
     
     private var broardcast:Bool {
         get {
@@ -57,6 +57,7 @@ public class RemonCast: RemonIBController, RemonControllBlockSettable, RemonCast
         - chId: 접속 하려는 방송의 채널 ID
         - config: 이 인자를 전달 하면 RemonCast의 설정이 무시 되고, config의 설정 값을 따릅니다.
      */
+    @objc(joinWithChId:AndConfig:)
     public func join(chId: String, _ config:RemonConfig? = nil) {
         self.broardcast = false
         self.joinCast(chID: chId, config)
@@ -70,7 +71,7 @@ public class RemonCast: RemonIBController, RemonControllBlockSettable, RemonCast
     /**방송을 생성 합니다.
      - Parameter config: 이 인자를 전달 하면 RemonCast의 설정이 무시 되고, config의 설정 값을 따릅니다.
      */
-    public func create(_ config:RemonConfig? = nil) {
+    @objc public func create(_ config:RemonConfig? = nil) {
         self.broardcast = true
         self.createCast(config)
     }
@@ -78,12 +79,16 @@ public class RemonCast: RemonIBController, RemonControllBlockSettable, RemonCast
     /**방송 목록을 가져 옵니다.
      - Parameter complete: 패치 완료 블럭. error 인자가 nil 이라면 RemonSearchResult 목록을 전달 합니다.
      */
-    public func fetchCasts(complete: @escaping (RemonError?, Array<RemonSearchResult>?) -> Void) {
-        self.fetchChannel(type: .cast, complete: complete)
+    @objc public func fetchCasts(complete: @escaping (Array<RemonSearchResult>?) -> Void) {
+        self.fetchChannel(type: .cast) { (error, chs) in
+            complete(chs)
+        }
     }
     
-    public func fetchCasts(restUrl:String?, complete: @escaping (RemonError?, Array<RemonSearchResult>?) -> Void) {
-        self.fetchChannel(type: .cast, restUrl:restUrl, complete: complete)
+    @objc public func fetchCasts(isTest:Bool, complete: @escaping (Array<RemonSearchResult>?) -> Void) {
+        self.fetchChannel(type: .cast, isTest:isTest) { (error, chs) in
+            complete(chs)
+        }
     }
     
     @objc public func onCreate(block: @escaping RemonStringBlock) {

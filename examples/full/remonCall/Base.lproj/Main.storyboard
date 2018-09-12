@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Remon Call View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RemonCallViewController" customModule="RemonCall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6q3-0z-eCC">
+                                <rect key="frame" x="20" y="154" width="126" height="154"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="N7J-53-m5D"/>
+                                    <constraint firstAttribute="height" constant="154" id="q1v-YI-PKD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdY-31-Jim">
+                                <rect key="frame" x="166" y="154" width="126" height="154"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="hzx-aD-PxJ"/>
+                                    <constraint firstAttribute="height" constant="154" id="sDI-mK-iq9"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEr-ap-mQG">
+                                <rect key="frame" x="199.5" y="314" width="59" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="HLe-y5-psf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbI-CN-pQS">
+                                <rect key="frame" x="62" y="314" width="41" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="QkP-YU-jbE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGn-Sv-Agb">
+                                <rect key="frame" x="162" y="80" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jhq-r2-Be7"/>
+                                    <constraint firstAttribute="width" constant="50" id="z2Q-vK-msQ"/>
+                                </constraints>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rxv-rB-0EI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JbI-CN-pQS" firstAttribute="centerX" secondItem="6q3-0z-eCC" secondAttribute="centerX" id="2a3-i4-45h"/>
+                            <constraint firstItem="SGn-Sv-Agb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Cf-69-Aa8"/>
+                            <constraint firstItem="ZEr-ap-mQG" firstAttribute="top" secondItem="MdY-31-Jim" secondAttribute="bottom" constant="6" id="5Ra-uD-twJ"/>
+                            <constraint firstItem="JbI-CN-pQS" firstAttribute="top" secondItem="6q3-0z-eCC" secondAttribute="bottom" constant="6" id="A2I-JE-yuJ"/>
+                            <constraint firstItem="6q3-0z-eCC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="134" id="gYs-d1-6iE"/>
+                            <constraint firstItem="SGn-Sv-Agb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="lmi-dT-LdW"/>
+                            <constraint firstItem="ZEr-ap-mQG" firstAttribute="centerX" secondItem="MdY-31-Jim" secondAttribute="centerX" id="pGp-Ue-aOW"/>
+                            <constraint firstItem="6q3-0z-eCC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xhy-Kr-YaZ"/>
+                            <constraint firstItem="MdY-31-Jim" firstAttribute="top" secondItem="SGn-Sv-Agb" secondAttribute="bottom" constant="44" id="yOC-wd-HV3"/>
+                            <constraint firstItem="MdY-31-Jim" firstAttribute="leading" secondItem="6q3-0z-eCC" secondAttribute="trailing" constant="20" id="zxe-w7-BT6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="remonCall" destination="giJ-tx-ZjJ" id="5j2-JY-9uX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="giJ-tx-ZjJ" customClass="RemonCall" customModule="RemoteMonster">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://matiz.remotemonster.com/ws"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://matiz.remotemonster.com/rest/init"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="localView" destination="6q3-0z-eCC" id="nfy-AU-n2Z"/>
+                        <outlet property="remoteView" destination="MdY-31-Jim" id="SuR-cD-9aC"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="96.799999999999997" y="-18.440779610194905"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>209731474483-cmqekvltir4tm79i4ndjghne9bt6h77m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.209731474483-cmqekvltir4tm79i4ndjghne9bt6h77m</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB0HOQKi011LHL_RAVfGn0t11BqMUKQ9fE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>209731474483</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Remotemonster.RemonCall</string>
+	<key>PROJECT_ID</key>
+	<string>remon-179706</string>
+	<key>STORAGE_BUCKET</key>
+	<string>remon-179706.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:209731474483:ios:5b9ef77ecfd3d068</string>
+	<key>DATABASE_URL</key>
+	<string>https://remon-179706.firebaseio.com</string>
+</dict>
+</plist>

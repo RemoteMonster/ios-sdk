@@ -28,12 +28,16 @@ import UIKit
     }
     
     /***/
-    public func fetchCalls(complete: @escaping (RemonError?, Array<RemonSearchResult>?) -> Void) {
-        self.fetchChannel(type: .call, complete: complete)
+    @objc public func fetchCalls(complete: @escaping (Array<RemonSearchResult>?) -> Void) {
+        self.fetchChannel(type: .call) { (error, chs) in
+            complete(chs)
+        }
     }
     
-    public func fetchCalls(restUrl:String?, complete: @escaping (RemonError?, Array<RemonSearchResult>?) -> Void) {
-        self.fetchChannel(type: .call, restUrl:restUrl, complete: complete)
+    @objc public func fetchCalls(isTest:Bool, complete: @escaping (Array<RemonSearchResult>?) -> Void) {
+        self.fetchChannel(type: .call, isTest:isTest){ (error, chs) in
+            complete(chs)
+        }
     }
     
     /***/

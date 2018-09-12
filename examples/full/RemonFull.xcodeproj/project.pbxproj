@@ -21,7 +21,16 @@
 		0BD78A5420BB9B760017E2F0 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */; };
 		6069E4E120EB4526000B3AA5 /* SimpleAudioSessionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6069E4E020EB4526000B3AA5 /* SimpleAudioSessionObserver.swift */; };
 		60B27F6820DB94BD00BB97C8 /* RemonSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60B27F6720DB94BD00BB97C8 /* RemonSettings.plist */; };
+		63DC033411862F621A4F958E /* Pods_RemonCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98DB5808B1B972342BF7A3D /* Pods_RemonCall.framework */; };
 		754AF784A248CF1A28D8E29D /* Pods_RemonFull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */; };
+		A36A798E214601A1002D580C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A798D214601A1002D580C /* AppDelegate.swift */; };
+		A36A7990214601A2002D580C /* RemonCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A798F214601A2002D580C /* RemonCallViewController.swift */; };
+		A36A7993214601A2002D580C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36A7991214601A2002D580C /* Main.storyboard */; };
+		A36A7995214601A2002D580C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36A7994214601A2002D580C /* Assets.xcassets */; };
+		A36A7998214601A2002D580C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36A7996214601A2002D580C /* LaunchScreen.storyboard */; };
+		A36A799D214601C3002D580C /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36A79852146015B002D580C /* CallKit.framework */; };
+		A36A799F214620A5002D580C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A36A799E214620A4002D580C /* GoogleService-Info.plist */; };
+		A36A79A121462529002D580C /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36A79A021462529002D580C /* PushKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +54,20 @@
 		6069E4E020EB4526000B3AA5 /* SimpleAudioSessionObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAudioSessionObserver.swift; sourceTree = "<group>"; };
 		60B27F6720DB94BD00BB97C8 /* RemonSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RemonSettings.plist; sourceTree = "<group>"; };
 		7CA5660B94705913FE97BC3C /* Pods-RemonFull.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonFull.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull.debug.xcconfig"; sourceTree = "<group>"; };
+		836F57194BDB8B7817E30781 /* Pods-RemonCall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonCall.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemonCall/Pods-RemonCall.release.xcconfig"; sourceTree = "<group>"; };
+		A36A79852146015B002D580C /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
+		A36A798B214601A1002D580C /* RemonCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemonCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A36A798D214601A1002D580C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A36A798F214601A2002D580C /* RemonCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemonCallViewController.swift; sourceTree = "<group>"; };
+		A36A7992214601A2002D580C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A36A7994214601A2002D580C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A36A7997214601A2002D580C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A36A7999214601A2002D580C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A36A799E214620A4002D580C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A36A79A021462529002D580C /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
+		A36A79A221462D16002D580C /* RemonCall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RemonCall.entitlements; sourceTree = "<group>"; };
+		A98DB5808B1B972342BF7A3D /* Pods_RemonCall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemonCall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5F63BDED5FF2F50ECFA591A /* Pods-RemonCall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonCall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemonCall/Pods-RemonCall.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +76,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				754AF784A248CF1A28D8E29D /* Pods_RemonFull.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A36A7988214601A1002D580C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A36A79A121462529002D580C /* PushKit.framework in Frameworks */,
+				A36A799D214601C3002D580C /* CallKit.framework in Frameworks */,
+				63DC033411862F621A4F958E /* Pods_RemonCall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +118,7 @@
 			children = (
 				60B27F6720DB94BD00BB97C8 /* RemonSettings.plist */,
 				0B5CB5F520B5563B00FB2BFE /* RemonFull */,
+				A36A798C214601A1002D580C /* RemonCall */,
 				0BA0AF9120A9700700DEA203 /* Products */,
 				8322D69B4586F7A47D8D4D87 /* Pods */,
 				61506248230B4EAB7E317792 /* Frameworks */,
@@ -96,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				0B5CB5F320B555BE00FB2BFE /* RemonFull.app */,
+				A36A798B214601A1002D580C /* RemonCall.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,7 +138,10 @@
 		61506248230B4EAB7E317792 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A36A79A021462529002D580C /* PushKit.framework */,
+				A36A79852146015B002D580C /* CallKit.framework */,
 				509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */,
+				A98DB5808B1B972342BF7A3D /* Pods_RemonCall.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -113,8 +151,25 @@
 			children = (
 				7CA5660B94705913FE97BC3C /* Pods-RemonFull.debug.xcconfig */,
 				41FA9D86BC59C24ECE49B567 /* Pods-RemonFull.release.xcconfig */,
+				E5F63BDED5FF2F50ECFA591A /* Pods-RemonCall.debug.xcconfig */,
+				836F57194BDB8B7817E30781 /* Pods-RemonCall.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A36A798C214601A1002D580C /* RemonCall */ = {
+			isa = PBXGroup;
+			children = (
+				A36A79A221462D16002D580C /* RemonCall.entitlements */,
+				A36A799E214620A4002D580C /* GoogleService-Info.plist */,
+				A36A798D214601A1002D580C /* AppDelegate.swift */,
+				A36A798F214601A2002D580C /* RemonCallViewController.swift */,
+				A36A7991214601A2002D580C /* Main.storyboard */,
+				A36A7994214601A2002D580C /* Assets.xcassets */,
+				A36A7996214601A2002D580C /* LaunchScreen.storyboard */,
+				A36A7999214601A2002D580C /* Info.plist */,
+			);
+			path = RemonCall;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,15 +194,47 @@
 			productReference = 0B5CB5F320B555BE00FB2BFE /* RemonFull.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A36A798A214601A1002D580C /* RemonCall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A36A799A214601A2002D580C /* Build configuration list for PBXNativeTarget "RemonCall" */;
+			buildPhases = (
+				3EBFC27D4FAFBD8A16A188D6 /* [CP] Check Pods Manifest.lock */,
+				A36A7987214601A1002D580C /* Sources */,
+				A36A7988214601A1002D580C /* Frameworks */,
+				A36A7989214601A1002D580C /* Resources */,
+				FCDCFD2194455088C5960DA8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RemonCall;
+			productName = RemonCall;
+			productReference = A36A798B214601A1002D580C /* RemonCall.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0BA0AF8820A9700700DEA203 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Remon;
+				TargetAttributes = {
+					A36A798A214601A1002D580C = {
+						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = 0BA0AF8B20A9700700DEA203 /* Build configuration list for PBXProject "RemonFull" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -163,6 +250,7 @@
 			projectRoot = "";
 			targets = (
 				0B5CB5DD20B555BE00FB2BFE /* RemonFull */,
+				A36A798A214601A1002D580C /* RemonCall */,
 			);
 		};
 /* End PBXProject section */
@@ -176,6 +264,17 @@
 				0B5CB60720B5563B00FB2BFE /* Assets.xcassets in Resources */,
 				0B5CB60920B5563B00FB2BFE /* LaunchScreen.storyboard in Resources */,
 				60B27F6820DB94BD00BB97C8 /* RemonSettings.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A36A7989214601A1002D580C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A36A7998214601A2002D580C /* LaunchScreen.storyboard in Resources */,
+				A36A799F214620A5002D580C /* GoogleService-Info.plist in Resources */,
+				A36A7995214601A2002D580C /* Assets.xcassets in Resources */,
+				A36A7993214601A2002D580C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +321,52 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3EBFC27D4FAFBD8A16A188D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RemonCall-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCDCFD2194455088C5960DA8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RemonCall/Pods-RemonCall-frameworks.sh",
+				"${PODS_ROOT}/Remon-WebRTC-iOS/WebRTC.framework",
+				"${PODS_ROOT}/RemoteMonster/RemoteMonster.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RemoteMonster.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemonCall/Pods-RemonCall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -242,6 +387,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A36A7987214601A1002D580C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A36A7990214601A2002D580C /* RemonCallViewController.swift in Sources */,
+				A36A798E214601A1002D580C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -259,6 +413,22 @@
 				0B5CB5FE20B5563B00FB2BFE /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A36A7991214601A2002D580C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A36A7992214601A2002D580C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A36A7996214601A2002D580C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A36A7997214601A2002D580C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -420,6 +590,50 @@
 			};
 			name = Release;
 		};
+		A36A799B214601A2002D580C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5F63BDED5FF2F50ECFA591A /* Pods-RemonCall.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RemonCall/RemonCall.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = RemonCall/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Remotemonster.RemonCall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A36A799C214601A2002D580C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 836F57194BDB8B7817E30781 /* Pods-RemonCall.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RemonCall/RemonCall.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = RemonCall/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Remotemonster.RemonCall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -437,6 +651,15 @@
 			buildConfigurations = (
 				0BA0AFA020A9700900DEA203 /* Debug */,
 				0BA0AFA120A9700900DEA203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A36A799A214601A2002D580C /* Build configuration list for PBXNativeTarget "RemonCall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A36A799B214601A2002D580C /* Debug */,
+				A36A799C214601A2002D580C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
