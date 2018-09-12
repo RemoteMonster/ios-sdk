@@ -437,6 +437,27 @@ SWIFT_CLASS("_TtC13RemoteMonster22RemonViewFrameObserver")
 
 SWIFT_CLASS("_TtC13RemoteMonster10StatResult")
 @interface StatResult : NSObject
+@property (nonatomic) NSInteger availableReceiveBandwidth;
+@property (nonatomic) NSInteger availableSendBandwidth;
+@property (nonatomic) NSInteger fractionRating;
+@property (nonatomic) NSInteger localAudioFractionLost;
+@property (nonatomic) NSInteger localAudioFractionRating;
+@property (nonatomic, copy) NSString * _Nonnull localCandidate;
+@property (nonatomic) NSInteger localFrameHeight;
+@property (nonatomic) NSInteger localFrameRate;
+@property (nonatomic) NSInteger localFrameWidth;
+@property (nonatomic) NSInteger localVideoFractionLost;
+@property (nonatomic) NSInteger localVideoFractionRating;
+@property (nonatomic) NSInteger remoteAudioFractionLost;
+@property (nonatomic) NSInteger remoteAudioFractionRating;
+@property (nonatomic, copy) NSString * _Nonnull remoteCandidate;
+@property (nonatomic) NSInteger remoteFrameHeight;
+@property (nonatomic) NSInteger remoteFrameRate;
+@property (nonatomic) NSInteger remoteFrameWidth;
+@property (nonatomic) NSInteger remoteVideoFractionLost;
+@property (nonatomic) NSInteger remoteVideoFractionRating;
+@property (nonatomic) NSInteger rtt;
+@property (nonatomic) NSInteger rttRating;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
