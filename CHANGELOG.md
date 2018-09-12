@@ -25,3 +25,11 @@
 
 ## 2.2.2
 - objc supported (RemonStatReport)
+
+## 2.2.3
+- add objc error callback
+```
+[self.remonCast onObjcErrorWithBlock:^(NSError * _Nonnull error) {
+    // Do something
+}];
+```

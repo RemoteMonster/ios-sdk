@@ -232,6 +232,7 @@ SWIFT_PROTOCOL("_TtP13RemoteMonster22RemonCallBlockSettable_")
 - (void)onFetchWithBlock:(void (^ _Nonnull)(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull))block;
 @end
 
+@class NSError;
 @class RemonStatReport;
 @class RTCAudioSession;
 
@@ -241,6 +242,7 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @interface RemonController : NSObject <RTCAudioSessionDelegate>
 - (void)onInitWithBlock:(void (^ _Nonnull)(void))block;
 - (void)onCloseWithBlock:(void (^ _Nonnull)(void))block;
+- (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
 - (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
 @property (nonatomic, copy) NSString * _Nullable channelID;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -458,7 +460,6 @@ SWIFT_CLASS("_TtC13RemoteMonster9WebSocket")
 - (void)sendWithData:(NSData * _Nonnull)data;
 @end
 
-@class NSError;
 
 /// WebSocketDelegate is an Objective-C alternative to WebSocketEvents and is used to delegate the events for the WebSocket connection.
 SWIFT_PROTOCOL("_TtP13RemoteMonster17WebSocketDelegate_")

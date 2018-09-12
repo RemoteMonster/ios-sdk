@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name             = 'RemoteMonster'
-  s.version          = '2.2.2'
+  s.version          = '2.2.3'
   s.summary          = 'RemoteMonster SDK'
   s.homepage         = 'https://remotemonster.com'
   s.license          = { :type => 'MIT' }
   s.author           = { 'RemoteMonster' => 'remotemonster@remotemonster.com' }
-  s.source           = { :git => 'https://github.com/RemoteMonster/ios-sdk.git', :tag => '2.2.2' }
+  s.source           = { :git => 'https://github.com/RemoteMonster/ios-sdk.git', :tag => '2.2.3' }
   s.platform     = :ios, '9.1'
   s.documentation_url = 'https://remotemonster.github.io/ios-sdk/'
 
