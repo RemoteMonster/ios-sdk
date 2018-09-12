@@ -33,3 +33,6 @@
     // Do something
 }];
 ```
+
+## 2.2.4
+- bug fix

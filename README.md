@@ -6,6 +6,7 @@ RemoteMonster - Livecast Management in the Cloud
 
 * [Website](https://remotemonster.com)
 
+## Now 2.2.4 Objective-C Supported!!!
 ## Get SDK
 
 ### Package Manager - Cocoapods
