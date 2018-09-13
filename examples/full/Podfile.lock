@@ -53,10 +53,10 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Remon-WebRTC-iOS (1.0117)
-  - RemoteMonster (2.2.4):
+  - RemoteMonster (2.2.6):
     - Remon-WebRTC-iOS (= 1.0117)
-    - SwiftProtobuf (= 1.0.3)
-  - SwiftProtobuf (1.0.3)
+    - SwiftProtobuf (= 1.1.1)
+  - SwiftProtobuf (1.1.1)
 
 DEPENDENCIES:
   - Firebase/Core
@@ -89,8 +89,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Remon-WebRTC-iOS: 08db3c171a8f96814a7967e9bfb32039bb932a64
-  RemoteMonster: 064d53f37fe07d8a8effe6c596d083b3fe84a13a
-  SwiftProtobuf: 5ccc0e4054e37c75800e5744acb2aa80bb72b39c
+  RemoteMonster: 3ff20ab5adeed6cbe935ece5085b9c93eb8c67fd
+  SwiftProtobuf: 4298b0b814dd49031c3218fdfb8d42f7107c8a6d
 
 PODFILE CHECKSUM: 43e43e0160d3de4ae0a8a3c560b3437a0ff2aa7e
 

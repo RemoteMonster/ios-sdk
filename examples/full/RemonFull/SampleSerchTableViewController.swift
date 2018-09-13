@@ -23,7 +23,7 @@ class SampleSerchTableViewController: UIViewController, UITableViewDataSource, U
 //            remonCast.serviceKey = customConfig?.key
         }
         
-        remonCast.fetchCasts { (err, results) in
+        remonCast.fetchCasts { (results) in
             guard let rs = results
                 else { return}
             self.items = rs
@@ -41,7 +41,7 @@ class SampleSerchTableViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         let item = self.items[indexPath.row]
-        cell.textLabel?.text = item.id
+        cell.textLabel?.text = item.chId
         
         return cell
     }
@@ -50,7 +50,7 @@ class SampleSerchTableViewController: UIViewController, UITableViewDataSource, U
         let vc:SimpleCastViewer? = self.storyboard?.instantiateViewController(withIdentifier: "SimpleCastViewer") as? SimpleCastViewer
         let item = self.items[indexPath.row]
         vc?.customConfig = customConfig
-        vc?.toChID = item.id
+        vc?.toChID = item.chId
         if vc != nil {
             self.show(vc!, sender: self)
         }
