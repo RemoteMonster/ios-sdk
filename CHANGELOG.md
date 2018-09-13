@@ -36,3 +36,6 @@
 
 ## 2.2.4
 - bug fix
+
+## 2.2.5
+- sorry .. my mistake
