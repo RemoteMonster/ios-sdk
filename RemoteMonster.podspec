@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'RemoteMonster.framework'
   # s.dependency 'GoogleWebRTC', '1.1.23391'
   s.dependency 'Remon-WebRTC-iOS', '1.0117'
-  s.dependency 'SwiftProtobuf', '1.0.3'
+  s.dependency 'SwiftProtobuf', '1.1.1'
 end
