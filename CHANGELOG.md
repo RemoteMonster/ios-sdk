@@ -39,3 +39,6 @@
 
 ## 2.2.5
 - sorry .. my mistake
+
+## 2.2.7
+- swift 4.2 supported
