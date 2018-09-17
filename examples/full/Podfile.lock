@@ -53,7 +53,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - RemoteMonster (2.2.7):
+  - RemoteMonster (2.2.8):
     - GoogleWebRTC (= 1.1.24717)
     - SwiftProtobuf (= 1.1.2)
   - SwiftProtobuf (1.1.2)
@@ -89,7 +89,7 @@ SPEC CHECKSUMS:
   GoogleWebRTC: 80c5e7207527fa31b29e8ab813d68f761675ab62
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  RemoteMonster: b2747a3e8f6e9490e3ba9b1db0d2320a31f5a5e8
+  RemoteMonster: 28c899305403fe79fba08dc0640b95655654edea
   SwiftProtobuf: 7147b8ec19c8c0694a45155d989ea9e6dedaf51f
 
 PODFILE CHECKSUM: 43e43e0160d3de4ae0a8a3c560b3437a0ff2aa7e
