@@ -46,17 +46,17 @@ PODS:
   - "GoogleUtilities/NSData+zlib (5.2.3)"
   - GoogleUtilities/Reachability (5.2.3):
     - GoogleUtilities/Logger
+  - GoogleWebRTC (1.1.24717)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - Remon-WebRTC-iOS (1.0117)
-  - RemoteMonster (2.2.6):
-    - Remon-WebRTC-iOS (= 1.0117)
-    - SwiftProtobuf (= 1.1.1)
-  - SwiftProtobuf (1.1.1)
+  - RemoteMonster (2.2.7):
+    - GoogleWebRTC (= 1.1.24717)
+    - SwiftProtobuf (= 1.1.2)
+  - SwiftProtobuf (1.1.2)
 
 DEPENDENCIES:
   - Firebase/Core
@@ -72,9 +72,9 @@ SPEC REPOS:
     - FirebaseInstanceID
     - GoogleAppMeasurement
     - GoogleUtilities
+    - GoogleWebRTC
     - leveldb-library
     - nanopb
-    - Remon-WebRTC-iOS
     - RemoteMonster
     - SwiftProtobuf
 
@@ -86,11 +86,11 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
   GoogleAppMeasurement: fc4a4c3fe0144db9313cbf443ffe62e6b1d6268c
   GoogleUtilities: 6f681e27050c5e130325e89fa0316dfca826f954
+  GoogleWebRTC: 80c5e7207527fa31b29e8ab813d68f761675ab62
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  Remon-WebRTC-iOS: 08db3c171a8f96814a7967e9bfb32039bb932a64
-  RemoteMonster: 3ff20ab5adeed6cbe935ece5085b9c93eb8c67fd
-  SwiftProtobuf: 4298b0b814dd49031c3218fdfb8d42f7107c8a6d
+  RemoteMonster: b2747a3e8f6e9490e3ba9b1db0d2320a31f5a5e8
+  SwiftProtobuf: 7147b8ec19c8c0694a45155d989ea9e6dedaf51f
 
 PODFILE CHECKSUM: 43e43e0160d3de4ae0a8a3c560b3437a0ff2aa7e
 

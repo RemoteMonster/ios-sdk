@@ -42,3 +42,6 @@
 
 ## 2.2.7
 - swift 4.2 supported
+
+## 2.2.8
+- bug fix
