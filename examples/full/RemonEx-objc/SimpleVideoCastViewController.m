@@ -18,7 +18,7 @@
 
 @implementation SimpleVideoCastViewController
 - (IBAction)closeBroadcast:(id)sender {
-    [self.remonCast closeRemon:YES];
+    [self.remonCast closeRemon];
 }
 
 - (void)viewDidLoad {
@@ -45,7 +45,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.remonCast closeRemon:YES];
+    [self.remonCast closeRemon];
 }
 
 - (void)didReceiveMemoryWarning {

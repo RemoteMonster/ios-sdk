@@ -31,7 +31,7 @@
 }
 
 - (IBAction)closeRemon:(id)sender {
-    [self.remonCall closeRemon:YES];
+    [self.remonCall closeRemon];
 }
 
 - (void)viewDidLoad {
@@ -73,7 +73,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.remonCall closeRemon:YES];
+    [self.remonCall closeRemon];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

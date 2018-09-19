@@ -45,3 +45,7 @@
 
 ## 2.2.8
 - bug fix
+
+## 2.2.9
+- bug fix
+	- do not called 'onClose()'
