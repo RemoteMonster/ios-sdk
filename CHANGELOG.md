@@ -49,3 +49,6 @@
 ## 2.2.9
 - bug fix
 	- do not called 'onClose()'
+
+## 2.3.0
+- objc 에서 녹음 기능 지원

@@ -195,6 +195,13 @@ SWIFT_CLASS("_TtC13RemoteMonster12FractionLost")
 
 
 
+typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_STATE, closed) {
+  REMON_AECUNPACK_STATESTART = 0,
+  REMON_AECUNPACK_STATEERROR = 1,
+  REMON_AECUNPACK_STATEWROTE = 2,
+  REMON_AECUNPACK_STATECOMPLTE = 3,
+};
+
 
 SWIFT_CLASS("_TtC13RemoteMonster11RatingValue")
 @interface RatingValue : NSObject
@@ -234,6 +241,9 @@ SWIFT_PROTOCOL("_TtP13RemoteMonster22RemonCallBlockSettable_")
 /// RemonController를 사용하면 Remon를 직접 사용하는 것보다 더욱 쉽게 Remon의 기능으르 사용 할 수 있으며 Remon를 직접 사용하는 것과 거의 같은 기능을 이용 할 수 있습니다.
 SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @interface RemonController : NSObject <RTCAudioSessionDelegate>
+- (void)startDumpWithFileName:(NSString * _Nonnull)withFileName maxSizeInBytes:(int64_t)maxSizeInBytes;
+- (void)stopDump;
+- (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
 - (void)onInitWithBlock:(void (^ _Nonnull)(void))block;
 - (void)onCloseWithBlock:(void (^ _Nonnull)(void))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
