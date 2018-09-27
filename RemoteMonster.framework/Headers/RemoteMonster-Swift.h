@@ -233,6 +233,7 @@ SWIFT_PROTOCOL("_TtP13RemoteMonster22RemonCallBlockSettable_")
 - (void)onFetchWithBlock:(void (^ _Nonnull)(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull))block;
 @end
 
+enum RemonCloseType : NSInteger;
 @class NSError;
 @class RemonStatReport;
 @class RTCAudioSession;
@@ -245,7 +246,7 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 - (void)stopDump;
 - (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
 - (void)onInitWithBlock:(void (^ _Nonnull)(void))block;
-- (void)onCloseWithBlock:(void (^ _Nonnull)(void))block;
+- (void)onCloseWithBlock:(void (^ _Nonnull)(enum RemonCloseType))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
 - (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
 @property (nonatomic, copy) NSString * _Nullable channelID;
@@ -327,6 +328,13 @@ typedef SWIFT_ENUM(NSInteger, RemonChannelType, closed) {
   RemonChannelTypeP2p = 0,
   RemonChannelTypeViewer = 1,
   RemonChannelTypeBroadcast = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, RemonCloseType, closed) {
+  RemonCloseTypeMINE = 0,
+  RemonCloseTypeOTHER = 1,
+  RemonCloseTypeUNKNOWN = 2,
+  RemonCloseTypeOTHER_UNEXPECTED = 3,
 };
 
 @class RTCIceServer;
