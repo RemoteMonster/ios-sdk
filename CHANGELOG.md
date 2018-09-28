@@ -52,3 +52,7 @@
 
 ## 2.3.0
 - objc 에서 녹음 기능 지원
+
+## 2.3.4
+- getHealthRating 호출시 비정상 종료 되는 문제 수정
+- getHealthRating가 objc 환경에서 동작 하도록 수정
