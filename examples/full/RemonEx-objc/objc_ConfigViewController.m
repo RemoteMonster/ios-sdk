@@ -38,8 +38,10 @@
 }
 
 - (IBAction)next:(id)sender {
-    self.remonConfig.serviceId = [self fieldText:self.serviceIdField];
-    self.remonConfig.key = [self fieldText:self.serviceKeyField];
+//    self.remonConfig.serviceId = [self fieldText:self.serviceIdField];
+//    self.remonConfig.key = [self fieldText:self.serviceKeyField];
+    self.remonConfig.serviceId = @"SERVICEID1";
+    self.remonConfig.key = @"1234567890";
     self.remonConfig.videoCodec = [self fieldText:self.codecField];
     self.remonConfig.videoWidth = [[self fieldText:self.videoWidthField] integerValue];
     self.remonConfig.videoHeight = [[self fieldText:self.videoHeightField] integerValue];

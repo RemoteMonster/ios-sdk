@@ -27,7 +27,6 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
     [self.remonCast create:self.customConfig];
     
     [self.remonCast onCreateWithBlock:^(NSString * _Nullable chId) {
@@ -36,7 +35,7 @@
         });
     }];
     
-    [self.remonCast onCloseWithBlock:^{
+    [self.remonCast onCloseWithBlock:^(RemonCloseType type){ 
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.channelIdLabel setText:@"Broadcast Closed"];
         });

@@ -16,9 +16,17 @@ class SimpleCallViewController: UIViewController {
     @IBOutlet weak var chField: UITextField!
     @IBOutlet weak var chLabel: UILabel!
     
-    @IBOutlet weak var iuputGainSlider: UISlider!
-    
     var customConfig:RemonConfig?
+    
+    
+    @IBAction func ewf(_ sender: Any) {
+        self.remonCall.showLocalVideoStat = true
+        self.remonCall.showRemoteVideoStat = true
+    }
+    
+    @IBAction func awedawef(_ sender: Any) {
+        
+    }
     
     @IBAction func touchConnectButton(_ sender: Any) {
         self.view.endEditing(true)
@@ -37,6 +45,15 @@ class SimpleCallViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let apapap = aecunpack()
+//        apapap.run(dumpName: "dump.dump", resultFileName: "result.m4a") { (err, state) in
+//            if let err = err {
+//                print(err.localizedDescription)
+//            } else {
+//                
+//            }
+//        }
+        
         remonCall.onInit {
             DispatchQueue.main.async {
                 self.boxView.isHidden = true
@@ -47,32 +64,24 @@ class SimpleCallViewController: UIViewController {
             DispatchQueue.main.async {
                 self.chLabel.text = self.remonCall.channelID
             }
-            print("zzz", AVAudioSession.sharedInstance().currentRoute)
-            RTCDispatcher.dispatchAsync(on: .typeAudioSession) {
-                let con = RTCAudioSessionConfiguration.webRTC()
-                print(con)
-                con.mode = AVAudioSessionModeVoiceChat
-                
-                let session = RTCAudioSession.sharedInstance()
-                session.lockForConfiguration()
-                do {
-                    if session.isActive {
-                        try session.setConfiguration(con)
-                    } else {
-                        try session.setConfiguration(con, active: true)
-                    }
-                } catch let error as NSError {
-                    print("** Error RTCAudioSessionConfiguration", error.localizedDescription)
-                }
-                session.unlockForConfiguration()
-                
-            }
+            
+            self.remonCall.startDump(withFileName: "audio.aecdump", maxSizeInBytes: 100 * 1024)
         }
         
         remonCall.onClose {
             DispatchQueue.main.async {
                 self.chLabel.text = "Close Remon"
             }
+            
+            self.remonCall.stopDump()
+            
+            self.remonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a", progress: { (error, state) in
+                
+            })
+        }
+        
+        remonCall.onConnect { (ss) in
+            print(ss)
         }
         
         remonCall.onError { (error) in

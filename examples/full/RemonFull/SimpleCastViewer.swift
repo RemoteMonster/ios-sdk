@@ -15,8 +15,6 @@ class SimpleCastViewer: UIViewController {
     @IBOutlet weak var chLabel: UILabel!
     @IBOutlet var remonCast: RemonCast!
     
-    
-    
     var toChID:String?
     var customConfig:RemonConfig?
 
@@ -29,10 +27,28 @@ class SimpleCastViewer: UIViewController {
         self.dismiss(animated: true, completion: {
             
         })
+        self.remonCast.closeRemon()
         self.chLabel.text = "closing..."
     }
     
-
+    @IBAction func test(_ sender: Any) {
+//        self.remonCast.reconnectRoom()
+    }
+    
+    @IBAction func swichStream(_ sender: UIControl) {
+        let tag = sender.tag
+        var bandwidth:RemonBandwidth = .HIGH
+        if tag == 0 {
+            bandwidth = .HIGH
+        } else if tag == 1 {
+            bandwidth = .MEDIUM
+        } else if tag == 2 {
+            bandwidth = .LOW
+        }
+        
+        self.remonCast.switchBandWidth(bandwidth: bandwidth)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

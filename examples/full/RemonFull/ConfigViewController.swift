@@ -24,6 +24,7 @@ class ConfigViewController: UIViewController {
     @IBOutlet weak var audioModeSegment: UISegmentedControl!
     @IBOutlet weak var debugModeSegment: UISegmentedControl!
     
+    
     @IBAction func hideKeyboard(_ sender: Any) {
         self.view.endEditing(true)
     }
@@ -34,7 +35,7 @@ class ConfigViewController: UIViewController {
         guard let sid:String = self.serviceIDField.text,
             let skey:String = self.serviceKeyField.text,
             let vCall:Bool = self.videoCallSegment.selectedSegmentIndex == 0,
-            let codec:String = self.serviceIDField.text,
+            let codec:String = self.codecField.text,
             let width:Int = Int(self.widthField.text!),
             let height:Int = Int(self.heightField.text!),
             let fps:Int = Int(self.fpsField.text!),

@@ -32,6 +32,7 @@
 
 - (IBAction)closeRemon:(id)sender {
     [self.remonCall closeRemon];
+    
 }
 
 - (void)viewDidLoad {
@@ -59,15 +60,35 @@
             [self.ChannelIdField setText:@""];
             [self.boxView setHidden:YES];
         });
+        
+        //덤프 기록 시작
+        [self.remonCall startDumpWithFileName:@"audio.aecdump" maxSizeInBytes:100 * 1024];
     }];
     
-    [self.remonCall onCloseWithBlock:^{
+    [self.remonCall onCloseWithBlock:^(RemonCloseType type){
+        NSLog(@"zzzz %ld" , type);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.boxView setHidden:NO];
             [self.closeButton setEnabled:NO];
             [self.ChannelIdLabel setText:@"connection closed"];
             [self.statusLabel setText:@"CLOSE"];
         });
+        
+        //덤프 기록 중지
+        //onClose()에서 하셔도 되고, 별도의 이벤트에서 하셔도 됩니다.
+        [self.remonCall stopDump];
+        
+        //덤프 파일을 m4a 형식으로 인코딩 하는 메소드 입니다.
+        //이 과정은 시간이 소요 됩니다. onClose()에서 하셔도 되고, 덤프 파일 위치만 알고 있다면 별도의 이벤트에서 하셔도 됩니다.
+        [self.remonCall unpackAecDumpWithDumpName:@"audio.aecdump" resultFileName:@"unpack.m4a" progress:^(NSError * _Nullable erro, enum REMON_AECUNPACK_STATE state) {
+            
+        }];
+    }];
+    
+    [self.remonCall onRemonStatReportWithBlock:^(RemonStatReport * _Nonnull stat) {
+        RatingValue *remonRating = [stat getHealthRating];
+        NSLog(@"xxxxx %f" , remonRating.value);
+        
     }];
 }
 

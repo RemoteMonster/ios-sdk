@@ -14,11 +14,6 @@ class SimpleVoiceCast:UIViewController {
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet var remonCast: RemonCast!
     @IBOutlet weak var chLabel: UILabel!
-    @IBOutlet weak var iuputGainSlider: UISlider!
-    
-    @IBAction func changeInputSliderValue(_ sender: UISlider) {
-        
-    }
     
     var customConfig:RemonConfig?
     
@@ -71,6 +66,9 @@ class SimpleVoiceCast:UIViewController {
         self.remonCast.create(customConfig)
     }
     
+    @IBAction func stopVpio(_ sender: Any) {
+        
+    }
     
     @IBAction func closeRemonManager(_ sender: Any) {
         self.remonCast.closeRemon()
@@ -78,8 +76,7 @@ class SimpleVoiceCast:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.remonCast.debugMode = true
+        self.remonCast.debugMode = true
 
         self.remonCast.onInit {
             self.createBtn.isEnabled = false
@@ -90,7 +87,6 @@ class SimpleVoiceCast:UIViewController {
                 self.closeBtn.isEnabled = true
                 self.chLabel.text = chid
             }
-            print(AVAudioSession.sharedInstance().currentRoute)
         }
         
         self.remonCast.onClose {

@@ -23,7 +23,7 @@ class SampleSerchTableViewController: UIViewController, UITableViewDataSource, U
 //            remonCast.serviceKey = customConfig?.key
         }
         
-        remonCast.fetchCasts { (results) in
+        remonCast.fetchCasts(isTest:true) { (results) in
             guard let rs = results
                 else { return}
             self.items = rs
