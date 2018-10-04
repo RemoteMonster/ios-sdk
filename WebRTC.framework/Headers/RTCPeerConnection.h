@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <WebRTC/RTCMacros.h>
+#import "RTCMacros.h"
 
 @class RTCConfiguration;
 @class RTCDataChannel;
@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, RTCRtpMediaType);
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern NSString * const kRTCPeerConnectionErrorDomain;
+extern NSString *const kRTCPeerConnectionErrorDomain;
 extern int const kRTCSessionDescriptionErrorCode;
 
 /** Represents the signaling state of the peer connection. */
@@ -72,7 +72,7 @@ typedef NS_ENUM(NSInteger, RTCStatsOutputLevel) {
 
 @class RTCPeerConnection;
 
-RTC_EXPORT
+RTC_OBJC_EXPORT
 @protocol RTCPeerConnectionDelegate <NSObject>
 
 /** Called when the SignalingState changed. */
@@ -80,14 +80,12 @@ RTC_EXPORT
     didChangeSignalingState:(RTCSignalingState)stateChanged;
 
 /** Called when media is received on a new stream from remote peer. */
-- (void)peerConnection:(RTCPeerConnection *)peerConnection
-          didAddStream:(RTCMediaStream *)stream;
+- (void)peerConnection:(RTCPeerConnection *)peerConnection didAddStream:(RTCMediaStream *)stream;
 
 /** Called when a remote peer closes a stream.
  *  This is not called when RTCSdpSemanticsUnifiedPlan is specified.
  */
-- (void)peerConnection:(RTCPeerConnection *)peerConnection
-       didRemoveStream:(RTCMediaStream *)stream;
+- (void)peerConnection:(RTCPeerConnection *)peerConnection didRemoveStream:(RTCMediaStream *)stream;
 
 /** Called when negotiation is needed, for example ICE has restarted. */
 - (void)peerConnectionShouldNegotiate:(RTCPeerConnection *)peerConnection;
@@ -126,9 +124,13 @@ RTC_EXPORT
         didAddReceiver:(RTCRtpReceiver *)rtpReceiver
                streams:(NSArray<RTCMediaStream *> *)mediaStreams;
 
+/** Called when the receiver and its track are removed. */
+- (void)peerConnection:(RTCPeerConnection *)peerConnection
+     didRemoveReceiver:(RTCRtpReceiver *)rtpReceiver;
+
 @end
 
-RTC_EXPORT
+RTC_OBJC_EXPORT
 @interface RTCPeerConnection : NSObject
 
 /** The object that will be notifed about events such as state changes and
@@ -139,10 +141,8 @@ RTC_EXPORT
  *  |senders| instead.
  */
 @property(nonatomic, readonly) NSArray<RTCMediaStream *> *localStreams;
-@property(nonatomic, readonly, nullable)
-    RTCSessionDescription *localDescription;
-@property(nonatomic, readonly, nullable)
-    RTCSessionDescription *remoteDescription;
+@property(nonatomic, readonly, nullable) RTCSessionDescription *localDescription;
+@property(nonatomic, readonly, nullable) RTCSessionDescription *remoteDescription;
 @property(nonatomic, readonly) RTCSignalingState signalingState;
 @property(nonatomic, readonly) RTCIceConnectionState iceConnectionState;
 @property(nonatomic, readonly) RTCIceGatheringState iceGatheringState;
@@ -252,25 +252,21 @@ RTC_EXPORT
 
 /** Generate an SDP offer. */
 - (void)offerForConstraints:(RTCMediaConstraints *)constraints
-          completionHandler:(nullable void (^)
-    (RTCSessionDescription * _Nullable sdp,
-     NSError * _Nullable error))completionHandler;
+          completionHandler:(nullable void (^)(RTCSessionDescription *_Nullable sdp,
+                                               NSError *_Nullable error))completionHandler;
 
 /** Generate an SDP answer. */
 - (void)answerForConstraints:(RTCMediaConstraints *)constraints
-           completionHandler:(nullable void (^)
-    (RTCSessionDescription * _Nullable sdp,
-     NSError * _Nullable error))completionHandler;
+           completionHandler:(nullable void (^)(RTCSessionDescription *_Nullable sdp,
+                                                NSError *_Nullable error))completionHandler;
 
 /** Apply the supplied RTCSessionDescription as the local description. */
 - (void)setLocalDescription:(RTCSessionDescription *)sdp
-          completionHandler:
-    (nullable void (^)(NSError * _Nullable error))completionHandler;
+          completionHandler:(nullable void (^)(NSError *_Nullable error))completionHandler;
 
 /** Apply the supplied RTCSessionDescription as the remote description. */
 - (void)setRemoteDescription:(RTCSessionDescription *)sdp
-           completionHandler:
-    (nullable void (^)(NSError * _Nullable error))completionHandler;
+           completionHandler:(nullable void (^)(NSError *_Nullable error))completionHandler;
 
 /** Limits the bandwidth allocated for all RTP streams sent by this
  *  PeerConnection. Nil parameters will be unchanged. Setting
@@ -282,8 +278,7 @@ RTC_EXPORT
               maxBitrateBps:(nullable NSNumber *)maxBitrateBps;
 
 /** Start or stop recording an Rtc EventLog. */
-- (BOOL)startRtcEventLogWithFilePath:(NSString *)filePath
-                      maxSizeInBytes:(int64_t)maxSizeInBytes;
+- (BOOL)startRtcEventLogWithFilePath:(NSString *)filePath maxSizeInBytes:(int64_t)maxSizeInBytes;
 - (void)stopRtcEventLog;
 
 @end
@@ -312,11 +307,9 @@ RTC_EXPORT
 /** Gather stats for the given RTCMediaStreamTrack. If |mediaStreamTrack| is nil
  *  statistics are gathered for all tracks.
  */
-- (void)statsForTrack:
-    (nullable RTCMediaStreamTrack *)mediaStreamTrack
+- (void)statsForTrack:(nullable RTCMediaStreamTrack *)mediaStreamTrack
      statsOutputLevel:(RTCStatsOutputLevel)statsOutputLevel
-    completionHandler:
-    (nullable void (^)(NSArray<RTCLegacyStatsReport *> *stats))completionHandler;
+    completionHandler:(nullable void (^)(NSArray<RTCLegacyStatsReport *> *stats))completionHandler;
 
 @end
 

@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <WebRTC/RTCMacros.h>
+#import "RTCMacros.h"
 
 // Subset of rtc::LoggingSeverity.
 typedef NS_ENUM(NSInteger, RTCLoggingSeverity) {
@@ -33,12 +33,9 @@ RTC_EXTERN NSString* RTCFileName(const char* filePath);
 
 // Some convenience macros.
 
-#define RTCLogString(format, ...)                    \
-  [NSString stringWithFormat:@"(%@:%d %s): " format, \
-      RTCFileName(__FILE__),                         \
-      __LINE__,                                      \
-      __FUNCTION__,                                  \
-      ##__VA_ARGS__]
+#define RTCLogString(format, ...)                                           \
+  [NSString stringWithFormat:@"(%@:%d %s): " format, RTCFileName(__FILE__), \
+                             __LINE__, __FUNCTION__, ##__VA_ARGS__]
 
 #define RTCLogFormat(severity, format, ...)                     \
   do {                                                          \
@@ -46,17 +43,17 @@ RTC_EXTERN NSString* RTCFileName(const char* filePath);
     RTCLogEx(severity, log_string);                             \
   } while (false)
 
-#define RTCLogVerbose(format, ...)                                \
-  RTCLogFormat(RTCLoggingSeverityVerbose, format, ##__VA_ARGS__) \
+#define RTCLogVerbose(format, ...) \
+  RTCLogFormat(RTCLoggingSeverityVerbose, format, ##__VA_ARGS__)
 
-#define RTCLogInfo(format, ...)                                   \
-  RTCLogFormat(RTCLoggingSeverityInfo, format, ##__VA_ARGS__)    \
+#define RTCLogInfo(format, ...) \
+  RTCLogFormat(RTCLoggingSeverityInfo, format, ##__VA_ARGS__)
 
-#define RTCLogWarning(format, ...)                                \
-  RTCLogFormat(RTCLoggingSeverityWarning, format, ##__VA_ARGS__) \
+#define RTCLogWarning(format, ...) \
+  RTCLogFormat(RTCLoggingSeverityWarning, format, ##__VA_ARGS__)
 
-#define RTCLogError(format, ...)                                  \
-  RTCLogFormat(RTCLoggingSeverityError, format, ##__VA_ARGS__)   \
+#define RTCLogError(format, ...) \
+  RTCLogFormat(RTCLoggingSeverityError, format, ##__VA_ARGS__)
 
 #if !defined(NDEBUG)
 #define RTCLogDebug(format, ...) RTCLogInfo(format, ##__VA_ARGS__)
