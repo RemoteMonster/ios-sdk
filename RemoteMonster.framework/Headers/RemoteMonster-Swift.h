@@ -195,6 +195,13 @@ SWIFT_CLASS("_TtC13RemoteMonster12FractionLost")
 
 
 
+typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_PRESET, closed) {
+  REMON_AECUNPACK_PRESETM4A = 0,
+  REMON_AECUNPACK_PRESETMP4LOW = 1,
+  REMON_AECUNPACK_PRESETMP4MEDIUM = 2,
+  REMON_AECUNPACK_PRESETMP4HIGH = 3,
+};
+
 typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_STATE, closed) {
   REMON_AECUNPACK_STATESTART = 0,
   REMON_AECUNPACK_STATEERROR = 1,
@@ -244,7 +251,8 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @interface RemonController : NSObject <RTCAudioSessionDelegate>
 - (void)startDumpWithFileName:(NSString * _Nonnull)withFileName maxSizeInBytes:(int64_t)maxSizeInBytes;
 - (void)stopDump;
-- (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
++ (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName avPreset:(enum REMON_AECUNPACK_PRESET)avPreset progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
++ (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
 - (void)onInitWithBlock:(void (^ _Nonnull)(void))block;
 - (void)onCloseWithBlock:(void (^ _Nonnull)(enum RemonCloseType))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
