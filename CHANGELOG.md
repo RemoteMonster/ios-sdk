@@ -56,3 +56,12 @@
 ## 2.3.4
 - getHealthRating 호출시 비정상 종료 되는 문제 수정
 - getHealthRating가 objc 환경에서 동작 하도록 수정
+
+## 2.3.6
+- add unpackAecDump 
+```
+RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a", avPreset:.MP4MEDIUM, progress:{(_, _) in }
+```
+
+## 2.3.7
+- hotfix unpackAecDump()
