@@ -243,6 +243,7 @@ SWIFT_PROTOCOL("_TtP13RemoteMonster22RemonCallBlockSettable_")
 enum RemonCloseType : NSInteger;
 @class NSError;
 @class RemonStatReport;
+@class RemonConfig;
 @class RTCAudioSession;
 
 /// 이 클래스는 Remon 클래스를 사용을 돕는 도우미 역확을 합니다.
@@ -257,11 +258,20 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 - (void)onCloseWithBlock:(void (^ _Nonnull)(enum RemonCloseType))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
 - (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
+@property (nonatomic, strong) Remon * _Nullable remon;
+@property (nonatomic, strong) RemonConfig * _Nullable remonConfig;
 @property (nonatomic, copy) NSString * _Nullable channelID;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 - (void)closeRemon;
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
+- (void)muteRemoteAudioWithMute:(BOOL)mute;
+- (void)muteLocalAudioWithMute:(BOOL)mute;
+- (BOOL)stopLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)startLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
+- (void)stopRemoteVideoCapture;
+- (void)startRemoteVideoCapture;
+- (void)setVolumeWithVolume:(float)volume;
 - (void)audioSessionDidStartPlayOrRecord:(RTCAudioSession * _Nonnull)session;
 @end
 
@@ -289,7 +299,6 @@ SWIFT_CLASS_NAMED("RemonIBController")
 @property (nonatomic) BOOL useFrontCamera;
 @end
 
-@class RemonConfig;
 @class RemonSearchResult;
 
 ///
