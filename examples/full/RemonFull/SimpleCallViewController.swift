@@ -68,7 +68,7 @@ class SimpleCallViewController: UIViewController {
             self.remonCall.startDump(withFileName: "audio.aecdump", maxSizeInBytes: 100 * 1024)
         }
         
-        remonCall.onClose {
+        remonCall.onClose { (type) in
             DispatchQueue.main.async {
                 self.chLabel.text = "Close Remon"
             }

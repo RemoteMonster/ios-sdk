@@ -89,7 +89,7 @@ class SimpleVoiceCast:UIViewController {
             }
         }
         
-        self.remonCast.onClose {
+        self.remonCast.onClose { (type) in
             self.createBtn.isEnabled = true
             self.closeBtn.isEnabled = false
         }
