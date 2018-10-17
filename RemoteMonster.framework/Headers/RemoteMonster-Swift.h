@@ -301,9 +301,9 @@ SWIFT_CLASS_NAMED("RemonIBController")
 ///
 @property (nonatomic, weak) IBOutlet UIView * _Nullable remoteView;
 ///
-@property (nonatomic, weak) IBOutlet UIView * _Nullable localView;
+@property (nonatomic, strong) IBOutlet UIView * _Nullable localView;
 ///
-@property (nonatomic, weak) IBOutlet UIView * _Nullable localPreView;
+@property (nonatomic, strong) IBOutlet UIView * _Nullable localPreView;
 @end
 
 @class RemonSearchResult;

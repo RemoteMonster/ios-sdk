@@ -159,21 +159,21 @@ import UIKit
     
     //    IBOutlet
     /***/
-    @IBOutlet public weak var remoteView:UIView? {
-        didSet (rv) {
-            self.remoteView_ = rv
+    @IBOutlet dynamic public weak var remoteView:UIView? {
+        didSet {
+            self.remoteView_ = remoteView
         }
     }
     
     /***/
-    @IBOutlet public weak var localView:UIView? {
+    @IBOutlet dynamic public var localView:UIView? {
         didSet {
             self.localView_ = localView
         }
     }
     
     /***/
-    @IBOutlet public weak var localPreView:UIView? {
+    @IBOutlet dynamic public var localPreView:UIView? {
         didSet {
             self.localPreView_ = localPreView
         }
