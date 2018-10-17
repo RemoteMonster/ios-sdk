@@ -49,6 +49,15 @@ class SimpleVideoCast:UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        for view in self.view.subviews {
+            if (view.tag == 999) {
+                self.remonCast.localView = view
+            }
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.remonCast.closeRemon()

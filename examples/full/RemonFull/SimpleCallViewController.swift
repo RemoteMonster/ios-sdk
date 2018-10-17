@@ -45,14 +45,17 @@ class SimpleCallViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let apapap = aecunpack()
-//        apapap.run(dumpName: "dump.dump", resultFileName: "result.m4a") { (err, state) in
-//            if let err = err {
-//                print(err.localizedDescription)
-//            } else {
-//                
-//            }
-//        }
+        
+        for view in self.view.subviews {
+            if (view.tag == 999) {
+                self.remonCall.remoteView = view;
+            }
+            
+            if (view.tag == 888) {
+                self.remonCall.localView = view;
+            }
+            
+        }
         
         remonCall.onInit {
             DispatchQueue.main.async {
@@ -64,20 +67,12 @@ class SimpleCallViewController: UIViewController {
             DispatchQueue.main.async {
                 self.chLabel.text = self.remonCall.channelID
             }
-            
-            self.remonCall.startDump(withFileName: "audio.aecdump", maxSizeInBytes: 100 * 1024)
         }
         
         remonCall.onClose { (type) in
             DispatchQueue.main.async {
                 self.chLabel.text = "Close Remon"
             }
-            
-            self.remonCall.stopDump()
-            
-            self.remonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a", progress: { (error, state) in
-                
-            })
         }
         
         remonCall.onConnect { (ss) in

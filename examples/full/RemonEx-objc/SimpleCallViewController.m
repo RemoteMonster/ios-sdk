@@ -39,6 +39,10 @@
     [super viewDidLoad];
     
     for (UIView * view in self.view.subviews) {
+        if (view.tag == 888) {
+            self.remonCall.remoteView = view;
+        }
+        
         if (view.tag == 999) {
             self.remonCall.localView = view;
         }

@@ -23,6 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    for (UIView * view in self.view.subviews) {
+        if (view.tag == 999) {
+            self.remonCast.remoteView = view;
+        }
+        
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated {

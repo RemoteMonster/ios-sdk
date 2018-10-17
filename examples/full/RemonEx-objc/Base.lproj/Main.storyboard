@@ -256,7 +256,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view tag="999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2l-cx-L2W">
+                            <view tag="888" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2l-cx-L2W">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -301,7 +301,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DuQ-aG-iiG">
+                            <view tag="999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DuQ-aG-iiG">
                                 <rect key="frame" x="238" y="474" width="117" height="173"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -361,11 +361,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ktG-fv-fmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="l4v-Pr-Cqu" customClass="RemonCall" customModule="RemoteMonster">
-                    <connections>
-                        <outlet property="localView" destination="DuQ-aG-iiG" id="ju0-R8-snA"/>
-                    </connections>
-                </customObject>
+                <customObject id="l4v-Pr-Cqu" customClass="RemonCall" customModule="RemoteMonster"/>
             </objects>
             <point key="canvasLocation" x="-2618" y="-590"/>
         </scene>
@@ -383,7 +379,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leW-Co-0pt">
+                            <view tag="888" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leW-Co-0pt">
                                 <rect key="frame" x="0.0" y="67" width="375" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -418,11 +414,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8C-zO-J56" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="2F0-Q1-TE0" customClass="RemonCast" customModule="RemoteMonster">
-                    <connections>
-                        <outlet property="localView" destination="leW-Co-0pt" id="Bto-Yx-uLS"/>
-                    </connections>
-                </customObject>
+                <customObject id="2F0-Q1-TE0" customClass="RemonCast" customModule="RemoteMonster"/>
             </objects>
             <point key="canvasLocation" x="-1895.2" y="-606.74662668665667"/>
         </scene>

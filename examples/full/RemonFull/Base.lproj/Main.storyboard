@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n9N-QK-4b6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n9N-QK-4b6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +29,7 @@
         <!--Table View Controller-->
         <scene sceneID="wbN-in-m8g">
             <objects>
-                <tableViewController id="Iao-xj-gVv" customClass="VTableViewController" customModule="verySimpleRemon" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Iao-xj-gVv" customClass="VTableViewController" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yvZ-Cv-Y7k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +63,7 @@
         <!--Sample Serch Table View Controller-->
         <scene sceneID="f9E-2M-28j">
             <objects>
-                <viewController storyboardIdentifier="SampleSerchTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4sd-6v-QtQ" customClass="SampleSerchTableViewController" customModule="verySimpleRemon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SampleSerchTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4sd-6v-QtQ" customClass="SampleSerchTableViewController" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Por-HF-GIo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +154,7 @@
         <!--Simple Voice Cast-->
         <scene sceneID="aYI-gG-zNd">
             <objects>
-                <viewController storyboardIdentifier="SimpleVoiceCast" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eTy-W4-tCw" customClass="SimpleVoiceCast" customModule="verySimpleRemon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleVoiceCast" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eTy-W4-tCw" customClass="SimpleVoiceCast" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sc9-Fq-6en">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,17 +252,17 @@
         <!--Simple Call View Controller-->
         <scene sceneID="l94-Q4-T5P">
             <objects>
-                <viewController storyboardIdentifier="SimpleCallViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LTh-fj-XDA" customClass="SimpleCallViewController" customModule="verySimpleRemon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleCallViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LTh-fj-XDA" customClass="SimpleCallViewController" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C6y-yO-VSK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfO-Wo-ZYV">
+                            <view tag="999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfO-Wo-ZYV">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gL9-wO-RS7">
-                                <rect key="frame" x="67" y="219" width="240" height="128"/>
+                                <rect key="frame" x="67.5" y="219" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Simple Call" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsS-Cy-okr">
                                         <rect key="frame" x="77.5" y="15" width="85" height="21"/>
@@ -300,7 +299,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZE-2N-Za8">
+                            <view tag="888" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZE-2N-Za8">
                                 <rect key="frame" x="238" y="474" width="117" height="173"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -356,10 +355,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://matiz.remotemonster.com/ws"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://matiz.remotemonster.com/rest/init"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="localView" destination="gZE-2N-Za8" id="Dct-Oa-dV0"/>
-                        <outlet property="remoteView" destination="nfO-Wo-ZYV" id="u4G-yn-mgC"/>
-                    </connections>
                 </customObject>
             </objects>
             <point key="canvasLocation" x="-6209" y="-1264"/>
@@ -367,7 +362,7 @@
         <!--Simple Video Cast-->
         <scene sceneID="8uJ-dk-kUd">
             <objects>
-                <viewController storyboardIdentifier="SimpleVideoCast" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RrD-LM-PxO" customClass="SimpleVideoCast" customModule="verySimpleRemon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleVideoCast" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RrD-LM-PxO" customClass="SimpleVideoCast" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vCz-f3-d4Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,8 +395,8 @@
                                     <action selector="createBoardcast:" destination="RrD-LM-PxO" eventType="touchUpInside" id="Cdw-Ak-6Z9"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MtZ-cD-LEa">
-                                <rect key="frame" x="20.5" y="185" width="335" height="462"/>
+                            <view tag="999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MtZ-cD-LEa">
+                                <rect key="frame" x="20" y="185" width="335" height="462"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MtZ-cD-LEa" secondAttribute="height" multiplier="163:225" id="d78-MR-aFk"/>
@@ -442,17 +437,14 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="localView" destination="MtZ-cD-LEa" id="oOs-aK-6YJ"/>
-                    </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="-5170.3999999999996" y="-876.61169415292363"/>
+            <point key="canvasLocation" x="-5327" y="-1038"/>
         </scene>
         <!--Simple Cast Viewer-->
         <scene sceneID="cGW-F1-bhp">
             <objects>
-                <viewController storyboardIdentifier="SimpleCastViewer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oPA-nA-pub" customClass="SimpleCastViewer" customModule="verySimpleRemon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleCastViewer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oPA-nA-pub" customClass="SimpleCastViewer" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="341-x6-OEV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -562,7 +554,7 @@
         <!--Config View Controller-->
         <scene sceneID="Fbh-sx-zjU">
             <objects>
-                <viewController storyboardIdentifier="ConfigViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j5l-ZV-2VD" customClass="ConfigViewController" customModule="verySimpleRemon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfigViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j5l-ZV-2VD" customClass="ConfigViewController" customModule="RemonFull" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JfW-9i-cmE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
