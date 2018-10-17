@@ -31,6 +31,12 @@ class SimpleVideoCast:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for view in self.view.subviews {
+            if (view.tag == 999) {
+                self.remonCast.localView = view
+            }
+        }
+        
         self.remonCast.onInit {
             self.createBtn.isEnabled = false
         }
@@ -51,11 +57,6 @@ class SimpleVideoCast:UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        for view in self.view.subviews {
-            if (view.tag == 999) {
-                self.remonCast.localView = view
-            }
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
