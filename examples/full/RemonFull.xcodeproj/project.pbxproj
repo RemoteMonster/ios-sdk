@@ -408,7 +408,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull-frameworks.sh",
-				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
+				"${PODS_ROOT}/Remon-WebRTC-iOS/WebRTC.framework",
 				"${PODS_ROOT}/RemoteMonster/RemoteMonster.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
 			);
@@ -448,7 +448,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RemonEx-objc/Pods-RemonEx-objc-frameworks.sh",
-				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
+				"${PODS_ROOT}/Remon-WebRTC-iOS/WebRTC.framework",
 				"${PODS_ROOT}/RemoteMonster/RemoteMonster.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
 			);
@@ -488,7 +488,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RemonCall/Pods-RemonCall-frameworks.sh",
-				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
+				"${PODS_ROOT}/Remon-WebRTC-iOS/WebRTC.framework",
 				"${PODS_ROOT}/RemoteMonster/RemoteMonster.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
