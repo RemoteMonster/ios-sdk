@@ -275,6 +275,7 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 - (void)audioSessionDidStartPlayOrRecord:(RTCAudioSession * _Nonnull)session;
 @end
 
+@class UIView;
 
 ///
 SWIFT_CLASS_NAMED("RemonIBController")
@@ -297,6 +298,12 @@ SWIFT_CLASS_NAMED("RemonIBController")
 @property (nonatomic, copy) NSString * _Nonnull restUrl;
 ///
 @property (nonatomic) BOOL useFrontCamera;
+///
+@property (nonatomic, weak) IBOutlet UIView * _Nullable remoteView;
+///
+@property (nonatomic, weak) IBOutlet UIView * _Nullable localView;
+///
+@property (nonatomic, weak) IBOutlet UIView * _Nullable localPreView;
 @end
 
 @class RemonSearchResult;

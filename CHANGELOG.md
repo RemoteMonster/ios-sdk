@@ -65,3 +65,9 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 
 ## 2.3.7
 - hotfix unpackAecDump()
+
+## ## 2.3.8
+- support mute at objc
+
+## ## 2.3.9
+- change videoView access controll

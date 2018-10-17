@@ -89,6 +89,8 @@ class SimpleCallViewController: UIViewController {
                 self.chLabel.text = error.localizedDescription
             }
         }
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
