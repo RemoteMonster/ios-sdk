@@ -52,8 +52,6 @@ class SimpleCastViewer: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.remonCast.remon?.switchCamera()
-        
         for view in self.view.subviews {
             if view.tag == 999 {
                 self.remonCast.remoteView = view

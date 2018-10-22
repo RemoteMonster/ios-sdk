@@ -135,18 +135,18 @@
 		0B5CB5F520B5563B00FB2BFE /* RemonFull */ = {
 			isa = PBXGroup;
 			children = (
-				0B5CB5F620B5563B00FB2BFE /* ViewController.swift */,
-				0B5CB5F720B5563B00FB2BFE /* SampleSerchTableViewController.swift */,
-				0B5CB5F820B5563B00FB2BFE /* SimpleCastViewer.swift */,
+				0B5CB60220B5563B00FB2BFE /* Info.plist */,
 				0B5CB5F920B5563B00FB2BFE /* Assets.xcassets */,
-				0B5CB5FA20B5563B00FB2BFE /* SimpleCallViewController.swift */,
 				0B5CB5FB20B5563B00FB2BFE /* LaunchScreen.storyboard */,
 				0B5CB5FD20B5563B00FB2BFE /* Main.storyboard */,
 				0B5CB5FF20B5563B00FB2BFE /* VTableViewController.swift */,
 				0B5CB60020B5563B00FB2BFE /* AppDelegate.swift */,
+				0B5CB5F620B5563B00FB2BFE /* ViewController.swift */,
+				0B5CB5F720B5563B00FB2BFE /* SampleSerchTableViewController.swift */,
+				0B5CB5FA20B5563B00FB2BFE /* SimpleCallViewController.swift */,
 				0B5CB60120B5563B00FB2BFE /* SimpleVideoCast.swift */,
-				0B5CB60220B5563B00FB2BFE /* Info.plist */,
 				0B5CB60320B5563B00FB2BFE /* SimpleVoiceCast.swift */,
+				0B5CB5F820B5563B00FB2BFE /* SimpleCastViewer.swift */,
 				0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */,
 				6069E4E020EB4526000B3AA5 /* SimpleAudioSessionObserver.swift */,
 			);
