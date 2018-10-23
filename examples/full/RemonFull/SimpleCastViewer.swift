@@ -75,6 +75,16 @@ class SimpleCastViewer: UIViewController {
                 self.chLabel.text = "init..."
             }
         }
+        
+        self.remonCast.onRemoteVideoSizeChanged { (remoteView, size) in
+            print("aaaaa", size)
+            let newFrame = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+            remoteView?.frame = newFrame
+        }
+        
+        self.remonCast.onLocalVideoSizeChanged { (localView, size) in
+            print("aaaaa", size, "bbb")
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
