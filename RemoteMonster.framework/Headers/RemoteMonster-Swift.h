@@ -163,6 +163,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_DEPRECATED_OBJC(Msg) SWIFT_DEPRECATED_MSG(Msg)
 #endif
 #if __has_feature(modules)
+@import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
 @import WebRTC;
@@ -240,16 +241,21 @@ SWIFT_PROTOCOL("_TtP13RemoteMonster22RemonCallBlockSettable_")
 - (void)onFetchWithBlock:(void (^ _Nonnull)(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull))block;
 @end
 
+@protocol RTCVideoRenderer;
 enum RemonCloseType : NSInteger;
 @class NSError;
 @class RemonStatReport;
+@class UIView;
 @class RemonConfig;
+@class RTCEAGLVideoView;
+@class RTCCameraPreviewView;
 @class RTCAudioSession;
 
 /// 이 클래스는 Remon 클래스를 사용을 돕는 도우미 역확을 합니다.
 /// RemonController를 사용하면 Remon를 직접 사용하는 것보다 더욱 쉽게 Remon의 기능으르 사용 할 수 있으며 Remon를 직접 사용하는 것과 거의 같은 기능을 이용 할 수 있습니다.
 SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
-@interface RemonController : NSObject <RTCAudioSessionDelegate>
+@interface RemonController : NSObject <RTCAudioSessionDelegate, RTCVideoViewDelegate>
+- (void)videoView:(id <RTCVideoRenderer> _Nonnull)videoView didChangeVideoSize:(CGSize)size;
 - (void)startDumpWithFileName:(NSString * _Nonnull)withFileName maxSizeInBytes:(int64_t)maxSizeInBytes;
 - (void)stopDump;
 + (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName avPreset:(enum REMON_AECUNPACK_PRESET)avPreset progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
@@ -258,8 +264,13 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 - (void)onCloseWithBlock:(void (^ _Nonnull)(enum RemonCloseType))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
 - (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
+- (void)onRemoteVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
+- (void)onLocalVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
 @property (nonatomic, strong) Remon * _Nullable remon;
 @property (nonatomic, strong) RemonConfig * _Nullable remonConfig;
+@property (nonatomic, strong) RTCEAGLVideoView * _Nullable remoteRTCEAGLVideoView;
+@property (nonatomic, strong) RTCEAGLVideoView * _Nullable localRTCEAGLVideoView;
+@property (nonatomic, strong) RTCCameraPreviewView * _Nullable localRTCCameraPreviewView;
 @property (nonatomic, copy) NSString * _Nullable channelID;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
@@ -275,7 +286,6 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 - (void)audioSessionDidStartPlayOrRecord:(RTCAudioSession * _Nonnull)session;
 @end
 
-@class UIView;
 
 ///
 SWIFT_CLASS_NAMED("RemonIBController")
@@ -301,9 +311,9 @@ SWIFT_CLASS_NAMED("RemonIBController")
 ///
 @property (nonatomic, weak) IBOutlet UIView * _Nullable remoteView;
 ///
-@property (nonatomic, weak) IBOutlet UIView * _Nullable localView;
+@property (nonatomic, strong) IBOutlet UIView * _Nullable localView;
 ///
-@property (nonatomic, weak) IBOutlet UIView * _Nullable localPreView;
+@property (nonatomic, strong) IBOutlet UIView * _Nullable localPreView;
 @end
 
 @class RemonSearchResult;
