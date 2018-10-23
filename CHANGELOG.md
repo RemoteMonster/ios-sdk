@@ -71,3 +71,8 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 
 ## ## 2.3.9
 - change videoView access controll
+
+## ## 2.4.0.1
+- add observer method
+	- onRemoteVideoSizeChanged
+	- onLocalVideoSizeChanged
