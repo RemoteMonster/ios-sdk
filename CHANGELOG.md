@@ -80,3 +80,8 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 ## ## 2.4.13
 - bug fix
   - No crash without a channel id
+
+## ## 2.4.20
+- change default audio session category
+- change health log cycle
+- change health log rule
