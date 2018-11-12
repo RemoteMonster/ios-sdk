@@ -79,6 +79,7 @@
 #import <WebRTC/RTCSessionDescription.h>
 #import <WebRTC/RTCTracing.h>
 #import <WebRTC/RTCCertificate.h>
+#import <WebRTC/RTCCryptoOptions.h>
 #import <WebRTC/RTCVideoSource.h>
 #import <WebRTC/RTCVideoTrack.h>
 #import <WebRTC/RTCVideoCodecConstants.h>

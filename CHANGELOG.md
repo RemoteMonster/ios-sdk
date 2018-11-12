@@ -76,3 +76,7 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 - add observer method
 	- onRemoteVideoSizeChanged
 	- onLocalVideoSizeChanged
+
+## ## 2.4.13
+- bug fix
+  - No crash without a channel id
