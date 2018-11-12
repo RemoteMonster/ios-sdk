@@ -48,7 +48,7 @@
 
 ## 2.2.9
 - bug fix
-	- do not called 'onClose()'
+  - do not called 'onClose()'
 
 ## 2.3.0
 - objc 에서 녹음 기능 지원
@@ -74,9 +74,14 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 
 ## ## 2.4.0.1
 - add observer method
-	- onRemoteVideoSizeChanged
-	- onLocalVideoSizeChanged
+  - onRemoteVideoSizeChanged
+  - onLocalVideoSizeChanged
 
 ## ## 2.4.13
 - bug fix
   - No crash without a channel id
+
+## ## 2.4.20
+- change default audio session category
+- change health log cycle
+- change health log rule
