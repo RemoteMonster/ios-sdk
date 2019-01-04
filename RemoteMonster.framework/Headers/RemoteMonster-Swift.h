@@ -475,9 +475,10 @@ typedef SWIFT_ENUM(NSInteger, RemonState, closed) {
   RemonStateTRYRECONNECT = 5,
 /// 통신 연결을 수행하다가 오류가 발생하였을 때의 상태
   RemonStateFAIL = 6,
+  RemonStateICEDISCONNECT = 7,
 /// 통신 연결 후 빠져나갔을 때의 상태
-  RemonStateEXIT = 7,
-  RemonStateCLOSE = 8,
+  RemonStateEXIT = 8,
+  RemonStateCLOSE = 9,
 };
 
 
