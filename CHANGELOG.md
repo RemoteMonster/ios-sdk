@@ -85,3 +85,8 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 - change default audio session category
 - change health log cycle
 - change health log rule
+
+## ## 2.4.38
+- add property volumeRatio at RemonController
+- add property userMete at RemonConfig
+- add callback func onRetry at RemonController

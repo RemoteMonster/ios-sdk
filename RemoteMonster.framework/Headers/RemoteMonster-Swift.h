@@ -249,6 +249,7 @@ enum RemonCloseType : NSInteger;
 @class RemonConfig;
 @class RTCEAGLVideoView;
 @class RTCCameraPreviewView;
+enum objc_RemonBandwidth : NSInteger;
 @class RTCAudioSession;
 
 /// 이 클래스는 Remon 클래스를 사용을 돕는 도우미 역확을 합니다.
@@ -260,9 +261,12 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 - (void)stopDump;
 + (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName avPreset:(enum REMON_AECUNPACK_PRESET)avPreset progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
 + (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
+@property (nonatomic) double volumeRatio;
+@property (nonatomic, copy) NSString * _Nonnull userMeta;
 - (void)onInitWithBlock:(void (^ _Nonnull)(void))block;
 - (void)onCloseWithBlock:(void (^ _Nonnull)(enum RemonCloseType))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
+- (void)onRetryWithBlock:(void (^ _Nonnull)(BOOL))block;
 - (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
 - (void)onRemoteVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
 - (void)onLocalVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
@@ -271,10 +275,12 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @property (nonatomic, strong) RTCEAGLVideoView * _Nullable remoteRTCEAGLVideoView;
 @property (nonatomic, strong) RTCEAGLVideoView * _Nullable localRTCEAGLVideoView;
 @property (nonatomic, strong) RTCCameraPreviewView * _Nullable localRTCCameraPreviewView;
+@property (nonatomic) BOOL showRemoteVideoStat;
 @property (nonatomic, copy) NSString * _Nullable channelID;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 - (void)closeRemon;
+- (void)objc_switchBandWidthWithBandwidth:(enum objc_RemonBandwidth)bandwidth;
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (void)muteRemoteAudioWithMute:(BOOL)mute;
 - (void)muteLocalAudioWithMute:(BOOL)mute;
@@ -406,6 +412,7 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic) BOOL debugMode;
 /// 사용할 카메라 포지션
 @property (nonatomic) BOOL useFrontCamera;
+@property (nonatomic, copy) NSString * _Nonnull userMeta;
 @property (nonatomic) RTCLoggingSeverity debugLevel;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -465,11 +472,12 @@ typedef SWIFT_ENUM(NSInteger, RemonState, closed) {
   RemonStateCREATE = 3,
 /// 방송 생성 후 상태
   RemonStateCOMPLETE = 4,
+  RemonStateTRYRECONNECT = 5,
 /// 통신 연결을 수행하다가 오류가 발생하였을 때의 상태
-  RemonStateFAIL = 5,
+  RemonStateFAIL = 6,
 /// 통신 연결 후 빠져나갔을 때의 상태
-  RemonStateEXIT = 6,
-  RemonStateCLOSE = 7,
+  RemonStateEXIT = 7,
+  RemonStateCLOSE = 8,
 };
 
 
@@ -566,6 +574,12 @@ SWIFT_CLASS("_TtC13RemoteMonster9aecunpack")
 @interface aecunpack : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, objc_RemonBandwidth, closed) {
+  objc_RemonBandwidthHIGH = 0,
+  objc_RemonBandwidthMEDIUM = 1,
+  objc_RemonBandwidthLOW = 2,
+};
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
