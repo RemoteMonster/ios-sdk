@@ -89,9 +89,11 @@ class SimpleVoiceCast:UIViewController {
             }
         }
         
-        self.remonCast.onClose { (type) in
-            self.createBtn.isEnabled = true
-            self.closeBtn.isEnabled = false
+        self.remonCast.onClose { (_) in
+            DispatchQueue.main.async {
+                self.createBtn.isEnabled = true
+                self.closeBtn.isEnabled = false
+            }
         }
     }
     

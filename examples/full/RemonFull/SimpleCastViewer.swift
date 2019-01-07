@@ -17,6 +17,7 @@ class SimpleCastViewer: UIViewController {
     
     var toChID:String?
     var customConfig:RemonConfig?
+    var socketErr = false
 
     
     @IBAction func showStat(_ sender: Any) {
@@ -33,6 +34,7 @@ class SimpleCastViewer: UIViewController {
     
     @IBAction func test(_ sender: Any) {
 //        self.remonCast.reconnectRoom()
+        
     }
     
     @IBAction func swichStream(_ sender: UIControl) {
@@ -62,23 +64,98 @@ class SimpleCastViewer: UIViewController {
                 self.closeBtn.isEnabled = true
                 self.chLabel.text = self.toChID
             }
+            do {
+                if #available(iOS 10.0, *) {
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, mode: AVAudioSessionModeDefault)
+                }
+                else {
+                    AVAudioSession.sharedInstance().perform(NSSelectorFromString("setCategory:error:"), with: AVAudioSessionCategoryPlayback)
+                }
+                
+                try AVAudioSession.sharedInstance().setActive(true, with: [])
+                try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
+            } catch {
+                print(error)
+            }
         }
         
         self.remonCast.onInit {
+            self.socketErr = false
             DispatchQueue.main.async {
                 self.chLabel.text = "init..."
             }
         }
         
-        self.remonCast.onRemoteVideoSizeChanged { (remoteView, size) in
-            print("aaaaa", size)
-            let newFrame = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
-            remoteView?.frame = newFrame
+        self.remonCast.onRetry { (com) in
+            print(com)
         }
         
-        self.remonCast.onLocalVideoSizeChanged { (localView, size) in
-            print("aaaaa", size, "bbb")
+        
+        self.remonCast.onRemonStatReport { (report) in
+            let remoteFrameRate = report.remoteFrameRate
+            let localFrameRate = report.localFrameRate
+            
+            print("remonStat.remoteFrameRate A®" , remoteFrameRate)
         }
+        
+        self.remonCast.onError { (error) in
+            print("ERROR" , error.localizedDescription)
+            if (error.localizedDescription.contains("error 3")){
+                self.remonCast.closeRemon()
+                self.socketErr = true
+            }
+        }
+        self.remonCast.onClose { (type) in
+            if self.socketErr {
+                self.socketErr = false
+                if let chid = self.toChID {
+                    self.remonCast.join(chId: chid)
+                }
+            }
+        }
+        
+        self.remonCast.onRemoteVideoSizeChanged { (view, size) in
+            print("Debug onRemoteVideoSizeChanged", size)
+            print("Debug remonCast\(self.remonCast.remoteView.hashValue) and view\(view.hashValue) is same")
+            
+            let videoHeight = size.height
+            let videoWidth = size.width
+            let videoRatio:CGFloat = videoWidth / videoHeight
+            
+            guard let myView = view else { return }
+            
+            let myViewWidth:CGFloat = myView.frame.size.width
+            let myViewHeight:CGFloat = myView.frame.size.height
+            let myViewRatio:CGFloat = myViewWidth / myViewHeight
+            
+            if videoRatio < 1.0 {
+                if myViewRatio < 1.0 {
+                    let computedWidth:CGFloat = myViewHeight * videoRatio
+                    print("Debug computedWidth", computedWidth)
+                    DispatchQueue.main.async {
+                        myView.frame = CGRect(x: 0.0, y: 0.0, width: computedWidth, height: myViewHeight)
+                        myView.center = self.view.center
+                    }
+                } else {
+                    //                    NOOP
+                }
+            } else {
+                if myViewRatio < 1.0 {
+                    let computedWidth:CGFloat = myViewHeight * videoRatio
+                    print("Debug computedWidth", computedWidth)
+                    DispatchQueue.main.async {
+                        myView.frame = CGRect(x: -430.0, y: 170.0, width: computedWidth, height: myViewHeight)
+//                        myView.center = self.view.center
+                    }
+                }
+            }
+        }
+        
+//        if let view = self.remonCast.remoteView {
+//            let degrees:Double = 20
+//            view.transform = CGAffineTransform(rotationAngle: CGFloat(degrees * Double.pi / Double(180)));
+//        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

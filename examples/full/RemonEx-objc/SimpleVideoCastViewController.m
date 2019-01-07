@@ -40,6 +40,30 @@
             [self.channelIdLabel setText:@"Broadcast Closed"];
         });
     }];
+    
+    [self.remonCast onRemoteVideoSizeChangedWithBlock:^(UIView * _Nullable view, CGSize size) {
+        CGFloat videoHeight = size.height;
+        CGFloat videoWidth = size.width;
+        CGFloat videoRatio = videoWidth / videoHeight;
+        
+        CGFloat myViewWidth = view.frame.size.width;
+        CGFloat myViewHeight = view.frame.size.height;
+        CGFloat myViewRatio = myViewWidth / myViewHeight;
+        
+        if (videoRatio < 1.0) { // 방송 영상이 세로입니다.
+            if (myViewRatio < 1.0) { // 시청자 뷰가 세로 입니다.
+                CGFloat computedWidth = myViewHeight * videoRatio;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    view.frame = CGRectMake(0.0, 0.0, computedWidth, myViewHeight);
+                    view.center = self.view.center;
+                });
+            } else {
+                //                    NOOP
+            }
+        } else {
+            //                NOOP
+        }
+    }];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

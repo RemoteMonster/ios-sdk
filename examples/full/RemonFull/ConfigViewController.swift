@@ -62,8 +62,8 @@ class ConfigViewController: UIViewController {
         config.autoCaptureStart = autoCapture
         config.useFrontCamera = frontCametra
 //        config.audioType = audioMode
-        config.restUrl = "https://matiz.remotemonster.com/rest/init"
-        config.wsUrl = "wss://matiz.remotemonster.com/ws"
+        config.restUrl = "https://signal.remotemonster.com/rest/init"
+        config.wsUrl = "wss://signal.remotemonster.com/ws"
         config.debugMode = debugMode
         switch chType {
         case 0:

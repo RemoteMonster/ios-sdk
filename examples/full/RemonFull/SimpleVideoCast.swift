@@ -15,8 +15,20 @@ class SimpleVideoCast:UIViewController {
     @IBOutlet weak var remonLocalView: UIView!
     @IBOutlet weak var chLabel: UILabel!
     @IBOutlet var remonCast: RemonCast!
+    @IBOutlet weak var captureView: UIImageView!
     
     var customConfig:RemonConfig?
+    
+    func image(with view: UIView) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+        defer { UIGraphicsEndImageContext() }
+        if let context = UIGraphicsGetCurrentContext() {
+            view.layer.render(in: context)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            return image
+        }
+        return nil
+    }
     
     @IBAction func createBoardcast(_ sender: Any) {
         //config is nilable
@@ -26,6 +38,14 @@ class SimpleVideoCast:UIViewController {
     
     @IBAction func closeRemonManager(_ sender: Any) {
         self.remonCast.closeRemon()
+    }
+    
+    @IBAction func viewCapture(_ sender: Any) {
+        guard let localView = self.remonCast.localRTCEAGLVideoView else {
+            return
+        }
+        let image = self.image(with: self.view)
+        self.captureView.image = image
     }
     
     override func viewDidLoad() {
@@ -43,7 +63,7 @@ class SimpleVideoCast:UIViewController {
             }
         }
         
-        self.remonCast.onClose { (type) in
+        self.remonCast.onClose { (_) in
             self.createBtn.isEnabled = true
             self.closeBtn.isEnabled = false
         }

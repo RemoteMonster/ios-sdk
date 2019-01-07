@@ -17,7 +17,15 @@ class SimpleCallViewController: UIViewController {
     @IBOutlet weak var chLabel: UILabel!
     
     var customConfig:RemonConfig?
+    var muted = false
     
+    @IBAction func volumeRatioP(_ sender: Any) {
+        self.remonCall.volumeRatio = self.remonCall.volumeRatio + 0.1
+    }
+    
+    @IBAction func volumeRatioM(_ sender: Any) {
+        self.remonCall.volumeRatio = self.remonCall.volumeRatio - 0.1
+    }
     
     @IBAction func ewf(_ sender: Any) {
         self.remonCall.showLocalVideoStat = true
@@ -25,7 +33,8 @@ class SimpleCallViewController: UIViewController {
     }
     
     @IBAction func awedawef(_ sender: Any) {
-        
+        self.remonCall.muteLocalAudio(mute: !self.muted)
+        self.muted = !self.muted
     }
     
     @IBAction func touchConnectButton(_ sender: Any) {
@@ -53,7 +62,7 @@ class SimpleCallViewController: UIViewController {
 //                
 //            }
 //        }
-        
+        remonCall.useFrontCamera = false
         remonCall.onInit {
             DispatchQueue.main.async {
                 self.boxView.isHidden = true
@@ -64,24 +73,41 @@ class SimpleCallViewController: UIViewController {
             DispatchQueue.main.async {
                 self.chLabel.text = self.remonCall.channelID
             }
-            
-            self.remonCall.startDump(withFileName: "audio.aecdump", maxSizeInBytes: 100 * 1024)
         }
         
-        remonCall.onClose { (type) in
+        remonCall.onRemoteVideoSizeChanged { (remoteView, size) in
+            print("aaaaa", size)
+            let newFrame = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+            remoteView?.frame = newFrame
+        }
+        
+        remonCall.onLocalVideoSizeChanged { (localView, size) in
+            print("aaaaa", size, "bbb")
+        }
+        
+        remonCall.onClose { (_) in
             DispatchQueue.main.async {
-                self.chLabel.text = "Close Remon"
+//                self.chLabel.text = "Close Remon-   "
             }
-            
-            self.remonCall.stopDump()
-            
-            self.remonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a", progress: { (error, state) in
-                
-            })
         }
         
         remonCall.onConnect { (ss) in
             print(ss)
+            do {
+                if #available(iOS 10.0, *) {
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategorySoloAmbient, mode: AVAudioSessionModeDefault)
+//                    try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.soloAmbient, mode: AVAudioSession.Mode.default) //ios 12
+                }
+                else {
+                    AVAudioSession.sharedInstance().perform(NSSelectorFromString("setCategory:error:"), with: AVAudioSessionCategorySoloAmbient)
+//                    AVAudioSession.sharedInstance().perform(NSSelectorFromString("setCategory:error:"), with: AVAudioSession.Category.soloAmbient) //ios 12
+                }
+                
+                try AVAudioSession.sharedInstance().setActive(true, with: [])
+                try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
+            } catch {
+                print(error)
+            }
         }
         
         remonCall.onError { (error) in
@@ -90,7 +116,39 @@ class SimpleCallViewController: UIViewController {
             }
         }
         
+        remonCall.onRetry { (completed) in
+            print(completed)
+        }
         
+        remonCall.onRemoteVideoSizeChanged { (view, size) in
+            print("Debug onRemoteVideoSizeChanged", size)
+            print("Debug self.remonCall\(self.remonCall.remoteView.hashValue) and view\(view.hashValue) is same")
+            
+            let videoHeight = size.height
+            let videoWidth = size.width
+            let videoRatio:CGFloat = videoWidth / videoHeight
+            
+            guard let myView = view else { return }
+            
+            let myViewWidth:CGFloat = myView.frame.size.width
+            let myViewHeight:CGFloat = myView.frame.size.height
+            let myViewRatio:CGFloat = myViewWidth / myViewHeight
+            
+            if videoRatio < 1.0 {
+                if myViewRatio < 1.0 {
+                    let computedWidth:CGFloat = myViewHeight * videoRatio
+                    print("Debug computedWidth", computedWidth)
+                    DispatchQueue.main.async {
+                        myView.frame = CGRect(x: 0.0, y: 0.0, width: computedWidth, height: myViewHeight)
+                        myView.center = self.view.center
+                    }
+                } else {
+//                    NOOP
+                }
+            } else {
+//                NOOP
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HO3-by-QeK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HO3-by-QeK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -109,14 +109,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="SERVICEID1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EYu-rR-irb">
-                                <rect key="frame" x="158" y="136" width="144" height="30"/>
+                                <rect key="frame" x="158" y="136" width="169" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234567890" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nsM-i5-JYK">
-                                <rect key="frame" x="158" y="173" width="144" height="30"/>
+                                <rect key="frame" x="158" y="173" width="417" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -256,7 +256,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view tag="999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2l-cx-L2W">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2l-cx-L2W">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -329,6 +329,30 @@
                                     <action selector="closeRemon:" destination="W6D-SU-QTP" eventType="touchUpInside" id="un6-56-EFF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilK-MW-e5L">
+                                <rect key="frame" x="132" y="385" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="muteLocalAudio"/>
+                                <connections>
+                                    <action selector="muteLocalAudio:" destination="W6D-SU-QTP" eventType="touchUpInside" id="rhk-rD-7hF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axp-qA-vGf">
+                                <rect key="frame" x="10" y="74" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="volumeRatioP:" destination="W6D-SU-QTP" eventType="touchUpInside" id="i7n-OS-mhB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8o-n1-CSV">
+                                <rect key="frame" x="77" y="74" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="volumeRatioM:" destination="W6D-SU-QTP" eventType="touchUpInside" id="AQ3-za-gIB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -362,8 +386,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ktG-fv-fmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="l4v-Pr-Cqu" customClass="RemonCall" customModule="RemoteMonster">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SEVICEID1"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://signal.remotemonster.com/rest/init"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="localView" destination="DuQ-aG-iiG" id="ju0-R8-snA"/>
+                        <outlet property="localView" destination="DuQ-aG-iiG" id="PTa-Yr-I0q"/>
+                        <outlet property="remoteView" destination="O2l-cx-L2W" id="lrP-5O-fv3"/>
                     </connections>
                 </customObject>
             </objects>
@@ -419,6 +450,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8C-zO-J56" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="2F0-Q1-TE0" customClass="RemonCast" customModule="RemoteMonster">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://signal.remotemonster.com/rest/init"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SEVICEID1"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="localView" destination="leW-Co-0pt" id="Bto-Yx-uLS"/>
                     </connections>
@@ -478,6 +515,13 @@
                                 <rect key="frame" x="0.0" y="114" width="375" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-Md-pzi">
+                                <rect key="frame" x="166" y="137" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -497,17 +541,24 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="channelLabel" destination="NlO-Q8-8WV" id="KPt-4N-XHW"/>
+                        <outlet property="fpsLabel" destination="1uT-Md-pzi" id="1h1-NN-2SG"/>
                         <outlet property="remonCast" destination="ky8-YI-WfO" id="u3Z-c7-Abm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCq-DX-JY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="ky8-YI-WfO" customClass="RemonCast" customModule="RemoteMonster">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://signal.remotemonster.com/rest/init"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="remoteView" destination="MNg-29-Mad" id="4Ua-0u-EKW"/>
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="-1946.4000000000001" y="-32.833583208395808"/>
+            <point key="canvasLocation" x="-1946.4000000000001" y="48.125937031484263"/>
         </scene>
         <!--Simple Serch Table View Controller-->
         <scene sceneID="zPi-Ao-Nse">
@@ -585,7 +636,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbP-8T-Q7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="Mdz-yz-Ji3" customClass="RemonCast" customModule="RemoteMonster"/>
+                <customObject id="Mdz-yz-Ji3" customClass="RemonCast" customModule="RemoteMonster">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wsUrl" value="wss://signal.remotemonster.com/ws"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="restUrl" value="https://signal.remotemonster.com/rest/init"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="-2617" y="63"/>
         </scene>

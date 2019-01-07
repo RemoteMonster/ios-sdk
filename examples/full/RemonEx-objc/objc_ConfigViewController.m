@@ -40,8 +40,8 @@
 - (IBAction)next:(id)sender {
 //    self.remonConfig.serviceId = [self fieldText:self.serviceIdField];
 //    self.remonConfig.key = [self fieldText:self.serviceKeyField];
-    self.remonConfig.serviceId = @"SERVICEID1";
-    self.remonConfig.key = @"1234567890";
+    self.remonConfig.serviceId = [self fieldText:self.serviceIdField];
+    self.remonConfig.key = [self fieldText:self.serviceKeyField];
     self.remonConfig.videoCodec = [self fieldText:self.codecField];
     self.remonConfig.videoWidth = [[self fieldText:self.videoWidthField] integerValue];
     self.remonConfig.videoHeight = [[self fieldText:self.videoHeightField] integerValue];
@@ -63,8 +63,8 @@
             break;
     }
     
-    self.remonConfig.restUrl = @"https://matiz.remotemonster.com/rest/init";
-    self.remonConfig.wsUrl = @"wss://matiz.remotemonster.com/ws";
+    self.remonConfig.restUrl = @"https://signal.remotemonster.com/rest/init";
+    self.remonConfig.wsUrl = @"wss://signal.remotemonster.com/ws";
     
     self.remonConfig.autoCaptureStart = self.autoCaptureStartSegmentedController.selectedSegmentIndex == 0;
     self.remonConfig.videoCall = self.videoCallSegmentedController.selectedSegmentIndex == 0;

@@ -20,7 +20,7 @@
 - (IBAction)reload:(id)sender {
     self.remonCast.serviceId = self.customConfig.serviceId;
     self.remonCast.serviceKey = self.customConfig.key;
-    [self.remonCast fetchCastsWithIsTest:YES
+    [self.remonCast fetchCastsWithIsTest:!YES
                                 complete:^(NSArray<RemonSearchResult *> * _Nullable chs) {
                                     self.rooms = chs;
                                     dispatch_async(dispatch_get_main_queue(), ^{

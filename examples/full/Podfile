@@ -16,8 +16,8 @@ target 'RemonCall' do
 
   # Pods for SampleV2
   pod 'RemoteMonster', '~> 2.0'
-  pod 'Firebase/Core'
-  pod 'Firebase/Database'
+#  pod 'Firebase/Core'
+#  pod 'Firebase/Database'
 
 end
 
