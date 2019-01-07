@@ -116,7 +116,7 @@ class SimpleCastViewer: UIViewController {
         
         self.remonCast.onRemoteVideoSizeChanged { (view, size) in
             print("Debug onRemoteVideoSizeChanged", size)
-            print("Debug remonCast\(self.remonCast.remoteView.hashValue) and view\(view.hashValue) is same")
+            print("Debug self.remonCast.remoteView(\(self.remonCast.remoteView.hashValue)) and view(\(view.hashValue)) is same")
             
             let videoHeight = size.height
             let videoWidth = size.width
