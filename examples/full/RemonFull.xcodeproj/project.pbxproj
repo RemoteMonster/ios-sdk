@@ -19,6 +19,7 @@
 		0B5CB60D20B5563B00FB2BFE /* SimpleVideoCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB60120B5563B00FB2BFE /* SimpleVideoCast.swift */; };
 		0B5CB60F20B5563B00FB2BFE /* SimpleVoiceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB60320B5563B00FB2BFE /* SimpleVoiceCast.swift */; };
 		0BD78A5420BB9B760017E2F0 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */; };
+		408B9EC0C25CBE761EE6B8CD /* Pods_meshCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235F160877997B192D55E2A8 /* Pods_meshCall.framework */; };
 		6069E4E120EB4526000B3AA5 /* SimpleAudioSessionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6069E4E020EB4526000B3AA5 /* SimpleAudioSessionObserver.swift */; };
 		60B27F6820DB94BD00BB97C8 /* RemonSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60B27F6720DB94BD00BB97C8 /* RemonSettings.plist */; };
 		63DC033411862F621A4F958E /* Pods_RemonCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98DB5808B1B972342BF7A3D /* Pods_RemonCall.framework */; };
@@ -40,6 +41,11 @@
 		A30D22E821EC241800771E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A30D22E721EC241800771E59 /* Assets.xcassets */; };
 		A30D22EB21EC241800771E59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30D22E921EC241800771E59 /* LaunchScreen.storyboard */; };
 		A30D22F321EC245700771E59 /* EXSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D22F121EC245700771E59 /* EXSViewController.swift */; };
+		A32FCCD221EC5C4500C3E4FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FCCD121EC5C4500C3E4FC /* AppDelegate.swift */; };
+		A32FCCD421EC5C4500C3E4FC /* MeshCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FCCD321EC5C4500C3E4FC /* MeshCallViewController.swift */; };
+		A32FCCD721EC5C4500C3E4FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32FCCD521EC5C4500C3E4FC /* Main.storyboard */; };
+		A32FCCD921EC5C4600C3E4FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32FCCD821EC5C4600C3E4FC /* Assets.xcassets */; };
+		A32FCCDC21EC5C4600C3E4FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32FCCDA21EC5C4600C3E4FC /* LaunchScreen.storyboard */; };
 		A36A798E214601A1002D580C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A798D214601A1002D580C /* AppDelegate.swift */; };
 		A36A7990214601A2002D580C /* RemonCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A798F214601A2002D580C /* RemonCallViewController.swift */; };
 		A36A7993214601A2002D580C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36A7991214601A2002D580C /* Main.storyboard */; };
@@ -67,6 +73,7 @@
 		0B5CB60320B5563B00FB2BFE /* SimpleVoiceCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleVoiceCast.swift; sourceTree = "<group>"; };
 		0B5CB61020B5566400FB2BFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		235F160877997B192D55E2A8 /* Pods_meshCall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meshCall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FA9D86BC59C24ECE49B567 /* Pods-RemonFull.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonFull.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull.release.xcconfig"; sourceTree = "<group>"; };
 		4501A5A6E8EA6B557726E06E /* Pods_externalSampler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_externalSampler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFED3282B89D6374ABEDA49 /* Pods-externalSampler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-externalSampler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-externalSampler/Pods-externalSampler.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +108,13 @@
 		A30D22EA21EC241800771E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A30D22EC21EC241800771E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A30D22F121EC245700771E59 /* EXSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXSViewController.swift; sourceTree = "<group>"; };
+		A32FCCCF21EC5C4500C3E4FC /* meshCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meshCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A32FCCD121EC5C4500C3E4FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A32FCCD321EC5C4500C3E4FC /* MeshCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshCallViewController.swift; sourceTree = "<group>"; };
+		A32FCCD621EC5C4500C3E4FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A32FCCD821EC5C4600C3E4FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A32FCCDB21EC5C4600C3E4FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A32FCCDD21EC5C4600C3E4FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A36A79852146015B002D580C /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
 		A36A798B214601A1002D580C /* RemonCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemonCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36A798D214601A1002D580C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,8 +127,10 @@
 		A36A79A021462529002D580C /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		A36A79A221462D16002D580C /* RemonCall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RemonCall.entitlements; sourceTree = "<group>"; };
 		A98DB5808B1B972342BF7A3D /* Pods_RemonCall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemonCall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2D3AB140091E753B8148A06 /* Pods-meshCall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meshCall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meshCall/Pods-meshCall.debug.xcconfig"; sourceTree = "<group>"; };
 		E5F63BDED5FF2F50ECFA591A /* Pods-RemonCall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonCall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemonCall/Pods-RemonCall.debug.xcconfig"; sourceTree = "<group>"; };
 		E6FEC8F6C95903AEC7D6D8A9 /* Pods-RemonEx-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonEx-objc.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemonEx-objc/Pods-RemonEx-objc.release.xcconfig"; sourceTree = "<group>"; };
+		E7DC0705251F6FCFC9F6A06E /* Pods-meshCall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meshCall.release.xcconfig"; path = "Pods/Target Support Files/Pods-meshCall/Pods-meshCall.release.xcconfig"; sourceTree = "<group>"; };
 		FEEDB2D9D3082E3C50AACF46 /* Pods_RemonEx_objc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemonEx_objc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,6 +156,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BECC11036F337AB125A456E /* Pods_externalSampler.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A32FCCCC21EC5C4500C3E4FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				408B9EC0C25CBE761EE6B8CD /* Pods_meshCall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +209,7 @@
 				A36A798C214601A1002D580C /* RemonCall */,
 				A305738D2148C19700680F65 /* RemonEx-objc */,
 				A30D22DF21EC241700771E59 /* externalSampler */,
+				A32FCCD021EC5C4500C3E4FC /* meshCall */,
 				0BA0AF9120A9700700DEA203 /* Products */,
 				8322D69B4586F7A47D8D4D87 /* Pods */,
 				61506248230B4EAB7E317792 /* Frameworks */,
@@ -199,6 +224,7 @@
 				A36A798B214601A1002D580C /* RemonCall.app */,
 				A305738C2148C19700680F65 /* RemonEx-objc.app */,
 				A30D22DE21EC241600771E59 /* externalSampler.app */,
+				A32FCCCF21EC5C4500C3E4FC /* meshCall.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,6 +238,7 @@
 				A98DB5808B1B972342BF7A3D /* Pods_RemonCall.framework */,
 				FEEDB2D9D3082E3C50AACF46 /* Pods_RemonEx_objc.framework */,
 				4501A5A6E8EA6B557726E06E /* Pods_externalSampler.framework */,
+				235F160877997B192D55E2A8 /* Pods_meshCall.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -227,6 +254,8 @@
 				E6FEC8F6C95903AEC7D6D8A9 /* Pods-RemonEx-objc.release.xcconfig */,
 				4EFED3282B89D6374ABEDA49 /* Pods-externalSampler.debug.xcconfig */,
 				7BCAB032182713BBBB9B977A /* Pods-externalSampler.release.xcconfig */,
+				D2D3AB140091E753B8148A06 /* Pods-meshCall.debug.xcconfig */,
+				E7DC0705251F6FCFC9F6A06E /* Pods-meshCall.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -266,6 +295,19 @@
 				A30D22EC21EC241800771E59 /* Info.plist */,
 			);
 			path = externalSampler;
+			sourceTree = "<group>";
+		};
+		A32FCCD021EC5C4500C3E4FC /* meshCall */ = {
+			isa = PBXGroup;
+			children = (
+				A32FCCD121EC5C4500C3E4FC /* AppDelegate.swift */,
+				A32FCCD321EC5C4500C3E4FC /* MeshCallViewController.swift */,
+				A32FCCD521EC5C4500C3E4FC /* Main.storyboard */,
+				A32FCCD821EC5C4600C3E4FC /* Assets.xcassets */,
+				A32FCCDA21EC5C4600C3E4FC /* LaunchScreen.storyboard */,
+				A32FCCDD21EC5C4600C3E4FC /* Info.plist */,
+			);
+			path = meshCall;
 			sourceTree = "<group>";
 		};
 		A36A798C214601A1002D580C /* RemonCall */ = {
@@ -343,6 +385,25 @@
 			productReference = A30D22DE21EC241600771E59 /* externalSampler.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A32FCCCE21EC5C4500C3E4FC /* meshCall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A32FCCE021EC5C4600C3E4FC /* Build configuration list for PBXNativeTarget "meshCall" */;
+			buildPhases = (
+				2E749092E4D9C0324883BFF1 /* [CP] Check Pods Manifest.lock */,
+				A32FCCCB21EC5C4500C3E4FC /* Sources */,
+				A32FCCCC21EC5C4500C3E4FC /* Frameworks */,
+				A32FCCCD21EC5C4500C3E4FC /* Resources */,
+				40CD6B5216C737CD544E3769 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = meshCall;
+			productName = meshCall;
+			productReference = A32FCCCF21EC5C4500C3E4FC /* meshCall.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A36A798A214601A1002D580C /* RemonCall */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A36A799A214601A2002D580C /* Build configuration list for PBXNativeTarget "RemonCall" */;
@@ -378,6 +439,9 @@
 					A30D22DD21EC241600771E59 = {
 						CreatedOnToolsVersion = 10.1;
 					};
+					A32FCCCE21EC5C4500C3E4FC = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					A36A798A214601A1002D580C = {
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
@@ -408,6 +472,7 @@
 				A36A798A214601A1002D580C /* RemonCall */,
 				A305738B2148C19700680F65 /* RemonEx-objc */,
 				A30D22DD21EC241600771E59 /* externalSampler */,
+				A32FCCCE21EC5C4500C3E4FC /* meshCall */,
 			);
 		};
 /* End PBXProject section */
@@ -441,6 +506,16 @@
 				A30D22EB21EC241800771E59 /* LaunchScreen.storyboard in Resources */,
 				A30D22E821EC241800771E59 /* Assets.xcassets in Resources */,
 				A30D22E621EC241700771E59 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A32FCCCD21EC5C4500C3E4FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A32FCCDC21EC5C4600C3E4FC /* LaunchScreen.storyboard in Resources */,
+				A32FCCD921EC5C4600C3E4FC /* Assets.xcassets in Resources */,
+				A32FCCD721EC5C4500C3E4FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +573,28 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2E749092E4D9C0324883BFF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-meshCall-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3EBFC27D4FAFBD8A16A188D6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -514,6 +611,32 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40CD6B5216C737CD544E3769 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-meshCall/Pods-meshCall-frameworks.sh",
+				"${PODS_ROOT}/Remon-WebRTC-iOS/WebRTC.framework",
+				"${PODS_ROOT}/RemoteMonster/RemoteMonster.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RemoteMonster.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-meshCall/Pods-meshCall-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		58666B9E91C27DDC965EF460 /* [CP] Embed Pods Frameworks */ = {
@@ -671,6 +794,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A32FCCCB21EC5C4500C3E4FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A32FCCD421EC5C4500C3E4FC /* MeshCallViewController.swift in Sources */,
+				A32FCCD221EC5C4500C3E4FC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A36A7987214601A1002D580C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -727,6 +859,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				A30D22EA21EC241800771E59 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A32FCCD521EC5C4500C3E4FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A32FCCD621EC5C4500C3E4FC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A32FCCDA21EC5C4600C3E4FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A32FCCDB21EC5C4600C3E4FC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -999,6 +1147,51 @@
 			};
 			name = Release;
 		};
+		A32FCCDE21EC5C4600C3E4FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2D3AB140091E753B8148A06 /* Pods-meshCall.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = meshCall/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Remotemonster.meshCall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A32FCCDF21EC5C4600C3E4FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7DC0705251F6FCFC9F6A06E /* Pods-meshCall.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = meshCall/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Remotemonster.meshCall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A36A799B214601A2002D580C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E5F63BDED5FF2F50ECFA591A /* Pods-RemonCall.debug.xcconfig */;
@@ -1078,6 +1271,15 @@
 			buildConfigurations = (
 				A30D22ED21EC241800771E59 /* Debug */,
 				A30D22EE21EC241800771E59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A32FCCE021EC5C4600C3E4FC /* Build configuration list for PBXNativeTarget "meshCall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A32FCCDE21EC5C4600C3E4FC /* Debug */,
+				A32FCCDF21EC5C4600C3E4FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -164,6 +164,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import CoreGraphics;
+@import CoreMedia;
 @import CoreVideo;
 @import Foundation;
 @import ObjectiveC;
@@ -431,7 +432,7 @@ enum RemonVideoRotation : NSInteger;
 
 SWIFT_CLASS("_TtC13RemoteMonster19RemonSampleCapturer")
 @interface RemonSampleCapturer : RTCVideoCapturer
-- (void)didCaptureFrameWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer timeStampNs:(int64_t)timeStampNs videoRetation:(enum RemonVideoRotation)videoRetation;
+- (void)didCaptureFrameWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer timeStamp:(CMTime)timeStamp videoRetation:(enum RemonVideoRotation)videoRetation;
 - (nonnull instancetype)initWithDelegate:(id <RTCVideoCapturerDelegate> _Nonnull)delegate OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
