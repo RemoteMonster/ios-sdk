@@ -39,7 +39,6 @@
 		A30D22E621EC241700771E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30D22E421EC241700771E59 /* Main.storyboard */; };
 		A30D22E821EC241800771E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A30D22E721EC241800771E59 /* Assets.xcassets */; };
 		A30D22EB21EC241800771E59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30D22E921EC241800771E59 /* LaunchScreen.storyboard */; };
-		A30D22F221EC245700771E59 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30D22F021EC245700771E59 /* GPUImage.framework */; };
 		A30D22F321EC245700771E59 /* EXSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D22F121EC245700771E59 /* EXSViewController.swift */; };
 		A36A798E214601A1002D580C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A798D214601A1002D580C /* AppDelegate.swift */; };
 		A36A7990214601A2002D580C /* RemonCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A798F214601A2002D580C /* RemonCallViewController.swift */; };
@@ -101,7 +100,6 @@
 		A30D22E721EC241800771E59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A30D22EA21EC241800771E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A30D22EC21EC241800771E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A30D22F021EC245700771E59 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		A30D22F121EC245700771E59 /* EXSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXSViewController.swift; sourceTree = "<group>"; };
 		A36A79852146015B002D580C /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
 		A36A798B214601A1002D580C /* RemonCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemonCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +139,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A30D22F221EC245700771E59 /* GPUImage.framework in Frameworks */,
 				8BECC11036F337AB125A456E /* Pods_externalSampler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				A30D22F121EC245700771E59 /* EXSViewController.swift */,
-				A30D22F021EC245700771E59 /* GPUImage.framework */,
 				A30D22E021EC241700771E59 /* AppDelegate.swift */,
 				A30D22E421EC241700771E59 /* Main.storyboard */,
 				A30D22E721EC241800771E59 /* Assets.xcassets */,
