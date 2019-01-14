@@ -1,24 +1,28 @@
 PODS:
+  - GPUImage (0.1.7)
   - Remon-WebRTC-iOS (1.0140)
-  - RemoteMonster (2.4.39):
+  - RemoteMonster (2.4.41):
     - Remon-WebRTC-iOS (= 1.0140)
     - SwiftProtobuf (= 1.1.2)
   - SwiftProtobuf (1.1.2)
 
 DEPENDENCIES:
+  - GPUImage (~> 0.1)
   - RemoteMonster (~> 2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - GPUImage
     - Remon-WebRTC-iOS
     - RemoteMonster
     - SwiftProtobuf
 
 SPEC CHECKSUMS:
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   Remon-WebRTC-iOS: 8a67282a91072c350ed27c91188944cd3d1d35da
-  RemoteMonster: bda800efc9ccfe87ea6bff7da43449d70d7cd40b
+  RemoteMonster: d0497b3aae7d8d8c787cfb0c438de169696ebb8c
   SwiftProtobuf: 7147b8ec19c8c0694a45155d989ea9e6dedaf51f
 
-PODFILE CHECKSUM: e41c747e980b96a83b177f7a283a37080bbcf871
+PODFILE CHECKSUM: 247d00acb0d670770aeb2395421fe6c01d48ab59
 
 COCOAPODS: 1.5.3
