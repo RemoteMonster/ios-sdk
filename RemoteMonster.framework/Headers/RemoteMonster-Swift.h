@@ -164,6 +164,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import CoreGraphics;
+@import CoreVideo;
 @import Foundation;
 @import ObjectiveC;
 @import WebRTC;
@@ -242,6 +243,8 @@ SWIFT_PROTOCOL("_TtP13RemoteMonster22RemonCallBlockSettable_")
 @end
 
 @protocol RTCVideoRenderer;
+@class RTCCameraVideoCapturer;
+@class RemonSampleCapturer;
 enum RemonCloseType : NSInteger;
 @class NSError;
 @class RemonStatReport;
@@ -263,6 +266,8 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 + (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
 @property (nonatomic) double volumeRatio;
 @property (nonatomic, copy) NSString * _Nonnull userMeta;
+@property (nonatomic, strong) RTCCameraVideoCapturer * _Nullable localCameraCapturer;
+@property (nonatomic, strong) RemonSampleCapturer * _Nullable localExternalCaptureDelegator;
 - (void)onInitWithBlock:(void (^ _Nonnull)(void))block;
 - (void)onCloseWithBlock:(void (^ _Nonnull)(enum RemonCloseType))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
@@ -276,6 +281,7 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @property (nonatomic, strong) RTCEAGLVideoView * _Nullable localRTCEAGLVideoView;
 @property (nonatomic, strong) RTCCameraPreviewView * _Nullable localRTCCameraPreviewView;
 @property (nonatomic) BOOL showRemoteVideoStat;
+@property (nonatomic) BOOL useExternalCapturer;
 @property (nonatomic, copy) NSString * _Nullable channelID;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
@@ -412,12 +418,23 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic) BOOL debugMode;
 /// 사용할 카메라 포지션
 @property (nonatomic) BOOL useFrontCamera;
+@property (nonatomic) BOOL useExternalCapturer;
 @property (nonatomic, copy) NSString * _Nonnull userMeta;
 @property (nonatomic) RTCLoggingSeverity debugLevel;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
+
+enum RemonVideoRotation : NSInteger;
+@protocol RTCVideoCapturerDelegate;
+
+SWIFT_CLASS("_TtC13RemoteMonster19RemonSampleCapturer")
+@interface RemonSampleCapturer : RTCVideoCapturer
+- (void)didCaptureFrameWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer timeStampNs:(int64_t)timeStampNs videoRetation:(enum RemonVideoRotation)videoRetation;
+- (nonnull instancetype)initWithDelegate:(id <RTCVideoCapturerDelegate> _Nonnull)delegate OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 SWIFT_CLASS("_TtC13RemoteMonster17RemonSearchResult")
@@ -479,6 +496,13 @@ typedef SWIFT_ENUM(NSInteger, RemonState, closed) {
 /// 통신 연결 후 빠져나갔을 때의 상태
   RemonStateEXIT = 8,
   RemonStateCLOSE = 9,
+};
+
+typedef SWIFT_ENUM(NSInteger, RemonVideoRotation, closed) {
+  RemonVideoRotation_0 = 0,
+  RemonVideoRotation_90 = 90,
+  RemonVideoRotation_180 = 180,
+  RemonVideoRotation_270 = 270,
 };
 
 
