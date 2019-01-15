@@ -9,7 +9,7 @@
 import UIKit
 import RemoteMonster
 
-class MeshCallViewController: UIViewController {
+class MeshCallViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var remonCall_0: RemonCall!
     @IBOutlet var remonCall_1: RemonCall!
@@ -148,11 +148,33 @@ class MeshCallViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.remonCall_0.videoCodec = "H264"
+        self.remonCall_1.videoCodec = "H264"
+        self.remonCall_2.videoCodec = "H264"
+        self.remonCall_3.videoCodec = "H264"
+        self.remonCall_4.videoCodec = "H264"
+        self.remonCall_5.videoCodec = "H264"
+        
+//        self.remonCall_0.videoCodec = "VP8"
+//        self.remonCall_1.videoCodec = "VP8"
+//        self.remonCall_2.videoCodec = "VP8"
+//        self.remonCall_3.videoCodec = "VP8"
+//        self.remonCall_4.videoCodec = "VP8"
+//        self.remonCall_5.videoCodec = "VP8"
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     func hideKeyboard() -> Void {
         self.view.endEditing(true)
+    }
+    
+    @IBAction func aa(_ sender: Any) {
+        self.hideKeyboard()
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.hideKeyboard()
+        return true
     }
 }
 
