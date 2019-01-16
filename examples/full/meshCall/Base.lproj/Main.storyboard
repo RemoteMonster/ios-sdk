@@ -470,6 +470,12 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="videoWidth">
+                            <integer key="value" value="240"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="videoHeight">
+                            <integer key="value" value="320"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="localView" destination="2op-D1-CoH" id="u2f-Vi-xCB"/>
@@ -481,6 +487,12 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="videoWidth">
+                            <integer key="value" value="240"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="videoHeight">
+                            <integer key="value" value="320"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="remoteView" destination="yZe-x8-FIl" id="nQL-Nh-6wK"/>
@@ -491,6 +503,12 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="videoWidth">
+                            <integer key="value" value="240"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="videoHeight">
+                            <integer key="value" value="320"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="remoteView" destination="Gyl-z3-Aix" id="RvU-kv-iK2"/>
@@ -501,6 +519,12 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="videoWidth">
+                            <integer key="value" value="240"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="videoHeight">
+                            <integer key="value" value="320"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="remoteView" destination="Rpe-F6-Xjn" id="cEk-00-2eQ"/>
@@ -511,6 +535,12 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="videoWidth">
+                            <integer key="value" value="240"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="videoHeight">
+                            <integer key="value" value="320"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="remoteView" destination="NhQ-YB-ePG" id="5nX-k1-8r6"/>
@@ -521,6 +551,12 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="videoWidth">
+                            <integer key="value" value="240"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="videoHeight">
+                            <integer key="value" value="320"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="remoteView" destination="anN-YG-KkF" id="QpP-wa-7q8"/>
