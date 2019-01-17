@@ -66,27 +66,32 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 ## 2.3.7
 - hotfix unpackAecDump()
 
-## ## 2.3.8
+## 2.3.8
 - support mute at objc
 
-## ## 2.3.9
+## 2.3.9
 - change videoView access controll
 
-## ## 2.4.0.1
+## 2.4.0.1
 - add observer method
   - onRemoteVideoSizeChanged
   - onLocalVideoSizeChanged
 
-## ## 2.4.13
+## 2.4.13
 - bug fix
   - No crash without a channel id
 
-## ## 2.4.20
+## 2.4.20
 - change default audio session category
 - change health log cycle
 - change health log rule
 
-## ## 2.4.38
+## 2.4.38
 - add property volumeRatio at RemonController
 - add property userMete at RemonConfig
 - add callback func onRetry at RemonController
+
+## 2.4.43
+- add property useExternalCapturer at RemonController And RemonConfig
+- add Class RemonSampleCapturer
+  - Used through localExternalCaptureDelegator at RemonController
