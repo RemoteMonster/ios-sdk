@@ -8,6 +8,7 @@
 
 import UIKit
 import RemoteMonster
+import GPUImage
 
 class MeshCallViewController: UIViewController, UITextFieldDelegate {
     
@@ -148,21 +149,16 @@ class MeshCallViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.remonCall_0.videoCodec = "H264"
-        self.remonCall_1.videoCodec = "H264"
-        self.remonCall_2.videoCodec = "H264"
-        self.remonCall_3.videoCodec = "H264"
-        self.remonCall_4.videoCodec = "H264"
-        self.remonCall_5.videoCodec = "H264"
+        let mons:Array<RemonCall> = [self.remonCall_0, self.remonCall_1, self.remonCall_2, self.remonCall_3, self.remonCall_4, self.remonCall_5]
         
-//        self.remonCall_0.videoCodec = "VP8"
-//        self.remonCall_1.videoCodec = "VP8"
-//        self.remonCall_2.videoCodec = "VP8"
-//        self.remonCall_3.videoCodec = "VP8"
-//        self.remonCall_4.videoCodec = "VP8"
-//        self.remonCall_5.videoCodec = "VP8"
-
-        // Do any additional setup after loading the view, typically from a nib.
+        mons.forEach { (mon) in
+            mon.videoCodec = "H264"
+            
+            // 기본 챕처러를 사용한다고 선언할 경우 n개의 로컬 캡터러가 생성 되어짐.
+            // 한개의 외부 캡쳐러를 사용하고, 한개의 캡쳐 결과를 각 연결에 전달 하는 방법으로 개발할 필요가 있음.
+            // 외부 캡쳐러에 대한 가이드는 예제 'exrenalSampler'를 참조.
+            mon.useExternalCapturer = true
+        }
     }
 
     func hideKeyboard() -> Void {

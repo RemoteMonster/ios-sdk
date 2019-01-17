@@ -332,9 +332,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7H-3p-bg5">
-                                <rect key="frame" x="166" y="63" width="46" height="30"/>
+                                <rect key="frame" x="141" y="63" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="hide keyboard"/>
                                 <connections>
                                     <action selector="aa:" destination="BYZ-38-t0r" eventType="touchUpInside" id="shY-1R-xga"/>
                                 </connections>
@@ -471,10 +471,13 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="videoWidth">
-                            <integer key="value" value="240"/>
+                            <integer key="value" value="60"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="videoHeight">
-                            <integer key="value" value="320"/>
+                            <integer key="value" value="80"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fps">
+                            <integer key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -488,10 +491,13 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="videoWidth">
-                            <integer key="value" value="240"/>
+                            <integer key="value" value="60"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="videoHeight">
-                            <integer key="value" value="320"/>
+                            <integer key="value" value="80"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fps">
+                            <integer key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -504,10 +510,13 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="videoWidth">
-                            <integer key="value" value="240"/>
+                            <integer key="value" value="60"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="videoHeight">
-                            <integer key="value" value="320"/>
+                            <integer key="value" value="80"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fps">
+                            <integer key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -520,10 +529,13 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="videoWidth">
-                            <integer key="value" value="240"/>
+                            <integer key="value" value="60"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="videoHeight">
-                            <integer key="value" value="320"/>
+                            <integer key="value" value="80"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fps">
+                            <integer key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -536,10 +548,13 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="videoWidth">
-                            <integer key="value" value="240"/>
+                            <integer key="value" value="60"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="videoHeight">
-                            <integer key="value" value="320"/>
+                            <integer key="value" value="80"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fps">
+                            <integer key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -552,10 +567,13 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAudio" value="NO"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="videoWidth">
-                            <integer key="value" value="240"/>
+                            <integer key="value" value="60"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="videoHeight">
-                            <integer key="value" value="320"/>
+                            <integer key="value" value="80"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fps">
+                            <integer key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
