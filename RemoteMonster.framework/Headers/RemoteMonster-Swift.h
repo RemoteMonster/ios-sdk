@@ -286,6 +286,7 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 @property (nonatomic, copy) NSString * _Nullable channelID;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+- (NSString * _Nonnull)getCurruntStateString SWIFT_WARN_UNUSED_RESULT;
 - (void)closeRemon;
 - (void)objc_switchBandWidthWithBandwidth:(enum objc_RemonBandwidth)bandwidth;
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
@@ -294,6 +295,7 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 - (BOOL)stopLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)startLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
 - (void)stopRemoteVideoCapture;
+- (void)switchCamera;
 - (void)startRemoteVideoCapture;
 - (void)setVolumeWithVolume:(float)volume;
 - (void)audioSessionDidStartPlayOrRecord:(RTCAudioSession * _Nonnull)session;
