@@ -100,3 +100,6 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 - add getCurrentStateString()
 - bug fix
   - support switchCameta for objc
+
+## 2.4.44
+- bug fix
