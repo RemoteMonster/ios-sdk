@@ -95,3 +95,8 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 - add property useExternalCapturer at RemonController And RemonConfig
 - add Class RemonSampleCapturer
   - Used through localExternalCaptureDelegator at RemonController
+
+## 2.4.44
+- add getCurrentStateString()
+- bug fix
+  - support switchCameta for objc
