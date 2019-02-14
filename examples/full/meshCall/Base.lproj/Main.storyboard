@@ -223,7 +223,24 @@
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2op-D1-CoH">
                                 <rect key="frame" x="50" y="40" width="275" height="138"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKB-5B-Z5V">
+                                        <rect key="frame" x="91" y="62" width="93" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="djA-aV-MNp"/>
+                                            <constraint firstAttribute="width" constant="93" id="xPM-Ct-ecu"/>
+                                        </constraints>
+                                        <state key="normal" title="Start Capture"/>
+                                        <connections>
+                                            <action selector="touchStartCapture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WwX-VB-uj1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="vKB-5B-Z5V" firstAttribute="centerX" secondItem="2op-D1-CoH" secondAttribute="centerX" id="WjI-hl-idq"/>
+                                    <constraint firstItem="vKB-5B-Z5V" firstAttribute="top" secondItem="2op-D1-CoH" secondAttribute="top" constant="62" id="cKM-oX-W2j"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdM-OX-lBD">
                                 <rect key="frame" x="80" y="232" width="23" height="43"/>
@@ -331,9 +348,12 @@
                                     <action selector="endCh_5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tsk-xI-8Y0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7H-3p-bg5">
-                                <rect key="frame" x="141" y="63" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7H-3p-bg5">
+                                <rect key="frame" x="139" y="63" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="P9B-7d-C0k"/>
+                                    <constraint firstAttribute="width" constant="97" id="gyV-cm-JNF"/>
+                                </constraints>
                                 <state key="normal" title="hide keyboard"/>
                                 <connections>
                                     <action selector="aa:" destination="BYZ-38-t0r" eventType="touchUpInside" id="shY-1R-xga"/>
@@ -353,6 +373,7 @@
                             <constraint firstItem="CFC-Kq-aHH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5Ok-xu-3U1"/>
                             <constraint firstItem="hsI-MU-g7S" firstAttribute="leading" secondItem="OLr-K6-fQQ" secondAttribute="trailing" constant="80" id="6a7-8O-GbI"/>
                             <constraint firstItem="2le-y9-ZYb" firstAttribute="top" secondItem="jqV-0n-rPg" secondAttribute="bottom" constant="5" id="7sc-1h-UuR"/>
+                            <constraint firstItem="Z7H-3p-bg5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="8qW-xa-Dnu"/>
                             <constraint firstItem="mVo-Hn-bCw" firstAttribute="top" secondItem="jqV-0n-rPg" secondAttribute="bottom" constant="10" id="9ks-IO-nFz"/>
                             <constraint firstItem="eog-UL-8El" firstAttribute="leading" secondItem="OLr-K6-fQQ" secondAttribute="trailing" constant="50" id="Aui-kx-JBe"/>
                             <constraint firstItem="xdM-OX-lBD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="Aui-pO-nYQ"/>
@@ -424,6 +445,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2op-D1-CoH" secondAttribute="trailing" constant="50" id="qUG-X5-zkO"/>
                             <constraint firstItem="dYH-Ec-zMl" firstAttribute="top" secondItem="og1-US-7U0" secondAttribute="bottom" constant="126" id="rlP-ZI-h7h"/>
                             <constraint firstItem="og1-US-7U0" firstAttribute="top" secondItem="Rpe-F6-Xjn" secondAttribute="bottom" constant="7" id="s31-WX-S4f"/>
+                            <constraint firstItem="Z7H-3p-bg5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t6j-Wx-gDe"/>
                             <constraint firstItem="GkH-5F-56n" firstAttribute="leading" secondItem="OLr-K6-fQQ" secondAttribute="trailing" constant="50" id="tHb-rB-akc"/>
                             <constraint firstItem="d6J-om-XXt" firstAttribute="leading" secondItem="OLr-K6-fQQ" secondAttribute="trailing" constant="80" id="ukN-WU-X4l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CFC-Kq-aHH" secondAttribute="trailing" id="uo9-kZ-OgK"/>
@@ -438,6 +460,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="buttonStartCapture" destination="vKB-5B-Z5V" id="BxL-k4-4jW"/>
                         <outlet property="chButton_0" destination="aBI-m9-Jd7" id="Wol-jp-irL"/>
                         <outlet property="chButton_1" destination="OsP-S3-jvA" id="ODW-M0-DCy"/>
                         <outlet property="chButton_2" destination="i0M-up-4Oo" id="j92-eJ-rij"/>
@@ -462,6 +485,12 @@
                         <outlet property="remonCall_3" destination="0ON-J7-NOi" id="FqY-Tj-ewc"/>
                         <outlet property="remonCall_4" destination="0rt-aI-VUY" id="yjP-wS-UTI"/>
                         <outlet property="remonCall_5" destination="c7h-rU-aeU" id="eai-Gk-Tfa"/>
+                        <outletCollection property="remons" destination="zRY-wi-fC2" collectionClass="NSMutableArray" id="bqx-1Y-chR"/>
+                        <outletCollection property="remons" destination="Bha-qq-Cj3" collectionClass="NSMutableArray" id="yMD-bi-OBd"/>
+                        <outletCollection property="remons" destination="2G9-F2-23Z" collectionClass="NSMutableArray" id="9bJ-yC-0LB"/>
+                        <outletCollection property="remons" destination="0ON-J7-NOi" collectionClass="NSMutableArray" id="II7-8a-L7h"/>
+                        <outletCollection property="remons" destination="0rt-aI-VUY" collectionClass="NSMutableArray" id="Cjh-nP-DDQ"/>
+                        <outletCollection property="remons" destination="c7h-rU-aeU" collectionClass="NSMutableArray" id="mzS-PR-qUw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -481,7 +510,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="localView" destination="2op-D1-CoH" id="u2f-Vi-xCB"/>
+                        <outlet property="localView" destination="2op-D1-CoH" id="hbA-xk-GTo"/>
                         <outlet property="remoteView" destination="2le-y9-ZYb" id="qA7-my-4rK"/>
                     </connections>
                 </customObject>

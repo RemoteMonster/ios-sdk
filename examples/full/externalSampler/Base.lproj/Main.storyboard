@@ -79,8 +79,8 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="8ja-vu-I4T" customClass="RemonCall" customModule="RemoteMonster">
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="SERVICEID1"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceId" value="hyungeun.jo@smoothy.co"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="fd4d4ff5952ede14a8ecc453ad2f629bb33ff1e9380674f5"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="remoteView" destination="bXo-vw-PZh" id="n5i-uf-UVj"/>
