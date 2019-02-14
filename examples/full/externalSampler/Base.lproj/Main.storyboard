@@ -72,6 +72,7 @@
                     <connections>
                         <outlet property="chField" destination="uQc-Wg-knA" id="cb3-Dy-hHx"/>
                         <outlet property="enBtn" destination="NZA-KM-jyv" id="LAd-SN-iYb"/>
+                        <outlet property="localView" destination="xgQ-DP-MKX" id="AhQ-cC-60z"/>
                         <outlet property="remonCall" destination="8ja-vu-I4T" id="eNr-yq-qL8"/>
                     </connections>
                 </viewController>
@@ -82,7 +83,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="serviceKey" value="1234567890"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="localView" destination="xgQ-DP-MKX" id="72M-vS-tbM"/>
                         <outlet property="remoteView" destination="bXo-vw-PZh" id="n5i-uf-UVj"/>
                     </connections>
                 </customObject>
