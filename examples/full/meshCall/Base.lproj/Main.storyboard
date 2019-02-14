@@ -223,24 +223,7 @@
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2op-D1-CoH">
                                 <rect key="frame" x="50" y="40" width="275" height="138"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKB-5B-Z5V">
-                                        <rect key="frame" x="91" y="62" width="93" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="djA-aV-MNp"/>
-                                            <constraint firstAttribute="width" constant="93" id="xPM-Ct-ecu"/>
-                                        </constraints>
-                                        <state key="normal" title="Start Capture"/>
-                                        <connections>
-                                            <action selector="touchStartCapture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WwX-VB-uj1"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="vKB-5B-Z5V" firstAttribute="centerX" secondItem="2op-D1-CoH" secondAttribute="centerX" id="WjI-hl-idq"/>
-                                    <constraint firstItem="vKB-5B-Z5V" firstAttribute="top" secondItem="2op-D1-CoH" secondAttribute="top" constant="62" id="cKM-oX-W2j"/>
-                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdM-OX-lBD">
                                 <rect key="frame" x="80" y="232" width="23" height="43"/>
@@ -359,6 +342,17 @@
                                     <action selector="aa:" destination="BYZ-38-t0r" eventType="touchUpInside" id="shY-1R-xga"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKB-5B-Z5V">
+                                <rect key="frame" x="141" y="91" width="93" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="Iwp-9d-nFc"/>
+                                    <constraint firstAttribute="height" constant="30" id="Miw-Aw-onR"/>
+                                </constraints>
+                                <state key="normal" title="Start Capture"/>
+                                <connections>
+                                    <action selector="touchStartCapture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WwX-VB-uj1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -372,6 +366,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="OLr-K6-fQQ" secondAttribute="bottom" constant="35" id="4Zx-Sz-EMJ"/>
                             <constraint firstItem="CFC-Kq-aHH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5Ok-xu-3U1"/>
                             <constraint firstItem="hsI-MU-g7S" firstAttribute="leading" secondItem="OLr-K6-fQQ" secondAttribute="trailing" constant="80" id="6a7-8O-GbI"/>
+                            <constraint firstItem="vKB-5B-Z5V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Do-X2-U0z"/>
                             <constraint firstItem="2le-y9-ZYb" firstAttribute="top" secondItem="jqV-0n-rPg" secondAttribute="bottom" constant="5" id="7sc-1h-UuR"/>
                             <constraint firstItem="Z7H-3p-bg5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="8qW-xa-Dnu"/>
                             <constraint firstItem="mVo-Hn-bCw" firstAttribute="top" secondItem="jqV-0n-rPg" secondAttribute="bottom" constant="10" id="9ks-IO-nFz"/>
@@ -404,6 +399,7 @@
                             <constraint firstItem="lqP-lr-8wj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="SsX-dQ-jVl"/>
                             <constraint firstItem="38f-s6-Ctf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="UTa-Rl-xZW"/>
                             <constraint firstItem="tdx-KX-UwH" firstAttribute="top" secondItem="CFC-Kq-aHH" secondAttribute="bottom" constant="10" id="UUl-R0-04E"/>
+                            <constraint firstItem="vKB-5B-Z5V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="V2x-aC-HsS"/>
                             <constraint firstItem="og1-US-7U0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VxL-Il-sqz"/>
                             <constraint firstItem="OLr-K6-fQQ" firstAttribute="leading" secondItem="2le-y9-ZYb" secondAttribute="trailing" constant="40" id="W30-4f-EaR"/>
                             <constraint firstItem="dYH-Ec-zMl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WDJ-ZI-sph"/>
@@ -479,6 +475,7 @@
                         <outlet property="chLabel_3" destination="Xua-Z4-rQo" id="1fj-yA-seH"/>
                         <outlet property="chLabel_4" destination="K8a-ms-2cH" id="5Bw-fM-lZm"/>
                         <outlet property="chLabel_5" destination="hsI-MU-g7S" id="oji-8R-OiU"/>
+                        <outlet property="localView" destination="2op-D1-CoH" id="ztb-vz-QFx"/>
                         <outlet property="remonCall_0" destination="zRY-wi-fC2" id="7iO-QD-BeS"/>
                         <outlet property="remonCall_1" destination="Bha-qq-Cj3" id="8MV-Qu-rn3"/>
                         <outlet property="remonCall_2" destination="2G9-F2-23Z" id="NQK-og-VpB"/>
@@ -510,7 +507,6 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="localView" destination="2op-D1-CoH" id="hbA-xk-GTo"/>
                         <outlet property="remoteView" destination="2le-y9-ZYb" id="qA7-my-4rK"/>
                     </connections>
                 </customObject>
