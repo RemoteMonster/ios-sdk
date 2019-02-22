@@ -103,3 +103,6 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 
 ## 2.4.44
 - bug fix
+
+## 2.4.47
+- modify debug log for issue tracking

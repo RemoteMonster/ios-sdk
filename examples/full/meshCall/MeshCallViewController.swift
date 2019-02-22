@@ -172,7 +172,7 @@ class MeshCallViewController: UIViewController, UITextFieldDelegate, GPUImageVid
         if let videoCamera = self.videoCamera {
             videoCamera.delegate = self
             videoCamera.addTarget(filter)
-            videoCamera.frameRate = 24
+            videoCamera.frameRate = 10
             videoCamera.outputImageOrientation = .portrait
             /**
              ExternalCapturer를 사용 할 경우 Remon이 제공 하는 preview를 사용 할 수 없게 됩니다.
@@ -251,6 +251,7 @@ class MeshCallViewController: UIViewController, UITextFieldDelegate, GPUImageVid
             mon.videoCodec = "H264"
             mon.serviceId = "hyungeun.jo@smoothy.co"
             mon.serviceKey = "fd4d4ff5952ede14a8ecc453ad2f629bb33ff1e9380674f5"
+            mon.fps = 1
             // 기본 챕처러를 사용한다고 선언할 경우 n개의 로컬 캡터러가 생성 되어짐.
             // 한개의 외부 캡쳐러를 사용하고, 한개의 캡쳐 결과를 각 연결에 전달 하는 방법으로 개발할 필요가 있음.
             // 외부 캡쳐러에 대한 가이드는 예제 'exrenalSampler'를 참조.
