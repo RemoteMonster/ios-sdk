@@ -470,6 +470,7 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonStatReport")
 @property (nonatomic) float bytesReceived;
 @property (nonatomic, copy) NSString * _Nonnull fullStatReport;
 - (RatingValue * _Nonnull)getHealthRating SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getFpsRating SWIFT_WARN_UNUSED_RESULT;
 - (RatingValue * _Nonnull)getRemoteAudioFractionLost SWIFT_WARN_UNUSED_RESULT;
 - (RatingValue * _Nonnull)getLocalAudioFractionLost SWIFT_WARN_UNUSED_RESULT;
 - (RatingValue * _Nonnull)getRemoteVideoFractionLost SWIFT_WARN_UNUSED_RESULT;
