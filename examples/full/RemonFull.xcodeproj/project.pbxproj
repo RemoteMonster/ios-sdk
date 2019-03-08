@@ -46,6 +46,8 @@
 		A32FCCD721EC5C4500C3E4FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32FCCD521EC5C4500C3E4FC /* Main.storyboard */; };
 		A32FCCD921EC5C4600C3E4FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32FCCD821EC5C4600C3E4FC /* Assets.xcassets */; };
 		A32FCCDC21EC5C4600C3E4FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32FCCDA21EC5C4600C3E4FC /* LaunchScreen.storyboard */; };
+		A33266792232032D008EC151 /* Conferance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33266782232031A008EC151 /* Conferance.framework */; };
+		A332667B2232037A008EC151 /* Conferance.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A33266782232031A008EC151 /* Conferance.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A36A798E214601A1002D580C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A798D214601A1002D580C /* AppDelegate.swift */; };
 		A36A7990214601A2002D580C /* RemonCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A798F214601A2002D580C /* RemonCallViewController.swift */; };
 		A36A7993214601A2002D580C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36A7991214601A2002D580C /* Main.storyboard */; };
@@ -55,6 +57,19 @@
 		A36A799F214620A5002D580C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A36A799E214620A4002D580C /* GoogleService-Info.plist */; };
 		A36A79A121462529002D580C /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36A79A021462529002D580C /* PushKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A332667A22320374008EC151 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A332667B2232037A008EC151 /* Conferance.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0562E04820BF9D01DB8D718C /* Pods-RemonEx-objc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonEx-objc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemonEx-objc/Pods-RemonEx-objc.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +130,7 @@
 		A32FCCD821EC5C4600C3E4FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A32FCCDB21EC5C4600C3E4FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A32FCCDD21EC5C4600C3E4FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A33266782232031A008EC151 /* Conferance.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Conferance.framework; sourceTree = "<group>"; };
 		A36A79852146015B002D580C /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
 		A36A798B214601A1002D580C /* RemonCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemonCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36A798D214601A1002D580C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A33266792232032D008EC151 /* Conferance.framework in Frameworks */,
 				408B9EC0C25CBE761EE6B8CD /* Pods_meshCall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +323,7 @@
 				A32FCCD821EC5C4600C3E4FC /* Assets.xcassets */,
 				A32FCCDA21EC5C4600C3E4FC /* LaunchScreen.storyboard */,
 				A32FCCDD21EC5C4600C3E4FC /* Info.plist */,
+				A33266782232031A008EC151 /* Conferance.framework */,
 			);
 			path = meshCall;
 			sourceTree = "<group>";
@@ -394,6 +412,7 @@
 				A32FCCCC21EC5C4500C3E4FC /* Frameworks */,
 				A32FCCCD21EC5C4500C3E4FC /* Resources */,
 				40CD6B5216C737CD544E3769 /* [CP] Embed Pods Frameworks */,
+				A332667A22320374008EC151 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1157,6 +1176,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/meshCall",
+				);
 				INFOPLIST_FILE = meshCall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1180,6 +1203,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/meshCall",
+				);
 				INFOPLIST_FILE = meshCall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

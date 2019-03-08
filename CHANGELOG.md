@@ -103,3 +103,8 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 
 ## 2.4.44
 - bug fix
+
+## 2.4.48
+- modify debug log for issue tracking
+- bug fix
+    - sockect reconnect error

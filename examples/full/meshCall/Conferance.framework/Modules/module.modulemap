@@ -1,0 +1,11 @@
+framework module Conferance {
+  umbrella header "Conferance.h"
+
+  export *
+  module * { export * }
+}
+
+module Conferance.Swift {
+    header "Conferance-Swift.h"
+    requires objc
+}
