@@ -108,3 +108,7 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 - modify debug log for issue tracking
 - bug fix
     - sockect reconnect error
+
+## 2.4.49
+- Change time to add videoRender at videoTrack
+- Change call interval of onRemonStatReport()
