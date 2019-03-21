@@ -112,3 +112,7 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 ## 2.4.49
 - Change time to add videoRender at videoTrack
 - Change call interval of onRemonStatReport()
+
+## 2.4.491
+- bug fix 
+  - unpackAecDump(resultFileName: "record.mp4", avPreset: .MP4MEDIUM, progress: (error, state) -> Void)
