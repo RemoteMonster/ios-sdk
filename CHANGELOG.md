@@ -122,3 +122,7 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 
 ## 2.4.50
 - support swift 5
+
+## 2.5.0
+- support swift 5
+- removed AVAudioSession controll code

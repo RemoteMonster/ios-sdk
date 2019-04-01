@@ -62,6 +62,14 @@ class SimpleCallViewController: UIViewController {
 //                
 //            }
 //        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, mode: AVAudioSessionModeDefault)
+            try AVAudioSession.sharedInstance().setActive(true, with: [])
+        } catch {
+            print(error)
+        }
+        
         remonCall.useFrontCamera = false
         remonCall.onInit {
             DispatchQueue.main.async {
@@ -92,22 +100,7 @@ class SimpleCallViewController: UIViewController {
         }
         
         remonCall.onConnect { (ss) in
-            print(ss)
-            do {
-                if #available(iOS 10.0, *) {
-                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategorySoloAmbient, mode: AVAudioSessionModeDefault)
-//                    try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.soloAmbient, mode: AVAudioSession.Mode.default) //ios 12
-                }
-                else {
-                    AVAudioSession.sharedInstance().perform(NSSelectorFromString("setCategory:error:"), with: AVAudioSessionCategorySoloAmbient)
-//                    AVAudioSession.sharedInstance().perform(NSSelectorFromString("setCategory:error:"), with: AVAudioSession.Category.soloAmbient) //ios 12
-                }
-                
-                try AVAudioSession.sharedInstance().setActive(true, with: [])
-                try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
-            } catch {
-                print(error)
-            }
+            
         }
         
         remonCall.onError { (error) in

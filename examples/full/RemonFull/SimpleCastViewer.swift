@@ -54,6 +54,13 @@ class SimpleCastViewer: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, mode: AVAudioSessionModeDefault)
+            try AVAudioSession.sharedInstance().setActive(true, with: [])
+        } catch {
+            print(error)
+        }
+        
         if let chID = self.toChID {
             //config is nilable
             self.remonCast.join(chId: chID, customConfig)
@@ -63,19 +70,6 @@ class SimpleCastViewer: UIViewController {
             DispatchQueue.main.async {
                 self.closeBtn.isEnabled = true
                 self.chLabel.text = self.toChID
-            }
-            do {
-                if #available(iOS 10.0, *) {
-                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, mode: AVAudioSessionModeDefault)
-                }
-                else {
-                    AVAudioSession.sharedInstance().perform(NSSelectorFromString("setCategory:error:"), with: AVAudioSessionCategoryPlayback)
-                }
-                
-                try AVAudioSession.sharedInstance().setActive(true, with: [])
-                try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
-            } catch {
-                print(error)
             }
         }
         
