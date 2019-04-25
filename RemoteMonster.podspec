@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RemoteMonster'
-  s.version          = '2.5.0'
+  s.version          = '2.6.0'
   s.summary          = 'RemoteMonster SDK'
   s.homepage         = 'https://remotemonster.com'
   s.license          = { :type => 'MIT' }
@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks = 'RemoteMonster.framework'
   # s.dependency 'GoogleWebRTC', '1.1.24717'
-  s.dependency 'Remon-WebRTC-iOS', '1.0140'
+  s.dependency 'Remon-WebRTC-iOS', '1.0141'
   s.dependency 'SwiftProtobuf', '1.4.0'
 end

@@ -126,3 +126,6 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 ## 2.5.0
 - support swift 5
 - removed AVAudioSession controll code
+
+## 2.6.0
+- support latest webrtc library
