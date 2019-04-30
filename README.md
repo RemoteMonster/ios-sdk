@@ -6,7 +6,6 @@ RemoteMonster - Livecast Management in the Cloud
 
 * [Website](https://remotemonster.com)
 
-## Now 2.2.4 Objective-C Supported!!!
 ## Get SDK
 
 ### Package Manager - Cocoapods
@@ -15,7 +14,8 @@ RemoteMonster - Livecast Management in the Cloud
 # Podfile
 use_frameworks!
 target 'MyApp' do
-  pod 'RemoteMonster', '~> 2.0'
+  pod 'RemoteMonster', '~> 2.5'
+  # pod 'RemoteMonster', '~> 2.4.491' #if you use swift 4 
 end
 ```
 
