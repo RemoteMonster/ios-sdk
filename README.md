@@ -13,7 +13,7 @@ RemoteMonster - Livecast Management in the Cloud
 
 ```ruby
 # Podfile
-
+use_frameworks!
 target 'MyApp' do
   pod 'RemoteMonster', '~> 2.0'
 end
