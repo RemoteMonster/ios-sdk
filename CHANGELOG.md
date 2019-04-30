@@ -117,7 +117,7 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 - bug fix 
   - unpackAecDump(resultFileName: "record.mp4", avPreset: .MP4MEDIUM, progress: (error, state) -> Void)
 
-## 2.4.491
+## 2.4.492
 - Change REMON_AECUNPACK_STATE
 
 ## 2.4.50
