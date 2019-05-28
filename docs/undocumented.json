@@ -1,320 +1,796 @@
 {
   "warnings": [
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/PeerConnectionManager.swift",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/gUnpack/aecunpack.swift",
+      "line": 11,
+      "symbol": "REMON_AECUNPACK_STATE",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/gUnpack/aecunpack.swift",
+      "line": 19,
+      "symbol": "REMON_AECUNPACK_PRESET",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/gUnpack/aecunpack.swift",
+      "line": 30,
+      "symbol": "aecunpack",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/gUnpack/debug.pb.swift",
+      "line": null,
+      "symbol": "Webrtc_Audioproc_Event",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/PeerConnectionManager.swift",
       "line": 14,
       "symbol": "PeerConnectionManager",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 33,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 18,
+      "symbol": "RemonBandwidth.HIGH",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 19,
+      "symbol": "RemonBandwidth.MEDIUM",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 20,
+      "symbol": "RemonBandwidth.LOW",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 23,
+      "symbol": "objc_RemonBandwidth",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 44,
+      "symbol": "RemonState.TRYRECONNECT",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 47,
+      "symbol": "RemonState.ICEDISCONNECT",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 50,
       "symbol": "RemonState.CLOSE",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 44,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 61,
       "symbol": "RemonDelegate.didReceiveLocalAudioTrack(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 45,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 62,
       "symbol": "RemonDelegate.didReceiveLocalVideoCapture(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 48,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 65,
       "symbol": "RemonDelegate.didReceiveRemoteAudioTrack(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 128,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 146,
       "symbol": "Remon.orientationChanged(notification:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 133,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 151,
       "symbol": "Remon.startLocalVideoCapture()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 141,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 159,
       "symbol": "Remon.stopLocalVideoCapture()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 149,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 167,
       "symbol": "Remon.setState(state:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 190,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 208,
       "symbol": "Remon.createRoom()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 201,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 219,
       "symbol": "Remon.joinRoom(chID:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 212,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 230,
+      "symbol": "Remon.switchBandWidth(bandwidth:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 244,
       "symbol": "Remon.dummysdp()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 216,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 248,
       "symbol": "Remon.connectChannel()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 284,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 316,
       "symbol": "Remon.search(type:complete:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/Remon.swift",
-      "line": 306,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/Remon.swift",
+      "line": 341,
       "symbol": "Remon.softclose()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonCall.swift",
-      "line": 11,
-      "symbol": "RemonCallBlockSettable",
-      "symbol_kind": "source.lang.swift.decl.protocol",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonCall.swift",
+      "line": 13,
+      "symbol": "RemonCallBlockSettable.onConnect(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonCall.swift",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonCall.swift",
+      "line": 14,
+      "symbol": "RemonCallBlockSettable.onComplete(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonCall.swift",
       "line": 15,
-      "symbol": "RemonCall",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "symbol": "RemonCallBlockSettable.onFetch(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonCast.swift",
-      "line": 11,
-      "symbol": "RemonCastBlockSettable",
-      "symbol_kind": "source.lang.swift.decl.protocol",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonCall.swift",
+      "line": 20,
+      "symbol": "RemonCall.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonCast.swift",
-      "line": 15,
-      "symbol": "RemonCast",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonCall.swift",
+      "line": 37,
+      "symbol": "RemonCall.fetchCalls(isTest:complete:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonConfig.swift",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonCall.swift",
+      "line": 53,
+      "symbol": "RemonCall.onComplete(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonCast.swift",
+      "line": 50,
+      "symbol": "RemonCast.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonCast.swift",
+      "line": 66,
+      "symbol": "RemonCast.objc_join(chId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonCast.swift",
+      "line": 88,
+      "symbol": "RemonCast.fetchCasts(isTest:complete:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
       "line": 12,
       "symbol": "RemonChannelType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonConfig.swift",
-      "line": 28,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 22,
+      "symbol": "RemonAudioMode",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 32,
       "symbol": "RemonConfig.restUrl",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonConfig.swift",
-      "line": 29,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 33,
       "symbol": "RemonConfig.wsUrl",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonConfig.swift",
-      "line": 43,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 47,
       "symbol": "RemonConfig.iceServers",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonConfig.swift",
-      "line": 52,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 56,
       "symbol": "RemonConfig.startVideoBitrate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonConfig.swift",
-      "line": 61,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 65,
       "symbol": "RemonConfig.autoCaptureStart",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonConfig.swift",
-      "line": 75,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 79,
       "symbol": "RemonConfig.sendonly",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonConfig.swift",
-      "line": 76,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 80,
       "symbol": "RemonConfig.id",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonConfig.swift",
-      "line": 77,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 81,
       "symbol": "RemonConfig.debugMode",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonConfig.swift",
-      "line": 80,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 84,
+      "symbol": "RemonConfig.useExternalCapturer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 85,
+      "symbol": "RemonConfig.userMeta",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 86,
       "symbol": "RemonConfig.debugLevel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonConfig.swift",
-      "line": 81,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonConfig.swift",
+      "line": 90,
       "symbol": "RemonConfig.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonContext.swift",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonContext.swift",
       "line": 15,
       "symbol": "RemonContext",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonController.swift",
-      "line": 11,
-      "symbol": "RemonSearchType",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 16,
+      "symbol": "RemonSearchType.call",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 17,
+      "symbol": "RemonSearchType.cast",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 20,
+      "symbol": "RemonCloseType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonController.swift",
-      "line": 35,
-      "symbol": "RemonViewFrameObserver",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 91,
+      "symbol": "RemonViewFrameObserver.observeValue(forKeyPath:of:change:context:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonController.swift",
-      "line": 125,
-      "symbol": "RemonVoidBlock",
-      "symbol_kind": "source.lang.swift.decl.typealias",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 203,
+      "symbol": "RemonController.videoView(_:didChangeVideoSize:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonController.swift",
-      "line": 126,
-      "symbol": "RemonStringBlock",
-      "symbol_kind": "source.lang.swift.decl.typealias",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 249,
+      "symbol": "RemonController.startDump(withFileName:maxSizeInBytes:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonController.swift",
-      "line": 127,
-      "symbol": "RemonErrorBlock",
-      "symbol_kind": "source.lang.swift.decl.typealias",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 255,
+      "symbol": "RemonController.stopDump()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonController.swift",
-      "line": 128,
-      "symbol": "RemonArrayBlock",
-      "symbol_kind": "source.lang.swift.decl.typealias",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 259,
+      "symbol": "RemonController.unpackAecDump(dumpName:resultFileName:avPreset:progress:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonController.swift",
-      "line": 145,
-      "symbol": "RemonController",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 290,
+      "symbol": "RemonController.unpackAecDump(dumpName:resultFileName:progress:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonError.swift",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 329,
+      "symbol": "RemonController.firstInit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 367,
+      "symbol": "RemonController.volumeRatio",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 382,
+      "symbol": "RemonController.userMeta",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 395,
+      "symbol": "RemonController.localCameraCapturer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 396,
+      "symbol": "RemonController.localExternalCaptureDelegator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 420,
+      "symbol": "RemonController.onInit(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 421,
+      "symbol": "RemonController.onClose(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 425,
+      "symbol": "RemonController.onDisConnect(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 426,
+      "symbol": "RemonController.onMessage(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 428,
+      "symbol": "RemonController.onError(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 429,
+      "symbol": "RemonController.onObjcError(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 430,
+      "symbol": "RemonController.onRetry(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 432,
+      "symbol": "RemonController.onRemonStatReport(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 434,
+      "symbol": "RemonController.onRemoteVideoSizeChanged(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 437,
+      "symbol": "RemonController.onLocalVideoSizeChanged(block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 444,
+      "symbol": "RemonController.remon",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 445,
+      "symbol": "RemonController.remonConfig",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 446,
+      "symbol": "RemonController.legacyDelegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 453,
+      "symbol": "RemonController.remoteRTCEAGLVideoView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 454,
+      "symbol": "RemonController.localRTCEAGLVideoView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 455,
+      "symbol": "RemonController.localRTCCameraPreviewView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 462,
+      "symbol": "RemonController.showRemoteVideoStat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 470,
+      "symbol": "RemonController.showLocalVideoStat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 484,
+      "symbol": "RemonController.useExternalCapturer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 486,
+      "symbol": "RemonController.channelID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 487,
+      "symbol": "RemonController.currentRemonState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 590,
+      "symbol": "RemonController.sendHealthData(_:com:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 596,
+      "symbol": "RemonController.getCurruntStateString()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 729,
+      "symbol": "RemonController.closeRemon()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1070,
+      "symbol": "RemonController.switchBandWidth(bandwidth:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1074,
+      "symbol": "RemonController.objc_switchBandWidth(bandwidth:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1087,
+      "symbol": "RemonController.observeValue(forKeyPath:of:change:context:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1258,
+      "symbol": "RemonController.muteRemoteAudio(mute:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1262,
+      "symbol": "RemonController.muteLocalAudio(mute:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1266,
+      "symbol": "RemonController.stopLocalVideoCapture()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1274,
+      "symbol": "RemonController.startLocalVideoCapture()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1282,
+      "symbol": "RemonController.stopRemoteVideoCapture()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1286,
+      "symbol": "RemonController.switchCamera()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1292,
+      "symbol": "RemonController.startRemoteVideoCapture()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1296,
+      "symbol": "RemonController.setVolume(volume:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1304,
+      "symbol": "RemonController.fetchChannel(type:complete:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1315,
+      "symbol": "RemonController.fetchChannel(type:isTest:complete:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1414,
+      "symbol": "RemonController.didReceiveLocalAudioTrack(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1418,
+      "symbol": "RemonController.didReceiveLocalVideoCapture(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1440,
+      "symbol": "RemonController.didReceiveRemoteAudioTrack(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonController.swift",
+      "line": 1478,
+      "symbol": "RemonController.audioSessionDidStartPlayOrRecord(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonError.swift",
       "line": 11,
       "symbol": "RemonError",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonIBController.swift",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonRestManager.swift",
       "line": 11,
-      "symbol": "RemonIBController",
+      "symbol": "RemonSearchResult",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonRestManager.swift",
-      "line": 11,
-      "symbol": "RemonSearchResult",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonSampleCapturer.swift",
+      "line": 12,
+      "symbol": "RemonVideoRotation",
+      "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonStatReport.swift",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonSampleCapturer.swift",
+      "line": 37,
+      "symbol": "RemonSampleCapturer",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonStatReport.swift",
       "line": 9,
       "symbol": "FractionLost",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonStatReport.swift",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonStatReport.swift",
       "line": 21,
       "symbol": "RatingValue",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonStatReport.swift",
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonStatReport.swift",
       "line": 35,
       "symbol": "RemonStatReport",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk/sdk/RemonStatReport.swift",
-      "line": 139,
+      "file": "/Users/calmglow/dev/workspace/iossdkold/sdk/RemonStatReport.swift",
+      "line": 175,
       "symbol": "StatResult",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/dididi/workspaces/remotemonster/remon-ios-sdk"
+  "source_directory": "/Users/calmglow/dev/workspace/iossdkold"
 }

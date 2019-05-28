@@ -296,7 +296,7 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonController")
 - (BOOL)stopLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)startLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
 - (void)stopRemoteVideoCapture;
-- (void)switchCamera;
+- (BOOL)switchCamera SWIFT_WARN_UNUSED_RESULT;
 - (void)startRemoteVideoCapture;
 - (void)setVolumeWithVolume:(float)volume;
 - (void)audioSessionDidStartPlayOrRecord:(RTCAudioSession * _Nonnull)session;
