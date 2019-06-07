@@ -117,7 +117,7 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 - bug fix 
   - unpackAecDump(resultFileName: "record.mp4", avPreset: .MP4MEDIUM, progress: (error, state) -> Void)
 
-## 2.4.492
+## 2.4.491
 - Change REMON_AECUNPACK_STATE
 
 ## 2.4.50
@@ -127,6 +127,5 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 - support swift 5
 - removed AVAudioSession controll code
 
-## 2.4.495
-- changed the sequnce for init/deit of RTCViews
-
+## 2.6.0
+- support latest webrtc library
