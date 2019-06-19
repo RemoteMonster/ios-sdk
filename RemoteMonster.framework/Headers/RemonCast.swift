@@ -28,11 +28,11 @@ public protocol RemonCastBlockSettable {
 }
 
 /***/
-@objc public class RemonCast: RemonIBController, RemonControllBlockSettable, RemonCastBlockSettable {
+@objc public class RemonCast: RemonIBController, RemonCastBlockSettable {
     
     private var broardcast:Bool {
         get {
-            if self.channelType_ == 2 {
+            if self.channelType == RemonChannelType.broadcast {
                 return true
             } else {
                 return false
@@ -40,9 +40,9 @@ public protocol RemonCastBlockSettable {
         }
         set(broardcast) {
             if broardcast {
-                self.channelType = 2
+                self.channelType = RemonChannelType.broadcast
             } else {
-                self.channelType = 1
+                self.channelType = RemonChannelType.viewer
             }
         }
     }
@@ -60,12 +60,12 @@ public protocol RemonCastBlockSettable {
     @objc(joinWithChId:AndConfig:)
     public func join(chId: String, _ config:RemonConfig? = nil) {
         self.broardcast = false
-        self.joinCast(chID: chId, config)
+        controller?.joinCast(client:self, chID: chId, config: config)
     }
     @objc(joinWithChId:)
     public func objc_join(chId: String) {
         self.broardcast = false
-        self.joinCast(chID: chId, nil)
+        controller?.joinCast(client:self, chID: chId, config: nil)
     }
     
     /**방송을 생성 합니다.
@@ -73,7 +73,7 @@ public protocol RemonCastBlockSettable {
      */
     @objc public func create(_ config:RemonConfig? = nil) {
         self.broardcast = true
-        self.createCast(config)
+        controller?.createCast(client:self, config: config)
     }
     
     /**방송 목록을 가져 옵니다.
@@ -93,7 +93,7 @@ public protocol RemonCastBlockSettable {
     
     @objc public func onCreate(block: @escaping RemonStringBlock) {
         self.onComplete {
-            var chType = self.channelTypeE
+            var chType = self.channelType
             if let config = self.remonConfig {
                 chType = config.channelType
             }
@@ -105,7 +105,7 @@ public protocol RemonCastBlockSettable {
     
     @objc public func onJoin(block: @escaping RemonStringBlock) {
         self.onComplete {
-            var chType = self.channelTypeE
+            var chType = self.channelType
             if let config = self.remonConfig {
                 chType = config.channelType
             }

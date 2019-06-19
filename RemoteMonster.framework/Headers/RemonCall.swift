@@ -16,15 +16,17 @@ import UIKit
 }
 
 /***/
-@objc public class RemonCall: RemonIBController, RemonControllBlockSettable, RemonCallBlockSettable {
+@objc public class RemonCall: RemonIBController, RemonCallBlockSettable {
     override public init() {
+        print("[RemonCall.init]")
         super.init()
-        self.channelType = 0
+        self.channelType = RemonChannelType.p2p
     }
     
     /***/
     @objc public func connect(_ ch: String, _ config:RemonConfig? = nil) {
-        self.connectCall(ch, config)
+        print("[RemonCall.connect]" )
+        controller?.connectCall( client:self, ch:ch, config:config)
     }
     
     /***/
