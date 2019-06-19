@@ -120,6 +120,13 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 ## 2.4.491
 - Change REMON_AECUNPACK_STATE
 
+## 2.4.496
+- Added capture functionality for fixed camera rotation
+- Added camera mirror mode
+- bug fix 
+  - modified strong circular references
+  - fixed minor bugs
+  
 ## 2.4.50
 - support swift 5
 
