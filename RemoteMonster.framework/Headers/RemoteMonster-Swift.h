@@ -287,6 +287,13 @@ SWIFT_CLASS("_TtC13RemoteMonster9RemonCall")
 @end
 
 
+enum RemonVideoRotation : NSInteger;
+
+SWIFT_PROTOCOL("_TtP13RemoteMonster20RemonCaptureDelegate_")
+@protocol RemonCaptureDelegate
+- (void)didCaptureFrameWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer timeStamp:(CMTime)timeStamp videoRetation:(enum RemonVideoRotation)videoRetation;
+@end
+
 
 ///
 SWIFT_CLASS("_TtC13RemoteMonster9RemonCast")
@@ -389,6 +396,7 @@ enum objc_RemonBandwidth : NSInteger;
 
 @interface RemonIBController (SWIFT_EXTENSION(RemoteMonster))
 - (NSString * _Nonnull)getCurruntStateString SWIFT_WARN_UNUSED_RESULT;
+- (void)closeRemon;
 - (void)objc_switchBandWidthWithBandwidth:(enum objc_RemonBandwidth)bandwidth;
 - (void)muteRemoteAudioWithMute:(BOOL)mute;
 - (void)muteLocalAudioWithMute:(BOOL)mute;
@@ -404,11 +412,10 @@ enum objc_RemonBandwidth : NSInteger;
 - (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
 @end
 
-enum RemonVideoRotation : NSInteger;
 @protocol RTCVideoCapturerDelegate;
 
 SWIFT_CLASS("_TtC13RemoteMonster19RemonSampleCapturer")
-@interface RemonSampleCapturer : RTCVideoCapturer
+@interface RemonSampleCapturer : RTCVideoCapturer <RemonCaptureDelegate>
 - (void)didCaptureFrameWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer timeStamp:(CMTime)timeStamp videoRetation:(enum RemonVideoRotation)videoRetation;
 - (nonnull instancetype)initWithDelegate:(id <RTCVideoCapturerDelegate> _Nonnull)delegate OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
