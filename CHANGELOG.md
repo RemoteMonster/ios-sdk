@@ -116,11 +116,9 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 ## 2.4.491
 - bug fix 
   - unpackAecDump(resultFileName: "record.mp4", avPreset: .MP4MEDIUM, progress: (error, state) -> Void)
-
-## 2.4.491
 - Change REMON_AECUNPACK_STATE
 
-## 2.4.496
+## 2.4.497
 - Added capture functionality for fixed camera rotation
 - Added camera mirror mode
 - bug fix 
