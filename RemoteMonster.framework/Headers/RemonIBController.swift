@@ -70,8 +70,17 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
     
     @objc public var useExternalCapturer:Bool = false
     @objc public var channelID:String?
+    public var localCameraCapturer:RTCCameraVideoCapturer? {
+        get {
+            return controller?.localCameraCapturer
+        }
+    }
     
-    
+    public var localExternalCaptureDelegator:RemonSampleCapturer? {
+        get {
+            return controller?.localExternalCaptureDelegator
+        }
+    }
     
     var currentRemonState:RemonState?
     
@@ -171,9 +180,11 @@ extension RemonIBController {
     }
     
     
-    public func closeRemon() {
+    @objc public func closeRemon() {
         controller?.closeRemon()
     }
+    
+    
     
     public func switchBandWidth(bandwidth:RemonBandwidth) {
         controller?.switchBandWidth(bandwidth: bandwidth)

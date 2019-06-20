@@ -6,7 +6,7 @@ target 'RemonFull' do
   use_frameworks!
 
   # Pods for SampleV2
-  pod 'RemoteMonster', '~> 2.0'
+  pod 'RemoteMonster', '2.4.496'
 
 end
 
