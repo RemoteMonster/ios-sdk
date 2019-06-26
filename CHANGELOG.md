@@ -124,7 +124,11 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 - bug fix 
   - modified strong circular references
   - fixed minor bugs
-  
+
+## 2.4.498
+- fixed front camera mirror mode
+- fixed local view rotation direction is based on UI orientation
+
 ## 2.4.50
 - support swift 5
 
