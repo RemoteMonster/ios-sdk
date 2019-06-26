@@ -76,9 +76,9 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
         }
     }
     
-    public var localExternalCaptureDelegator:RemonSampleCapturer? {
+    public var localSampleCapturer:RemonSampleCapturer? {
         get {
-            return controller?.localExternalCaptureDelegator
+            return controller?.localSampleCapturer
         }
     }
     
@@ -113,16 +113,16 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
     
     // IBInspectable
     @IBInspectable public var onlyAudio:Bool = false
-    @IBInspectable public var videoWidth:Int = 480
-    @IBInspectable public var videoHeight:Int = 640
+    @IBInspectable public var videoWidth:Int = 640
+    @IBInspectable public var videoHeight:Int = 480
     @IBInspectable public var fps:Int = 24
     @IBInspectable public var serviceId:String?
     @IBInspectable public var serviceKey:String?
     @IBInspectable public var wsUrl:String = "wss://signal.remotemonster.com/ws"
     @IBInspectable public var restUrl:String = "https://signal.remotemonster.com/rest/init"
     @IBInspectable public var frontCamera:Bool = true
-    @IBInspectable public var mirrorMode:Bool = true
-    @IBInspectable public var fixedCameraRotation:Bool = true
+    @IBInspectable public var mirrorMode:Bool = false
+    @IBInspectable public var fixedCameraRotation:Bool = false
     
     
     // @IBInspectable public var autoReJoin:Bool
@@ -260,7 +260,6 @@ extension RemonIBController {
 
 extension RemonIBController {
     //set oberserver block
-    internal func onConnect(block_:@escaping RemonVoidBlock) { controller?.observerBlock.connectRemonChannelBlock = block_}
     internal func onFetchChannels(block:@escaping RemonArrayBlock) { controller?.observerBlock.fetchRemonChannelBlock = block}
     internal func onCreate(block_:@escaping RemonStringBlock) { controller?.observerBlock.createRemonChannelBlock = block_}
     public func onError(block:@escaping RemonErrorBlock) { controller?.observerBlock.errorRemonBlock = block}
@@ -293,7 +292,7 @@ extension RemonIBController {
         }
     }
     
-    public var localRTCCameraPreviewView:RTCCameraPreviewView? {
+    public var localRTCCameraPreviewView:RemonCameraPreviewView? {
         get {
             return controller?.remonView?.localRTCCameraPreviewView
         }

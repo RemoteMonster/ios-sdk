@@ -169,6 +169,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import Dispatch;
 @import Foundation;
 @import ObjectiveC;
+@import UIKit;
 @import WebRTC;
 #endif
 
@@ -233,7 +234,6 @@ typedef SWIFT_ENUM(NSInteger, RemonAudioMode, closed) {
 SWIFT_PROTOCOL("_TtP13RemoteMonster22RemonCallBlockSettable_")
 @protocol RemonCallBlockSettable
 - (void)onConnectWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
-- (void)onCompleteWithBlock:(void (^ _Nonnull)(void))block;
 - (void)onFetchWithBlock:(void (^ _Nonnull)(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull))block;
 @end
 
@@ -279,13 +279,22 @@ SWIFT_CLASS("_TtC13RemoteMonster9RemonCall")
 ///
 - (void)fetchCallsWithComplete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
 - (void)fetchCallsWithIsTest:(BOOL)isTest complete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
-///
 - (void)onConnectWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 ///
 - (void)onFetchWithBlock:(void (^ _Nonnull)(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull))block;
-- (void)onCompleteWithBlock:(void (^ _Nonnull)(void))block;
 @end
 
+
+@class NSCoder;
+
+SWIFT_CLASS("_TtC13RemoteMonster22RemonCameraPreviewView")
+@interface RemonCameraPreviewView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
++ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
+- (void)layoutSubviews;
+@end
 
 enum RemonVideoRotation : NSInteger;
 

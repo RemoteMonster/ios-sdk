@@ -11,7 +11,6 @@ import UIKit
 /***/
 @objc public protocol RemonCallBlockSettable {
     func onConnect(block:@escaping RemonStringBlock)
-    func onComplete(block:@escaping RemonVoidBlock)
     func onFetch(block:@escaping RemonArrayBlock)
 }
 
@@ -43,6 +42,8 @@ import UIKit
     }
     
     /***/
+    // note:chance: 사용자에게 추가적인 인터페이스를 노출시키는데, 일관성이 떨어지는 것으로 판단됨.
+    // 이미 배포된 버전들이 있어 일단은 유지
     @objc public func onConnect(block: @escaping RemonStringBlock) {
         self.onCreate(block_: block)
     }
@@ -52,7 +53,4 @@ import UIKit
         self.onFetchChannels(block: block)
     }
     
-    @objc override public func onComplete(block: @escaping RemonVoidBlock) {
-        super.onComplete(block: block)
-    }
 }

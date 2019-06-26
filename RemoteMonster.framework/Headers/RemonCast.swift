@@ -92,25 +92,29 @@ public protocol RemonCastBlockSettable {
     }
     
     @objc public func onCreate(block: @escaping RemonStringBlock) {
-        self.onComplete {
-            var chType = self.channelType
-            if let config = self.remonConfig {
-                chType = config.channelType
-            }
-            if chType == .broadcast {
-                block(self.channelID)
+        self.onComplete { [weak self] in
+            if let cast = self {
+                var chType = cast.channelType
+                if let config = cast.remonConfig {
+                    chType = config.channelType
+                }
+                if chType == .broadcast {
+                    block(cast.channelID)
+                }
             }
         }
     }
     
     @objc public func onJoin(block: @escaping RemonStringBlock) {
-        self.onComplete {
-            var chType = self.channelType
-            if let config = self.remonConfig {
-                chType = config.channelType
-            }
-            if chType == .viewer {
-                block(self.channelID)
+        self.onComplete { [weak self] in
+            if let cast = self {
+                var chType = cast.channelType
+                if let config = cast.remonConfig {
+                    chType = config.channelType
+                }
+                if chType == .viewer {
+                    block(cast.channelID)
+                }
             }
         }
     }
