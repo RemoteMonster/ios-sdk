@@ -1,0 +1,153 @@
+//
+//  VCasterViewController.swift
+//  verySimpleRemon
+//
+//  Created by hyounsiklee on 2018. 4. 27..
+//  Copyright © 2018년 Remote Monster. All rights reserved.
+//
+
+import UIKit
+import RemoteMonster
+
+class SimpleVideoCastViewController:UIViewController {
+
+    @IBOutlet weak var createBtn: UIButton!
+    @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet weak var chLabel: UILabel!
+    @IBOutlet weak var captureView: UIImageView!
+    
+    // IB Object로 등록한 RemonCast 객체
+    @IBOutlet weak var remonCast: RemonCast!
+    
+    
+    // config를 사용해 접속 정보와 서비스 설정을 할 수 있습니다.
+    // 샘플에서는 ConifgViewController에서 config를 전달합니다.
+    // config객체는 connect() 호출시 복사되어 전달됩니다.
+    var customConfig:RemonConfig?
+    
+    
+    // 전면 카메라에만 미러보기를 적용하기 위해 별도 변수를 사용
+    var isFrontCamera:Bool = false
+    
+    
+    // 방송 송출을 위해 서비스에 연결합니다.
+    @IBAction func createBroadcast(_ sender: Any) {
+        //config is nilable
+        self.remonCast.create(customConfig)
+    }
+    
+    // 서비스 종료
+    @IBAction func closeBroadcast(_ sender: Any) {
+        self.remonCast.closeRemon()
+    }
+    
+    
+    // 카메라 위치를 동적으로 변경합니다.
+    @IBAction func switchCamera(_ sender: Any) {
+        // 전면카메라 미러모드
+        var mirror:Bool = self.remonCast.mirrorMode
+        
+        // 현재 전면 카메라이고, 바뀌는 카메라의 경우에는 미러모드 끄기
+        if self.isFrontCamera {
+            mirror = false
+        }
+        
+        // 카메라 전환
+        self.isFrontCamera = self.remonCast.switchCamera(mirror: mirror)
+        print("[Client.onSwitchCamera] switchCamera=\(self.isFrontCamera)")
+    }
+    
+    
+    @IBAction func captureView(_ sender: Any) {
+        guard self.remonCast.localRTCEAGLVideoView != nil else {
+            return
+        }
+        let image = self.image(with: self.view)
+        self.captureView.image = image
+    }
+    
+    func image(with view: UIView) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+        defer { UIGraphicsEndImageContext() }
+        if let context = UIGraphicsGetCurrentContext() {
+            view.layer.render(in: context)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            return image
+        }
+        return nil
+    }
+    
+    // SDK에서 전달하는 이벤트를 처리하기 위한 콜백 함수를 정의합니다.
+    func initRemonCallbacks() {
+        self.isFrontCamera = remonCast.frontCamera
+        
+        self.remonCast.onInit { [weak self] in
+            self?.createBtn.isEnabled = false
+        }
+        
+        self.remonCast.onCreate { [weak self] (chid) in
+            self?.closeBtn.isEnabled = true
+            self?.chLabel.text = chid
+
+
+            // test
+            let capturer:RemonCameraCapturer? = self?.remonCast.localCameraCapturer as? RemonCameraCapturer
+            capturer?.imageDelegate = self
+
+        }
+        
+        self.remonCast.onClose { [weak self](_) in
+            self?.createBtn.isEnabled = true
+            self?.closeBtn.isEnabled = false
+        }
+        
+        // 로컬 비디오 사이즈 변경
+        self.remonCast.onLocalVideoSizeChanged { [weak self] (view, size) in
+            print("[Client.onRemoteVideoSizeChanged] size=\(size)")
+            
+            // 뷰의 constraint 변경
+            self?.remonCast?.localView?.constraints.forEach({ (item) in
+                if item.identifier == "LocalViewAspectRatio" {
+                    item.setMultiplier(multiplier: size.width / size.height)
+                }
+            })
+        }
+    }
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        initRemonCallbacks()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // 뷰가 pop 되는 경우 sdk를 종료합니다
+        self.remonCast?.closeRemon()
+        self.customConfig = nil
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+}
+
+extension SimpleVideoCastViewController:RemonCameraCapturerBufferDelegate {
+    public func didReceiveCameraData(inputImage: CIImage) -> CIImage? {
+        let effect = CIFilter(name: "CIComicEffect")
+        effect?.setValue(inputImage, forKey: kCIInputImageKey)
+        
+//        let effect = CIFilter(name:"CISepiaTone")
+//        effect?.setValue(inputImage, forKey: kCIInputImageKey)
+//        effect?.setValue(1, forKey: kCIInputIntensityKey)
+//        //effect?.setValue(20, forKey: kCIInputRadiusKey)
+        let outputImage = effect?.outputImage
+        return outputImage
+    }
+}
+
+
