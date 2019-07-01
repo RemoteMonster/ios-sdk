@@ -88,12 +88,6 @@ class SimpleVideoCastViewController:UIViewController {
         self.remonCast.onCreate { [weak self] (chid) in
             self?.closeBtn.isEnabled = true
             self?.chLabel.text = chid
-
-
-            // test
-            let capturer:RemonCameraCapturer? = self?.remonCast.localCameraCapturer as? RemonCameraCapturer
-            capturer?.imageDelegate = self
-
         }
         
         self.remonCast.onClose { [weak self](_) in
@@ -136,18 +130,6 @@ class SimpleVideoCastViewController:UIViewController {
     
 }
 
-extension SimpleVideoCastViewController:RemonCameraCapturerBufferDelegate {
-    public func didReceiveCameraData(inputImage: CIImage) -> CIImage? {
-        let effect = CIFilter(name: "CIComicEffect")
-        effect?.setValue(inputImage, forKey: kCIInputImageKey)
-        
-//        let effect = CIFilter(name:"CISepiaTone")
-//        effect?.setValue(inputImage, forKey: kCIInputImageKey)
-//        effect?.setValue(1, forKey: kCIInputIntensityKey)
-//        //effect?.setValue(20, forKey: kCIInputRadiusKey)
-        let outputImage = effect?.outputImage
-        return outputImage
-    }
-}
+
 
 

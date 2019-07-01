@@ -85,7 +85,7 @@ class EXSViewController: UIViewController, GPUImageVideoCameraDelegate {
                         if let cmTime = self.cmTime {
 //                            remonCall의 외부샘플러델리게이터에게 프래임을 넘깁니다.
                             if let rtcCaptureDelegate = self.remonCall.localExternalCaptureDelegator {
-                                rtcCaptureDelegate.didCaptureFrame(pixelBuffer: pixelBuffer, timeStampNs: cmTime.value, videoRetation: ._0)
+                                rtcCaptureDelegate.didCaptureFrame(pixelBuffer: pixelBuffer, timeStamp: cmTime.value, videoRetation: ._0)
                             }
                         }
                     }
