@@ -138,3 +138,13 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 
 ## 2.6.0
 - support latest webrtc library
+
+## 2.6.1
+- Added capture functionality for fixed camera rotation
+- Added camera mirror mode
+- Added a sample project : 'examples/BaseExamples/'
+- fixed front camera mirror mode
+- fixed local view rotation direction is based on UI orientation
+- modified strong circular references
+- fixed minor bugs
+
