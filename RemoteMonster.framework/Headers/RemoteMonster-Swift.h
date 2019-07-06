@@ -247,7 +247,7 @@ SWIFT_PROTOCOL("_TtP13RemoteMonster22RemonCallBlockSettable_")
 @class RemonConfig;
 @class UIView;
 
-///
+/// InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스
 SWIFT_CLASS_NAMED("RemonIBController")
 @interface RemonIBController : NSObject
 @property (nonatomic, strong) RemonConfig * _Nullable remonConfig;
@@ -255,20 +255,35 @@ SWIFT_CLASS_NAMED("RemonIBController")
 @property (nonatomic, copy) NSString * _Nonnull userMeta;
 @property (nonatomic) BOOL showRemoteVideoStat;
 @property (nonatomic) BOOL showLocalVideoStat;
+/// 외부 캡처러 사용 여부 설정
 @property (nonatomic) BOOL useExternalCapturer;
 @property (nonatomic, copy) NSString * _Nullable channelID;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// 오디오 전용 여부 선택
 @property (nonatomic) BOOL onlyAudio;
+/// 비디오 가로 크기
 @property (nonatomic) NSInteger videoWidth;
+/// 비디오 세로 크기
 @property (nonatomic) NSInteger videoHeight;
+/// 초당 프레임 수
 @property (nonatomic) NSInteger fps;
+/// 서비스 아이디
 @property (nonatomic, copy) NSString * _Nullable serviceId;
+/// 서비스키
 @property (nonatomic, copy) NSString * _Nullable serviceKey;
+/// 웹소켓 주소
 @property (nonatomic, copy) NSString * _Nonnull wsUrl;
+/// rest api 주소
 @property (nonatomic, copy) NSString * _Nonnull restUrl;
+/// 전면 카메라 시작
 @property (nonatomic) BOOL frontCamera;
+/// 카메라 화면 미러모드 동작여부, 화면만 미러로 동작하며, 실제 데이터는 정상 전송
 @property (nonatomic) BOOL mirrorMode;
+/// 최종 output 프레임 고정여부.
+/// true 인 경우 연결시의 방향으로 출력 사이즈가 고정됩니다.
+/// false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
+/// 단, 앱이 하나의 방향만을 지원하는 경우 회전이 발생하지 않습니다.
 @property (nonatomic) BOOL fixedCameraRotation;
 @property (nonatomic, weak) IBOutlet UIView * _Nullable remoteView;
 @property (nonatomic, weak) IBOutlet UIView * _Nullable localView;
@@ -277,7 +292,7 @@ SWIFT_CLASS_NAMED("RemonIBController")
 
 @class RemonSearchResult;
 
-///
+/// P2P 영상통화 클래스
 SWIFT_CLASS("_TtC13RemoteMonster9RemonCall")
 @interface RemonCall : RemonIBController <RemonCallBlockSettable>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -286,6 +301,7 @@ SWIFT_CLASS("_TtC13RemoteMonster9RemonCall")
 ///
 - (void)fetchCallsWithComplete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
 - (void)fetchCallsWithIsTest:(BOOL)isTest complete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
+///
 - (void)onConnectWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 ///
 - (void)onFetchWithBlock:(void (^ _Nonnull)(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull))block;
@@ -373,6 +389,7 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic, copy) NSString * _Nonnull token;
 /// 음성만 사용할 경우 false, 영상도 사용할 경우 true
 @property (nonatomic) BOOL videoCall;
+/// 초기 비트레이트
 @property (nonatomic, copy) NSString * _Nonnull startVideoBitrate;
 /// 송출할 비디오의 영상 코덱. 기본은 H264이며 VP9, VP8등을 사용할 수 있다.
 @property (nonatomic, copy) NSString * _Nonnull videoCodec;
@@ -390,8 +407,11 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic) BOOL debugMode;
 /// 사용할 카메라 포지션
 @property (nonatomic) BOOL frontCamera;
+/// 프론트카메라 미러모드 설정
 @property (nonatomic) BOOL mirrorMode;
+/// 송출 방향 고정 여부
 @property (nonatomic) BOOL fixedCameraRotation;
+/// 외부 캡처러 사용
 @property (nonatomic) BOOL useExternalCapturer;
 @property (nonatomic, copy) NSString * _Nonnull userMeta;
 @property (nonatomic) RTCLoggingSeverity debugLevel;
@@ -405,7 +425,9 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @class RemonStatReport;
 
 @interface RemonIBController (SWIFT_EXTENSION(RemoteMonster))
+/// 초기화 콜백
 - (void)onInitWithBlock:(void (^ _Nonnull)(void))block;
+/// webrtc 접속이 완료된 이후에 호출
 - (void)onCompleteWithBlock:(void (^ _Nonnull)(void))block;
 - (void)onCloseWithBlock:(void (^ _Nonnull)(enum RemonCloseType))block;
 - (void)onDisConnectWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
@@ -413,23 +435,37 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
 - (void)onRetryWithBlock:(void (^ _Nonnull)(BOOL))block;
 - (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
+/// 원격측 비디오 사이즈 변경시 호출
 - (void)onRemoteVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
+/// 로컬 비디오 사이즈 변경시 호출
 - (void)onLocalVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
 @end
 
 enum objc_RemonBandwidth : NSInteger;
 
 @interface RemonIBController (SWIFT_EXTENSION(RemoteMonster))
+///
 - (NSString * _Nonnull)getCurruntStateString SWIFT_WARN_UNUSED_RESULT;
+/// webrtc 연결 종료
 - (void)closeRemon;
 - (void)objc_switchBandWidthWithBandwidth:(enum objc_RemonBandwidth)bandwidth;
+/// 원격지 사운드 켜거나 끄기
 - (void)muteRemoteAudioWithMute:(BOOL)mute;
+/// 로컬 사운드 켜거나 끄기
 - (void)muteLocalAudioWithMute:(BOOL)mute;
 - (BOOL)stopLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)startLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
-- (void)stopRemoteVideoCapture;
-- (BOOL)switchCameraWithMirror:(BOOL)mirror SWIFT_WARN_UNUSED_RESULT;
+/// 로컬 비디오(카메라) 캡처 시작
+- (BOOL)startLocalVideoCaptureWithCompletion:(void (^ _Nonnull)(void))completion SWIFT_WARN_UNUSED_RESULT;
 - (void)startRemoteVideoCapture;
+- (void)stopRemoteVideoCapture;
+/// 카메라 전환
+/// 현재 카메라의 미러모드를 전환하거나, 전후면 카메라를 전환한다
+/// -Parameters:
+/// +isMirror: 미러모드 적용 여부
+/// +isToggle: 카메라 전면,후면 전환 여부
+/// -Return:변경된 카메라가 전면이면 true, 후면이면 false
+- (BOOL)switchCameraWithIsMirror:(BOOL)isMirror isToggle:(BOOL)isToggle SWIFT_WARN_UNUSED_RESULT;
+/// 볼륨설정
 - (void)setVolumeWithVolume:(float)volume;
 - (void)startDumpWithFileName:(NSString * _Nonnull)withFileName maxSizeInBytes:(int64_t)maxSizeInBytes;
 - (void)stopDump;
@@ -440,8 +476,9 @@ enum objc_RemonBandwidth : NSInteger;
 
 SWIFT_CLASS("_TtC13RemoteMonster19RemonSampleCapturer")
 @interface RemonSampleCapturer : RTCVideoCapturer
-- (nonnull instancetype)initWithDelegate:(id <RTCVideoCapturerDelegate> _Nonnull)delegate OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithDelegate:(id <RTCVideoCapturerDelegate> _Nonnull)delegate SWIFT_UNAVAILABLE;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -505,13 +542,6 @@ typedef SWIFT_ENUM(NSInteger, RemonState, closed) {
 /// 통신 연결 후 빠져나갔을 때의 상태
   RemonStateEXIT = 8,
   RemonStateCLOSE = 9,
-};
-
-typedef SWIFT_ENUM(NSInteger, RemonVideoRotation, closed) {
-  RemonVideoRotation_0 = 0,
-  RemonVideoRotation_90 = 90,
-  RemonVideoRotation_180 = 180,
-  RemonVideoRotation_270 = 270,
 };
 
 
@@ -908,7 +938,7 @@ SWIFT_PROTOCOL("_TtP13RemoteMonster22RemonCallBlockSettable_")
 @class RemonConfig;
 @class UIView;
 
-///
+/// InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스
 SWIFT_CLASS_NAMED("RemonIBController")
 @interface RemonIBController : NSObject
 @property (nonatomic, strong) RemonConfig * _Nullable remonConfig;
@@ -916,20 +946,35 @@ SWIFT_CLASS_NAMED("RemonIBController")
 @property (nonatomic, copy) NSString * _Nonnull userMeta;
 @property (nonatomic) BOOL showRemoteVideoStat;
 @property (nonatomic) BOOL showLocalVideoStat;
+/// 외부 캡처러 사용 여부 설정
 @property (nonatomic) BOOL useExternalCapturer;
 @property (nonatomic, copy) NSString * _Nullable channelID;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// 오디오 전용 여부 선택
 @property (nonatomic) BOOL onlyAudio;
+/// 비디오 가로 크기
 @property (nonatomic) NSInteger videoWidth;
+/// 비디오 세로 크기
 @property (nonatomic) NSInteger videoHeight;
+/// 초당 프레임 수
 @property (nonatomic) NSInteger fps;
+/// 서비스 아이디
 @property (nonatomic, copy) NSString * _Nullable serviceId;
+/// 서비스키
 @property (nonatomic, copy) NSString * _Nullable serviceKey;
+/// 웹소켓 주소
 @property (nonatomic, copy) NSString * _Nonnull wsUrl;
+/// rest api 주소
 @property (nonatomic, copy) NSString * _Nonnull restUrl;
+/// 전면 카메라 시작
 @property (nonatomic) BOOL frontCamera;
+/// 카메라 화면 미러모드 동작여부, 화면만 미러로 동작하며, 실제 데이터는 정상 전송
 @property (nonatomic) BOOL mirrorMode;
+/// 최종 output 프레임 고정여부.
+/// true 인 경우 연결시의 방향으로 출력 사이즈가 고정됩니다.
+/// false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
+/// 단, 앱이 하나의 방향만을 지원하는 경우 회전이 발생하지 않습니다.
 @property (nonatomic) BOOL fixedCameraRotation;
 @property (nonatomic, weak) IBOutlet UIView * _Nullable remoteView;
 @property (nonatomic, weak) IBOutlet UIView * _Nullable localView;
@@ -938,7 +983,7 @@ SWIFT_CLASS_NAMED("RemonIBController")
 
 @class RemonSearchResult;
 
-///
+/// P2P 영상통화 클래스
 SWIFT_CLASS("_TtC13RemoteMonster9RemonCall")
 @interface RemonCall : RemonIBController <RemonCallBlockSettable>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -947,6 +992,7 @@ SWIFT_CLASS("_TtC13RemoteMonster9RemonCall")
 ///
 - (void)fetchCallsWithComplete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
 - (void)fetchCallsWithIsTest:(BOOL)isTest complete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
+///
 - (void)onConnectWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 ///
 - (void)onFetchWithBlock:(void (^ _Nonnull)(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull))block;
@@ -1034,6 +1080,7 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic, copy) NSString * _Nonnull token;
 /// 음성만 사용할 경우 false, 영상도 사용할 경우 true
 @property (nonatomic) BOOL videoCall;
+/// 초기 비트레이트
 @property (nonatomic, copy) NSString * _Nonnull startVideoBitrate;
 /// 송출할 비디오의 영상 코덱. 기본은 H264이며 VP9, VP8등을 사용할 수 있다.
 @property (nonatomic, copy) NSString * _Nonnull videoCodec;
@@ -1051,8 +1098,11 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic) BOOL debugMode;
 /// 사용할 카메라 포지션
 @property (nonatomic) BOOL frontCamera;
+/// 프론트카메라 미러모드 설정
 @property (nonatomic) BOOL mirrorMode;
+/// 송출 방향 고정 여부
 @property (nonatomic) BOOL fixedCameraRotation;
+/// 외부 캡처러 사용
 @property (nonatomic) BOOL useExternalCapturer;
 @property (nonatomic, copy) NSString * _Nonnull userMeta;
 @property (nonatomic) RTCLoggingSeverity debugLevel;
@@ -1066,7 +1116,9 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @class RemonStatReport;
 
 @interface RemonIBController (SWIFT_EXTENSION(RemoteMonster))
+/// 초기화 콜백
 - (void)onInitWithBlock:(void (^ _Nonnull)(void))block;
+/// webrtc 접속이 완료된 이후에 호출
 - (void)onCompleteWithBlock:(void (^ _Nonnull)(void))block;
 - (void)onCloseWithBlock:(void (^ _Nonnull)(enum RemonCloseType))block;
 - (void)onDisConnectWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
@@ -1074,23 +1126,37 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
 - (void)onRetryWithBlock:(void (^ _Nonnull)(BOOL))block;
 - (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
+/// 원격측 비디오 사이즈 변경시 호출
 - (void)onRemoteVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
+/// 로컬 비디오 사이즈 변경시 호출
 - (void)onLocalVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
 @end
 
 enum objc_RemonBandwidth : NSInteger;
 
 @interface RemonIBController (SWIFT_EXTENSION(RemoteMonster))
+///
 - (NSString * _Nonnull)getCurruntStateString SWIFT_WARN_UNUSED_RESULT;
+/// webrtc 연결 종료
 - (void)closeRemon;
 - (void)objc_switchBandWidthWithBandwidth:(enum objc_RemonBandwidth)bandwidth;
+/// 원격지 사운드 켜거나 끄기
 - (void)muteRemoteAudioWithMute:(BOOL)mute;
+/// 로컬 사운드 켜거나 끄기
 - (void)muteLocalAudioWithMute:(BOOL)mute;
 - (BOOL)stopLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)startLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
-- (void)stopRemoteVideoCapture;
-- (BOOL)switchCameraWithMirror:(BOOL)mirror SWIFT_WARN_UNUSED_RESULT;
+/// 로컬 비디오(카메라) 캡처 시작
+- (BOOL)startLocalVideoCaptureWithCompletion:(void (^ _Nonnull)(void))completion SWIFT_WARN_UNUSED_RESULT;
 - (void)startRemoteVideoCapture;
+- (void)stopRemoteVideoCapture;
+/// 카메라 전환
+/// 현재 카메라의 미러모드를 전환하거나, 전후면 카메라를 전환한다
+/// -Parameters:
+/// +isMirror: 미러모드 적용 여부
+/// +isToggle: 카메라 전면,후면 전환 여부
+/// -Return:변경된 카메라가 전면이면 true, 후면이면 false
+- (BOOL)switchCameraWithIsMirror:(BOOL)isMirror isToggle:(BOOL)isToggle SWIFT_WARN_UNUSED_RESULT;
+/// 볼륨설정
 - (void)setVolumeWithVolume:(float)volume;
 - (void)startDumpWithFileName:(NSString * _Nonnull)withFileName maxSizeInBytes:(int64_t)maxSizeInBytes;
 - (void)stopDump;
@@ -1101,8 +1167,9 @@ enum objc_RemonBandwidth : NSInteger;
 
 SWIFT_CLASS("_TtC13RemoteMonster19RemonSampleCapturer")
 @interface RemonSampleCapturer : RTCVideoCapturer
-- (nonnull instancetype)initWithDelegate:(id <RTCVideoCapturerDelegate> _Nonnull)delegate OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithDelegate:(id <RTCVideoCapturerDelegate> _Nonnull)delegate SWIFT_UNAVAILABLE;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -1166,13 +1233,6 @@ typedef SWIFT_ENUM(NSInteger, RemonState, closed) {
 /// 통신 연결 후 빠져나갔을 때의 상태
   RemonStateEXIT = 8,
   RemonStateCLOSE = 9,
-};
-
-typedef SWIFT_ENUM(NSInteger, RemonVideoRotation, closed) {
-  RemonVideoRotation_0 = 0,
-  RemonVideoRotation_90 = 90,
-  RemonVideoRotation_180 = 180,
-  RemonVideoRotation_270 = 270,
 };
 
 

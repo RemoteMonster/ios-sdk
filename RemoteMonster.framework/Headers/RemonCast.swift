@@ -9,7 +9,9 @@
 import UIKit
 
 
-/***/
+/**
+ 1:다 방송을 위한 클래스
+ */
 public protocol RemonCastBlockSettable {
     /** create() 호출 이후 방송 생성이 완료 되면 호출 됩니다.
      - Parameter block: 이 블럭의 string 인자는 생성된 채널의 ID 입니다.

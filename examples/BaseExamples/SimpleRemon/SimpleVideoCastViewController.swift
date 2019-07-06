@@ -28,11 +28,12 @@ class SimpleVideoCastViewController:UIViewController {
     
     // 전면 카메라에만 미러보기를 적용하기 위해 별도 변수를 사용
     var isFrontCamera:Bool = false
+    var isMirrorMode:Bool = false
     
     
     // 방송 송출을 위해 서비스에 연결합니다.
     @IBAction func createBroadcast(_ sender: Any) {
-        //config is nilable
+        
         self.remonCast.create(customConfig)
     }
     
@@ -44,17 +45,20 @@ class SimpleVideoCastViewController:UIViewController {
     
     // 카메라 위치를 동적으로 변경합니다.
     @IBAction func switchCamera(_ sender: Any) {
-        // 전면카메라 미러모드
-        var mirror:Bool = self.remonCast.mirrorMode
+
+        // 미러모드 : 초기 설정된 값으로 지정
+        isMirrorMode = self.remonCast.mirrorMode
         
-        // 현재 전면 카메라이고, 바뀌는 카메라의 경우에는 미러모드 끄기
+        
+        // 현재 전면 카메라이면 바뀌는 카메라는 후면카메라이므로, 미러모드 끄기
         if self.isFrontCamera {
-            mirror = false
+            isMirrorMode = false
         }
-        
+
+
         // 카메라 전환
-        self.isFrontCamera = self.remonCast.switchCamera(mirror: mirror)
-        print("[Client.onSwitchCamera] switchCamera=\(self.isFrontCamera)")
+        self.isFrontCamera = self.remonCast.switchCamera( isMirror: isMirrorMode)
+        print("[Client.onSwitchCamera] switchCamera=\(isMirrorMode)")
     }
     
     
@@ -88,6 +92,12 @@ class SimpleVideoCastViewController:UIViewController {
         self.remonCast.onCreate { [weak self] (chid) in
             self?.closeBtn.isEnabled = true
             self?.chLabel.text = chid
+
+
+            // test
+            let capturer:RemonCameraCapturer? = self?.remonCast.localCameraCapturer as? RemonCameraCapturer
+            capturer?.imageDelegate = self
+
         }
         
         self.remonCast.onClose { [weak self](_) in
@@ -130,6 +140,18 @@ class SimpleVideoCastViewController:UIViewController {
     
 }
 
-
+extension SimpleVideoCastViewController:RemonCameraCapturerBufferDelegate {
+    public func didReceiveCameraData(inputImage: CIImage) -> CIImage? {
+        let effect = CIFilter(name: "CIComicEffect")
+        effect?.setValue(inputImage, forKey: kCIInputImageKey)
+        
+//        let effect = CIFilter(name:"CISepiaTone")
+//        effect?.setValue(inputImage, forKey: kCIInputImageKey)
+//        effect?.setValue(1, forKey: kCIInputIntensityKey)
+//        //effect?.setValue(20, forKey: kCIInputRadiusKey)
+        let outputImage = effect?.outputImage
+        return outputImage
+    }
+}
 
 

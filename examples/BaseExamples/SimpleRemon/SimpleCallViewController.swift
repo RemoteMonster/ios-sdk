@@ -22,15 +22,12 @@ class SimpleCallViewController: UIViewController {
     
     
     // config를 사용해 접속 정보와 서비스 설정을 할 수 있습니다.
-    // 샘플에서는 ConifgViewController에서 config를 전달합니다.
+    // 현재 샘플에서는 ConifgViewController에서 config를 전달합니다.
     // config객체는 connect() 호출시 복사되어 전달됩니다.
     var customConfig:RemonConfig? = nil
     
-
-    // 전면 카메라에만 미러보기를 적용하기 위해 별도 변수를 사용
-    var isFrontCamera:Bool = false
     
-    
+    var frontCamera = false
     var muted = false
     
     @IBAction func volumeRatioP(_ sender: Any) {
@@ -74,20 +71,28 @@ class SimpleCallViewController: UIViewController {
         }
     }
     
+    
     // 카메라 위치를 동적으로 변경합니다.
     @IBAction func switchCamera(_ sender: Any) {
         // 미러모드
         var mirror:Bool = true
 
-        // 현재 전면 카메라이고, 바뀌는 카메라의 경우에는 미러모드 끄기
-        if self.isFrontCamera {
+        // 현재 전면 카메라이고, 변경시 카메라가 후면 카메라인 경우에는 미러모드 끄기
+        if self.frontCamera {
             mirror = false
         }
+
+        self.frontCamera = self.remonCall.switchCamera( isMirror: mirror, isToggle: true)
+    }
+    
+    // 카메라는 변경하지 않고, 현재 카메라 화면만 미러모드로 변경합니다.
+    @IBAction func switchMirrorMode(_ sender: Any) {
+        let mirror:Bool = !self.remonCall.mirrorMode
         
         // 카메라 전환
-        self.isFrontCamera = self.remonCall.switchCamera(mirror: mirror)
-        print("[Client.onSwitchCamera] switchCamera=\(self.isFrontCamera)")
+        self.frontCamera = self.remonCall.switchCamera( isMirror: mirror, isToggle: false)
     }
+    
     
     
     // SDK에서 전달하는 이벤트를 처리하기 위한 콜백 함수를 정의합니다.
@@ -103,7 +108,7 @@ class SimpleCallViewController: UIViewController {
         }
 
         
-        self.isFrontCamera = remonCall.frontCamera
+        self.frontCamera = remonCall.frontCamera
         
         
         // 각 이벤트 콜백을 등록합니다.
