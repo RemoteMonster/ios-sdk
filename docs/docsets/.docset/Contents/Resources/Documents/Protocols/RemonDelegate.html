@@ -14,7 +14,7 @@
     <a title="RemonDelegate Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (48% documented)</p>
+        <p><a href="../index.html"> Docs</a> (43% documented)</p>
         <p class="header-right"><a href="https://github.com/remotemonster/ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -32,10 +32,27 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/Remon.html">Remon</a>
+                <a href="../Classes/RemonCall.html">RemonCall</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RemonCast.html">RemonCast</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/RemonConfig.html">RemonConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RemonIBController.html">RemonIBController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:13RemoteMonster11ErrorDomainSSvp">ErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:13RemoteMonster20ErrorUnsupportedTypeSivp">ErrorUnsupportedType</a>
               </li>
             </ul>
           </li>
@@ -43,7 +60,19 @@
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums.html#/s:13RemoteMonster7JSONKeyO">JSONKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums.html#/s:13RemoteMonster14RemonBandwidthO">RemonBandwidth</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums.html#/s:13RemoteMonster15RemonSearchTypeO">RemonSearchType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/RemonState.html">RemonState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums.html#/s:13RemoteMonster4TypeO">Type</a>
               </li>
             </ul>
           </li>
@@ -51,7 +80,33 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Protocols.html#/c:@M@RemoteMonster@objc(pl)RemonCallBlockSettable">RemonCallBlockSettable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RemonCastBlockSettable.html">RemonCastBlockSettable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/RemonDelegate.html">RemonDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13RemoteMonster15RemonArrayBlocka">RemonArrayBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13RemoteMonster15RemonCloseBlocka">RemonCloseBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13RemoteMonster15RemonErrorBlocka">RemonErrorBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13RemoteMonster16RemonStringBlocka">RemonStringBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13RemoteMonster14RemonVoidBlocka">RemonVoidBlock</a>
               </li>
             </ul>
           </li>
@@ -63,7 +118,7 @@
             <h1>RemonDelegate</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RemonDelegate</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RemonDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                 </div>
               </div>
@@ -76,9 +131,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster13RemonDelegateP13onStateChangeyAA0cF0OF"></a>
+                    <a name="/s:13RemoteMonster13RemonDelegateP13onStateChangeyyAA0cF0OF"></a>
                     <a name="//apple_ref/swift/Method/onStateChange(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP13onStateChangeyAA0cF0OF">onStateChange(_:)</a>
+                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP13onStateChangeyyAA0cF0OF">onStateChange(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -103,9 +158,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster13RemonDelegateP25didReceiveLocalVideoTrackySo08RTCVideoI0CF"></a>
+                    <a name="/s:13RemoteMonster13RemonDelegateP25didReceiveLocalVideoTrackyySo08RTCVideoI0CF"></a>
                     <a name="//apple_ref/swift/Method/didReceiveLocalVideoTrack(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP25didReceiveLocalVideoTrackySo08RTCVideoI0CF">didReceiveLocalVideoTrack(_:)</a>
+                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP25didReceiveLocalVideoTrackyySo08RTCVideoI0CF">didReceiveLocalVideoTrack(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -130,9 +185,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster13RemonDelegateP010didReceiveA10VideoTrackySo08RTCVideoH0CF"></a>
+                    <a name="/s:13RemoteMonster13RemonDelegateP010didReceiveA10VideoTrackyySo08RTCVideoH0CF"></a>
                     <a name="//apple_ref/swift/Method/didReceiveRemoteVideoTrack(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP010didReceiveA10VideoTrackySo08RTCVideoH0CF">didReceiveRemoteVideoTrack(_:)</a>
+                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP010didReceiveA10VideoTrackyySo08RTCVideoH0CF">didReceiveRemoteVideoTrack(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -157,9 +212,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster13RemonDelegateP7onErroryAA0cF0OF"></a>
+                    <a name="/s:13RemoteMonster13RemonDelegateP7onErroryyAA0cF0OF"></a>
                     <a name="//apple_ref/swift/Method/onError(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP7onErroryAA0cF0OF">onError(_:)</a>
+                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP7onErroryyAA0cF0OF">onError(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -184,9 +239,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster13RemonDelegateP9onMessageySSF"></a>
+                    <a name="/s:13RemoteMonster13RemonDelegateP9onMessageyySSF"></a>
                     <a name="//apple_ref/swift/Method/onMessage(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP9onMessageySSF">onMessage(_:)</a>
+                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP9onMessageyySSF">onMessage(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -211,9 +266,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster13RemonDelegateP8onSearchySays10DictionaryVyS2SGGF"></a>
+                    <a name="/s:13RemoteMonster13RemonDelegateP8onSearchyySaySDyS2SGGF"></a>
                     <a name="//apple_ref/swift/Method/onSearch(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP8onSearchySays10DictionaryVyS2SGGF">onSearch(_:)</a>
+                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP8onSearchyySaySDyS2SGGF">onSearch(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -238,9 +293,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster13RemonDelegateP15onCreateChannelySS9channelID_tF"></a>
+                    <a name="/s:13RemoteMonster13RemonDelegateP15onCreateChannel9channelIDySS_tF"></a>
                     <a name="//apple_ref/swift/Method/onCreateChannel(channelID:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP15onCreateChannelySS9channelID_tF">onCreateChannel(channelID:)</a>
+                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP15onCreateChannel9channelIDySS_tF">onCreateChannel(channelID:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -264,9 +319,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster13RemonDelegateP19onDisconnectChannelySSSgF"></a>
+                    <a name="/s:13RemoteMonster13RemonDelegateP19onDisconnectChannelyySSSgF"></a>
                     <a name="//apple_ref/swift/Method/onDisconnectChannel(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP19onDisconnectChannelySSSgF">onDisconnectChannel(_:)</a>
+                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP19onDisconnectChannelyySSSgF">onDisconnectChannel(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -291,9 +346,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster13RemonDelegateP7onCloseyyF"></a>
-                    <a name="//apple_ref/swift/Method/onClose()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP7onCloseyyF">onClose()</a>
+                    <a name="/s:13RemoteMonster13RemonDelegateP7onCloseyyAA0cF4TypeOF"></a>
+                    <a name="//apple_ref/swift/Method/onClose(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13RemoteMonster13RemonDelegateP7onCloseyyAA0cF4TypeOF">onClose(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -308,7 +363,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onClose</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onClose</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">RemonCloseType</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -320,8 +375,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2018-05-31)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2019-07-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
