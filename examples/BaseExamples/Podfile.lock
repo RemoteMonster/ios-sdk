@@ -1,12 +1,12 @@
 PODS:
   - Remon-WebRTC-iOS (1.1041)
-  - RemoteMonster (2.6.1):
+  - RemoteMonster (2.6.2):
     - Remon-WebRTC-iOS (= 1.1041)
     - SwiftProtobuf (= 1.5.0)
   - SwiftProtobuf (1.5.0)
 
 DEPENDENCIES:
-  - RemoteMonster (~> 2.6.1)
+  - RemoteMonster (~> 2.6.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -16,9 +16,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Remon-WebRTC-iOS: 9310f0b2971e494e25fbff282f6ab642ac191450
-  RemoteMonster: fbc57260973f6add1a82db9dd0c126752d6c4f77
+  RemoteMonster: 766446f7e3e7f80b2add066eee02bc2a0f7ccc40
   SwiftProtobuf: 241400280f912735c1e1b9fe675fdd2c6c4d42e2
 
-PODFILE CHECKSUM: 3ad17b6da3c6ef93206edbc45a8c5d46fb82d438
+PODFILE CHECKSUM: 4e432f45bf5a3f30b8954651adfc4466038e2e4e
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.7.3
