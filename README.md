@@ -31,13 +31,13 @@ pod install
 
 ## Examples
 ### Base Example( P2P Call, Cast )
-* [source](https://github.com/RemoteMonster/ios-sdk/examples/BaseExamples/)
+* [source](https://github.com/RemoteMonster/ios-sdk/tree/master/examples/BaseExamples)
 
 ### External Sample Capturer
-* [source](https://github.com/RemoteMonster/ios-sdk/examples/RemonCapturer/)
+* [source](https://github.com/RemoteMonster/ios-sdk/tree/master/examples/RemonCapturer)
 
 ### Full features
-* [source](https://github.com/RemoteMonster/ios-sdk/examples/full/)
+* [source](https://github.com/RemoteMonster/ios-sdk/tree/master/examples/full)
 
 ## Documents
 
@@ -46,4 +46,4 @@ pod install
 
 ## Changelog
 
-* [Changelog](https://github.com/RemoteMonster/ios-sdk/CHANGELOG.md)
+* [Changelog](https://github.com/RemoteMonster/ios-sdk/blob/master/CHANGELOG.md)
