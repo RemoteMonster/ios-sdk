@@ -1,887 +1,887 @@
 {
   "warnings": [
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/gUnpack/aecunpack.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/gUnpack/aecunpack.swift",
       "line": 11,
       "symbol": "REMON_AECUNPACK_STATE",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/gUnpack/aecunpack.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/gUnpack/aecunpack.swift",
       "line": 19,
       "symbol": "REMON_AECUNPACK_PRESET",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/gUnpack/aecunpack.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/gUnpack/aecunpack.swift",
       "line": 30,
       "symbol": "aecunpack",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/gUnpack/debug.pb.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/gUnpack/debug.pb.swift",
       "line": null,
       "symbol": "Webrtc_Audioproc_Event",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Client/RemonCall.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Client/RemonCall.swift",
       "line": 13,
       "symbol": "RemonCallBlockSettable.onConnect(block:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Client/RemonCall.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Client/RemonCall.swift",
       "line": 14,
       "symbol": "RemonCallBlockSettable.onFetch(block:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Client/RemonCall.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Client/RemonCall.swift",
       "line": 21,
       "symbol": "RemonCall.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Client/RemonCall.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Client/RemonCall.swift",
       "line": 40,
       "symbol": "RemonCall.fetchCalls(isTest:complete:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Client/RemonCast.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Client/RemonCast.swift",
       "line": 52,
       "symbol": "RemonCast.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Client/RemonCast.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Client/RemonCast.swift",
       "line": 68,
       "symbol": "RemonCast.objc_join(chId:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Client/RemonCast.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Client/RemonCast.swift",
       "line": 90,
       "symbol": "RemonCast.fetchCasts(isTest:complete:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonController.swift",
       "line": null,
       "symbol": "RemonController",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonController.swift",
       "line": null,
       "symbol": "RemonController",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonController.swift",
       "line": null,
       "symbol": "RemonController",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonController.swift",
       "line": 13,
       "symbol": "RemonCloseType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 25,
       "symbol": "RemonIBController.legacyDelegate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 37,
       "symbol": "RemonIBController.remonConfig",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 39,
       "symbol": "RemonIBController.volumeRatio",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 52,
       "symbol": "RemonIBController.userMeta",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 61,
       "symbol": "RemonIBController.showRemoteVideoStat",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 67,
       "symbol": "RemonIBController.showLocalVideoStat",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 75,
       "symbol": "RemonIBController.channelID",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 76,
       "symbol": "RemonIBController.localCameraCapturer",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 176,
       "symbol": "RemonIBController.remoteView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 177,
       "symbol": "RemonIBController.localView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 178,
       "symbol": "RemonIBController.localPreView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 245,
       "symbol": "RemonIBController.objc_switchBandWidth(bandwidth:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 268,
       "symbol": "RemonIBController.stopLocalVideoCapture()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 280,
       "symbol": "RemonIBController.startRemoteVideoCapture()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
       "line": 284,
       "symbol": "RemonIBController.stopRemoteVideoCapture()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 318,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 324,
       "symbol": "RemonIBController.fetchChannel(type:isTest:complete:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 323,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 329,
       "symbol": "RemonIBController.startDump(withFileName:maxSizeInBytes:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 327,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 333,
       "symbol": "RemonIBController.stopDump()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 331,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 337,
       "symbol": "RemonIBController.unpackAecDump(dumpName:resultFileName:avPreset:progress:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 335,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 341,
       "symbol": "RemonIBController.unpackAecDump(dumpName:resultFileName:progress:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 353,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 359,
       "symbol": "RemonIBController.onClose(block:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 354,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 360,
       "symbol": "RemonIBController.onDisConnect(block:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 355,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 361,
       "symbol": "RemonIBController.onMessage(block:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 356,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 362,
       "symbol": "RemonIBController.onObjcError(block:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 357,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 363,
       "symbol": "RemonIBController.onRetry(block:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 358,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 364,
       "symbol": "RemonIBController.onRemonStatReport(block:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 372,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 378,
       "symbol": "RemonIBController.remoteRTCEAGLVideoView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 378,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 384,
       "symbol": "RemonIBController.localRTCEAGLVideoView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonIBController.swift",
-      "line": 384,
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonIBController.swift",
+      "line": 390,
       "symbol": "RemonIBController.localRTCCameraPreviewView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonStatReport.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonStatReport.swift",
       "line": 9,
       "symbol": "FractionLost",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonStatReport.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonStatReport.swift",
       "line": 21,
       "symbol": "RatingValue",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonStatReport.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonStatReport.swift",
       "line": 35,
       "symbol": "RemonStatReport",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Controller/RemonStatReport.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Controller/RemonStatReport.swift",
       "line": 175,
       "symbol": "StatResult",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/Channel.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/Channel.swift",
       "line": 12,
       "symbol": "RemonChannelType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/RemonConfig.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/RemonConfig.swift",
       "line": 22,
       "symbol": "RemonConfig.restUrl",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/RemonConfig.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/RemonConfig.swift",
       "line": 23,
       "symbol": "RemonConfig.wsUrl",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/RemonConfig.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/RemonConfig.swift",
       "line": 37,
       "symbol": "RemonConfig.iceServers",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/RemonConfig.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/RemonConfig.swift",
       "line": 65,
       "symbol": "RemonConfig.autoCaptureStart",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/RemonConfig.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/RemonConfig.swift",
       "line": 81,
       "symbol": "RemonConfig.sendonly",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/RemonConfig.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/RemonConfig.swift",
       "line": 82,
       "symbol": "RemonConfig.id",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/RemonConfig.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/RemonConfig.swift",
       "line": 83,
       "symbol": "RemonConfig.debugMode",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/RemonConfig.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/RemonConfig.swift",
       "line": 98,
       "symbol": "RemonConfig.userMeta",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/RemonConfig.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/RemonConfig.swift",
       "line": 99,
       "symbol": "RemonConfig.debugLevel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/RemonConfig.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/RemonConfig.swift",
       "line": 104,
       "symbol": "RemonConfig.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/RemonError.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/RemonError.swift",
       "line": 11,
       "symbol": "RemonError",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/Types.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/Types.swift",
       "line": 14,
       "symbol": "RemonAudioMode",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/Types.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/Types.swift",
       "line": 23,
       "symbol": "RemonSearchType.call",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Model/Types.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Model/Types.swift",
       "line": 24,
       "symbol": "RemonSearchType.cast",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/PeerConnectionManager.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/PeerConnectionManager.swift",
       "line": 14,
       "symbol": "PeerConnectionManager",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Protocol/RemonDelegate.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Protocol/RemonDelegate.swift",
       "line": 18,
       "symbol": "RemonDelegate.didReceiveLocalAudioTrack(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Protocol/RemonDelegate.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Protocol/RemonDelegate.swift",
       "line": 19,
       "symbol": "RemonDelegate.didReceiveLocalVideoCapture(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Protocol/RemonDelegate.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Protocol/RemonDelegate.swift",
       "line": 22,
       "symbol": "RemonDelegate.didReceiveRemoteAudioTrack(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Remon.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Remon.swift",
       "line": 16,
       "symbol": "RemonBandwidth.HIGH",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Remon.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Remon.swift",
       "line": 17,
       "symbol": "RemonBandwidth.MEDIUM",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Remon.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Remon.swift",
       "line": 18,
       "symbol": "RemonBandwidth.LOW",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Remon.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Remon.swift",
       "line": 21,
       "symbol": "objc_RemonBandwidth",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Remon.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Remon.swift",
       "line": 42,
       "symbol": "RemonState.TRYRECONNECT",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Remon.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Remon.swift",
       "line": 45,
       "symbol": "RemonState.ICEDISCONNECT",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Remon.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Remon.swift",
       "line": 48,
       "symbol": "RemonState.CLOSE",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/RemonRestManager.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/RemonRestManager.swift",
       "line": 11,
       "symbol": "RemonSearchResult",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/RemonUtil.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/RemonUtil.swift",
       "line": 12,
       "symbol": "JSONStringify(value:prettyPrinted:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": null,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 32,
       "symbol": "ErrorIndexOutOfBounds",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 33,
       "symbol": "ErrorWrongType",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 34,
       "symbol": "ErrorNotExist",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 35,
       "symbol": "ErrorInvalidJSON",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 46,
       "symbol": "Type.number",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 47,
       "symbol": "Type.string",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 48,
       "symbol": "Type.bool",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 49,
       "symbol": "Type.array",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 50,
       "symbol": "Type.dictionary",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 51,
       "symbol": "Type.null",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 52,
       "symbol": "Type.unknown",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 56,
       "symbol": "JSON",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 284,
       "symbol": "Index",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 314,
       "symbol": "JSONIndex",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 315,
       "symbol": "JSONRawIndex",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 387,
       "symbol": "JSONKey.index(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 388,
       "symbol": "JSONKey.key(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 391,
       "symbol": "JSONSubscriptType",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 396,
       "symbol": "Int.jsonKey",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 402,
       "symbol": "String.jsonKey",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 1313,
       "symbol": "==(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 1333,
       "symbol": "<=(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 1353,
       "symbol": ">=(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 1373,
       "symbol": ">(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 1385,
       "symbol": "<(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/Util/SwiftyJSON.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/Util/SwiftyJSON.swift",
       "line": 1480,
       "symbol": "writingOptionsKeys",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/WebRTC/RemonCameraCapturer.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/WebRTC/RemonCameraCapturer.swift",
       "line": null,
       "symbol": "RemonCameraCapturer",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/WebRTC/RemonCameraCapturer.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/WebRTC/RemonCameraCapturer.swift",
       "line": 10,
       "symbol": "RemonCameraCapturerBufferDelegate",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/WebRTC/RemonCameraCapturer.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/WebRTC/RemonCameraCapturer.swift",
       "line": 15,
       "symbol": "RemonCameraCapturer",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/WebRTC/RemonCameraPreviewView.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/WebRTC/RemonCameraPreviewView.swift",
       "line": 12,
       "symbol": "RemonCameraPreviewView",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/chance/Project/remon/sdk/remon-ios-sdk/sdk/WebRTC/RemonSampleCapturer.swift",
+      "file": "/Users/chance/Project/remon/sdk/ios/sdk/WebRTC/RemonSampleCapturer.swift",
       "line": 12,
       "symbol": "RemonSampleCapturer",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/chance/Project/remon/sdk/remon-ios-sdk"
+  "source_directory": "/Users/chance/Project/remon/sdk/ios"
 }

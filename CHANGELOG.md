@@ -155,3 +155,7 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 - changed switchCamera function. switchCamera( isMirror:Bool, isToggle:Bool )
 - added RemonSampleCapturer and example project for using it 
 - fixed minor bugs
+
+
+## 2.6.3
+- added sendMessage( message:String ) to RemonCall, RemonCast
