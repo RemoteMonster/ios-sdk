@@ -285,6 +285,12 @@ extension RemonIBController {
         controller?.stopRemoteVideoCapture()
     }
     
+    /**
+     * 채널이 연결된 상태에서 상대편에게 메시지를 전달한다.
+     */
+    @objc public func sendMessage(message:String){
+        controller?.sendMessage(message: message)
+    }
     
     /**
      카메라 전환
