@@ -27,8 +27,6 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
     /** 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부 */
     public var autoCaptureStart:Bool = true
     
-    /**video codec H264 | VP8. default is H264 */
-    public var videoCodec:String = "H264"
     
     /**debug mode.  default is false*/
     public var debugMode:Bool = false
@@ -115,7 +113,13 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
     internal var sendonly:Bool = false
     internal var tryReConnecting:Bool = false
     
+    
+    
     // IBInspectable
+    /**video codec H264 | VP8. default is H264 */
+    @IBInspectable public var videoCodec:String = "H264"
+    
+    
     /// 오디오 전용 여부 선택
     @IBInspectable public var onlyAudio:Bool = false
     

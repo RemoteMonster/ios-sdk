@@ -260,6 +260,8 @@ SWIFT_CLASS_NAMED("RemonIBController")
 @property (nonatomic, copy) NSString * _Nullable channelID;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// video codec H264 | VP8. default is H264
+@property (nonatomic, copy) NSString * _Nonnull videoCodec;
 /// 오디오 전용 여부 선택
 @property (nonatomic) BOOL onlyAudio;
 /// 비디오 가로 크기
@@ -953,6 +955,8 @@ SWIFT_CLASS_NAMED("RemonIBController")
 @property (nonatomic, copy) NSString * _Nullable channelID;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// video codec H264 | VP8. default is H264
+@property (nonatomic, copy) NSString * _Nonnull videoCodec;
 /// 오디오 전용 여부 선택
 @property (nonatomic) BOOL onlyAudio;
 /// 비디오 가로 크기

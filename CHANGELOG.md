@@ -159,3 +159,6 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 
 ## 2.6.3
 - added sendMessage( message:String ) to RemonCall, RemonCast
+
+## 2.6.4
+- possible to select supported video codec(H264,VP8) when RemonCast is starting to broadcast
