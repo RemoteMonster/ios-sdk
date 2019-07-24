@@ -82,6 +82,7 @@ class SimpleCallViewController: UIViewController {
             mirror = false
         }
 
+        // supported v2.6.4 or higher
         self.frontCamera = self.remonCall.switchCamera( isMirror: mirror, isToggle: true)
     }
     
@@ -90,6 +91,7 @@ class SimpleCallViewController: UIViewController {
         let mirror:Bool = !self.remonCall.mirrorMode
         
         // 카메라 전환
+        // supported v2.6.4 or higher
         self.frontCamera = self.remonCall.switchCamera( isMirror: mirror, isToggle: false)
     }
     

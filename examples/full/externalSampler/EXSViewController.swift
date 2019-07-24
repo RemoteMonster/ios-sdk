@@ -10,6 +10,11 @@ import UIKit
 import RemoteMonster
 import GPUImage
 
+
+/**
+ 이 예제는 업데이트되지 않습니다.
+ 외부 캡처러를 이용한 샘플 프로젝트는 /examples/RemonCapturer 를 참조하시기바랍니다.
+ */
 class EXSViewController: UIViewController, GPUImageVideoCameraDelegate {
     @IBOutlet var remonCall: RemonCall!
     @IBOutlet weak var chField: UITextField!
@@ -83,10 +88,7 @@ class EXSViewController: UIViewController, GPUImageVideoCameraDelegate {
                     
                     if let pixelBuffer = pixelBuffer {
                         if let cmTime = self.cmTime {
-//                            remonCall의 외부샘플러델리게이터에게 프래임을 넘깁니다.
-                            if let rtcCaptureDelegate = self.remonCall.localExternalCaptureDelegator {
-                                rtcCaptureDelegate.didCaptureFrame(pixelBuffer: pixelBuffer, timeStamp: cmTime.value, videoRetation: ._0)
-                            }
+                            self.remonCall.localSampleCapturer?.willOutputPixelBuffer(pixelBuffer, time: cmTime )
                         }
                     }
                 }
