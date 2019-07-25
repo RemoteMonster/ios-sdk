@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -178,7 +178,6 @@
 				CB6588CC2D3F0F4C26175286 /* Pods-SimpleRemonObjC.debug.xcconfig */,
 				9934BB70E7EF086AD1028F21 /* Pods-SimpleRemonObjC.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
