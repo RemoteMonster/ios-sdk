@@ -11,8 +11,10 @@ import UIKit
 
 
 /**
- InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스
-
+ InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스.
+ 접속전 서비스별로 각 프로퍼티를 설정할 수 있음.
+ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 사용.
+ 별도의 config 정보가 없을 경우 지정된 값이 사용되며, config를 통한 설정시에는 config 값으로 설정됨.
  */
 @objc(RemonIBController)
 @IBDesignable
@@ -30,7 +32,6 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
     
     /**debug mode.  default is false*/
     public var debugMode:Bool = false
-    
     
     @objc public var remonConfig:RemonConfig?
     
@@ -138,11 +139,20 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
     /// 서비스키
     @IBInspectable public var serviceKey:String?
     
-    /// 웹소켓 주소
-    @IBInspectable public var wsUrl:String = "wss://signal.remotemonster.com/ws"
-    
     /// rest api 주소
-    @IBInspectable public var restUrl:String = "https://signal.remotemonster.com/rest/init"
+    @IBInspectable public var restUrl:String = RemonConfig.REMON_REST_URL
+    
+    
+    /// 웹소켓 주소
+    @IBInspectable public var wsUrl:String = RemonConfig.REMON_WS_URL
+    
+    /// log 서버 주소
+    @IBInspectable public var logUrl:String = RemonConfig.REMON_REST_LOG_SERVER
+    
+    
+    
+    
+    
     
     
     /// 전면 카메라 시작
@@ -352,27 +362,34 @@ extension RemonIBController {
     internal func onFetchChannels(block:@escaping RemonArrayBlock) { controller?.observerBlock.fetchRemonChannelBlock = block}
     internal func onCreate(block_:@escaping RemonStringBlock) { controller?.observerBlock.createRemonChannelBlock = block_}
     
-    /// 에러 콜백
+    /** 에러 콜백 */
     public func onError(block:@escaping RemonErrorBlock) { controller?.observerBlock.errorRemonBlock = block}
     
-    /// 초기화 콜백
+    /** 초기화 콜백 */
     @objc public func onInit(block:@escaping RemonVoidBlock) { controller?.observerBlock.initRemonBlock = block}
     
-    /// webrtc 접속이 완료된 이후에 호출
+    /** 접속 완료 콜백. webrtc 접속이 완료된 이후에 호출 */
     @objc public func onComplete(block:@escaping RemonVoidBlock) { controller?.observerBlock.completeRemonChannelBlock = block}
+    
+    /** 연결 종료 콜백 */
     @objc public func onClose(block:@escaping RemonCloseBlock) {controller?.observerBlock.closeRemonChannelBlock = block}
+    
+    
     @objc public func onDisConnect(block:@escaping RemonStringBlock) { controller?.observerBlock.disConnectRemonChannelBlock = block}
+    
+    /** 메시지 수신 콜백 */
     @objc public func onMessage(block:@escaping RemonStringBlock) { controller?.observerBlock.messageRemonChannelBlock = block}
+    
     @objc public func onObjcError(block:@escaping ((_:NSError) -> Void)) { controller?.observerBlock.objc_errorRemonBlock = block}
     @objc public func onRetry(block:@escaping ((_:Bool) -> Void)) { controller?.observerBlock.tryReConnect = block}
     @objc public func onRemonStatReport(block:@escaping (_:RemonStatReport)->Void) {controller?.observerBlock.remonStatBlock = block}
     
-    /// 원격측 비디오 사이즈 변경시 호출
+    /** 원격측 비디오 사이즈 변경시 호출 */
     @objc public func onRemoteVideoSizeChanged(block: @escaping (_ remoteView:UIView?, _ videoSize:CGSize) -> Void) {
         controller?.observerBlock.didChangeRemoteVideoSize = block
     }
     
-    /// 로컬 비디오 사이즈 변경시 호출
+    /** 로컬 비디오 사이즈 변경시 호출 */
     @objc public func onLocalVideoSizeChanged(block: @escaping (_ localView:UIView?, _ videoSize:CGSize) -> Void) {
         controller?.observerBlock.didChangeLocalVideoSize = block
     }

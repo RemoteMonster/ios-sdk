@@ -247,7 +247,10 @@ SWIFT_PROTOCOL("_TtP13RemoteMonster22RemonCallBlockSettable_")
 @class RemonConfig;
 @class UIView;
 
-/// InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스
+/// InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스.
+/// 접속전 서비스별로 각 프로퍼티를 설정할 수 있음.
+/// RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 사용.
+/// 별도의 config 정보가 없을 경우 지정된 값이 사용되며, config를 통한 설정시에는 config 값으로 설정됨.
 SWIFT_CLASS_NAMED("RemonIBController")
 @interface RemonIBController : NSObject
 @property (nonatomic, strong) RemonConfig * _Nullable remonConfig;
@@ -274,10 +277,12 @@ SWIFT_CLASS_NAMED("RemonIBController")
 @property (nonatomic, copy) NSString * _Nullable serviceId;
 /// 서비스키
 @property (nonatomic, copy) NSString * _Nullable serviceKey;
-/// 웹소켓 주소
-@property (nonatomic, copy) NSString * _Nonnull wsUrl;
 /// rest api 주소
 @property (nonatomic, copy) NSString * _Nonnull restUrl;
+/// 웹소켓 주소
+@property (nonatomic, copy) NSString * _Nonnull wsUrl;
+/// log 서버 주소
+@property (nonatomic, copy) NSString * _Nonnull logUrl;
 /// 전면 카메라 시작
 @property (nonatomic) BOOL frontCamera;
 /// 카메라 화면 미러모드 동작여부, 화면만 미러로 동작하며, 실제 데이터는 정상 전송
@@ -380,8 +385,12 @@ typedef SWIFT_ENUM(NSInteger, RemonCloseType, closed) {
 /// 비디오 코덱등도 수정이 가능하다.
 SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @interface RemonConfig : NSObject
+/// 인증을 위한 rest 서버 url
 @property (nonatomic, copy) NSString * _Nonnull restUrl;
+/// 시그널링 서버 url
 @property (nonatomic, copy) NSString * _Nonnull wsUrl;
+/// 로그 서버 url
+@property (nonatomic, copy) NSString * _Nonnull logUrl;
 @property (nonatomic, copy) NSArray<RTCIceServer *> * _Nonnull iceServers;
 /// RemoteMonster서버로부터 발급받은 인증 키
 @property (nonatomic, copy) NSString * _Nonnull key;
@@ -395,26 +404,28 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic, copy) NSString * _Nonnull startVideoBitrate;
 /// 송출할 비디오의 영상 코덱. 기본은 H264이며 VP9, VP8등을 사용할 수 있다.
 @property (nonatomic, copy) NSString * _Nonnull videoCodec;
-/// 송출할 비디오의 가로길이. 기본값은 640
+/// 송출할 비디오의 가로길이. 기본값은 640. 네트워크 상태에 따라 변경됨.
 @property (nonatomic) NSInteger videoWidth;
-/// 송출할 비디오의 세로길이. 기본값은 480
+/// 송출할 비디오의 세로길이. 기본값은 480. 네트워크 상태에 따라 변경됨.
 @property (nonatomic) NSInteger videoHeight;
-/// 송출할 비디오의 frames per second. 기본값은 30
+/// 송출할 비디오의 frames per second. 기본값은 30. 네트워크 상태에 따라 변경됨.
 @property (nonatomic) NSInteger videoFps;
 @property (nonatomic) BOOL autoCaptureStart;
-/// P2P, BROADCAST, VIEWER
+/// RemonChannelType 설정 : P2P, BROADCAST, VIEWER
 @property (nonatomic) enum RemonChannelType channelType;
+/// 전송 전용(방송)
 @property (nonatomic, copy) NSString * _Nonnull sendonly;
 @property (nonatomic, copy) NSString * _Nonnull id;
 @property (nonatomic) BOOL debugMode;
-/// 사용할 카메라 포지션
+/// 시작시 전면 카메라 사용여부
 @property (nonatomic) BOOL frontCamera;
-/// 프론트카메라 미러모드 설정
+/// 전면카메라 미러모드 설정.
 @property (nonatomic) BOOL mirrorMode;
-/// 송출 방향 고정 여부
+/// 송출 방향 고정 여부. 단말의 orientation에 영향을 받지 않고 단일 방향으로 고정할 때 사용.
 @property (nonatomic) BOOL fixedCameraRotation;
-/// 외부 캡처러 사용
+/// 외부 캡처러 사용. 내부 카메라 모듈을 사용하지 않고, 외부에서 별도로 구성하는 경우 사용.
 @property (nonatomic) BOOL useExternalCapturer;
+/// 추가 메타 정보
 @property (nonatomic, copy) NSString * _Nonnull userMeta;
 @property (nonatomic) RTCLoggingSeverity debugLevel;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -429,10 +440,12 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @interface RemonIBController (SWIFT_EXTENSION(RemoteMonster))
 /// 초기화 콜백
 - (void)onInitWithBlock:(void (^ _Nonnull)(void))block;
-/// webrtc 접속이 완료된 이후에 호출
+/// 접속 완료 콜백. webrtc 접속이 완료된 이후에 호출
 - (void)onCompleteWithBlock:(void (^ _Nonnull)(void))block;
+/// 연결 종료 콜백
 - (void)onCloseWithBlock:(void (^ _Nonnull)(enum RemonCloseType))block;
 - (void)onDisConnectWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
+/// 메시지 수신 콜백
 - (void)onMessageWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
 - (void)onRetryWithBlock:(void (^ _Nonnull)(BOOL))block;
@@ -942,7 +955,10 @@ SWIFT_PROTOCOL("_TtP13RemoteMonster22RemonCallBlockSettable_")
 @class RemonConfig;
 @class UIView;
 
-/// InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스
+/// InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스.
+/// 접속전 서비스별로 각 프로퍼티를 설정할 수 있음.
+/// RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 사용.
+/// 별도의 config 정보가 없을 경우 지정된 값이 사용되며, config를 통한 설정시에는 config 값으로 설정됨.
 SWIFT_CLASS_NAMED("RemonIBController")
 @interface RemonIBController : NSObject
 @property (nonatomic, strong) RemonConfig * _Nullable remonConfig;
@@ -969,10 +985,12 @@ SWIFT_CLASS_NAMED("RemonIBController")
 @property (nonatomic, copy) NSString * _Nullable serviceId;
 /// 서비스키
 @property (nonatomic, copy) NSString * _Nullable serviceKey;
-/// 웹소켓 주소
-@property (nonatomic, copy) NSString * _Nonnull wsUrl;
 /// rest api 주소
 @property (nonatomic, copy) NSString * _Nonnull restUrl;
+/// 웹소켓 주소
+@property (nonatomic, copy) NSString * _Nonnull wsUrl;
+/// log 서버 주소
+@property (nonatomic, copy) NSString * _Nonnull logUrl;
 /// 전면 카메라 시작
 @property (nonatomic) BOOL frontCamera;
 /// 카메라 화면 미러모드 동작여부, 화면만 미러로 동작하며, 실제 데이터는 정상 전송
@@ -1075,8 +1093,12 @@ typedef SWIFT_ENUM(NSInteger, RemonCloseType, closed) {
 /// 비디오 코덱등도 수정이 가능하다.
 SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @interface RemonConfig : NSObject
+/// 인증을 위한 rest 서버 url
 @property (nonatomic, copy) NSString * _Nonnull restUrl;
+/// 시그널링 서버 url
 @property (nonatomic, copy) NSString * _Nonnull wsUrl;
+/// 로그 서버 url
+@property (nonatomic, copy) NSString * _Nonnull logUrl;
 @property (nonatomic, copy) NSArray<RTCIceServer *> * _Nonnull iceServers;
 /// RemoteMonster서버로부터 발급받은 인증 키
 @property (nonatomic, copy) NSString * _Nonnull key;
@@ -1090,26 +1112,28 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic, copy) NSString * _Nonnull startVideoBitrate;
 /// 송출할 비디오의 영상 코덱. 기본은 H264이며 VP9, VP8등을 사용할 수 있다.
 @property (nonatomic, copy) NSString * _Nonnull videoCodec;
-/// 송출할 비디오의 가로길이. 기본값은 640
+/// 송출할 비디오의 가로길이. 기본값은 640. 네트워크 상태에 따라 변경됨.
 @property (nonatomic) NSInteger videoWidth;
-/// 송출할 비디오의 세로길이. 기본값은 480
+/// 송출할 비디오의 세로길이. 기본값은 480. 네트워크 상태에 따라 변경됨.
 @property (nonatomic) NSInteger videoHeight;
-/// 송출할 비디오의 frames per second. 기본값은 30
+/// 송출할 비디오의 frames per second. 기본값은 30. 네트워크 상태에 따라 변경됨.
 @property (nonatomic) NSInteger videoFps;
 @property (nonatomic) BOOL autoCaptureStart;
-/// P2P, BROADCAST, VIEWER
+/// RemonChannelType 설정 : P2P, BROADCAST, VIEWER
 @property (nonatomic) enum RemonChannelType channelType;
+/// 전송 전용(방송)
 @property (nonatomic, copy) NSString * _Nonnull sendonly;
 @property (nonatomic, copy) NSString * _Nonnull id;
 @property (nonatomic) BOOL debugMode;
-/// 사용할 카메라 포지션
+/// 시작시 전면 카메라 사용여부
 @property (nonatomic) BOOL frontCamera;
-/// 프론트카메라 미러모드 설정
+/// 전면카메라 미러모드 설정.
 @property (nonatomic) BOOL mirrorMode;
-/// 송출 방향 고정 여부
+/// 송출 방향 고정 여부. 단말의 orientation에 영향을 받지 않고 단일 방향으로 고정할 때 사용.
 @property (nonatomic) BOOL fixedCameraRotation;
-/// 외부 캡처러 사용
+/// 외부 캡처러 사용. 내부 카메라 모듈을 사용하지 않고, 외부에서 별도로 구성하는 경우 사용.
 @property (nonatomic) BOOL useExternalCapturer;
+/// 추가 메타 정보
 @property (nonatomic, copy) NSString * _Nonnull userMeta;
 @property (nonatomic) RTCLoggingSeverity debugLevel;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1124,10 +1148,12 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @interface RemonIBController (SWIFT_EXTENSION(RemoteMonster))
 /// 초기화 콜백
 - (void)onInitWithBlock:(void (^ _Nonnull)(void))block;
-/// webrtc 접속이 완료된 이후에 호출
+/// 접속 완료 콜백. webrtc 접속이 완료된 이후에 호출
 - (void)onCompleteWithBlock:(void (^ _Nonnull)(void))block;
+/// 연결 종료 콜백
 - (void)onCloseWithBlock:(void (^ _Nonnull)(enum RemonCloseType))block;
 - (void)onDisConnectWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
+/// 메시지 수신 콜백
 - (void)onMessageWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
 - (void)onRetryWithBlock:(void (^ _Nonnull)(BOOL))block;
