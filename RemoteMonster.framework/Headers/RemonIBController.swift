@@ -140,7 +140,7 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
     @IBInspectable public var serviceKey:String?
     
     /// rest api 주소
-    @IBInspectable public var restUrl:String = RemonConfig.REMON_REST_URL
+    @IBInspectable public var restUrl:String = RemonConfig.REMON_REST_HOST_URL
     
     
     /// 웹소켓 주소
@@ -258,10 +258,6 @@ extension RemonIBController {
     
     @objc public func objc_switchBandWidth(bandwidth:objc_RemonBandwidth) {
         controller?.objc_switchBandWidth(bandwidth: bandwidth)
-    }
-    
-    @objc func setAudioToSpeaker(){
-        controller?.setAudioToSpeaker()
     }
     
     

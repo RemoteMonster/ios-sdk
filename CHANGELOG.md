@@ -165,3 +165,7 @@ RemonCall.unpackAecDump(dumpName: "audio.aecdump", resultFileName: "unpack.m4a",
 
 ## 2.6.5
 - fixed a issue for multiple peer connection
+
+## 2.6.6
+- added some configuration for host urls
+
