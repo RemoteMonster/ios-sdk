@@ -47,7 +47,7 @@ class ConfigViewController: UIViewController {
                 al.addAction(ac)
                 self.present(al, animated: true, completion: nil)
                 return
-        }
+            }
         
         config.serviceId = sid
         config.key = skey
@@ -62,8 +62,11 @@ class ConfigViewController: UIViewController {
         config.fixedCameraRotation = self.fixedRotation.selectedSegmentIndex == 0 ? true:false
         
         //config.audioType = audioMode
-        config.restUrl = "https://signal.remotemonster.com/rest/init"
+        // sdk의 서버 url 이 변경된 경우 아래의 3개 값을 해당 url 에 맞게 변경
+        config.restUrl = "https://signal.remotemonster.com"
         config.wsUrl = "wss://signal.remotemonster.com/ws"
+        config.logUrl = "https://signal.remotemonster.com:2001"
+        
         config.debugMode = self.debugModeSegment.selectedSegmentIndex == 0 ? true:false
         
         switch (self.channelTypeSegment.selectedSegmentIndex) {

@@ -19,18 +19,23 @@ class SampleSerchTableViewController: UIViewController, UITableViewDataSource, U
     
     @IBAction func reloadAction(_ sender: Any) {
         if customConfig != nil && customConfig?.serviceId != nil { // && customConfig?.key != nil {
-            remonCast.serviceId = customConfig?.serviceId
-//            remonCast.serviceKey = customConfig?.key
+            if( customConfig?.serviceId != nil ) {
+                remonCast.serviceId = customConfig?.serviceId
+                //            remonCast.serviceKey = customConfig?.key
+            }
+
+            // 설정된 config를 지정
+            remonCast.remonConfig = customConfig
         }
         
-        remonCast.fetchCasts(isTest:!true) { (results) in
+        remonCast.fetchCasts(complete: { (results) in
             guard let rs = results
                 else { return}
             self.items = rs
             DispatchQueue.main.async {
                 self.searchTableView.reloadData()
             }
-        }
+        })
     }
     
     var items:Array<RemonSearchResult> = Array<RemonSearchResult>()
