@@ -331,10 +331,6 @@ extension RemonIBController {
         controller?.fetchChannel(client: self, type: type, complete: complete)
     }
     
-    public func fetchChannel(type:RemonSearchType, isTest:Bool, complete: @escaping (_ error:RemonError?, _ results:Array<RemonSearchResult>?)->Void) {
-        controller?.fetchChannel(client:self, type: type, isTest: isTest, complete: complete)
-    }
-    
     
     @objc public func startDump(withFileName: String, maxSizeInBytes:Int64) -> Void {
         controller?.startDump(withFileName: withFileName, maxSizeInBytes: maxSizeInBytes)

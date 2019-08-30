@@ -87,11 +87,6 @@ public protocol RemonCastBlockSettable {
         }
     }
     
-    @objc public func fetchCasts(isTest:Bool, complete: @escaping (Array<RemonSearchResult>?) -> Void) {
-        self.fetchChannel(type: .cast, isTest:isTest) { (error, chs) in
-            complete(chs)
-        }
-    }
     
     @objc public func onCreate(block: @escaping RemonStringBlock) {
         self.onComplete { [weak self] in

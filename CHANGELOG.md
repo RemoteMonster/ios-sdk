@@ -1,3 +1,7 @@
+## 2.6.7
+- fixed the url of fetchChannel function
+- fixed sending statistics for connection status 
+
 ## 2.6.6
 - added some configuration for host urls
 

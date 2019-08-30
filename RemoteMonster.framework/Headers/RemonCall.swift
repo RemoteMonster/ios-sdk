@@ -37,11 +37,6 @@ import UIKit
         }
     }
     
-    @objc public func fetchCalls(isTest:Bool, complete: @escaping (Array<RemonSearchResult>?) -> Void) {
-        self.fetchChannel(type: .call, isTest:isTest){ (error, chs) in
-            complete(chs)
-        }
-    }
     
     
     // note:chance: 사용자에게 추가적인 인터페이스를 노출시키는데, 일관성이 떨어지는 것으로 판단됨.

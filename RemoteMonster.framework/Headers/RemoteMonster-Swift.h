@@ -307,7 +307,6 @@ SWIFT_CLASS("_TtC13RemoteMonster9RemonCall")
 - (void)connect:(NSString * _Nonnull)ch :(RemonConfig * _Nullable)config;
 ///
 - (void)fetchCallsWithComplete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
-- (void)fetchCallsWithIsTest:(BOOL)isTest complete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
 ///
 - (void)onConnectWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 ///
@@ -359,7 +358,6 @@ SWIFT_CLASS("_TtC13RemoteMonster9RemonCast")
 /// 방송 목록을 가져 옵니다.
 /// - Parameter complete: 패치 완료 블럭. error 인자가 nil 이라면 RemonSearchResult 목록을 전달 합니다.
 - (void)fetchCastsWithComplete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
-- (void)fetchCastsWithIsTest:(BOOL)isTest complete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
 - (void)onCreateWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 - (void)onJoinWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 - (void)onFetchWithBlock:(void (^ _Nonnull)(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull))block;
@@ -1015,7 +1013,6 @@ SWIFT_CLASS("_TtC13RemoteMonster9RemonCall")
 - (void)connect:(NSString * _Nonnull)ch :(RemonConfig * _Nullable)config;
 ///
 - (void)fetchCallsWithComplete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
-- (void)fetchCallsWithIsTest:(BOOL)isTest complete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
 ///
 - (void)onConnectWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 ///
@@ -1067,7 +1064,6 @@ SWIFT_CLASS("_TtC13RemoteMonster9RemonCast")
 /// 방송 목록을 가져 옵니다.
 /// - Parameter complete: 패치 완료 블럭. error 인자가 nil 이라면 RemonSearchResult 목록을 전달 합니다.
 - (void)fetchCastsWithComplete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
-- (void)fetchCastsWithIsTest:(BOOL)isTest complete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
 - (void)onCreateWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 - (void)onJoinWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 - (void)onFetchWithBlock:(void (^ _Nonnull)(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull))block;
