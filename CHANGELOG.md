@@ -1,3 +1,6 @@
+## 2.6.8
+- fixed SDP customized setting for bandwidth
+
 ## 2.6.7
 - fixed the url of fetchChannel function
 - fixed sending statistics for connection status 
