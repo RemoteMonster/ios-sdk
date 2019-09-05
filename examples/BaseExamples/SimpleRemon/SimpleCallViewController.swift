@@ -141,6 +141,18 @@ class SimpleCallViewController: UIViewController {
             print("[Client.onError] error=\(error.localizedDescription)")
             self?.chLabel.text = error.localizedDescription
             
+            
+            
+            // error 는 RemonError 형식이므로
+            // 특정 오류에 대해 예외처리를 세분화 하려면 아래처럼 에러를 구분해 처리합니다.
+            switch error {
+            case .ConnectChannelFailed(_):
+                break
+                
+            default:
+                break
+                
+            }
         }
         
         // 재시도

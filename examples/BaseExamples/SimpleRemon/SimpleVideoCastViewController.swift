@@ -105,6 +105,27 @@ class SimpleVideoCastViewController:UIViewController {
             self?.closeBtn.isEnabled = false
         }
         
+        
+        // 에러 발생
+        self.remonCast.onError { [weak self] (error) in
+            print("[Client.onError] error=\(error.localizedDescription)")
+            self?.chLabel.text = error.localizedDescription
+            
+            
+            
+            // error 는 RemonError 형식이므로
+            // 특정 오류에 대해 예외처리를 세분화 하려면 아래처럼 에러를 구분해 처리합니다.
+            switch error {
+            case .ConnectChannelFailed(_):
+                break
+                
+            default:
+                break
+                
+            }
+        }
+        
+        
         // 로컬 비디오 사이즈 변경
         self.remonCast.onLocalVideoSizeChanged { [weak self] (view, size) in
             print("[Client.onRemoteVideoSizeChanged] size=\(size)")
