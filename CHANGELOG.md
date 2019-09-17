@@ -1,3 +1,7 @@
+## 2.6.9
+- integrated codes for calling callback on ui thread
+- fixed wrong command message
+
 ## 2.6.8
 - fixed SDP customized setting for bandwidth
 
