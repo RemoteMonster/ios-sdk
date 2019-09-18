@@ -14,7 +14,7 @@
     <a title="RemonIBController Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (43% documented)</p>
+        <p><a href="../index.html"> Docs</a> (47% documented)</p>
         <p class="header-right"><a href="https://github.com/remotemonster/ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -124,7 +124,10 @@
 
                 </div>
               </div>
-            <p>InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스</p>
+            <p>InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스.
+접속전 서비스별로 각 프로퍼티를 설정할 수 있음.
+RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 사용.
+별도의 config 정보가 없을 경우 지정된 값이 사용되며, config를 통한 설정시에는 config 값으로 설정됨.</p>
 
           </section>
           <section class="section task-group-section">
@@ -151,33 +154,6 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">autoCaptureStart</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:13RemoteMonster17RemonIBControllerC10videoCodecSSvp"></a>
-                    <a name="//apple_ref/swift/Property/videoCodec" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster17RemonIBControllerC10videoCodecSSvp">videoCodec</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>video codec H264 | VP8. default is H264</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">videoCodec</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -260,6 +236,34 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">localSampleCapturer</span><span class="p">:</span> <span class="kt">RemonSampleCapturer</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)videoCodec"></a>
+                    <a name="//apple_ref/swift/Property/videoCodec" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)videoCodec">videoCodec</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>video codec H264 | VP8. default is H264</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">videoCodec</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -437,6 +441,34 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)restUrl"></a>
+                    <a name="//apple_ref/swift/Property/restUrl" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)restUrl">restUrl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>rest api 주소</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">restUrl</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)wsUrl"></a>
                     <a name="//apple_ref/swift/Property/wsUrl" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)wsUrl">wsUrl</a>
@@ -465,9 +497,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)restUrl"></a>
-                    <a name="//apple_ref/swift/Property/restUrl" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)restUrl">restUrl</a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)logUrl"></a>
+                    <a name="//apple_ref/swift/Property/logUrl" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)logUrl">logUrl</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -475,7 +507,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>rest api 주소</p>
+                        <p>log 서버 주소</p>
 
                       </div>
                       <div class="declaration">
@@ -483,7 +515,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">public</span> <span class="k">var</span> <span class="nv">restUrl</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">logUrl</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -936,7 +968,7 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>webrtc 접속이 완료된 이후에 호출</p>
+                        <p>접속 완료 콜백. webrtc 접속이 완료된 이후에 호출</p>
 
                       </div>
                       <div class="declaration">
@@ -945,6 +977,62 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@objc</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">onComplete</span><span class="p">(</span><span class="nv">block</span><span class="p">:</span><span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:13RemoteMonster14RemonVoidBlocka">RemonVoidBlock</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onCloseWithBlock:"></a>
+                    <a name="//apple_ref/swift/Method/onClose(block:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onCloseWithBlock:">onClose(block:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>연결 종료 콜백</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">onClose</span><span class="p">(</span><span class="nv">block</span><span class="p">:</span><span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:13RemoteMonster15RemonCloseBlocka">RemonCloseBlock</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onMessageWithBlock:"></a>
+                    <a name="//apple_ref/swift/Method/onMessage(block:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onMessageWithBlock:">onMessage(block:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>메시지 수신 콜백</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">onMessage</span><span class="p">(</span><span class="nv">block</span><span class="p">:</span><span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:13RemoteMonster16RemonStringBlocka">RemonStringBlock</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1012,7 +1100,7 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2019-07-19)</p>
+          <p>&copy; 2019 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2019-09-18)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

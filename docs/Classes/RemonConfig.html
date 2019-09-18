@@ -14,7 +14,7 @@
     <a title="RemonConfig Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (43% documented)</p>
+        <p><a href="../index.html"> Docs</a> (47% documented)</p>
         <p class="header-right"><a href="https://github.com/remotemonster/ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -131,6 +131,90 @@ key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonConfig(py)restUrl"></a>
+                    <a name="//apple_ref/swift/Property/restUrl" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonConfig(py)restUrl">restUrl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>인증을 위한 rest 서버 url</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">restUrl</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonConfig(py)wsUrl"></a>
+                    <a name="//apple_ref/swift/Property/wsUrl" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonConfig(py)wsUrl">wsUrl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>시그널링 서버 url</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">wsUrl</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonConfig(py)logUrl"></a>
+                    <a name="//apple_ref/swift/Property/logUrl" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonConfig(py)logUrl">logUrl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>로그 서버 url</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">logUrl</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -312,7 +396,7 @@ key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>송출할 비디오의 가로길이. 기본값은 640</p>
+                        <p>송출할 비디오의 가로길이. 기본값은 640. 네트워크 상태에 따라 변경됨.</p>
 
                       </div>
                       <div class="declaration">
@@ -340,7 +424,7 @@ key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>송출할 비디오의 세로길이. 기본값은 480</p>
+                        <p>송출할 비디오의 세로길이. 기본값은 480. 네트워크 상태에 따라 변경됨.</p>
 
                       </div>
                       <div class="declaration">
@@ -368,7 +452,7 @@ key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>송출할 비디오의 frames per second. 기본값은 30</p>
+                        <p>송출할 비디오의 frames per second. 기본값은 30. 네트워크 상태에 따라 변경됨.</p>
 
                       </div>
                       <div class="declaration">
@@ -396,7 +480,7 @@ key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>P2P, BROADCAST, VIEWER</p>
+                        <p>RemonChannelType 설정 : P2P, BROADCAST, VIEWER</p>
 
                       </div>
                       <div class="declaration">
@@ -405,6 +489,34 @@ key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@objc</span>
 <span class="kd">public</span> <span class="k">var</span> <span class="nv">channelType</span><span class="p">:</span> <span class="kt">RemonChannelType</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonConfig(py)sendonly"></a>
+                    <a name="//apple_ref/swift/Property/sendonly" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonConfig(py)sendonly">sendonly</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>전송 전용(방송)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">sendonly</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -424,7 +536,7 @@ key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>사용할 카메라 포지션</p>
+                        <p>시작시 전면 카메라 사용여부</p>
 
                       </div>
                       <div class="declaration">
@@ -452,7 +564,7 @@ key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>프론트카메라 미러모드 설정</p>
+                        <p>전면카메라 미러모드 설정.</p>
 
                       </div>
                       <div class="declaration">
@@ -480,7 +592,7 @@ key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>송출 방향 고정 여부</p>
+                        <p>송출 방향 고정 여부. 단말의 orientation에 영향을 받지 않고 단일 방향으로 고정할 때 사용.</p>
 
                       </div>
                       <div class="declaration">
@@ -508,7 +620,7 @@ key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>외부 캡처러 사용</p>
+                        <p>외부 캡처러 사용. 내부 카메라 모듈을 사용하지 않고, 외부에서 별도로 구성하는 경우 사용.</p>
 
                       </div>
                       <div class="declaration">
@@ -523,12 +635,40 @@ key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonConfig(py)userMeta"></a>
+                    <a name="//apple_ref/swift/Property/userMeta" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonConfig(py)userMeta">userMeta</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>추가 메타 정보</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">userMeta</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2019-07-19)</p>
+          <p>&copy; 2019 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2019-09-18)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
