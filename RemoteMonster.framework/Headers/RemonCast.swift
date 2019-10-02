@@ -30,7 +30,7 @@ public protocol RemonCastBlockSettable {
 }
 
 /***/
-@objc public class RemonCast: RemonIBController, RemonCastBlockSettable {
+@objc public class RemonCast: RemonClient, RemonCastBlockSettable {
     
     private var broardcast:Bool {
         get {
@@ -87,7 +87,10 @@ public protocol RemonCastBlockSettable {
         }
     }
     
-    
+}
+
+
+@objc extension RemonCast {
     @objc public func onCreate(block: @escaping RemonStringBlock) {
         self.onComplete { [weak self] in
             if let cast = self {

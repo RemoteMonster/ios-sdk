@@ -211,14 +211,13 @@ class SimpleCallViewController: UIViewController {
         print("[Client.viewDidLoad]")
         super.viewDidLoad()
         
-        
-        do {
-            // 오디오세션 카테고리 설정
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default)
-            try AVAudioSession.sharedInstance().setActive(true, options: [])
-        } catch {
-            print(error)
-        }
+        // sdk 오디오세션 설정
+        // AVAudioSession.Mode.voiceChat : 수화기 사용
+        // AVAudioSession.Mode.videoChat : 스피커 사용
+        RemonClient.setAudioSessionConfiguration(
+            category: AVAudioSession.Category.playAndRecord,
+            mode: AVAudioSession.Mode.videoChat,
+            options: [] );
         
         
         // SDK 콜백 등록

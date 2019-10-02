@@ -1,3 +1,9 @@
+## 2.6.10
+- supported xcode11 and swift5.1
+- added static funtion for setting default AVAudioSession.Category
+- refactored codes
+- fixed minor bugs
+
 ## 2.6.9
 - integrated codes for calling callback on ui thread
 - fixed wrong command message

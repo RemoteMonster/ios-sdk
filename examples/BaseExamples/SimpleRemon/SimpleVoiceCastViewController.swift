@@ -76,6 +76,16 @@ class SimpleVoiceCastViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // sdk 오디오세션 설정
+        // AVAudioSession.Mode.voiceChat : 수화기 사용
+        // AVAudioSession.Mode.videoChat : 스피커 사용
+        RemonClient.setAudioSessionConfiguration(
+            category: AVAudioSession.Category.playAndRecord,
+            mode: AVAudioSession.Mode.voiceChat,
+            options: [] );
+        
+        
         self.remonCast.debugMode = true
 
         self.remonCast.onInit {

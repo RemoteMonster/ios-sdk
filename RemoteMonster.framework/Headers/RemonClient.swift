@@ -1,29 +1,22 @@
 //
-//  RemonIBController.swift
-//  remonios
+//  RemonClient.swift
+//  RemoteMonster
 //
-//  Created by hyounsiklee on 2018. 5. 10..
-//  Copyright © 2018년 Remote Monster. All rights reserved.
+//  Created by Chance Kim on 26/09/2019.
+//  Copyright © 2019 Remote Monster. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 
-
-/**
- InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스.
- 접속전 서비스별로 각 프로퍼티를 설정할 수 있음.
- RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 사용.
- 별도의 config 정보가 없을 경우 지정된 값이 사용되며, config를 통한 설정시에는 config 값으로 설정됨.
- */
-@objc(RemonIBController)
+@objc(RemonClient)
 @IBDesignable
-public class RemonIBController:NSObject, RemonControllBlockSettable {
-
-    var controller: RemonController? = nil
+public class RemonClient:NSObject, RemonControllerBlockSettable {
+    var controller: RemonClientController? = nil
     
     // public
     // deprecated : 뷰 설정 작업을 직접 진행하는 경우에 사용
+    @available(*, deprecated, message: "Use callback functions")
     public weak var legacyDelegate: RemonDelegate?
     
     /** 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부 */
@@ -45,8 +38,6 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
             controller?.setAudioVolume(ratio: self.volumeRatio)
         }
     }
-    
-    
     
     @objc public var userMeta:String = "" {
         didSet {
@@ -87,25 +78,22 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
     
     var currentRemonState:RemonState?
     
-
+    
     internal override init() {
-        print("[RemonIBController.init]")
+        print("[RemonClient.init]")
         super.init()
         if self.controller != nil {
             self.controller?.cleanup()
             self.controller = nil
         }
         
-        self.controller = RemonController(client: self)
+        self.controller = RemonClientController(client: self)
     }
     
     
     deinit {
-        print("[RemonIBController.deinit]")
+        print("[RemonClient.deinit]")
     }
-    
-
-
     
     
     internal var channelType:RemonChannelType = .p2p
@@ -119,7 +107,6 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
     // IBInspectable
     /**video codec H264 | VP8. default is H264 */
     @IBInspectable public var videoCodec:String = "H264"
-    
     
     /// 오디오 전용 여부 선택
     @IBInspectable public var onlyAudio:Bool = false
@@ -150,11 +137,6 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
     @IBInspectable public var logUrl:String = RemonConfig.REMON_REST_LOG_SERVER
     
     
-    
-    
-    
-    
-    
     /// 전면 카메라 시작
     @IBInspectable public var frontCamera:Bool = true {
         didSet( isFront ) {
@@ -174,32 +156,28 @@ public class RemonIBController:NSObject, RemonControllBlockSettable {
     }
     
     /**
-    최종 output 프레임 고정여부.
-    true 인 경우 연결시의 방향으로 출력 사이즈가 고정됩니다.
-    false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
-    단, 앱이 하나의 방향만을 지원하는 경우 회전이 발생하지 않습니다.
+     최종 output 프레임 고정여부.
+     true 인 경우 연결시의 방향으로 출력 사이즈가 고정됩니다.
+     false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
+     단, 앱이 하나의 방향만을 지원하는 경우 회전이 발생하지 않습니다.
      */
     @IBInspectable public var fixedCameraRotation:Bool = false
     
     
     // @IBInspectable public var autoReJoin:Bool
     // @IBInspectable public var audioType:RemonAudioMode
-
+    
     
     // IBOutlet
     @IBOutlet dynamic public weak var remoteView:UIView?
     @IBOutlet dynamic public weak var localView:UIView?
     @IBOutlet dynamic public weak var localPreView:UIView?
-    
-    
 }
-
-
 
 /**
  클라이언트에서 호출하는 메쏘드들에 대한 인터페이스 확장 클래스
  */
-extension RemonIBController {
+extension RemonClient {
     
     /**
      */
@@ -211,7 +189,7 @@ extension RemonIBController {
         }
     }
     
-    /**
+    /** 현재 상태를 문자열로 얻어옵니다.
      */
     @objc public func getCurruntStateString() -> String {
         let stateString = "UNKNOWN"
@@ -315,7 +293,7 @@ extension RemonIBController {
         return controller?.switchCamera(client: self, isMirror:isMirror, isToggle:isToggle) ?? false
     }
     
-
+    
     /**
      볼륨설정
      */
@@ -341,17 +319,19 @@ extension RemonIBController {
     }
     
     @objc public func unpackAecDump (dumpName:String? = "audio.aecdump", resultFileName:String, avPreset:REMON_AECUNPACK_PRESET, progress: @escaping (Error?, REMON_AECUNPACK_STATE) -> Void) -> Void {
-        RemonController.unpackAecDump(dumpName: dumpName, resultFileName: resultFileName, avPreset: avPreset, progress: progress )
+        RemonClientController.unpackAecDump(dumpName: dumpName, resultFileName: resultFileName, avPreset: avPreset, progress: progress )
     }
     
     @objc public func unpackAecDump (dumpName:String? = "audio.aecdump", resultFileName:String, progress: @escaping (Error?, REMON_AECUNPACK_STATE) -> Void) -> Void {
-        RemonController.unpackAecDump(dumpName: dumpName, resultFileName: resultFileName, progress: progress)
+        RemonClientController.unpackAecDump(dumpName: dumpName, resultFileName: resultFileName, progress: progress)
     }
 }
 
-extension RemonIBController {
+extension RemonClient {
     //set oberserver block
     internal func onFetchChannels(block:@escaping RemonArrayBlock) { controller?.observerBlock.fetchRemonChannelBlock = block}
+    
+    /** 채널 생성 후 호출되는 콜백 */
     internal func onCreate(block_:@escaping RemonStringBlock) { controller?.observerBlock.createRemonChannelBlock = block_}
     
     /** 에러 콜백 */
@@ -360,7 +340,7 @@ extension RemonIBController {
     /** 초기화 콜백 */
     @objc public func onInit(block:@escaping RemonVoidBlock) { controller?.observerBlock.initRemonBlock = block}
     
-    /** 접속 완료 콜백. webrtc 접속이 완료된 이후에 호출 */
+    /** Peer간 접속 완료 콜백. webrtc 접속이 완료된 이후에 호출 */
     @objc public func onComplete(block:@escaping RemonVoidBlock) { controller?.observerBlock.completeRemonChannelBlock = block}
     
     /** 연결 종료 콜백 */
@@ -373,7 +353,9 @@ extension RemonIBController {
     @objc public func onMessage(block:@escaping RemonStringBlock) { controller?.observerBlock.messageRemonChannelBlock = block}
     
     @objc public func onObjcError(block:@escaping ((_:NSError) -> Void)) { controller?.observerBlock.objc_errorRemonBlock = block}
+    
     @objc public func onRetry(block:@escaping ((_:Bool) -> Void)) { controller?.observerBlock.tryReConnect = block}
+    
     @objc public func onRemonStatReport(block:@escaping (_:RemonStatReport)->Void) {controller?.observerBlock.remonStatBlock = block}
     
     /** 원격측 비디오 사이즈 변경시 호출 */
@@ -387,7 +369,7 @@ extension RemonIBController {
     }
 }
 
-extension RemonIBController {
+extension RemonClient {
     public var remoteRTCEAGLVideoView:RTCEAGLVideoView?{
         get {
             return controller?.remonView?.remoteRTCEAGLVideoView
@@ -404,5 +386,29 @@ extension RemonIBController {
         get {
             return controller?.remonView?.localRTCCameraPreviewView
         }
+    }
+}
+
+//
+extension RemonClient {
+    /** sdk 의 기본 오디오 설정
+     - Parameters
+     + category: AVAudioSession.Category
+     + mode: AVAudioSession.Mode
+     + options: AVAudioSession.CategoryOptions
+     */
+    public static func setAudioSessionConfiguration(
+        category: AVAudioSession.Category,
+        mode: AVAudioSession.Mode,
+        options:AVAudioSession.CategoryOptions = []) {
+        
+        // webrtc 전역 오디오세션 카테고리 설정
+        let ac = RTCAudioSessionConfiguration.webRTC()
+        ac.category = category.rawValue
+        ac.mode = mode.rawValue
+        ac.categoryOptions =  options
+        
+        RTCAudioSessionConfiguration.setWebRTC(ac)
+        //
     }
 }

@@ -17,7 +17,7 @@ import UIKit
 /**
  P2P 영상통화 클래스
  */
-@objc public class RemonCall: RemonIBController, RemonCallBlockSettable {
+@objc public class RemonCall: RemonClient, RemonCallBlockSettable {
     override public init() {
         print("[RemonCall.init]")
         super.init()
@@ -36,11 +36,9 @@ import UIKit
             complete(chs)
         }
     }
-    
-    
-    
-    // note:chance: 사용자에게 추가적인 인터페이스를 노출시키는데, 일관성이 떨어지는 것으로 판단됨.
-    // 이미 배포된 버전들이 있어 일단은 유지
+}
+
+@objc extension RemonCall {
     /***/
     @objc public func onConnect(block: @escaping RemonStringBlock) {
         self.onCreate(block_: block)
@@ -50,5 +48,4 @@ import UIKit
     @objc public func onFetch(block: @escaping RemonArrayBlock) {
         self.onFetchChannels(block: block)
     }
-    
 }
