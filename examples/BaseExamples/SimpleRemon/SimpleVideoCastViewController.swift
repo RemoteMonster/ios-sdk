@@ -92,12 +92,6 @@ class SimpleVideoCastViewController:UIViewController {
         self.remonCast.onCreate { [weak self] (chid) in
             self?.closeBtn.isEnabled = true
             self?.chLabel.text = chid
-
-
-            // test
-            let capturer:RemonCameraCapturer? = self?.remonCast.localCameraCapturer as? RemonCameraCapturer
-            capturer?.imageDelegate = self
-
         }
         
         self.remonCast.onClose { [weak self](_) in

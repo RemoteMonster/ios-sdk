@@ -238,37 +238,58 @@ extension RemonClient {
         controller?.objc_switchBandWidth(bandwidth: bandwidth)
     }
     
+    // android 와 인터페이스 맞춤
+    @available(*, deprecated, message: "Use setRemoteAudioEnabled( isEnabled: Bool )")
+    @objc public func muteRemoteAudio(mute:Bool = true) -> Void {
+        controller?.setRemoteAudioEnabled(isEnabled: !mute)
+    }
+    
+    // android 와 인터페이스 맞춤
+    @available(*, deprecated, message: "Use setLocalAudioEnabled( isEnabled: Bool )")
+    @objc public func muteLocalAudio(mute:Bool = true) -> Void {
+        controller?.setLocalAudioEnabled(isEnabled: !mute)
+    }
+    
     
     /**
      원격지 사운드 켜거나 끄기
      */
-    @objc public func muteRemoteAudio(mute:Bool = true) -> Void {
-        controller?.muteRemoteAudio(mute: mute)
+    @objc public func setRemoteAudioEnabled(isEnabled:Bool = true) -> Void {
+        controller?.setRemoteAudioEnabled(isEnabled: isEnabled)
     }
     
     /**
      로컬 사운드 켜거나 끄기
      */
-    @objc public func muteLocalAudio(mute:Bool = true) -> Void {
-        controller?.muteLocalAudio(mute: mute)
+    @objc public func setLocalAudioEnabled(isEnabled:Bool = true ) -> Void {
+        controller?.setLocalAudioEnabled(isEnabled: isEnabled)
     }
     
-    @objc public func stopLocalVideoCapture() -> Bool {
-        return controller?.stopLocalVideoCapture() ?? false
-    }
-    
+
     /**
-     로컬 비디오(카메라) 캡처 시작
+     로컬 비디오(카메라) 시작
      */
     @objc public func startLocalVideoCapture(completion:@escaping ()->Void) -> Bool {
         return controller?.startLocalVideoCapture(completion: completion) ?? false
     }
     
+    /**
+     로컬 비디오(카메라) 중지
+     */
+    @objc public func stopLocalVideoCapture() -> Bool {
+        return controller?.stopLocalVideoCapture() ?? false
+    }
     
+    /**
+    원격 비디오(카메라) 시작
+    */
     @objc public func startRemoteVideoCapture() -> Void {
         controller?.startRemoteVideoCapture()
     }
     
+    /**
+    원격 비디오(카메라) 중지
+    */
     @objc public func stopRemoteVideoCapture() -> Void {
         controller?.stopRemoteVideoCapture()
     }
@@ -400,7 +421,8 @@ extension RemonClient {
     public static func setAudioSessionConfiguration(
         category: AVAudioSession.Category,
         mode: AVAudioSession.Mode,
-        options:AVAudioSession.CategoryOptions = []) {
+        options:AVAudioSession.CategoryOptions) {
+        
         
         // webrtc 전역 오디오세션 카테고리 설정
         let ac = RTCAudioSessionConfiguration.webRTC()
@@ -408,7 +430,23 @@ extension RemonClient {
         ac.mode = mode.rawValue
         ac.categoryOptions =  options
         
+        //ac.sampleRate = 44100
         RTCAudioSessionConfiguration.setWebRTC(ac)
+        
+        print("[RemonClient] setAudioSessionConfiguration: category=\(ac.category)")
+        print("[RemonClient] setAudioSessionConfiguration: mode=\(ac.mode)")
+        print("[RemonClient] setAudioSessionConfiguration: options=\(ac.categoryOptions)")
+    
+ 
+        let session = RTCAudioSession.sharedInstance()
+       
+        session.lockForConfiguration()
+        do {
+            try session.setConfiguration(ac)
+        } catch let error as NSError {
+            print("[RemonClient] setAudioSessionConfiguration: ** Error RTCAudioSessionConfiguration", error.localizedDescription)
+        }
+        session.unlockForConfiguration()
         //
     }
 }

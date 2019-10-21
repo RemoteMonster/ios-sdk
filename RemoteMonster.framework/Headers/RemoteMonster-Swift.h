@@ -424,14 +424,19 @@ enum objc_RemonBandwidth : NSInteger;
 /// webrtc 연결 종료
 - (void)closeRemon;
 - (void)objc_switchBandWidthWithBandwidth:(enum objc_RemonBandwidth)bandwidth;
+- (void)muteRemoteAudioWithMute:(BOOL)mute SWIFT_DEPRECATED_MSG("Use setRemoteAudioEnabled( isEnabled: Bool )");
+- (void)muteLocalAudioWithMute:(BOOL)mute SWIFT_DEPRECATED_MSG("Use setLocalAudioEnabled( isEnabled: Bool )");
 /// 원격지 사운드 켜거나 끄기
-- (void)muteRemoteAudioWithMute:(BOOL)mute;
+- (void)setRemoteAudioEnabledWithIsEnabled:(BOOL)isEnabled;
 /// 로컬 사운드 켜거나 끄기
-- (void)muteLocalAudioWithMute:(BOOL)mute;
-- (BOOL)stopLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
-/// 로컬 비디오(카메라) 캡처 시작
+- (void)setLocalAudioEnabledWithIsEnabled:(BOOL)isEnabled;
+/// 로컬 비디오(카메라) 시작
 - (BOOL)startLocalVideoCaptureWithCompletion:(void (^ _Nonnull)(void))completion SWIFT_WARN_UNUSED_RESULT;
+/// 로컬 비디오(카메라) 중지
+- (BOOL)stopLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
+/// 원격 비디오(카메라) 시작
 - (void)startRemoteVideoCapture;
+/// 원격 비디오(카메라) 중지
 - (void)stopRemoteVideoCapture;
 /// 채널이 연결된 상태에서 상대편에게 메시지를 전달한다.
 - (void)sendMessageWithMessage:(NSString * _Nonnull)message;
@@ -1152,14 +1157,19 @@ enum objc_RemonBandwidth : NSInteger;
 /// webrtc 연결 종료
 - (void)closeRemon;
 - (void)objc_switchBandWidthWithBandwidth:(enum objc_RemonBandwidth)bandwidth;
+- (void)muteRemoteAudioWithMute:(BOOL)mute SWIFT_DEPRECATED_MSG("Use setRemoteAudioEnabled( isEnabled: Bool )");
+- (void)muteLocalAudioWithMute:(BOOL)mute SWIFT_DEPRECATED_MSG("Use setLocalAudioEnabled( isEnabled: Bool )");
 /// 원격지 사운드 켜거나 끄기
-- (void)muteRemoteAudioWithMute:(BOOL)mute;
+- (void)setRemoteAudioEnabledWithIsEnabled:(BOOL)isEnabled;
 /// 로컬 사운드 켜거나 끄기
-- (void)muteLocalAudioWithMute:(BOOL)mute;
-- (BOOL)stopLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
-/// 로컬 비디오(카메라) 캡처 시작
+- (void)setLocalAudioEnabledWithIsEnabled:(BOOL)isEnabled;
+/// 로컬 비디오(카메라) 시작
 - (BOOL)startLocalVideoCaptureWithCompletion:(void (^ _Nonnull)(void))completion SWIFT_WARN_UNUSED_RESULT;
+/// 로컬 비디오(카메라) 중지
+- (BOOL)stopLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
+/// 원격 비디오(카메라) 시작
 - (void)startRemoteVideoCapture;
+/// 원격 비디오(카메라) 중지
 - (void)stopRemoteVideoCapture;
 /// 채널이 연결된 상태에서 상대편에게 메시지를 전달한다.
 - (void)sendMessageWithMessage:(NSString * _Nonnull)message;

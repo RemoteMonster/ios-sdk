@@ -1,3 +1,9 @@
+## 2.6.11
+- updated webrtc framework
+- added x86_64 architecture for ios simulator
+- fixed routine for setting Catetory,Mode in audio session
+- updated examples/BaseExamples
+
 ## 2.6.10
 - supported xcode11 and swift5.1
 - added static funtion for setting default AVAudioSession.Category

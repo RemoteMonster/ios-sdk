@@ -118,6 +118,13 @@ class SimpleCallViewController: UIViewController {
         remonCall.onInit { [weak self] in
             print("[Client.onInit]")
             self?.boxView.isHidden = true
+            
+            
+            // iOS 시뮬레이터 사용 : supported v2.6.11 or higher
+            // onInit 콜백에서 RemonClient(RemonCall, RemonCast)의 remonConfg.videoFilePathForSimulator 프로퍼티에
+            // Resources/영상파일명을 지정하면 시뮬레이터 동작시 해당 영상을 전송하게 됩니다.
+            // 시뮬레이터의 경우 외부 peer의 영상은 붉은색 박스로 표시되므로, 실제 peer 간의 영상 확인은 디바이스를 사용하시기 바랍니다.
+            // self?.remonCall.remonConfig?.videoFilePathForSimulator = "movie_file_for_simulator.mov"
         }
         
         
@@ -211,7 +218,7 @@ class SimpleCallViewController: UIViewController {
         print("[Client.viewDidLoad]")
         super.viewDidLoad()
         
-        // sdk 오디오세션 설정
+        // sdk 오디오세션 설정 : supported v2.6.10 or higher
         // AVAudioSession.Mode.voiceChat : 수화기 사용
         // AVAudioSession.Mode.videoChat : 스피커 사용
         RemonClient.setAudioSessionConfiguration(
