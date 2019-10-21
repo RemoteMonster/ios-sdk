@@ -14,7 +14,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (47% documented)</p>
+        <p><a href="index.html"> Docs</a> (48% documented)</p>
         <p class="header-right"><a href="https://github.com/remotemonster/ios-sdk"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -38,21 +38,21 @@
                 <a href="Classes/RemonCast.html">RemonCast</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/RemonConfig.html">RemonConfig</a>
+                <a href="Classes/RemonClient.html">RemonClient</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/RemonIBController.html">RemonIBController</a>
+                <a href="Classes/RemonConfig.html">RemonConfig</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Global Variables.html">Global Variables</a>
+            <a href="Global%20Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Global Variables.html#/s:13RemoteMonster11ErrorDomainSSvp">ErrorDomain</a>
+                <a href="Global%20Variables.html#/s:13RemoteMonster11ErrorDomainSSvp">ErrorDomain</a>
               </li>
               <li class="nav-group-task">
-                <a href="Global Variables.html#/s:13RemoteMonster20ErrorUnsupportedTypeSivp">ErrorUnsupportedType</a>
+                <a href="Global%20Variables.html#/s:13RemoteMonster20ErrorUnsupportedTypeSivp">ErrorUnsupportedType</a>
               </li>
             </ul>
           </li>
@@ -144,7 +144,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">RemonCall</span> <span class="p">:</span> <span class="kt"><a href="Classes/RemonIBController.html">RemonIBController</a></span><span class="p">,</span> <span class="kt"><a href="Protocols.html#/c:@M@RemoteMonster@objc(pl)RemonCallBlockSettable">RemonCallBlockSettable</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">RemonCall</span> <span class="p">:</span> <span class="kt"><a href="Classes/RemonClient.html">RemonClient</a></span><span class="p">,</span> <span class="kt"><a href="Protocols.html#/c:@M@RemoteMonster@objc(pl)RemonCallBlockSettable">RemonCallBlockSettable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -176,7 +176,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">RemonCast</span> <span class="p">:</span> <span class="kt"><a href="Classes/RemonIBController.html">RemonIBController</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/RemonCastBlockSettable.html">RemonCastBlockSettable</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">RemonCast</span> <span class="p">:</span> <span class="kt"><a href="Classes/RemonClient.html">RemonClient</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/RemonCastBlockSettable.html">RemonCastBlockSettable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -190,9 +190,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController"></a>
-                    <a name="//apple_ref/swift/Class/RemonIBController" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController">RemonIBController</a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient"></a>
+                    <a name="//apple_ref/swift/Class/RemonClient" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient">RemonClient</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -200,20 +200,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스.
-접속전 서비스별로 각 프로퍼티를 설정할 수 있음.
-RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 사용.
-별도의 config 정보가 없을 경우 지정된 값이 사용되며, config를 통한 설정시에는 config 값으로 설정됨.</p>
+                        <p>통화(RemonCall), 방송(RemonCast) 공통 클래스</p>
 
-                        <a href="Classes/RemonIBController.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/RemonClient.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc(RemonIBController)</span>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">RemonClient</span><span class="p">)</span>
 <span class="kd">@IBDesignable</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">RemonIBController</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">RemonControllBlockSettable</span></code></pre>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">RemonClient</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">RemonControllerBlockSettable</span></code></pre>
 
                         </div>
                       </div>
@@ -260,8 +257,8 @@ key와 serviceId가 있으며 그 외에도 음성만 사용하고자 할 경우
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2019-09-18)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2019-10-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

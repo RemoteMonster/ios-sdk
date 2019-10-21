@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RemonIBController Class Reference</title>
+    <title>RemonClient Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,11 +10,11 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/RemonIBController" class="dashAnchor"></a>
-    <a title="RemonIBController Class Reference"></a>
+    <a name="//apple_ref/swift/Class/RemonClient" class="dashAnchor"></a>
+    <a title="RemonClient Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (47% documented)</p>
+        <p><a href="../index.html"> Docs</a> (48% documented)</p>
         <p class="header-right"><a href="https://github.com/remotemonster/ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        RemonIBController Class Reference
+        RemonClient Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -38,21 +38,21 @@
                 <a href="../Classes/RemonCast.html">RemonCast</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/RemonConfig.html">RemonConfig</a>
+                <a href="../Classes/RemonClient.html">RemonClient</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/RemonIBController.html">RemonIBController</a>
+                <a href="../Classes/RemonConfig.html">RemonConfig</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Global Variables.html">Global Variables</a>
+            <a href="../Global%20Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:13RemoteMonster11ErrorDomainSSvp">ErrorDomain</a>
+                <a href="../Global%20Variables.html#/s:13RemoteMonster11ErrorDomainSSvp">ErrorDomain</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:13RemoteMonster20ErrorUnsupportedTypeSivp">ErrorUnsupportedType</a>
+                <a href="../Global%20Variables.html#/s:13RemoteMonster20ErrorUnsupportedTypeSivp">ErrorUnsupportedType</a>
               </li>
             </ul>
           </li>
@@ -115,19 +115,16 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>RemonIBController</h1>
+            <h1>RemonClient</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">@objc(RemonIBController)</span>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">RemonClient</span><span class="p">)</span>
 <span class="kd">@IBDesignable</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">RemonIBController</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">RemonControllBlockSettable</span></code></pre>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">RemonClient</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">RemonControllerBlockSettable</span></code></pre>
 
                 </div>
               </div>
-            <p>InterfaceBuilder와 클라이언트에서 사용하는 메쏘드들을 정의한 인터페이스 클래스.
-접속전 서비스별로 각 프로퍼티를 설정할 수 있음.
-RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 사용.
-별도의 config 정보가 없을 경우 지정된 값이 사용되며, config를 통한 설정시에는 config 값으로 설정됨.</p>
+            <p>통화(RemonCall), 방송(RemonCast) 공통 클래스</p>
 
           </section>
           <section class="section task-group-section">
@@ -136,9 +133,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster17RemonIBControllerC16autoCaptureStartSbvp"></a>
+                    <a name="/s:13RemoteMonster11RemonClientC16autoCaptureStartSbvp"></a>
                     <a name="//apple_ref/swift/Property/autoCaptureStart" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster17RemonIBControllerC16autoCaptureStartSbvp">autoCaptureStart</a>
+                    <a class="token" href="#/s:13RemoteMonster11RemonClientC16autoCaptureStartSbvp">autoCaptureStart</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -163,9 +160,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster17RemonIBControllerC9debugModeSbvp"></a>
+                    <a name="/s:13RemoteMonster11RemonClientC9debugModeSbvp"></a>
                     <a name="//apple_ref/swift/Property/debugMode" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster17RemonIBControllerC9debugModeSbvp">debugMode</a>
+                    <a class="token" href="#/s:13RemoteMonster11RemonClientC9debugModeSbvp">debugMode</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -190,9 +187,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)useExternalCapturer"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)useExternalCapturer"></a>
                     <a name="//apple_ref/swift/Property/useExternalCapturer" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)useExternalCapturer">useExternalCapturer</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)useExternalCapturer">useExternalCapturer</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -218,9 +215,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster17RemonIBControllerC19localSampleCapturerAA0cfG0CSgvp"></a>
+                    <a name="/s:13RemoteMonster11RemonClientC19localSampleCapturerAA0cfG0CSgvp"></a>
                     <a name="//apple_ref/swift/Property/localSampleCapturer" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster17RemonIBControllerC19localSampleCapturerAA0cfG0CSgvp">localSampleCapturer</a>
+                    <a class="token" href="#/s:13RemoteMonster11RemonClientC19localSampleCapturerAA0cfG0CSgvp">localSampleCapturer</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -245,9 +242,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)videoCodec"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)videoCodec"></a>
                     <a name="//apple_ref/swift/Property/videoCodec" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)videoCodec">videoCodec</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)videoCodec">videoCodec</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -273,9 +270,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)onlyAudio"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)onlyAudio"></a>
                     <a name="//apple_ref/swift/Property/onlyAudio" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)onlyAudio">onlyAudio</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)onlyAudio">onlyAudio</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -301,9 +298,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)videoWidth"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)videoWidth"></a>
                     <a name="//apple_ref/swift/Property/videoWidth" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)videoWidth">videoWidth</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)videoWidth">videoWidth</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -329,9 +326,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)videoHeight"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)videoHeight"></a>
                     <a name="//apple_ref/swift/Property/videoHeight" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)videoHeight">videoHeight</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)videoHeight">videoHeight</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -357,9 +354,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)fps"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)fps"></a>
                     <a name="//apple_ref/swift/Property/fps" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)fps">fps</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)fps">fps</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -385,9 +382,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)serviceId"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)serviceId"></a>
                     <a name="//apple_ref/swift/Property/serviceId" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)serviceId">serviceId</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)serviceId">serviceId</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -413,9 +410,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)serviceKey"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)serviceKey"></a>
                     <a name="//apple_ref/swift/Property/serviceKey" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)serviceKey">serviceKey</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)serviceKey">serviceKey</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -441,9 +438,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)restUrl"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)restUrl"></a>
                     <a name="//apple_ref/swift/Property/restUrl" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)restUrl">restUrl</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)restUrl">restUrl</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -469,9 +466,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)wsUrl"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)wsUrl"></a>
                     <a name="//apple_ref/swift/Property/wsUrl" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)wsUrl">wsUrl</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)wsUrl">wsUrl</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -497,9 +494,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)logUrl"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)logUrl"></a>
                     <a name="//apple_ref/swift/Property/logUrl" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)logUrl">logUrl</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)logUrl">logUrl</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -525,9 +522,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)frontCamera"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)frontCamera"></a>
                     <a name="//apple_ref/swift/Property/frontCamera" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)frontCamera">frontCamera</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)frontCamera">frontCamera</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -553,9 +550,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)mirrorMode"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)mirrorMode"></a>
                     <a name="//apple_ref/swift/Property/mirrorMode" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)mirrorMode">mirrorMode</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)mirrorMode">mirrorMode</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -581,9 +578,9 @@ RemonCall, RemonCast는 RemonIBController의 하위 클래스로 동일하게 �
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RemoteMonster@objc(cs)RemonIBController(py)fixedCameraRotation"></a>
+                    <a name="/c:@M@RemoteMonster@objc(cs)RemonClient(py)fixedCameraRotation"></a>
                     <a name="//apple_ref/swift/Property/fixedCameraRotation" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonIBController(py)fixedCameraRotation">fixedCameraRotation</a>
+                    <a class="token" href="#/c:@M@RemoteMonster@objc(cs)RemonClient(py)fixedCameraRotation">fixedCameraRotation</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -616,9 +613,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)getCurruntStateString"></a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)getCurruntStateString"></a>
                     <a name="//apple_ref/swift/Method/getCurruntStateString()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)getCurruntStateString">getCurruntStateString()</a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)getCurruntStateString">getCurruntStateString()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -626,7 +623,8 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>현재 상태를 문자열로 얻어옵니다.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -643,9 +641,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)closeRemon"></a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)closeRemon"></a>
                     <a name="//apple_ref/swift/Method/closeRemon()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)closeRemon">closeRemon()</a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)closeRemon">closeRemon()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -671,9 +669,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster17RemonIBControllerC15switchBandWidth9bandwidthyAA0C9BandwidthO_tF"></a>
+                    <a name="/s:13RemoteMonster11RemonClientC15switchBandWidth9bandwidthyAA0C9BandwidthO_tF"></a>
                     <a name="//apple_ref/swift/Method/switchBandWidth(bandwidth:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster17RemonIBControllerC15switchBandWidth9bandwidthyAA0C9BandwidthO_tF">switchBandWidth(bandwidth:)</a>
+                    <a class="token" href="#/s:13RemoteMonster11RemonClientC15switchBandWidth9bandwidthyAA0C9BandwidthO_tF">switchBandWidth(bandwidth:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -698,9 +696,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)muteRemoteAudioWithMute:"></a>
-                    <a name="//apple_ref/swift/Method/muteRemoteAudio(mute:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)muteRemoteAudioWithMute:">muteRemoteAudio(mute:)</a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)setRemoteAudioEnabledWithIsEnabled:"></a>
+                    <a name="//apple_ref/swift/Method/setRemoteAudioEnabled(isEnabled:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)setRemoteAudioEnabledWithIsEnabled:">setRemoteAudioEnabled(isEnabled:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -716,7 +714,7 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">muteRemoteAudio</span><span class="p">(</span><span class="nv">mute</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">setRemoteAudioEnabled</span><span class="p">(</span><span class="nv">isEnabled</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -726,9 +724,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)muteLocalAudioWithMute:"></a>
-                    <a name="//apple_ref/swift/Method/muteLocalAudio(mute:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)muteLocalAudioWithMute:">muteLocalAudio(mute:)</a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)setLocalAudioEnabledWithIsEnabled:"></a>
+                    <a name="//apple_ref/swift/Method/setLocalAudioEnabled(isEnabled:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)setLocalAudioEnabledWithIsEnabled:">setLocalAudioEnabled(isEnabled:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -744,7 +742,7 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">muteLocalAudio</span><span class="p">(</span><span class="nv">mute</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">setLocalAudioEnabled</span><span class="p">(</span><span class="nv">isEnabled</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -754,9 +752,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)startLocalVideoCaptureWithCompletion:"></a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)startLocalVideoCaptureWithCompletion:"></a>
                     <a name="//apple_ref/swift/Method/startLocalVideoCapture(completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)startLocalVideoCaptureWithCompletion:">startLocalVideoCapture(completion:)</a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)startLocalVideoCaptureWithCompletion:">startLocalVideoCapture(completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -764,7 +762,7 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>로컬 비디오(카메라) 캡처 시작</p>
+                        <p>로컬 비디오(카메라) 시작</p>
 
                       </div>
                       <div class="declaration">
@@ -782,9 +780,93 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)sendMessageWithMessage:"></a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)stopLocalVideoCapture"></a>
+                    <a name="//apple_ref/swift/Method/stopLocalVideoCapture()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)stopLocalVideoCapture">stopLocalVideoCapture()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>로컬 비디오(카메라) 중지</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">stopLocalVideoCapture</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)startRemoteVideoCapture"></a>
+                    <a name="//apple_ref/swift/Method/startRemoteVideoCapture()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)startRemoteVideoCapture">startRemoteVideoCapture()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>원격 비디오(카메라) 시작</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">startRemoteVideoCapture</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)stopRemoteVideoCapture"></a>
+                    <a name="//apple_ref/swift/Method/stopRemoteVideoCapture()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)stopRemoteVideoCapture">stopRemoteVideoCapture()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>원격 비디오(카메라) 중지</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">stopRemoteVideoCapture</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)sendMessageWithMessage:"></a>
                     <a name="//apple_ref/swift/Method/sendMessage(message:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)sendMessageWithMessage:">sendMessage(message:)</a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)sendMessageWithMessage:">sendMessage(message:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -810,9 +892,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)switchCameraWithIsMirror:isToggle:"></a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)switchCameraWithIsMirror:isToggle:"></a>
                     <a name="//apple_ref/swift/Method/switchCamera(isMirror:isToggle:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)switchCameraWithIsMirror:isToggle:">switchCamera(isMirror:isToggle:)</a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)switchCameraWithIsMirror:isToggle:">switchCamera(isMirror:isToggle:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -844,9 +926,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)setVolumeWithVolume:"></a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)setVolumeWithVolume:"></a>
                     <a name="//apple_ref/swift/Method/setVolume(volume:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)setVolumeWithVolume:">setVolume(volume:)</a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)setVolumeWithVolume:">setVolume(volume:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -872,9 +954,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster17RemonIBControllerC12fetchChannel4type8completeyAA0C10SearchTypeO_yAA0C5ErrorOSg_SayAA0cI6ResultCGSgtctF"></a>
+                    <a name="/s:13RemoteMonster11RemonClientC12fetchChannel4type8completeyAA0C10SearchTypeO_yAA0C5ErrorOSg_SayAA0cI6ResultCGSgtctF"></a>
                     <a name="//apple_ref/swift/Method/fetchChannel(type:complete:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster17RemonIBControllerC12fetchChannel4type8completeyAA0C10SearchTypeO_yAA0C5ErrorOSg_SayAA0cI6ResultCGSgtctF">fetchChannel(type:complete:)</a>
+                    <a class="token" href="#/s:13RemoteMonster11RemonClientC12fetchChannel4type8completeyAA0C10SearchTypeO_yAA0C5ErrorOSg_SayAA0cI6ResultCGSgtctF">fetchChannel(type:complete:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -903,9 +985,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster17RemonIBControllerC7onError5blockyyAA0cF0Oc_tF"></a>
+                    <a name="/s:13RemoteMonster11RemonClientC7onError5blockyyAA0cF0Oc_tF"></a>
                     <a name="//apple_ref/swift/Method/onError(block:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster17RemonIBControllerC7onError5blockyyAA0cF0Oc_tF">onError(block:)</a>
+                    <a class="token" href="#/s:13RemoteMonster11RemonClientC7onError5blockyyAA0cF0Oc_tF">onError(block:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -930,9 +1012,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onInitWithBlock:"></a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)onInitWithBlock:"></a>
                     <a name="//apple_ref/swift/Method/onInit(block:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onInitWithBlock:">onInit(block:)</a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)onInitWithBlock:">onInit(block:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -958,9 +1040,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onCompleteWithBlock:"></a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)onCompleteWithBlock:"></a>
                     <a name="//apple_ref/swift/Method/onComplete(block:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onCompleteWithBlock:">onComplete(block:)</a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)onCompleteWithBlock:">onComplete(block:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -968,7 +1050,7 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>접속 완료 콜백. webrtc 접속이 완료된 이후에 호출</p>
+                        <p>Peer간 접속 완료 콜백. webrtc 접속이 완료된 이후에 호출</p>
 
                       </div>
                       <div class="declaration">
@@ -986,9 +1068,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onCloseWithBlock:"></a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)onCloseWithBlock:"></a>
                     <a name="//apple_ref/swift/Method/onClose(block:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onCloseWithBlock:">onClose(block:)</a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)onCloseWithBlock:">onClose(block:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1014,9 +1096,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onMessageWithBlock:"></a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)onMessageWithBlock:"></a>
                     <a name="//apple_ref/swift/Method/onMessage(block:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onMessageWithBlock:">onMessage(block:)</a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)onMessageWithBlock:">onMessage(block:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1042,9 +1124,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onRemoteVideoSizeChangedWithBlock:"></a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)onRemoteVideoSizeChangedWithBlock:"></a>
                     <a name="//apple_ref/swift/Method/onRemoteVideoSizeChanged(block:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onRemoteVideoSizeChangedWithBlock:">onRemoteVideoSizeChanged(block:)</a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)onRemoteVideoSizeChangedWithBlock:">onRemoteVideoSizeChanged(block:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1070,9 +1152,9 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onLocalVideoSizeChangedWithBlock:"></a>
+                    <a name="/c:@CM@RemoteMonster@objc(cs)RemonClient(im)onLocalVideoSizeChangedWithBlock:"></a>
                     <a name="//apple_ref/swift/Method/onLocalVideoSizeChanged(block:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonIBController(im)onLocalVideoSizeChangedWithBlock:">onLocalVideoSizeChanged(block:)</a>
+                    <a class="token" href="#/c:@CM@RemoteMonster@objc(cs)RemonClient(im)onLocalVideoSizeChangedWithBlock:">onLocalVideoSizeChanged(block:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1097,11 +1179,51 @@ false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13RemoteMonster11RemonClientC28setAudioSessionConfiguration8category4mode7optionsySo07AVAudioG8Categorya_So0lG4ModeaSo0lgM7OptionsVtFZ"></a>
+                    <a name="//apple_ref/swift/Method/setAudioSessionConfiguration(category:mode:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13RemoteMonster11RemonClientC28setAudioSessionConfiguration8category4mode7optionsySo07AVAudioG8Categorya_So0lG4ModeaSo0lgM7OptionsVtFZ">setAudioSessionConfiguration(category:mode:options:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>sdk 의 기본 오디오 설정</p>
+
+<ul>
+<li>category: AVAudioSession.Category</li>
+<li>mode: AVAudioSession.Mode</li>
+<li>options: AVAudioSession.CategoryOptions</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">setAudioSessionConfiguration</span><span class="p">(</span>
+    <span class="nv">category</span><span class="p">:</span> <span class="kt">AVAudioSession</span><span class="o">.</span><span class="kt">Category</span><span class="p">,</span>
+    <span class="nv">mode</span><span class="p">:</span> <span class="kt">AVAudioSession</span><span class="o">.</span><span class="kt">Mode</span><span class="p">,</span>
+    <span class="nv">options</span><span class="p">:</span><span class="kt">AVAudioSession</span><span class="o">.</span><span class="kt">CategoryOptions</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2019-09-18)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2019-10-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
