@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21A8B86C2FE03046BFCCFDCD /* Pods_SimpleRemon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89EC3C2FA4F85E4162C752E4 /* Pods_SimpleRemon.framework */; };
+		2380BE7C7473F0FC5DED18DE /* Pods_SimpleRemonObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B8C41987B19F2C50B681FA /* Pods_SimpleRemonObjC.framework */; };
 		4C10355722C357D5002D62F4 /* NSLayoutConstraint+Multiplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C10355522C3536A002D62F4 /* NSLayoutConstraint+Multiplier.swift */; };
 		4C10355A22C3617D002D62F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C10355922C3617C002D62F4 /* Assets.xcassets */; };
 		4C10355B22C364CC002D62F4 /* hamburger-01@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA367BB22AD014C0047C09C /* hamburger-01@2X.png */; };
@@ -47,7 +47,7 @@
 		4C819C5D22AC5C8F00A4237B /* SimpleVideoCastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C819C5122AC5C8F00A4237B /* SimpleVideoCastViewController.m */; };
 		4C819C6B22AC69F100A4237B /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C819C6A22AC69F100A4237B /* CoreAudioKit.framework */; };
 		4C819C6D22AC69FE00A4237B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C819C6C22AC69FE00A4237B /* AudioToolbox.framework */; };
-		E5FD2BCF3BD4065F5D870E77 /* Pods_SimpleRemonObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4F4FA283D357FF6B16D32B /* Pods_SimpleRemonObjC.framework */; };
+		65F2EBA0DB6F52743088E9B6 /* Pods_SimpleRemon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5818266475E85E477DFCAEB /* Pods_SimpleRemon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,7 +81,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3B4F4FA283D357FF6B16D32B /* Pods_SimpleRemonObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleRemonObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36A7FA8D1CE33B431F9216FF /* Pods-SimpleRemon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleRemon.debug.xcconfig"; path = "Target Support Files/Pods-SimpleRemon/Pods-SimpleRemon.debug.xcconfig"; sourceTree = "<group>"; };
+		43B8C41987B19F2C50B681FA /* Pods_SimpleRemonObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleRemonObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C10355522C3536A002D62F4 /* NSLayoutConstraint+Multiplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Multiplier.swift"; sourceTree = "<group>"; };
 		4C10355922C3617C002D62F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C819A5122AC3FFB00A4237B /* SimpleRemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleRemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,11 +134,10 @@
 		4CA367BD22AD014C0047C09C /* hamburger-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hamburger-01.png"; sourceTree = "<group>"; };
 		4CA367BE22AD014C0047C09C /* remon_identityL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remon_identityL.png; sourceTree = "<group>"; };
 		4CA367BF22AD014C0047C09C /* remon_identityL@X2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remon_identityL@X2.png"; sourceTree = "<group>"; };
-		89EC3C2FA4F85E4162C752E4 /* Pods_SimpleRemon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleRemon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9934BB70E7EF086AD1028F21 /* Pods-SimpleRemonObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleRemonObjC.release.xcconfig"; path = "Target Support Files/Pods-SimpleRemonObjC/Pods-SimpleRemonObjC.release.xcconfig"; sourceTree = "<group>"; };
-		BEB51318C46278A9548E3AD1 /* Pods-SimpleRemon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleRemon.release.xcconfig"; path = "Target Support Files/Pods-SimpleRemon/Pods-SimpleRemon.release.xcconfig"; sourceTree = "<group>"; };
-		CB6588CC2D3F0F4C26175286 /* Pods-SimpleRemonObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleRemonObjC.debug.xcconfig"; path = "Target Support Files/Pods-SimpleRemonObjC/Pods-SimpleRemonObjC.debug.xcconfig"; sourceTree = "<group>"; };
-		FD50B427822070417A633082 /* Pods-SimpleRemon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleRemon.debug.xcconfig"; path = "Target Support Files/Pods-SimpleRemon/Pods-SimpleRemon.debug.xcconfig"; sourceTree = "<group>"; };
+		AFBE6DF589112C0DCDC10AD6 /* Pods-SimpleRemonObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleRemonObjC.release.xcconfig"; path = "Target Support Files/Pods-SimpleRemonObjC/Pods-SimpleRemonObjC.release.xcconfig"; sourceTree = "<group>"; };
+		D889E7C8B6099293921E2762 /* Pods-SimpleRemonObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleRemonObjC.debug.xcconfig"; path = "Target Support Files/Pods-SimpleRemonObjC/Pods-SimpleRemonObjC.debug.xcconfig"; sourceTree = "<group>"; };
+		E5818266475E85E477DFCAEB /* Pods_SimpleRemon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleRemon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E78358FDEF6F1B2483EEB780 /* Pods-SimpleRemon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleRemon.release.xcconfig"; path = "Target Support Files/Pods-SimpleRemon/Pods-SimpleRemon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,7 @@
 			files = (
 				4C819C6D22AC69FE00A4237B /* AudioToolbox.framework in Frameworks */,
 				4C819C6B22AC69F100A4237B /* CoreAudioKit.framework in Frameworks */,
-				21A8B86C2FE03046BFCCFDCD /* Pods_SimpleRemon.framework in Frameworks */,
+				65F2EBA0DB6F52743088E9B6 /* Pods_SimpleRemon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5FD2BCF3BD4065F5D870E77 /* Pods_SimpleRemonObjC.framework in Frameworks */,
+				2380BE7C7473F0FC5DED18DE /* Pods_SimpleRemonObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,10 +173,10 @@
 		1D43C353506D93918E37E73E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FD50B427822070417A633082 /* Pods-SimpleRemon.debug.xcconfig */,
-				BEB51318C46278A9548E3AD1 /* Pods-SimpleRemon.release.xcconfig */,
-				CB6588CC2D3F0F4C26175286 /* Pods-SimpleRemonObjC.debug.xcconfig */,
-				9934BB70E7EF086AD1028F21 /* Pods-SimpleRemonObjC.release.xcconfig */,
+				36A7FA8D1CE33B431F9216FF /* Pods-SimpleRemon.debug.xcconfig */,
+				E78358FDEF6F1B2483EEB780 /* Pods-SimpleRemon.release.xcconfig */,
+				D889E7C8B6099293921E2762 /* Pods-SimpleRemonObjC.debug.xcconfig */,
+				AFBE6DF589112C0DCDC10AD6 /* Pods-SimpleRemonObjC.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -243,8 +243,8 @@
 				4C819C6C22AC69FE00A4237B /* AudioToolbox.framework */,
 				4C819C6A22AC69F100A4237B /* CoreAudioKit.framework */,
 				4C819B6C22AC4A8000A4237B /* AVFoundation.framework */,
-				89EC3C2FA4F85E4162C752E4 /* Pods_SimpleRemon.framework */,
-				3B4F4FA283D357FF6B16D32B /* Pods_SimpleRemonObjC.framework */,
+				E5818266475E85E477DFCAEB /* Pods_SimpleRemon.framework */,
+				43B8C41987B19F2C50B681FA /* Pods_SimpleRemonObjC.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -304,12 +304,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C819A6122AC3FFC00A4237B /* Build configuration list for PBXNativeTarget "SimpleRemon" */;
 			buildPhases = (
-				053BDB95596986847260216F /* [CP] Check Pods Manifest.lock */,
+				D25CC1C7791B28394356E2CD /* [CP] Check Pods Manifest.lock */,
 				4C819A4D22AC3FFB00A4237B /* Sources */,
 				4C819A4E22AC3FFB00A4237B /* Frameworks */,
 				4C819A4F22AC3FFB00A4237B /* Resources */,
 				4C819B0622AC44B000A4237B /* CopyFiles */,
-				BA90611E0441105C9F8B18F6 /* [CP] Embed Pods Frameworks */,
+				EE172B62CCF0BCBF33B65F84 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -342,12 +342,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C819C3D22AC5C5500A4237B /* Build configuration list for PBXNativeTarget "SimpleRemonObjC" */;
 			buildPhases = (
-				8D707C76D31B7643B2D94F5C /* [CP] Check Pods Manifest.lock */,
+				C2A2D5CEC140237BC961F5AF /* [CP] Check Pods Manifest.lock */,
 				4C819C2622AC5C5400A4237B /* Sources */,
 				4C819C2722AC5C5400A4237B /* Frameworks */,
 				4C819C2822AC5C5400A4237B /* Resources */,
 				4CA3674122ACDF460047C09C /* CopyFiles */,
-				34E3AE93DB0939C833B40D6C /* [CP] Embed Pods Frameworks */,
+				DF3D091B61E07FAA02806060 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -440,46 +440,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		053BDB95596986847260216F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SimpleRemon-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		34E3AE93DB0939C833B40D6C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SimpleRemonObjC/Pods-SimpleRemonObjC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SimpleRemonObjC/Pods-SimpleRemonObjC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleRemonObjC/Pods-SimpleRemonObjC-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D707C76D31B7643B2D94F5C /* [CP] Check Pods Manifest.lock */ = {
+		C2A2D5CEC140237BC961F5AF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -501,7 +462,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BA90611E0441105C9F8B18F6 /* [CP] Embed Pods Frameworks */ = {
+		D25CC1C7791B28394356E2CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleRemon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF3D091B61E07FAA02806060 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleRemonObjC/Pods-SimpleRemonObjC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleRemonObjC/Pods-SimpleRemonObjC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleRemonObjC/Pods-SimpleRemonObjC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE172B62CCF0BCBF33B65F84 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -735,7 +735,7 @@
 		};
 		4C819A6222AC3FFC00A4237B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD50B427822070417A633082 /* Pods-SimpleRemon.debug.xcconfig */;
+			baseConfigurationReference = 36A7FA8D1CE33B431F9216FF /* Pods-SimpleRemon.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -810,7 +810,7 @@
 		};
 		4C819A6322AC3FFC00A4237B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEB51318C46278A9548E3AD1 /* Pods-SimpleRemon.release.xcconfig */;
+			baseConfigurationReference = E78358FDEF6F1B2483EEB780 /* Pods-SimpleRemon.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1021,7 +1021,7 @@
 		};
 		4C819C3E22AC5C5500A4237B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB6588CC2D3F0F4C26175286 /* Pods-SimpleRemonObjC.debug.xcconfig */;
+			baseConfigurationReference = D889E7C8B6099293921E2762 /* Pods-SimpleRemonObjC.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1100,7 +1100,7 @@
 		};
 		4C819C3F22AC5C5500A4237B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9934BB70E7EF086AD1028F21 /* Pods-SimpleRemonObjC.release.xcconfig */;
+			baseConfigurationReference = AFBE6DF589112C0DCDC10AD6 /* Pods-SimpleRemonObjC.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
