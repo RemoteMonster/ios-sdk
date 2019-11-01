@@ -1,3 +1,10 @@
+## 2.6.12
+- compiled with Swift 5.1.2(XCode 11.2)
+- added capturer manager for managing local capturer and local video stream
+- fixed error to run on ios simulator
+- added a sample project for multiple call : examples/SimpleDualCall
+- fixed minor bugs
+
 ## 2.6.11
 - updated webrtc framework
 - added x86_64 architecture for ios simulator

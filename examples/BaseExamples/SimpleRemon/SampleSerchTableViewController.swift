@@ -20,7 +20,7 @@ class SampleSerchTableViewController: UIViewController, UITableViewDataSource, U
     @IBAction func reloadAction(_ sender: Any) {
         if customConfig != nil && customConfig?.serviceId != nil { // && customConfig?.key != nil {
             if( customConfig?.serviceId != nil ) {
-                remonCast.serviceId = customConfig?.serviceId
+                remonCast.serviceId = customConfig!.serviceId
                 //            remonCast.serviceKey = customConfig?.key
             }
 

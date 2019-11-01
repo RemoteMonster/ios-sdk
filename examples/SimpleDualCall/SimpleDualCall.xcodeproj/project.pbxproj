@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E5B9EBBCCFC988AE04A0167 /* Pods_SimpleDualCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CFE53C324004E8444647D8 /* Pods_SimpleDualCall.framework */; };
+		4C4494BA236A964E0016A4D4 /* remon_identity.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4494B7236A964E0016A4D4 /* remon_identity.png */; };
+		4C4494BB236A964E0016A4D4 /* remon_identityL.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4494B8236A964E0016A4D4 /* remon_identityL.png */; };
+		4C4494BC236A964E0016A4D4 /* remon_identityL@X2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4494B9236A964E0016A4D4 /* remon_identityL@X2.png */; };
+		4C8CD24423683978007F83F0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CD24323683978007F83F0 /* MainViewController.swift */; };
+		4CB2E025236AF63E00E2AAA5 /* RemonSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CB2E024236AF63E00E2AAA5 /* RemonSettings.plist */; };
+		4CC094D9236183F700600C64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC094D8236183F700600C64 /* AppDelegate.swift */; };
+		4CC094DB236183F700600C64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC094DA236183F700600C64 /* SceneDelegate.swift */; };
+		4CC094DD236183F700600C64 /* SimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC094DC236183F700600C64 /* SimpleViewController.swift */; };
+		4CC094E0236183F700600C64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC094DE236183F700600C64 /* Main.storyboard */; };
+		4CC094E2236183F800600C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CC094E1236183F800600C64 /* Assets.xcassets */; };
+		4CC094E5236183F800600C64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC094E3236183F800600C64 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CC095262361855700600C64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CC095212361855700600C64 /* RemoteMonster.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6DD9E0D91E409D7600C9AFA3;
+			remoteInfo = RemoteMonster;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C4494B5236A95610016A4D4 /* sample_movie.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sample_movie.mov; sourceTree = "<group>"; };
+		4C4494B7236A964E0016A4D4 /* remon_identity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = remon_identity.png; path = ../../../BaseExamples/Resources/remon_identity.png; sourceTree = "<group>"; };
+		4C4494B8236A964E0016A4D4 /* remon_identityL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = remon_identityL.png; path = ../../../BaseExamples/Resources/remon_identityL.png; sourceTree = "<group>"; };
+		4C4494B9236A964E0016A4D4 /* remon_identityL@X2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remon_identityL@X2.png"; path = "../../../BaseExamples/Resources/remon_identityL@X2.png"; sourceTree = "<group>"; };
+		4C4BD7C6236C136000608B32 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftProtobuf.framework; path = ../../ExternalLibrary/SwiftProtobuf.framework; sourceTree = "<group>"; };
+		4C4BD7D2236C29E100608B32 /* RemoteMonster.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RemoteMonster.framework; sourceTree = "<group>"; };
+		4C4BD7D3236C29E100608B32 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4C8CD24323683978007F83F0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4C9B8CCA236C02AC00E996C2 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = ../../ExternalLibrary/WebRTC.framework; sourceTree = "<group>"; };
+		4CB2E024236AF63E00E2AAA5 /* RemonSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RemonSettings.plist; sourceTree = "<group>"; };
+		4CC094D5236183F700600C64 /* SimpleDualCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleDualCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CC094D8236183F700600C64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4CC094DA236183F700600C64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4CC094DC236183F700600C64 /* SimpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
+		4CC094DF236183F700600C64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4CC094E1236183F800600C64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4CC094E4236183F800600C64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4CC094E6236183F800600C64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CC095212361855700600C64 /* RemoteMonster.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RemoteMonster.xcodeproj; path = ../../RemoteMonster.xcodeproj; sourceTree = "<group>"; };
+		4CC0952D23619B9A00600C64 /* file_example.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = file_example.mov; sourceTree = "<group>"; };
+		666643246BDD2BD866F0C00E /* Pods-SimpleDualCall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleDualCall.release.xcconfig"; path = "Target Support Files/Pods-SimpleDualCall/Pods-SimpleDualCall.release.xcconfig"; sourceTree = "<group>"; };
+		78CFE53C324004E8444647D8 /* Pods_SimpleDualCall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleDualCall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8DCC4B37EBD77DFB3BCA405 /* Pods-SimpleDualCall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleDualCall.debug.xcconfig"; path = "Target Support Files/Pods-SimpleDualCall/Pods-SimpleDualCall.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CC094D2236183F700600C64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E5B9EBBCCFC988AE04A0167 /* Pods_SimpleDualCall.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40EFAB940D594FAFD2C9020A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D8DCC4B37EBD77DFB3BCA405 /* Pods-SimpleDualCall.debug.xcconfig */,
+				666643246BDD2BD866F0C00E /* Pods-SimpleDualCall.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4C4BD7D1236C29E100608B32 /* RemoteMonster */ = {
+			isa = PBXGroup;
+			children = (
+				4C4BD7D2236C29E100608B32 /* RemoteMonster.framework */,
+				4C4BD7D3236C29E100608B32 /* README.md */,
+			);
+			name = RemoteMonster;
+			path = Pods/RemoteMonster;
+			sourceTree = "<group>";
+		};
+		4CC094CC236183F700600C64 = {
+			isa = PBXGroup;
+			children = (
+				4C4BD7D1236C29E100608B32 /* RemoteMonster */,
+				4CC094D7236183F700600C64 /* SimpleDualCall */,
+				4CC094D6236183F700600C64 /* Products */,
+				4CC095102361849500600C64 /* Frameworks */,
+				40EFAB940D594FAFD2C9020A /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		4CC094D6236183F700600C64 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CC094D5236183F700600C64 /* SimpleDualCall.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CC094D7236183F700600C64 /* SimpleDualCall */ = {
+			isa = PBXGroup;
+			children = (
+				4CC0952C23619B6500600C64 /* Resources */,
+				4CC094D8236183F700600C64 /* AppDelegate.swift */,
+				4CC094DA236183F700600C64 /* SceneDelegate.swift */,
+				4C8CD24323683978007F83F0 /* MainViewController.swift */,
+				4CC094DC236183F700600C64 /* SimpleViewController.swift */,
+				4CC094DE236183F700600C64 /* Main.storyboard */,
+				4CC094E1236183F800600C64 /* Assets.xcassets */,
+				4CC094E3236183F800600C64 /* LaunchScreen.storyboard */,
+				4CC094E6236183F800600C64 /* Info.plist */,
+				4CB2E024236AF63E00E2AAA5 /* RemonSettings.plist */,
+			);
+			path = SimpleDualCall;
+			sourceTree = "<group>";
+		};
+		4CC095102361849500600C64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C4BD7C6236C136000608B32 /* SwiftProtobuf.framework */,
+				4C9B8CCA236C02AC00E996C2 /* WebRTC.framework */,
+				4CC095212361855700600C64 /* RemoteMonster.xcodeproj */,
+				78CFE53C324004E8444647D8 /* Pods_SimpleDualCall.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CC095222361855700600C64 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CC095272361855700600C64 /* RemoteMonster.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CC0952C23619B6500600C64 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C4494B7236A964E0016A4D4 /* remon_identity.png */,
+				4C4494B8236A964E0016A4D4 /* remon_identityL.png */,
+				4C4494B9236A964E0016A4D4 /* remon_identityL@X2.png */,
+				4C4494B5236A95610016A4D4 /* sample_movie.mov */,
+				4CC0952D23619B9A00600C64 /* file_example.mov */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CC094D4236183F700600C64 /* SimpleDualCall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CC094E9236183F800600C64 /* Build configuration list for PBXNativeTarget "SimpleDualCall" */;
+			buildPhases = (
+				2397508E0052E32847DD753E /* [CP] Check Pods Manifest.lock */,
+				4CC094D1236183F700600C64 /* Sources */,
+				4CC094D2236183F700600C64 /* Frameworks */,
+				4CC094D3236183F700600C64 /* Resources */,
+				1C26CE09DE7AF4DA65783087 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleDualCall;
+			productName = SimpleDualCall;
+			productReference = 4CC094D5236183F700600C64 /* SimpleDualCall.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CC094CD236183F700600C64 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "remote monster";
+				TargetAttributes = {
+					4CC094D4236183F700600C64 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 4CC094D0236183F700600C64 /* Build configuration list for PBXProject "SimpleDualCall" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4CC094CC236183F700600C64;
+			productRefGroup = 4CC094D6236183F700600C64 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4CC095222361855700600C64 /* Products */;
+					ProjectRef = 4CC095212361855700600C64 /* RemoteMonster.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				4CC094D4236183F700600C64 /* SimpleDualCall */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4CC095272361855700600C64 /* RemoteMonster.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RemoteMonster.framework;
+			remoteRef = 4CC095262361855700600C64 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CC094D3236183F700600C64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC094E5236183F800600C64 /* LaunchScreen.storyboard in Resources */,
+				4C4494BC236A964E0016A4D4 /* remon_identityL@X2.png in Resources */,
+				4CC094E2236183F800600C64 /* Assets.xcassets in Resources */,
+				4CC094E0236183F700600C64 /* Main.storyboard in Resources */,
+				4C4494BA236A964E0016A4D4 /* remon_identity.png in Resources */,
+				4CB2E025236AF63E00E2AAA5 /* RemonSettings.plist in Resources */,
+				4C4494BB236A964E0016A4D4 /* remon_identityL.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C26CE09DE7AF4DA65783087 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleDualCall/Pods-SimpleDualCall-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleDualCall/Pods-SimpleDualCall-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleDualCall/Pods-SimpleDualCall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2397508E0052E32847DD753E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleDualCall-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CC094D1236183F700600C64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC094DD236183F700600C64 /* SimpleViewController.swift in Sources */,
+				4CC094D9236183F700600C64 /* AppDelegate.swift in Sources */,
+				4CC094DB236183F700600C64 /* SceneDelegate.swift in Sources */,
+				4C8CD24423683978007F83F0 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4CC094DE236183F700600C64 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC094DF236183F700600C64 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4CC094E3236183F800600C64 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC094E4236183F800600C64 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CC094E7236183F800600C64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../ExternalLibrary";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4CC094E8236183F800600C64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../ExternalLibrary";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4CC094EA236183F800600C64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8DCC4B37EBD77DFB3BCA405 /* Pods-SimpleDualCall.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../ExternalLibrary",
+				);
+				INFOPLIST_FILE = SimpleDualCall/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.sample.SimpleDualCall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e armv7s";
+			};
+			name = Debug;
+		};
+		4CC094EB236183F800600C64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 666643246BDD2BD866F0C00E /* Pods-SimpleDualCall.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../ExternalLibrary",
+				);
+				INFOPLIST_FILE = SimpleDualCall/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.sample.SimpleDualCall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e armv7s";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CC094D0236183F700600C64 /* Build configuration list for PBXProject "SimpleDualCall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CC094E7236183F800600C64 /* Debug */,
+				4CC094E8236183F800600C64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CC094E9236183F800600C64 /* Build configuration list for PBXNativeTarget "SimpleDualCall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CC094EA236183F800600C64 /* Debug */,
+				4CC094EB236183F800600C64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CC094CD236183F700600C64 /* Project object */;
+}
