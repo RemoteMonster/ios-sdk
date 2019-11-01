@@ -9,25 +9,28 @@
 import Foundation
 
 
+/**
+통화(RemonCall), 방송(RemonCast) 공통 클래스
+*/
 @objc(RemonClient)
 @IBDesignable
 public class RemonClient:NSObject, RemonControllerBlockSettable {
     var controller: RemonClientController? = nil
-    
-    // public
-    // deprecated : 뷰 설정 작업을 직접 진행하는 경우에 사용
-    @available(*, deprecated, message: "Use callback functions")
-    public weak var legacyDelegate: RemonDelegate?
+    var currentRemonState:RemonState?
+        
+    internal var channelType:RemonChannelType = .p2p
+    internal var autoReJoin_:Bool = false
+    internal var firstInit:Bool = false
+    internal var sendonly:Bool = false
+    internal var tryReConnecting:Bool = false
     
     /** 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부 */
     public var autoCaptureStart:Bool = true
     
-    
-    /**debug mode.  default is false*/
+    /** debug mode.  default is false */
     public var debugMode:Bool = false
     
     @objc public var remonConfig:RemonConfig?
-    
     @objc public var volumeRatio:Double = 1.0 {
         didSet {
             if (self.volumeRatio > 1.0) {
@@ -47,7 +50,6 @@ public class RemonClient:NSObject, RemonControllerBlockSettable {
         }
     }
     
-    
     @objc public var showRemoteVideoStat = false {
         didSet(isShow) {
             controller?.remonView?.showRemoteVideoStat = self.showRemoteVideoStat
@@ -63,49 +65,18 @@ public class RemonClient:NSObject, RemonControllerBlockSettable {
     /// 외부 캡처러 사용 여부 설정
     @objc public var useExternalCapturer:Bool = false
     @objc public var channelID:String?
-    public var localCameraCapturer:RTCCameraVideoCapturer? {
+    
+
+    /// 갭처러 객체
+    public var localCapturer: RTCVideoCapturer? {
         get {
-            return controller?.localCameraCapturer
+            return RemonCapturerManager.getInstance().videoCapturer
         }
     }
     
-    /// 외부 캡처러 사용시 프레임 데이터를 전달할 객체
-    public var localSampleCapturer:RemonSampleCapturer? {
-        get {
-            return controller?.localSampleCapturer
-        }
-    }
-    
-    var currentRemonState:RemonState?
-    
-    
-    internal override init() {
-        print("[RemonClient.init]")
-        super.init()
-        if self.controller != nil {
-            self.controller?.cleanup()
-            self.controller = nil
-        }
-        
-        self.controller = RemonClientController(client: self)
-    }
-    
-    
-    deinit {
-        print("[RemonClient.deinit]")
-    }
-    
-    
-    internal var channelType:RemonChannelType = .p2p
-    internal var autoReJoin_:Bool = false
-    internal var firstInit:Bool = false
-    internal var sendonly:Bool = false
-    internal var tryReConnecting:Bool = false
-    
-    
-    
+
     // IBInspectable
-    /**video codec H264 | VP8. default is H264 */
+    /** video codec H264 | VP8. default is H264 */
     @IBInspectable public var videoCodec:String = "H264"
     
     /// 오디오 전용 여부 선택
@@ -121,21 +92,22 @@ public class RemonClient:NSObject, RemonControllerBlockSettable {
     @IBInspectable public var fps:Int = 24
     
     /// 서비스 아이디
-    @IBInspectable public var serviceId:String?
+    @IBInspectable public var serviceId:String = ""
     
     /// 서비스키
-    @IBInspectable public var serviceKey:String?
+    @IBInspectable public var serviceKey:String = ""
+    
+    /// 서비스 토큰
+    @IBInspectable public var serviceToken:String = ""
     
     /// rest api 주소
     @IBInspectable public var restUrl:String = RemonConfig.REMON_REST_HOST_URL
-    
     
     /// 웹소켓 주소
     @IBInspectable public var wsUrl:String = RemonConfig.REMON_WS_URL
     
     /// log 서버 주소
     @IBInspectable public var logUrl:String = RemonConfig.REMON_REST_LOG_SERVER
-    
     
     /// 전면 카메라 시작
     @IBInspectable public var frontCamera:Bool = true {
@@ -163,15 +135,45 @@ public class RemonClient:NSObject, RemonControllerBlockSettable {
      */
     @IBInspectable public var fixedCameraRotation:Bool = false
     
-    
     // @IBInspectable public var autoReJoin:Bool
     // @IBInspectable public var audioType:RemonAudioMode
-    
     
     // IBOutlet
     @IBOutlet dynamic public weak var remoteView:UIView?
     @IBOutlet dynamic public weak var localView:UIView?
-    @IBOutlet dynamic public weak var localPreView:UIView?
+    
+    
+    /// 시뮬레이터에서 사용할 동영상 파일명
+    @IBInspectable public var videoFilePathForSimulator:String?
+    
+    
+    internal override init() {
+        print("[RemonClient.init]")
+        super.init()
+        self.controller = RemonClientController()
+    }
+    
+    
+    deinit {
+        print("[RemonClient.deinit]")
+    }
+    
+    
+    // deprecated
+    @available(*, deprecated, message: "use localCapturer" )
+    public var localCameraCapturer:RTCCameraVideoCapturer?
+    
+    /// 외부 캡처러 사용시 프레임 데이터를 전달할 객체
+    @available(*, deprecated, message: "use localCapturer" )
+    public var localSampleCapturer:RemonSampleCapturer?
+    
+    // deprecated : 과거 RemonDelegate를 클라이언트에 직접 처리할때 사용된 코드
+    @available(*, deprecated, message: "use callback functions")
+    public weak var legacyDelegate: RemonDelegate?
+    
+    // preview 요소 deprecated. 카메라 프리뷰는 실제 전송될 화면과 다를수 있어 의미가 없음. localView 사용
+    @available(*, deprecated, message: "use localView")
+    public weak var localPreView:UIView?
 }
 
 /**
@@ -226,7 +228,6 @@ extension RemonClient {
         controller?.closeRemon()
     }
     
-    
     /**
      대역폭 전환
      */
@@ -237,19 +238,6 @@ extension RemonClient {
     @objc public func objc_switchBandWidth(bandwidth:objc_RemonBandwidth) {
         controller?.objc_switchBandWidth(bandwidth: bandwidth)
     }
-    
-    // android 와 인터페이스 맞춤
-    @available(*, deprecated, message: "Use setRemoteAudioEnabled( isEnabled: Bool )")
-    @objc public func muteRemoteAudio(mute:Bool = true) -> Void {
-        controller?.setRemoteAudioEnabled(isEnabled: !mute)
-    }
-    
-    // android 와 인터페이스 맞춤
-    @available(*, deprecated, message: "Use setLocalAudioEnabled( isEnabled: Bool )")
-    @objc public func muteLocalAudio(mute:Bool = true) -> Void {
-        controller?.setLocalAudioEnabled(isEnabled: !mute)
-    }
-    
     
     /**
      원격지 사운드 켜거나 끄기
@@ -265,9 +253,24 @@ extension RemonClient {
         controller?.setLocalAudioEnabled(isEnabled: isEnabled)
     }
     
-
+    /**
+        로컬 비디오 켜거나 끄기
+     */
+    @objc public func setLocalVideoEnabled(isEnabled:Bool = true ) -> Void {
+        controller?.setLocalVideoEnabled(isEnabled: isEnabled)
+    }
+    
+    /**
+        원격지 비디오 켜거나 끄기
+     */
+    @objc public func setRemoteVideoEnabled(isEnabled:Bool = true) -> Void {
+        controller?.setRemoteAudioEnabled(isEnabled: isEnabled)
+    }
+    
     /**
      로컬 비디오(카메라) 시작
+     로컬 비디오를 사용하는 모든 연결에 영향이 있으므로, 특정 연결된 세션의 비디오를 켜거나 끄는 경우
+     setLocalVideoEnabled( isEnabled: true ) 메쏘드 사용.
      */
     @objc public func startLocalVideoCapture(completion:@escaping ()->Void) -> Bool {
         return controller?.startLocalVideoCapture(completion: completion) ?? false
@@ -278,20 +281,6 @@ extension RemonClient {
      */
     @objc public func stopLocalVideoCapture() -> Bool {
         return controller?.stopLocalVideoCapture() ?? false
-    }
-    
-    /**
-    원격 비디오(카메라) 시작
-    */
-    @objc public func startRemoteVideoCapture() -> Void {
-        controller?.startRemoteVideoCapture()
-    }
-    
-    /**
-    원격 비디오(카메라) 중지
-    */
-    @objc public func stopRemoteVideoCapture() -> Void {
-        controller?.stopRemoteVideoCapture()
     }
     
     /**
@@ -311,25 +300,22 @@ extension RemonClient {
      -Return:변경된 카메라가 전면이면 true, 후면이면 false
      */
     @objc public func switchCamera( isMirror:Bool = false, isToggle:Bool = true) -> Bool {
-        return controller?.switchCamera(client: self, isMirror:isMirror, isToggle:isToggle) ?? false
+        return controller?.switchCamera( isMirror:isMirror, isToggle:isToggle) ?? false
     }
-    
     
     /**
      볼륨설정
      */
     @objc public func setVolume(volume:Float) -> Void {
-        controller?.setVolume(client: self, volume: volume)
+        controller?.setVolume( volume: volume)
     }
-    
     
     /**
      채널 목록 요청
      */
     public func fetchChannel(type:RemonSearchType, complete: @escaping (_ error:RemonError?, _ results:Array<RemonSearchResult>?)->Void) {
-        controller?.fetchChannel(client: self, type: type, complete: complete)
+        RemonClientController.fetchChannel(client: self, type: type, complete: complete)
     }
-    
     
     @objc public func startDump(withFileName: String, maxSizeInBytes:Int64) -> Void {
         controller?.startDump(withFileName: withFileName, maxSizeInBytes: maxSizeInBytes)
@@ -346,7 +332,40 @@ extension RemonClient {
     @objc public func unpackAecDump (dumpName:String? = "audio.aecdump", resultFileName:String, progress: @escaping (Error?, REMON_AECUNPACK_STATE) -> Void) -> Void {
         RemonClientController.unpackAecDump(dumpName: dumpName, resultFileName: resultFileName, progress: progress)
     }
+    
+    
+    public func showLocalVideo() -> Void {
+        self.controller?.showLocalVideo(client: self)
+    }
+    
+    
+    
+    // android 와 인터페이스 맞추기 위해 deprecated
+    @available(*, deprecated, message: "Use setRemoteAudioEnabled( isEnabled: Bool )")
+    @objc public func muteRemoteAudio(mute:Bool = true) -> Void {
+        controller?.setRemoteAudioEnabled(isEnabled: !mute)
+    }
+    
+    // android 와 인터페이스 맞춤
+    @available(*, deprecated, message: "Use setLocalAudioEnabled( isEnabled: Bool )")
+    @objc public func muteLocalAudio(mute:Bool = true) -> Void {
+        controller?.setLocalAudioEnabled(isEnabled: !mute)
+    }
+    
+
+    @available(*, deprecated, message: "Use setRemoteVideoEnabled( isEnabled: true)")
+    @objc public func startRemoteVideoCapture() -> Void {
+        controller?.setRemoteVideoEnabled(isEnabled: true)
+    }
+    
+    @available(*, deprecated, message: "Use setRemoteVideoEnabled( isEnabled: false)")
+    @objc public func stopRemoteVideoCapture() -> Void {
+        controller?.setRemoteAudioEnabled(isEnabled: false)
+    }
+    
 }
+
+
 
 extension RemonClient {
     //set oberserver block
@@ -366,7 +385,6 @@ extension RemonClient {
     
     /** 연결 종료 콜백 */
     @objc public func onClose(block:@escaping RemonCloseBlock) {controller?.observerBlock.closeRemonChannelBlock = block}
-    
     
     @objc public func onDisConnect(block:@escaping RemonStringBlock) { controller?.observerBlock.disConnectRemonChannelBlock = block}
     
@@ -390,25 +408,34 @@ extension RemonClient {
     }
 }
 
+
+
+
+
 extension RemonClient {
     public var remoteRTCEAGLVideoView:RTCEAGLVideoView?{
         get {
             return controller?.remonView?.remoteRTCEAGLVideoView
         }
     }
-    
+
     public var localRTCEAGLVideoView:RTCEAGLVideoView? {
         get {
             return controller?.remonView?.localRTCEAGLVideoView
         }
     }
-    
+
+    @available(*, deprecated, message: "use localRTCEAGLVideoView")
     public var localRTCCameraPreviewView:RemonCameraPreviewView? {
         get {
-            return controller?.remonView?.localRTCCameraPreviewView
+            return nil; //controller?.remonView?.localRTCCameraPreviewView
         }
     }
 }
+
+
+
+
 
 //
 extension RemonClient {
@@ -423,7 +450,6 @@ extension RemonClient {
         mode: AVAudioSession.Mode,
         options:AVAudioSession.CategoryOptions) {
         
-        
         // webrtc 전역 오디오세션 카테고리 설정
         let ac = RTCAudioSessionConfiguration.webRTC()
         ac.category = category.rawValue
@@ -433,10 +459,11 @@ extension RemonClient {
         //ac.sampleRate = 44100
         RTCAudioSessionConfiguration.setWebRTC(ac)
         
+        #if DEBUG
         print("[RemonClient] setAudioSessionConfiguration: category=\(ac.category)")
         print("[RemonClient] setAudioSessionConfiguration: mode=\(ac.mode)")
         print("[RemonClient] setAudioSessionConfiguration: options=\(ac.categoryOptions)")
-    
+        #endif
  
         let session = RTCAudioSession.sharedInstance()
        

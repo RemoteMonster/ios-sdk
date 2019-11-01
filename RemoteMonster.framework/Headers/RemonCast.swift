@@ -124,11 +124,4 @@ public protocol RemonCastBlockSettable {
         self.onFetchChannels(block: block)
     }
     
-//    public func startCap(_ path:String) {
-//        RTCStartInternalCapture(path)
-//    }
-//    
-//    public func stopCap() {
-//        RTCStopInternalCapture()
-//    }
 }
