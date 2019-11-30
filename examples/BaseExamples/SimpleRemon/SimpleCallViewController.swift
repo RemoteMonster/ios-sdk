@@ -44,7 +44,7 @@ class SimpleCallViewController: UIViewController {
     }
     
     @IBAction func awedawef(_ sender: Any) {
-        self.remonCall.muteLocalAudio(mute: !self.muted)
+        self.remonCall.setLocalAudioEnabled(isEnabled: !self.muted)
         self.muted = !self.muted
     }
     
@@ -219,6 +219,8 @@ class SimpleCallViewController: UIViewController {
         super.viewDidLoad()
         
         // sdk 오디오세션 설정 : supported v2.6.10 or higher
+        // 세부 내용은 애플 AVAudioSession 레퍼런스 참조
+        // iOS의 경우 RemonSettings.plist 에 추가 설정 필요
         // AVAudioSession.Mode.voiceChat : 수화기 사용
         // AVAudioSession.Mode.videoChat : 스피커 사용
         RemonClient.setAudioSessionConfiguration(

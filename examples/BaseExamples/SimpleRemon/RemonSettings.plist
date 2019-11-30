@@ -4,5 +4,7 @@
 <dict>
 	<key>AudioType</key>
 	<string>voice</string>
+	<key>AGC</key>
+	<true/>
 </dict>
 </plist>

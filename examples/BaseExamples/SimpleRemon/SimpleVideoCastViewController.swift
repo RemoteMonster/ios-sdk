@@ -137,7 +137,9 @@ class SimpleVideoCastViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // sdk 오디오세션 설정
+        // sdk 오디오세션 설정 : supported v2.6.10 or higher
+        // 세부 내용은 애플 AVAudioSession 레퍼런스 참조
+        // iOS의 경우 RemonSettings.plist 에 추가 설정 필요
         // AVAudioSession.Mode.voiceChat : 수화기 사용
         // AVAudioSession.Mode.videoChat : 스피커 사용
         RemonClient.setAudioSessionConfiguration(
@@ -163,18 +165,5 @@ class SimpleVideoCastViewController:UIViewController {
     
 }
 
-extension SimpleVideoCastViewController:RemonCameraCapturerBufferDelegate {
-    public func didReceiveCameraData(inputImage: CIImage) -> CIImage? {
-        let effect = CIFilter(name: "CIComicEffect")
-        effect?.setValue(inputImage, forKey: kCIInputImageKey)
-        
-//        let effect = CIFilter(name:"CISepiaTone")
-//        effect?.setValue(inputImage, forKey: kCIInputImageKey)
-//        effect?.setValue(1, forKey: kCIInputIntensityKey)
-//        //effect?.setValue(20, forKey: kCIInputRadiusKey)
-        let outputImage = effect?.outputImage
-        return outputImage
-    }
-}
 
 
