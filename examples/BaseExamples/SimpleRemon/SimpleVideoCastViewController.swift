@@ -63,7 +63,7 @@ class SimpleVideoCastViewController:UIViewController {
     
     
     @IBAction func captureView(_ sender: Any) {
-        guard self.remonCast.localRTCEAGLVideoView != nil else {
+        guard self.remonCast.localVideoView != nil else {
             return
         }
         let image = self.image(with: self.view)
