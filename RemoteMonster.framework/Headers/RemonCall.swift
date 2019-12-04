@@ -8,16 +8,10 @@
 
 import UIKit
 
-/***/
-@objc public protocol RemonCallBlockSettable {
-    func onConnect(block:@escaping RemonStringBlock)
-    func onFetch(block:@escaping RemonArrayBlock)
-}
-
 /**
  P2P 영상통화 클래스
  */
-@objc public class RemonCall: RemonClient, RemonCallBlockSettable {
+@objc public class RemonCall: RemonClient {
     override public init() {
         print("[RemonCall.init]")
         super.init()
@@ -32,7 +26,7 @@ import UIKit
     
     /***/
     @objc public func fetchCalls(complete: @escaping (Array<RemonSearchResult>?) -> Void) {
-        self.fetchChannel(type: .call) { (error, chs) in
+        self.fetchChannel(type: .call, roomName: nil) { (error, chs) in
             complete(chs)
         }
     }
@@ -41,7 +35,7 @@ import UIKit
 @objc extension RemonCall {
     /***/
     @objc public func onConnect(block: @escaping RemonStringBlock) {
-        self.onCreate(block_: block)
+        self.onCreateInternal(block: block)
     }
     
     /***/

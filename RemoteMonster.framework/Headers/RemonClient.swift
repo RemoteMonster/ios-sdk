@@ -14,7 +14,7 @@ import Foundation
 */
 @objc(RemonClient)
 @IBDesignable
-public class RemonClient:NSObject, RemonControllerBlockSettable {
+public class RemonClient:NSObject {
     var controller: RemonClientController? = nil
     var currentRemonState:RemonState?
         
@@ -167,10 +167,6 @@ public class RemonClient:NSObject, RemonControllerBlockSettable {
     @available(*, deprecated, message: "use localCapturer" )
     public var localSampleCapturer:RemonSampleCapturer?
     
-    // deprecated : 과거 RemonDelegate를 클라이언트에 직접 처리할때 사용된 코드
-    @available(*, deprecated, message: "use callback functions")
-    public weak var legacyDelegate: RemonDelegate?
-    
     // preview 요소 deprecated. 카메라 프리뷰는 실제 전송될 화면과 다를수 있어 의미가 없음. localView 사용
     @available(*, deprecated, message: "use localView")
     public weak var localPreView:UIView?
@@ -183,7 +179,7 @@ extension RemonClient {
     
     /**
      */
-    @objc func getCurrentRemonState() -> Int {
+    @objc public func getCurrentRemonState() -> Int {
         if let status = self.currentRemonState {
             return status.rawValue
         } else {
@@ -236,7 +232,7 @@ extension RemonClient {
     }
     
     @objc public func objc_switchBandWidth(bandwidth:objc_RemonBandwidth) {
-        controller?.objc_switchBandWidth(bandwidth: bandwidth)
+        controller?.switchBandWidth(bandwidth: bandwidth)
     }
     
     /**
@@ -313,9 +309,32 @@ extension RemonClient {
     /**
      채널 목록 요청
      */
-    public func fetchChannel(type:RemonSearchType, complete: @escaping (_ error:RemonError?, _ results:Array<RemonSearchResult>?)->Void) {
-        RemonClientController.fetchChannel(client: self, type: type, complete: complete)
+    public func fetchChannel(
+        type:RemonSearchType,
+        roomName:String?,
+        complete: @escaping (_ error:RemonError?, _ results:Array<RemonSearchResult>?)->Void) {
+        
+        
+        var restUrl:String = ""
+        if let config = self.remonConfig {
+            restUrl = config.restUrl
+        } else {
+            restUrl = self.restUrl
+        }
+        
+        RemonRestManager.fetchChannel(
+            type: type,
+            serviceID: self.serviceId,
+            roomName: roomName,
+            restUrl: restUrl ) { (results) in
+                DispatchQueue.main.async {
+                    complete(nil, results)
+                }
+                
+            }
+        
     }
+    
     
     @objc public func startDump(withFileName: String, maxSizeInBytes:Int64) -> Void {
         controller?.startDump(withFileName: withFileName, maxSizeInBytes: maxSizeInBytes)
@@ -367,12 +386,13 @@ extension RemonClient {
 
 
 
-extension RemonClient {
+extension RemonClient : RemonControllerBlockSettable{
     //set oberserver block
     internal func onFetchChannels(block:@escaping RemonArrayBlock) { controller?.observerBlock.fetchRemonChannelBlock = block}
     
-    /** 채널 생성 후 호출되는 콜백 */
-    internal func onCreate(block_:@escaping RemonStringBlock) { controller?.observerBlock.createRemonChannelBlock = block_}
+    // remon call 에서 사용
+    // 사용자는 onConnect로 보여지나 내부적으로는 onCreate 함수 사용됨.
+    internal func onCreateInternal(block:@escaping RemonStringBlock) { controller?.observerBlock.createRemonChannelBlock = block}
     
     /** 에러 콜백 */
     public func onError(block:@escaping RemonErrorBlock) { controller?.observerBlock.errorRemonBlock = block}
@@ -381,7 +401,9 @@ extension RemonClient {
     @objc public func onInit(block:@escaping RemonVoidBlock) { controller?.observerBlock.initRemonBlock = block}
     
     /** Peer간 접속 완료 콜백. webrtc 접속이 완료된 이후에 호출 */
-    @objc public func onComplete(block:@escaping RemonVoidBlock) { controller?.observerBlock.completeRemonChannelBlock = block}
+    @objc public func onComplete(block:@escaping RemonVoidBlock) {
+        controller?.observerBlock.completeRemonChannelBlock = block
+    }
     
     /** 연결 종료 콜백 */
     @objc public func onClose(block:@escaping RemonCloseBlock) {controller?.observerBlock.closeRemonChannelBlock = block}
@@ -406,6 +428,10 @@ extension RemonClient {
     @objc public func onLocalVideoSizeChanged(block: @escaping (_ localView:UIView?, _ videoSize:CGSize) -> Void) {
         controller?.observerBlock.didChangeLocalVideoSize = block
     }
+
+    @objc public func onRoomEvent(block: @escaping (_ type:String, _ channel:String) -> Void) {
+        controller?.observerBlock.roomEventBlock = block
+    }
 }
 
 
@@ -413,24 +439,70 @@ extension RemonClient {
 
 
 extension RemonClient {
+
+    #if (!arch(arm64))
+    @available(*, deprecated, message: "use remoteVideoView")
     public var remoteRTCEAGLVideoView:RTCEAGLVideoView?{
         get {
-            return controller?.remonView?.remoteRTCEAGLVideoView
+            return controller?.remonView?.remoteVideoView
         }
     }
 
+    @available(*, deprecated, message: "use localVideoView")
     public var localRTCEAGLVideoView:RTCEAGLVideoView? {
         get {
-            return controller?.remonView?.localRTCEAGLVideoView
+            return controller?.remonView?.localVideoView
         }
     }
+    
+    public var remoteVideoView:RTCEAGLVideoView?{
+        get {
+            return controller?.remonView?.remoteVideoView
+        }
+    }
+    
+    public var localVideoView:RTCEAGLVideoView? {
+        get {
+            return controller?.remonView?.localVideoView
+        }
+    }
+    
+    #else
+    @available(*, deprecated, message: "use remoteVideoView")
+    public var remoteRTCEAGLVideoView:RTCMTLVideoView?{
+        get {
+            return controller?.remonView?.remoteVideoView
+        }
+    }
+    
+    @available(*, deprecated, message: "use localVideoView")
+    public var localRTCEAGLVideoView:RTCMTLVideoView? {
+        get {
+            return controller?.remonView?.localVideoView
+        }
+    }
+    
 
-    @available(*, deprecated, message: "use localRTCEAGLVideoView")
+    public var remoteVideoView:RTCMTLVideoView?{
+        get {
+            return controller?.remonView?.remoteVideoView
+        }
+    }
+    
+    public var localVideoView:RTCMTLVideoView? {
+        get {
+            return controller?.remonView?.localVideoView
+        }
+    }
+    #endif
+    
+    @available(*, deprecated, message: "use localVideoView")
     public var localRTCCameraPreviewView:RemonCameraPreviewView? {
         get {
             return nil; //controller?.remonView?.localRTCCameraPreviewView
         }
     }
+    
 }
 
 
@@ -476,4 +548,5 @@ extension RemonClient {
         session.unlockForConfiguration()
         //
     }
+    
 }

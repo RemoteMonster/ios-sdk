@@ -1,3 +1,11 @@
+## 2.6.13
+- added a new feature and functionality for conference call
+- updated the video renderer to METAL video rendere
+- renamed the localEAGLVideoView to localVideoView
+- renamed the remoteEAGLVideoView to remoteVideoView
+- fixed an issue what the viewer has requested observing to local capturer
+- fixed minor bugs
+
 ## 2.6.12
 - compiled with Swift 5.1.2(XCode 11.2)
 - added capturer manager for managing local capturer and local video stream

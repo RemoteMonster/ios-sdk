@@ -249,14 +249,6 @@ typedef SWIFT_ENUM(NSInteger, RemonAudioMode, closed) {
   RemonAudioModeMusic = 1,
 };
 
-
-///
-SWIFT_PROTOCOL("_TtP13RemoteMonster22RemonCallBlockSettable_")
-@protocol RemonCallBlockSettable
-- (void)onConnectWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
-- (void)onFetchWithBlock:(void (^ _Nonnull)(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull))block;
-@end
-
 @class RemonConfig;
 @class UIView;
 
@@ -314,7 +306,7 @@ SWIFT_CLASS_NAMED("RemonClient")
 
 /// P2P 영상통화 클래스
 SWIFT_CLASS("_TtC13RemoteMonster9RemonCall")
-@interface RemonCall : RemonClient <RemonCallBlockSettable>
+@interface RemonCall : RemonClient
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 ///
 - (void)connect:(NSString * _Nonnull)ch :(RemonConfig * _Nullable)config;
@@ -329,7 +321,6 @@ SWIFT_CLASS("_TtC13RemoteMonster9RemonCall")
 ///
 - (void)onFetchWithBlock:(void (^ _Nonnull)(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull))block;
 @end
-
 
 @protocol RTCVideoCapturerDelegate;
 
@@ -388,9 +379,8 @@ typedef SWIFT_ENUM(NSInteger, RemonChannelType, closed) {
   RemonChannelTypeP2p = 0,
   RemonChannelTypeViewer = 1,
   RemonChannelTypeBroadcast = 2,
+  RemonChannelTypeRoom = 3,
 };
-
-
 
 
 
@@ -416,11 +406,16 @@ enum RemonCloseType : NSInteger;
 - (void)onRemoteVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
 /// 로컬 비디오 사이즈 변경시 호출
 - (void)onLocalVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
+- (void)onRoomEventWithBlock:(void (^ _Nonnull)(NSString * _Nonnull, NSString * _Nonnull))block;
 @end
+
+
 
 enum objc_RemonBandwidth : NSInteger;
 
 @interface RemonClient (SWIFT_EXTENSION(RemoteMonster))
+///
+- (NSInteger)getCurrentRemonState SWIFT_WARN_UNUSED_RESULT;
 /// 현재 상태를 문자열로 얻어옵니다.
 - (NSString * _Nonnull)getCurruntStateString SWIFT_WARN_UNUSED_RESULT;
 /// webrtc 연결 종료
@@ -468,6 +463,13 @@ typedef SWIFT_ENUM(NSInteger, RemonCloseType, closed) {
   RemonCloseTypeOTHER_UNEXPECTED = 3,
 };
 
+
+///
+SWIFT_CLASS("_TtC13RemoteMonster15RemonConference")
+@interface RemonConference : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class RTCIceServer;
 
 /// Remon을 실행하기 전에 여러가지 통신/방송 상태를 미리 설정할 필요가 있음. 필수적으로
@@ -504,7 +506,6 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 /// 송출할 비디오의 frames per second. 기본값은 30. 네트워크 상태에 따라 변경됨.
 @property (nonatomic) NSInteger videoFps;
 @property (nonatomic) BOOL autoCaptureStart;
-/// RemonChannelType 설정 : P2P, BROADCAST, VIEWER
 @property (nonatomic) enum RemonChannelType channelType;
 /// 전송 전용(방송) 여부 설정
 @property (nonatomic, copy) NSString * _Nonnull sendonly;
@@ -522,6 +523,28 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic, copy) NSString * _Nonnull userMeta;
 @property (nonatomic) RTCLoggingSeverity debugLevel;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC13RemoteMonster16RemonParticipant")
+@interface RemonParticipant : RemonClient
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+///
+- (void)create:(NSString * _Nonnull)name config:(RemonConfig * _Nullable)config;
+///
+- (void)joinWithChId:(NSString * _Nonnull)chId config:(RemonConfig * _Nullable)config;
+///
+- (void)joinWithChId:(NSString * _Nonnull)chId;
+/// 목록을 가져 옵니다.
+/// \param complete 패치 완료 블럭. error 인자가 nil 이라면 RemonSearchResult 목록을 전달 합니다.
+///
+- (void)fetchChannelsWithRoomName:(NSString * _Nonnull)roomName complete:(void (^ _Nonnull)(NSArray<RemonSearchResult *> * _Nullable))complete;
+@end
+
+
+@interface RemonParticipant (SWIFT_EXTENSION(RemoteMonster))
+- (void)onCreateWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
+- (void)onJoinWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 @end
 
 
