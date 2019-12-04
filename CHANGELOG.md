@@ -1,6 +1,6 @@
 ## 2.6.13
 - added a new feature and functionality for conference call
-- updated the video renderer to METAL video rendere
+- updated the video renderer to METAL video renderer
 - renamed the localEAGLVideoView to localVideoView
 - renamed the remoteEAGLVideoView to remoteVideoView
 - fixed an issue what the viewer has requested observing to local capturer
