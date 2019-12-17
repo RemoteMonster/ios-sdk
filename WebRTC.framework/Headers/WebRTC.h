@@ -89,5 +89,7 @@
 #import <WebRTC/RTCVideoEncoderVP9.h>
 #import <WebRTC/RTCNativeI420Buffer.h>
 #import <WebRTC/RTCNativeMutableI420Buffer.h>
+#import <WebRTC/RTCRemonAudioDevice.h>
+#import <WebRTC/RTCRemonAudioProcessing.h>
 #import <WebRTC/RTCCallbackLogger.h>
 #import <WebRTC/RTCFileLogger.h>

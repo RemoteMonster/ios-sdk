@@ -182,11 +182,19 @@
 		</data>
 		<key>Headers/RTCPeerConnectionFactory.h</key>
 		<data>
-		w9UCsqZqB0nii4+Mz7EzEgxgfSQ=
+		MMRPFIUjeeVv22zl1DYWSL0Vkgs=
 		</data>
 		<key>Headers/RTCPeerConnectionFactoryOptions.h</key>
 		<data>
 		vzpxfM/MZ8bVlOF1vOyA4Ysh9dQ=
+		</data>
+		<key>Headers/RTCRemonAudioDevice.h</key>
+		<data>
+		VWtkQyzCW8TjBOpIP2F9KPyjcP8=
+		</data>
+		<key>Headers/RTCRemonAudioProcessing.h</key>
+		<data>
+		sWeOatZDsyj93sNNxdCCi2tBPCk=
 		</data>
 		<key>Headers/RTCRtcpParameters.h</key>
 		<data>
@@ -338,11 +346,11 @@
 		</data>
 		<key>Headers/WebRTC.h</key>
 		<data>
-		+jetrwlUYvz5+wWJ9Jbcr7mw9tA=
+		VIiI+kaWOUYseVVeTC+eucEZO/8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		aajY2I/+6gKnd57x3UnUDJeX5+k=
+		bGuCM8G5ZS6wFV5FBKEqc5a2bnw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -839,11 +847,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w9UCsqZqB0nii4+Mz7EzEgxgfSQ=
+			MMRPFIUjeeVv22zl1DYWSL0Vkgs=
 			</data>
 			<key>hash2</key>
 			<data>
-			lkNgS9iZLrFmiKof7omtQeIh7pOaXK/S1MLHmv+B3MA=
+			4d2Ey/NbrPBr0Yr3RmUy+Di8nNplbVjpIUNOKjRLAL4=
 			</data>
 		</dict>
 		<key>Headers/RTCPeerConnectionFactoryOptions.h</key>
@@ -855,6 +863,28 @@
 			<key>hash2</key>
 			<data>
 			dCxVruYPhm5HOTHV+bv0ME0Ni9fbOM1lwVwCrxMJA+0=
+			</data>
+		</dict>
+		<key>Headers/RTCRemonAudioDevice.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			VWtkQyzCW8TjBOpIP2F9KPyjcP8=
+			</data>
+			<key>hash2</key>
+			<data>
+			1J8Yw4UTa5kThxhJctVsADjIoaItVwwDYd/tC6PlwTw=
+			</data>
+		</dict>
+		<key>Headers/RTCRemonAudioProcessing.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sWeOatZDsyj93sNNxdCCi2tBPCk=
+			</data>
+			<key>hash2</key>
+			<data>
+			jDTFS8zfyk7hZ0ZDotNowiquhxtEvgiAz/9rQUK9SCQ=
 			</data>
 		</dict>
 		<key>Headers/RTCRtcpParameters.h</key>
@@ -1268,11 +1298,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+jetrwlUYvz5+wWJ9Jbcr7mw9tA=
+			VIiI+kaWOUYseVVeTC+eucEZO/8=
 			</data>
 			<key>hash2</key>
 			<data>
-			wYjIXY05ro3ckce5oHsf+9ZJP8hazNIUqrx2rTm34WY=
+			nZ3Td50TSozzssRZ/zXWyOuJmNZx9op2a57k0qpLSYs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

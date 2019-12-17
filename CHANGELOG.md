@@ -1,3 +1,8 @@
+## 2.6.14
+- added a armv7 archiechture
+- refactored a getting stat function
+- updated remon-webrtc library v1.0.29078.2(m78 based)
+
 ## 2.6.13
 - added a new feature and functionality for conference call
 - updated the video renderer to METAL video renderer

@@ -23,6 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 @class RTCVideoSource;
 @class RTCVideoTrack;
 @class RTCPeerConnectionFactoryOptions;
+
+@protocol RTCRemonAudioDeviceDelegate;
+@class RTCRemonAudioProcessing;
+
 @protocol RTCPeerConnectionDelegate;
 @protocol RTCVideoDecoderFactory;
 @protocol RTCVideoEncoderFactory;
@@ -75,6 +79,18 @@ RTC_OBJC_EXPORT
 
 /* Stop an active AecDump recording */
 - (void)stopAecDump;
+
+
+
+
+
+
+/* Initialize object with injectable video encoder/decoder factories */
+- (instancetype)initWithEncoderFactory:(nullable id<RTCVideoEncoderFactory>)encoderFactory
+                        decoderFactory:(nullable id<RTCVideoDecoderFactory>)decoderFactory
+                    audioDeviceInterface:(nullable id<RTCRemonAudioDeviceDelegate>)audioDeviceInterface
+                       audioProcessing:(nullable RTCRemonAudioProcessing*)audioProcessing;
+
 
 @end
 

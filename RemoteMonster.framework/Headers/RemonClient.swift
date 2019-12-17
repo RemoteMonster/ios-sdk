@@ -74,6 +74,11 @@ public class RemonClient:NSObject {
         }
     }
     
+    
+    internal var simulcast:Bool = false
+    
+    
+    
 
     // IBInspectable
     /** video codec H264 | VP8. default is H264 */
@@ -228,11 +233,11 @@ extension RemonClient {
      대역폭 전환
      */
     public func switchBandWidth(bandwidth:RemonBandwidth) {
-        controller?.switchBandWidth(bandwidth: bandwidth)
+        controller?.switchSimulcastLayer(bandwidth: bandwidth)
     }
     
-    @objc public func objc_switchBandWidth(bandwidth:objc_RemonBandwidth) {
-        controller?.switchBandWidth(bandwidth: bandwidth)
+    @objc public func switchBandWidth(bandwidth:objc_RemonBandwidth) {
+        controller?.switchSimulcastLayer(bandwidth: bandwidth)
     }
     
     /**
