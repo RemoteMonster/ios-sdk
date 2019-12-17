@@ -14,7 +14,7 @@ RemoteMonster - Livecast Management in the Cloud
 # Podfile
 use_frameworks!
 target 'MyApp' do
-  pod 'RemoteMonster', '~> 2.6.13'
+  pod 'RemoteMonster', '~> 2.6.14'
 end
 ```
 
@@ -31,6 +31,9 @@ pod install
 ## Examples
 ### Base Example( P2P Call, Cast )
 * [source](https://github.com/RemoteMonster/ios-sdk/tree/master/examples/BaseExamples)
+
+### Simple Conference
+* [source](https://github.com/RemoteMonster/ios-sdk/tree/master/examples/SimpleConference)
 
 ### External Sample Capturer
 * [source](https://github.com/RemoteMonster/ios-sdk/tree/master/examples/RemonCapturer)
