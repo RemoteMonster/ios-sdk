@@ -75,10 +75,6 @@ public class RemonClient:NSObject {
     }
     
     
-    internal var simulcast:Bool = false
-    
-    
-    
 
     // IBInspectable
     /** video codec H264 | VP8. default is H264 */
@@ -150,6 +146,12 @@ public class RemonClient:NSObject {
     
     /// 시뮬레이터에서 사용할 동영상 파일명
     @IBInspectable public var videoFilePathForSimulator:String?
+    
+    
+    /// ICE Server 목록
+    @objc public var iceServers:[RTCIceServer] = []
+
+    
     
     
     internal override init() {
@@ -229,14 +231,15 @@ extension RemonClient {
         controller?.closeRemon()
     }
     
+    
     /**
      대역폭 전환
      */
-    public func switchBandWidth(bandwidth:RemonBandwidth) {
+    public func switchSimulcastLayer(bandwidth:RemonBandwidth) {
         controller?.switchSimulcastLayer(bandwidth: bandwidth)
     }
     
-    @objc public func switchBandWidth(bandwidth:objc_RemonBandwidth) {
+    @objc public func switchSimulcastLayer(bandwidth:objc_RemonBandwidth) {
         controller?.switchSimulcastLayer(bandwidth: bandwidth)
     }
     
@@ -387,6 +390,14 @@ extension RemonClient {
         controller?.setRemoteAudioEnabled(isEnabled: false)
     }
     
+    
+    public func switchBandWidth(bandwidth:RemonBandwidth) {
+        controller?.switchSimulcastLayer(bandwidth: bandwidth)
+    }
+    
+    @objc public func switchBandWidth(bandwidth:objc_RemonBandwidth) {
+        controller?.switchSimulcastLayer(bandwidth: bandwidth)
+    }
 }
 
 

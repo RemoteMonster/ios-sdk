@@ -10,6 +10,9 @@ import Foundation
 
 
 @objc public class RemonParticipant: RemonClient {
+    /// 시물캐스트 여부 : 방송
+    @IBInspectable public var simulcast:Bool = false
+    
     private var broardcast:Bool {
         get {
             if self.channelType == RemonChannelType.room {

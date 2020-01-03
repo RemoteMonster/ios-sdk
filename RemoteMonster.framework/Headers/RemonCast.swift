@@ -10,6 +10,8 @@ import UIKit
 
 /***/
 @objc public class RemonCast: RemonClient {
+    /// 시물캐스트 여부 : 방송
+    @IBInspectable public var simulcast:Bool = false
     
     private var broardcast:Bool {
         get {
