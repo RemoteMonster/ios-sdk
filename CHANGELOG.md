@@ -1,3 +1,18 @@
+## 2.6.16
+- Add a function for setting name and channelId to the RemonCast
+- Add a feature for selective candidate
+- Update error codes
+- Modify closing routine in error handler
+- Fix close type received disconnect message
+- Fix concurrent to access property
+- Fix reconnecting if the client has closed
+- Fix RemonError
+
+
+## 2.6.15
+- Add a feature for simulcast
+- Remove some unused properties
+
 ## 2.6.14
 - added a armv7 archiechture
 - refactored a getting stat function
