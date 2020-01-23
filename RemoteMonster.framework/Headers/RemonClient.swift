@@ -16,13 +16,12 @@ import Foundation
 @IBDesignable
 public class RemonClient:NSObject {
     var controller: RemonClientController? = nil
-    var currentRemonState:RemonState?
         
-    internal var channelType:RemonChannelType = .p2p
     internal var autoReJoin_:Bool = false
     internal var firstInit:Bool = false
     internal var sendonly:Bool = false
     internal var tryReConnecting:Bool = false
+    
     
     /** 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부 */
     public var autoCaptureStart:Bool = true
@@ -73,6 +72,14 @@ public class RemonClient:NSObject {
             return RemonCapturerManager.getInstance().videoCapturer
         }
     }
+    
+    
+
+    /// ICE Server 목록
+    @objc public var iceServers:[RTCIceServer] = []
+
+    /// Selective Candidate
+    @objc public var selectiveCandidate = RemonConfig.SelectiveCandidate.Default
     
     
 
@@ -148,9 +155,6 @@ public class RemonClient:NSObject {
     @IBInspectable public var videoFilePathForSimulator:String?
     
     
-    /// ICE Server 목록
-    @objc public var iceServers:[RTCIceServer] = []
-
     
     
     
@@ -187,7 +191,7 @@ extension RemonClient {
     /**
      */
     @objc public func getCurrentRemonState() -> Int {
-        if let status = self.currentRemonState {
+        if let status = self.controller?.remon?.context.state {
             return status.rawValue
         } else {
             return RemonState.CLOSE.rawValue
@@ -198,24 +202,18 @@ extension RemonClient {
      */
     @objc public func getCurruntStateString() -> String {
         let stateString = "UNKNOWN"
-        if let state = self.currentRemonState  {
+        if let state = self.controller?.remon?.context.state  {
             switch state {
             case RemonState.CLOSE:
                 return "CLOSE"
             case RemonState.CONNECT:
-                return "COMPLETE"
+                return "CONNECT"
             case RemonState.COMPLETE:
                 return "COMPLETE"
             case RemonState.CREATE:
                 return "CREATE"
-            case RemonState.FAIL:
-                return "FAIL"
-            case RemonState.ICEDISCONNECT:
-                return "ICEDISCONNECT"
             case RemonState.INIT:
                 return "INIT"
-            case RemonState.EXIT:
-                return "EXIT"
             default:
                 return stateString
             }
@@ -228,7 +226,13 @@ extension RemonClient {
      webrtc 연결 종료
      */
     @objc public func closeRemon() {
-        controller?.closeRemon()
+        if let state = controller?.remon?.context.state {
+            if state != RemonState.CLOSE {
+                controller?.remon?.context.requestClose(type: .MINE)
+            }
+        } else {
+            controller?.closeRemon()
+        }
     }
     
     
@@ -323,23 +327,23 @@ extension RemonClient {
         complete: @escaping (_ error:RemonError?, _ results:Array<RemonSearchResult>?)->Void) {
         
         
-        var restUrl:String = ""
-        if let config = self.remonConfig {
-            restUrl = config.restUrl
-        } else {
-            restUrl = self.restUrl
-        }
-        
-        RemonRestManager.fetchChannel(
-            type: type,
-            serviceID: self.serviceId,
-            roomName: roomName,
-            restUrl: restUrl ) { (results) in
-                DispatchQueue.main.async {
-                    complete(nil, results)
-                }
-                
+            var restUrl:String = ""
+            if let config = self.remonConfig {
+                restUrl = config.restUrl
+            } else {
+                restUrl = self.restUrl
             }
+            
+            RemonRestManager.fetchChannel(
+                type: type,
+                serviceID: self.serviceId,
+                roomName: roomName,
+                restUrl: restUrl ) { (results) in
+                    DispatchQueue.main.async {
+                        complete(nil, results)
+                    }
+                    
+                }
         
     }
     
@@ -430,8 +434,6 @@ extension RemonClient : RemonControllerBlockSettable{
     @objc public func onMessage(block:@escaping RemonStringBlock) { controller?.observerBlock.messageRemonChannelBlock = block}
     
     @objc public func onObjcError(block:@escaping ((_:NSError) -> Void)) { controller?.observerBlock.objc_errorRemonBlock = block}
-    
-    @objc public func onRetry(block:@escaping ((_:Bool) -> Void)) { controller?.observerBlock.tryReConnect = block}
     
     @objc public func onRemonStatReport(block:@escaping (_:RemonStatReport)->Void) {controller?.observerBlock.remonStatBlock = block}
     

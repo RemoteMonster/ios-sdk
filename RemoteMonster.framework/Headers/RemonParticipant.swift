@@ -12,29 +12,10 @@ import Foundation
 @objc public class RemonParticipant: RemonClient {
     /// 시물캐스트 여부 : 방송
     @IBInspectable public var simulcast:Bool = false
-    
-    private var broardcast:Bool {
-        get {
-            if self.channelType == RemonChannelType.room {
-                return true
-            } else {
-                return false
-            }
-        }
-        set(broardcast) {
-            if broardcast {
-                self.channelType = RemonChannelType.room
-            } else {
-                self.channelType = RemonChannelType.viewer
-            }
-            
-            self.remonConfig?.channelType = self.channelType
-        }
-    }
+
     
     override public init() {
         super.init()
-        self.broardcast = true
     }
     
     /**
@@ -42,7 +23,6 @@ import Foundation
      */
     @objc(create:config:)
     public func create( name:String, _ config:RemonConfig? = nil) {
-        self.broardcast = true
         controller?.createRoom(client:self, name: name, config: config)
     }
     
@@ -51,7 +31,6 @@ import Foundation
      */
     @objc(joinWithChId:config:)
     public func join(chId: String, _ config:RemonConfig? = nil) {
-        self.broardcast = false
         controller?.joinCast(client:self, chID: chId, config: config)
     }
     
@@ -60,7 +39,6 @@ import Foundation
      */
     @objc(joinWithChId:)
     public func join(chId: String) {
-        self.broardcast = false
         controller?.joinCast(client:self, chID: chId, config: nil)
     }
     
@@ -81,10 +59,7 @@ import Foundation
         self.onComplete { [weak self] in
             print("[RemonParticipant.onCreate]")
             if let room = self {
-                var chType = room.channelType
-                if let config = room.remonConfig {
-                    chType = config.channelType
-                }
+                let chType = room.controller?.remon?.context.channelType
                 if chType == .room {
                     block(room.channelID)
                 }
@@ -97,10 +72,7 @@ import Foundation
             print("[RemonParticipant.onJoin]")
             
             if let room = self {
-                var chType = room.channelType
-                if let config = room.remonConfig {
-                    chType = config.channelType
-                }
+                let chType = room.controller?.remon?.context.channelType
                 if chType == .viewer {
                     block(room.channelID)
                 }

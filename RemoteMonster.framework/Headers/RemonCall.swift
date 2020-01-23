@@ -15,7 +15,6 @@ import UIKit
     override public init() {
         print("[RemonCall.init]")
         super.init()
-        self.channelType = RemonChannelType.p2p
     }
     
     /***/

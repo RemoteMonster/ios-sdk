@@ -252,8 +252,9 @@ typedef SWIFT_ENUM(NSInteger, RemonAudioMode, closed) {
 };
 
 @class RemonConfig;
-@class UIView;
 @class RTCIceServer;
+enum SelectiveCandidate : NSInteger;
+@class UIView;
 
 /// 통화(RemonCall), 방송(RemonCast) 공통 클래스
 SWIFT_CLASS_NAMED("RemonClient")
@@ -266,6 +267,10 @@ SWIFT_CLASS_NAMED("RemonClient")
 /// 외부 캡처러 사용 여부 설정
 @property (nonatomic) BOOL useExternalCapturer;
 @property (nonatomic, copy) NSString * _Nullable channelID;
+/// ICE Server 목록
+@property (nonatomic, copy) NSArray<RTCIceServer *> * _Nonnull iceServers;
+/// Selective Candidate
+@property (nonatomic) enum SelectiveCandidate selectiveCandidate;
 /// video codec H264 | VP8. default is H264
 @property (nonatomic, copy) NSString * _Nonnull videoCodec;
 /// 오디오 전용 여부 선택
@@ -301,8 +306,6 @@ SWIFT_CLASS_NAMED("RemonClient")
 @property (nonatomic, weak) IBOutlet UIView * _Nullable localView;
 /// 시뮬레이터에서 사용할 동영상 파일명
 @property (nonatomic, copy) NSString * _Nullable videoFilePathForSimulator;
-/// ICE Server 목록
-@property (nonatomic, copy) NSArray<RTCIceServer *> * _Nonnull iceServers;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -368,7 +371,12 @@ SWIFT_CLASS("_TtC13RemoteMonster9RemonCast")
 - (void)joinWithChId:(NSString * _Nonnull)chId AndConfig:(RemonConfig * _Nullable)config;
 - (void)joinWithChId:(NSString * _Nonnull)chId;
 /// 방송을 생성 합니다.
-/// - Parameter config: 이 인자를 전달 하면 RemonCast의 설정이 무시 되고, config의 설정 값을 따릅니다.
+/// - Parameters:
+/// - name: 목록에 표시할 이름
+/// - channelId: 채널 아이디
+/// - config: 이 인자를 전달 하면 RemonCast의 설정이 무시 되고, config의 설정 값을 따릅니다.
+- (void)createWithName:(NSString * _Nonnull)name channelId:(NSString * _Nonnull)channelId config:(RemonConfig * _Nullable)config;
+/// 방송을 생성합니다.
 - (void)create:(RemonConfig * _Nullable)config;
 /// 방송 목록을 가져 옵니다.
 /// - Parameter complete: 패치 완료 블럭. error 인자가 nil 이라면 RemonSearchResult 목록을 전달 합니다.
@@ -407,7 +415,6 @@ enum RemonCloseType : NSInteger;
 /// 메시지 수신 콜백
 - (void)onMessageWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
-- (void)onRetryWithBlock:(void (^ _Nonnull)(BOOL))block;
 - (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
 /// 원격측 비디오 사이즈 변경시 호출
 - (void)onRemoteVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
@@ -492,6 +499,8 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic, copy) NSString * _Nonnull logUrl;
 /// ICE 서버 목록
 @property (nonatomic, copy) NSArray<RTCIceServer *> * _Nonnull iceServers;
+/// selective candidate
+@property (nonatomic) enum SelectiveCandidate selectiveCandidate;
 /// RemoteMonster서버로부터 발급받은 인증 키
 @property (nonatomic, copy) NSString * _Nonnull key;
 /// RemoteMonster API를 사용하기 위해 필요한 서비스 id. Remotemonster 홈페이지에서 요청하여 받는다.
@@ -513,7 +522,6 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 /// 송출할 비디오의 frames per second. 기본값은 30. 네트워크 상태에 따라 변경됨.
 @property (nonatomic) NSInteger videoFps;
 @property (nonatomic) BOOL autoCaptureStart;
-@property (nonatomic) enum RemonChannelType channelType;
 /// 전송 전용(방송) 여부 설정
 @property (nonatomic, copy) NSString * _Nonnull sendonly;
 @property (nonatomic, copy) NSString * _Nonnull id;
@@ -535,6 +543,13 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic) BOOL simulcast;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, SelectiveCandidate, closed) {
+  SelectiveCandidateDefault = 0,
+  SelectiveCandidateRelay = 1,
+  SelectiveCandidateRoute = 2,
+  SelectiveCandidateAuto = 3,
+};
 
 
 SWIFT_CLASS("_TtC13RemoteMonster16RemonParticipant")
@@ -612,23 +627,18 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonStatReport")
 /// Remon의 상태
 /// INIT: Remon을 생성하여 서버와 연결되기까지 과정을 의미
 typedef SWIFT_ENUM(NSInteger, RemonState, closed) {
+///
+  RemonStateREADY = 0,
 /// 객체를 생성하여 서버와 웹소켓으로 연결되는 과정의 상태를 의미
-  RemonStateINIT = 0,
-/// 채널을 생성하고 상대의 연결을 기다리고 있을 때의 상태
-  RemonStateWAIT = 1,
+  RemonStateINIT = 1,
+/// 채널 생성및 접속이 완료된 상황. 통화인 경우 상대편 기다리는 상태
+  RemonStateCREATE = 2,
 /// 상대편 채널에 접속중일 때의 상태
-  RemonStateCONNECT = 2,
-/// 상호간에 연결이 완료되었을 때의 상태
-  RemonStateCREATE = 3,
+  RemonStateCONNECT = 3,
 /// 방송 생성 후 상태
   RemonStateCOMPLETE = 4,
-  RemonStateTRYRECONNECT = 5,
-/// 통신 연결을 수행하다가 오류가 발생하였을 때의 상태
-  RemonStateFAIL = 6,
-  RemonStateICEDISCONNECT = 7,
 /// 통신 연결 후 빠져나갔을 때의 상태
-  RemonStateEXIT = 8,
-  RemonStateCLOSE = 9,
+  RemonStateCLOSE = 5,
 };
 
 
@@ -1030,8 +1040,9 @@ typedef SWIFT_ENUM(NSInteger, RemonAudioMode, closed) {
 };
 
 @class RemonConfig;
-@class UIView;
 @class RTCIceServer;
+enum SelectiveCandidate : NSInteger;
+@class UIView;
 
 /// 통화(RemonCall), 방송(RemonCast) 공통 클래스
 SWIFT_CLASS_NAMED("RemonClient")
@@ -1044,6 +1055,10 @@ SWIFT_CLASS_NAMED("RemonClient")
 /// 외부 캡처러 사용 여부 설정
 @property (nonatomic) BOOL useExternalCapturer;
 @property (nonatomic, copy) NSString * _Nullable channelID;
+/// ICE Server 목록
+@property (nonatomic, copy) NSArray<RTCIceServer *> * _Nonnull iceServers;
+/// Selective Candidate
+@property (nonatomic) enum SelectiveCandidate selectiveCandidate;
 /// video codec H264 | VP8. default is H264
 @property (nonatomic, copy) NSString * _Nonnull videoCodec;
 /// 오디오 전용 여부 선택
@@ -1079,8 +1094,6 @@ SWIFT_CLASS_NAMED("RemonClient")
 @property (nonatomic, weak) IBOutlet UIView * _Nullable localView;
 /// 시뮬레이터에서 사용할 동영상 파일명
 @property (nonatomic, copy) NSString * _Nullable videoFilePathForSimulator;
-/// ICE Server 목록
-@property (nonatomic, copy) NSArray<RTCIceServer *> * _Nonnull iceServers;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1146,7 +1159,12 @@ SWIFT_CLASS("_TtC13RemoteMonster9RemonCast")
 - (void)joinWithChId:(NSString * _Nonnull)chId AndConfig:(RemonConfig * _Nullable)config;
 - (void)joinWithChId:(NSString * _Nonnull)chId;
 /// 방송을 생성 합니다.
-/// - Parameter config: 이 인자를 전달 하면 RemonCast의 설정이 무시 되고, config의 설정 값을 따릅니다.
+/// - Parameters:
+/// - name: 목록에 표시할 이름
+/// - channelId: 채널 아이디
+/// - config: 이 인자를 전달 하면 RemonCast의 설정이 무시 되고, config의 설정 값을 따릅니다.
+- (void)createWithName:(NSString * _Nonnull)name channelId:(NSString * _Nonnull)channelId config:(RemonConfig * _Nullable)config;
+/// 방송을 생성합니다.
 - (void)create:(RemonConfig * _Nullable)config;
 /// 방송 목록을 가져 옵니다.
 /// - Parameter complete: 패치 완료 블럭. error 인자가 nil 이라면 RemonSearchResult 목록을 전달 합니다.
@@ -1185,7 +1203,6 @@ enum RemonCloseType : NSInteger;
 /// 메시지 수신 콜백
 - (void)onMessageWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
-- (void)onRetryWithBlock:(void (^ _Nonnull)(BOOL))block;
 - (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
 /// 원격측 비디오 사이즈 변경시 호출
 - (void)onRemoteVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
@@ -1270,6 +1287,8 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic, copy) NSString * _Nonnull logUrl;
 /// ICE 서버 목록
 @property (nonatomic, copy) NSArray<RTCIceServer *> * _Nonnull iceServers;
+/// selective candidate
+@property (nonatomic) enum SelectiveCandidate selectiveCandidate;
 /// RemoteMonster서버로부터 발급받은 인증 키
 @property (nonatomic, copy) NSString * _Nonnull key;
 /// RemoteMonster API를 사용하기 위해 필요한 서비스 id. Remotemonster 홈페이지에서 요청하여 받는다.
@@ -1291,7 +1310,6 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 /// 송출할 비디오의 frames per second. 기본값은 30. 네트워크 상태에 따라 변경됨.
 @property (nonatomic) NSInteger videoFps;
 @property (nonatomic) BOOL autoCaptureStart;
-@property (nonatomic) enum RemonChannelType channelType;
 /// 전송 전용(방송) 여부 설정
 @property (nonatomic, copy) NSString * _Nonnull sendonly;
 @property (nonatomic, copy) NSString * _Nonnull id;
@@ -1313,6 +1331,13 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic) BOOL simulcast;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, SelectiveCandidate, closed) {
+  SelectiveCandidateDefault = 0,
+  SelectiveCandidateRelay = 1,
+  SelectiveCandidateRoute = 2,
+  SelectiveCandidateAuto = 3,
+};
 
 
 SWIFT_CLASS("_TtC13RemoteMonster16RemonParticipant")
@@ -1390,23 +1415,18 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonStatReport")
 /// Remon의 상태
 /// INIT: Remon을 생성하여 서버와 연결되기까지 과정을 의미
 typedef SWIFT_ENUM(NSInteger, RemonState, closed) {
+///
+  RemonStateREADY = 0,
 /// 객체를 생성하여 서버와 웹소켓으로 연결되는 과정의 상태를 의미
-  RemonStateINIT = 0,
-/// 채널을 생성하고 상대의 연결을 기다리고 있을 때의 상태
-  RemonStateWAIT = 1,
+  RemonStateINIT = 1,
+/// 채널 생성및 접속이 완료된 상황. 통화인 경우 상대편 기다리는 상태
+  RemonStateCREATE = 2,
 /// 상대편 채널에 접속중일 때의 상태
-  RemonStateCONNECT = 2,
-/// 상호간에 연결이 완료되었을 때의 상태
-  RemonStateCREATE = 3,
+  RemonStateCONNECT = 3,
 /// 방송 생성 후 상태
   RemonStateCOMPLETE = 4,
-  RemonStateTRYRECONNECT = 5,
-/// 통신 연결을 수행하다가 오류가 발생하였을 때의 상태
-  RemonStateFAIL = 6,
-  RemonStateICEDISCONNECT = 7,
 /// 통신 연결 후 빠져나갔을 때의 상태
-  RemonStateEXIT = 8,
-  RemonStateCLOSE = 9,
+  RemonStateCLOSE = 5,
 };
 
 

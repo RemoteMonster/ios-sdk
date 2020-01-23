@@ -13,26 +13,9 @@ import UIKit
     /// 시물캐스트 여부 : 방송
     @IBInspectable public var simulcast:Bool = false
     
-    private var broardcast:Bool {
-        get {
-            if self.channelType == RemonChannelType.broadcast {
-                return true
-            } else {
-                return false
-            }
-        }
-        set(broardcast) {
-            if broardcast {
-                self.channelType = RemonChannelType.broadcast
-            } else {
-                self.channelType = RemonChannelType.viewer
-            }
-        }
-    }
     
     override public init() {
         super.init()
-        self.broardcast = true
     }
     
     /**방송에 접속 합니다.
@@ -42,22 +25,28 @@ import UIKit
      */
     @objc(joinWithChId:AndConfig:)
     public func join(chId: String, _ config:RemonConfig? ) {
-        self.broardcast = false
         controller?.joinCast(client:self, chID: chId, config: config)
     }
     @objc(joinWithChId:)
     public func join(chId: String) {
-        self.broardcast = false
         controller?.joinCast(client:self, chID: chId, config: nil)
     }
     
     /**방송을 생성 합니다.
-     - Parameter config: 이 인자를 전달 하면 RemonCast의 설정이 무시 되고, config의 설정 값을 따릅니다.
+     - Parameters:
+        - name: 목록에 표시할 이름
+        - channelId: 채널 아이디
+        - config: 이 인자를 전달 하면 RemonCast의 설정이 무시 되고, config의 설정 값을 따릅니다.
      */
-    @objc public func create(_ config:RemonConfig? = nil) {
-        self.broardcast = true
-        controller?.createCast(client:self, config: config)
+    @objc public func create(name:String, channelId:String, config:RemonConfig? = nil) {
+        controller?.createCast(client:self,name:name,channelId:channelId,config: config)
     }
+    
+    /**방송을 생성합니다.*/
+    @objc public func create(_ config:RemonConfig? = nil) {
+        create( name:"iOS", channelId: "", config: config)
+    }
+    
     
     /**방송 목록을 가져 옵니다.
      - Parameter complete: 패치 완료 블럭. error 인자가 nil 이라면 RemonSearchResult 목록을 전달 합니다.
@@ -75,10 +64,9 @@ import UIKit
     @objc public func onCreate(block: @escaping RemonStringBlock) {
         self.onComplete { [weak self] in
             if let cast = self {
-                var chType = cast.channelType
-                if let config = cast.remonConfig {
-                    chType = config.channelType
-                }
+                let chType = cast.controller?.remon?.context.channelType
+
+                
                 if chType == .broadcast {
                     block(cast.channelID)
                 }
@@ -89,10 +77,8 @@ import UIKit
     @objc public func onJoin(block: @escaping RemonStringBlock) {
         self.onComplete { [weak self] in
             if let cast = self {
-                var chType = cast.channelType
-                if let config = cast.remonConfig {
-                    chType = config.channelType
-                }
+                let chType = cast.controller?.remon?.context.channelType
+
                 if chType == .viewer {
                     block(cast.channelID)
                 }
