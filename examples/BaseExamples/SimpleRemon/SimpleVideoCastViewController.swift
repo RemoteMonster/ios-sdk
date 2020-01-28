@@ -109,9 +109,17 @@ class SimpleVideoCastViewController:UIViewController {
             
             // error 는 RemonError 형식이므로
             // 특정 오류에 대해 예외처리를 세분화 하려면 아래처럼 에러를 구분해 처리합니다.
+            // error 는 RemonError 형식이므로
+            // 특정 오류에 대해 예외처리를 세분화 하려면 아래처럼 에러를 구분해 처리합니다.
             switch error {
-            case .ConnectChannelFailed(_):
+            case .RestInitError(let code, let message):
+                print("[Client.onError] code=\(code),message=\(message)")
                 break
+                
+            case .InitError( let code, let message):
+                print("[Client.onError] code=\(code),message=\(message)")
+                break
+                
                 
             default:
                 break

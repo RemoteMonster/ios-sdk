@@ -70,7 +70,7 @@ class SimpleCallViewController: UIViewController {
             print(error)
         }
         
-        remonCall.useFrontCamera = false
+        remonCall.frontCamera = false
         remonCall.onInit {
             DispatchQueue.main.async {
                 self.boxView.isHidden = true
@@ -108,10 +108,7 @@ class SimpleCallViewController: UIViewController {
                 self.chLabel.text = error.localizedDescription
             }
         }
-        
-        remonCall.onRetry { (completed) in
-            print(completed)
-        }
+    
         
         remonCall.onRemoteVideoSizeChanged { (view, size) in
             print("Debug onRemoteVideoSizeChanged", size)

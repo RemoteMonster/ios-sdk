@@ -62,10 +62,6 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
         self.remonConference?.create{ participant in
             // init master channel
             
-            // 현재 그룹통화는 베타 기간으로 아래의 서버 url을 사용해야 합니다.
-            participant.restUrl = "https://conference.remotemonster.com"
-            participant.wsUrl = "wss://conference.remotemonster.com/ws"
-            
             // 일반적인 RemonClient 설정
             participant.serviceId = "SERVICEID1"
             participant.serviceKey = "1234567890"

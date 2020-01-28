@@ -80,9 +80,6 @@ class SimpleCastViewer: UIViewController {
             }
         }
         
-        self.remonCast.onRetry { (com) in
-            print(com)
-        }
         
         
         self.remonCast.onRemonStatReport { (report) in

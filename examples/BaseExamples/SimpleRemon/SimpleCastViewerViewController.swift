@@ -126,10 +126,7 @@ class SimpleCastViewerViewController: UIViewController {
             self?.socketErr = false
             self?.chLabel.text = "init..."
         }
-        
-        self.remonCast.onRetry { [weak self] (com) in
-           print(self?.debugDescription ?? "")
-        }
+    
         
         
         self.remonCast.onRemonStatReport { [weak self](report) in

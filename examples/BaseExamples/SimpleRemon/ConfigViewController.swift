@@ -70,30 +70,12 @@ class ConfigViewController: UIViewController {
         config.debugMode = self.debugModeSegment.selectedSegmentIndex == 0 ? true:false
         
         switch (self.channelTypeSegment.selectedSegmentIndex) {
-        case 0:
-            config.channelType = .p2p
         case 1:
-            config.channelType = .viewer
-        case 2:
-            config.channelType = .broadcast
-        default:
-            config.channelType = .p2p
-        }
-        
-        
-        if config.channelType == .p2p {
-            let callVC:SimpleCallViewController = self.storyboard?.instantiateViewController(withIdentifier: "SimpleCallViewController") as! SimpleCallViewController
-            callVC.customConfig = config
-            self.show(callVC, sender: self)
-        }
-        
-        if config.channelType == .viewer {
             let searchVC:SampleSerchTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "SampleSerchTableViewController") as! SampleSerchTableViewController
             searchVC.customConfig = config
             self.show(searchVC, sender: self)
-        }
-        
-        if config.channelType == .broadcast {
+            
+        case 2:
             if config.videoCall {
                 let castVC:SimpleVideoCastViewController = self.storyboard?.instantiateViewController(withIdentifier: "SimpleVideoCast") as! SimpleVideoCastViewController
                 castVC.customConfig = config
@@ -103,6 +85,12 @@ class ConfigViewController: UIViewController {
                 castVC.customConfig = config
                 self.show(castVC, sender: self)
             }
+            
+        case 0: fallthrough
+        default:
+            let callVC:SimpleCallViewController = self.storyboard?.instantiateViewController(withIdentifier: "SimpleCallViewController") as! SimpleCallViewController
+            callVC.customConfig = config
+            self.show(callVC, sender: self)
         }
     }
     
