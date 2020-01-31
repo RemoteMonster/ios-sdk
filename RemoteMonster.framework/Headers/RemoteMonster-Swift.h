@@ -522,8 +522,6 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 /// 송출할 비디오의 frames per second. 기본값은 30. 네트워크 상태에 따라 변경됨.
 @property (nonatomic) NSInteger videoFps;
 @property (nonatomic) BOOL autoCaptureStart;
-/// 전송 전용(방송) 여부 설정
-@property (nonatomic, copy) NSString * _Nonnull sendonly;
 @property (nonatomic, copy) NSString * _Nonnull id;
 @property (nonatomic) BOOL debugMode;
 /// 시작시 전면 카메라 사용여부
@@ -541,6 +539,7 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic, copy) NSString * _Nullable videoFilePathForSimulator;
 /// 시뮬캐스트 동작을 위한 플래그(방송)
 @property (nonatomic) BOOL simulcast;
+@property (nonatomic) NSInteger iceDisconnectedTimeout;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1310,8 +1309,6 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 /// 송출할 비디오의 frames per second. 기본값은 30. 네트워크 상태에 따라 변경됨.
 @property (nonatomic) NSInteger videoFps;
 @property (nonatomic) BOOL autoCaptureStart;
-/// 전송 전용(방송) 여부 설정
-@property (nonatomic, copy) NSString * _Nonnull sendonly;
 @property (nonatomic, copy) NSString * _Nonnull id;
 @property (nonatomic) BOOL debugMode;
 /// 시작시 전면 카메라 사용여부
@@ -1329,6 +1326,7 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic, copy) NSString * _Nullable videoFilePathForSimulator;
 /// 시뮬캐스트 동작을 위한 플래그(방송)
 @property (nonatomic) BOOL simulcast;
+@property (nonatomic) NSInteger iceDisconnectedTimeout;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

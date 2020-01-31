@@ -19,9 +19,6 @@ public class RemonClient:NSObject {
         
     internal var autoReJoin_:Bool = false
     internal var firstInit:Bool = false
-    internal var sendonly:Bool = false
-    internal var tryReConnecting:Bool = false
-    
     
     /** 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부 */
     public var autoCaptureStart:Bool = true
@@ -178,7 +175,7 @@ public class RemonClient:NSObject {
     @available(*, deprecated, message: "use localCapturer" )
     public var localSampleCapturer:RemonSampleCapturer?
     
-    // preview 요소 deprecated. 카메라 프리뷰는 실제 전송될 화면과 다를수 있어 의미가 없음. localView 사용
+    // preview 요소 deprecated
     @available(*, deprecated, message: "use localView")
     public weak var localPreView:UIView?
 }
