@@ -1,3 +1,9 @@
+## 2.6.17
+- Add a checking routine for peer connection status
+- Revise some error codes
+- Fix minor bugs
+
+
 ## 2.6.16
 - Add a function for setting name and channelId to the RemonCast
 - Add a feature for selective candidate
