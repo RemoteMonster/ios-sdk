@@ -512,7 +512,8 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 /// 음성만 사용할 경우 false, 영상도 사용할 경우 true
 @property (nonatomic) BOOL videoCall;
 /// 초기 비트레이트
-@property (nonatomic, copy) NSString * _Nonnull startVideoBitrate;
+@property (nonatomic, copy) NSString * _Nonnull videoStartBitrate;
+@property (nonatomic, copy) NSString * _Nonnull startVideoBitrate SWIFT_DEPRECATED_MSG("renamed to videoStartBitrate instead");
 /// 송출할 비디오의 영상 코덱. 기본은 H264이며 VP9, VP8등을 사용할 수 있다.
 @property (nonatomic, copy) NSString * _Nonnull videoCodec;
 /// 송출할 비디오의 가로길이. 기본값은 640. 네트워크 상태에 따라 변경됨.
@@ -1299,7 +1300,8 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 /// 음성만 사용할 경우 false, 영상도 사용할 경우 true
 @property (nonatomic) BOOL videoCall;
 /// 초기 비트레이트
-@property (nonatomic, copy) NSString * _Nonnull startVideoBitrate;
+@property (nonatomic, copy) NSString * _Nonnull videoStartBitrate;
+@property (nonatomic, copy) NSString * _Nonnull startVideoBitrate SWIFT_DEPRECATED_MSG("renamed to videoStartBitrate instead");
 /// 송출할 비디오의 영상 코덱. 기본은 H264이며 VP9, VP8등을 사용할 수 있다.
 @property (nonatomic, copy) NSString * _Nonnull videoCodec;
 /// 송출할 비디오의 가로길이. 기본값은 640. 네트워크 상태에 따라 변경됨.
