@@ -1,3 +1,8 @@
+## 2.6.18
+- Add a checking for unsupported command type
+- Migrate error handling of websocket to OnError command
+- Add a command for Service OP
+
 ## 2.6.17
 - Add a checking routine for peer connection status
 - Revise some error codes

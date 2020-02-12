@@ -14,7 +14,7 @@ RemoteMonster - Livecast Management in the Cloud
 # Podfile
 use_frameworks!
 target 'MyApp' do
-  pod 'RemoteMonster', '~> 2.6.17'
+  pod 'RemoteMonster', '~> 2.6.18'
 end
 ```
 
