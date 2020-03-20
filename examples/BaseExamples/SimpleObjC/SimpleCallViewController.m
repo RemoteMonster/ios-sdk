@@ -32,7 +32,7 @@ BOOL muted = NO;
 - (IBAction)muteLocalAudio:(id)sender {
 //    [self.remonCall muteLocalAudioWithMute:!muted];
 //    muted = !muted;
-    [self.remonCall switchCamera];
+    [self.remonCall switchCameraWithIsMirror:false isToggle:false];
 }
 
 - (IBAction)connectChannel:(id)sender {
@@ -103,10 +103,7 @@ BOOL muted = NO;
 //            
 //        }];
     }];
-    
-    [self.remonCall onRetryWithBlock:^(BOOL completed) {
-        
-    }];
+
     
     [self.remonCall onRemonStatReportWithBlock:^(RemonStatReport * _Nonnull stat) {
         RatingValue *remonRating = [stat getHealthRating];
@@ -140,9 +137,6 @@ BOOL muted = NO;
         
     }];
     
-    [self.remonCall fetchCallsWithIsTest:NO complete:^(NSArray<RemonSearchResult *> * _Nullable list) {
-        
-    }];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

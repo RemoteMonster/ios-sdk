@@ -49,36 +49,22 @@
     self.remonConfig.videoFps = [[self fieldText:self.videoFpsField] integerValue];
     
     NSInteger chType = self.channelTypeSegmentedController.selectedSegmentIndex;
-    switch (chType) {
-    case 0:
-            self.remonConfig.channelType = RemonChannelTypeP2p;
-            break;
-    case 1:
-            self.remonConfig.channelType = RemonChannelTypeViewer;
-            break;
-    case 2:
-            self.remonConfig.channelType = RemonChannelTypeBroadcast;
-            break;
-    default:
-            self.remonConfig.channelType = RemonChannelTypeP2p;
-            break;
-    }
     
     self.remonConfig.restUrl = @"https://signal.remotemonster.com/rest/init";
     self.remonConfig.wsUrl = @"wss://signal.remotemonster.com/ws";
     
     self.remonConfig.autoCaptureStart = self.autoCaptureStartSegmentedController.selectedSegmentIndex == 0;
     self.remonConfig.videoCall = self.videoCallSegmentedController.selectedSegmentIndex == 0;
-    self.remonConfig.useFrontCamera = self.useFrontCameraSegmentedController.selectedSegmentIndex == 0;
+    self.remonConfig.frontCamera = self.useFrontCameraSegmentedController.selectedSegmentIndex == 0;
     self.remonConfig.debugMode = self.debugModeSegmentedController.selectedSegmentIndex == 0;
     
-    if (self.remonConfig.channelType == RemonChannelTypeP2p) {
+    if (chType == 0) {
         SimpleCallViewController *callVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SimpleCallViewController"];
         if (callVC != nil) {
             callVC.customConfig = self.remonConfig;
             [self showViewController:callVC sender:self];
         }
-    } else if (self.remonConfig.channelType == RemonChannelTypeBroadcast) {
+    } else if (chType == 2) {
         SimpleVideoCastViewController *castVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SimpleVideoCastViewController"];
         if (castVC != nil) {
             castVC.customConfig = self.remonConfig;

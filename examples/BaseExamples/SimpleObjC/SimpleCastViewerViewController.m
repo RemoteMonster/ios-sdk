@@ -75,7 +75,7 @@
         
         NSLog(@"[self.remonCast getCurruntStateString] %@", [self.remonCast getCurruntStateString]);
         if ([[self.remonCast getCurruntStateString] isEqualToString:@"COMPLETE"]) {
-                    [self.remonCast switchCamera];
+            
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.fpsLabel setText:[NSString stringWithFormat:@"%ld", [stat remoteFrameRate]]];
