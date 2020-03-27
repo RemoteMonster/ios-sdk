@@ -12,10 +12,11 @@ import UIKit
  P2P 영상통화 클래스
  */
 @objc public class RemonCall: RemonClient {
-    override public init() {
+    public override init() {
         print("[RemonCall.init]")
         super.init()
     }
+    
     
     /***/
     @objc public func connect(_ ch: String, _ config:RemonConfig? = nil) {

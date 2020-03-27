@@ -15,18 +15,26 @@ import Foundation
 @objc(RemonClient)
 @IBDesignable
 public class RemonClient:NSObject {
+    public override init() {
+        print("[RemonClient.init]")
+        super.init()
+        self.controller = RemonClientController()
+    }
+    
+    
+    deinit {
+        print("[RemonClient.deinit]")
+    }
+    
+    
     var controller: RemonClientController? = nil
-        
+    
+    @objc public var remonConfig:RemonConfig = RemonConfig()
+    
+    
     internal var autoReJoin_:Bool = false
     internal var firstInit:Bool = false
     
-    /** 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부 */
-    public var autoCaptureStart:Bool = true
-    
-    /** debug mode.  default is false */
-    public var debugMode:Bool = false
-    
-    @objc public var remonConfig:RemonConfig?
     @objc public var volumeRatio:Double = 1.0 {
         didSet {
             if (self.volumeRatio > 1.0) {
@@ -38,13 +46,6 @@ public class RemonClient:NSObject {
         }
     }
     
-    @objc public var userMeta:String = "" {
-        didSet {
-            if let config = self.remonConfig {
-                config.userMeta = userMeta
-            }
-        }
-    }
     
     @objc public var showRemoteVideoStat = false {
         didSet(isShow) {
@@ -58,78 +59,133 @@ public class RemonClient:NSObject {
         }
     }
     
-    /// 외부 캡처러 사용 여부 설정
-    @objc public var useExternalCapturer:Bool = false
+    
     @objc public var channelID:String?
     
 
+    
     /// 갭처러 객체
-    public var localCapturer: RTCVideoCapturer? {
+    @objc public var localCapturer: RTCVideoCapturer? {
         get {
             return RemonCapturerManager.getInstance().videoCapturer
         }
     }
     
     
-
+    /** 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부 */
+    public var autoCaptureStart:Bool {
+        get { return remonConfig.autoCaptureStart }
+        set(value) { remonConfig.autoCaptureStart = value }
+    }
+    
+    /** debug mode.  default is false */
+    public var debugMode:Bool {
+        get { return remonConfig.debugMode }
+        set(value) { remonConfig.debugMode = value }
+    }
+    
+    @objc public var userMeta:String {
+        set(meta) { remonConfig.userMeta = meta }
+        get { return remonConfig.userMeta }
+    }
+    
+    
+    /// 외부 캡처러 사용 여부 설정
+    @objc public var useExternalCapturer:Bool {
+        get { return remonConfig.useExternalCapturer }
+        set(value) { remonConfig.useExternalCapturer = value }
+    }
+    
     /// ICE Server 목록
-    @objc public var iceServers:[RTCIceServer] = []
+    @objc public var iceServers:[RTCIceServer] {
+        get { return remonConfig.iceServers }
+        set(value) { remonConfig.iceServers = value }
+    }
 
     /// Selective Candidate
-    @objc public var selectiveCandidate = RemonConfig.SelectiveCandidate.Default
+    @objc public var selectiveCandidate:RemonConfig.SelectiveCandidate {
+        get { return remonConfig.selectiveCandidate }
+        set(value) { remonConfig.selectiveCandidate = value }
+    }
     
     
-
     // IBInspectable
     /** video codec H264 | VP8. default is H264 */
-    @IBInspectable public var videoCodec:String = "H264"
+    @IBInspectable public var videoCodec:String {
+        get { return remonConfig.videoCodec }
+        set(value) { remonConfig.videoCodec = value }
+    }
     
     /// 오디오 전용 여부 선택
-    @IBInspectable public var onlyAudio:Bool = false
+    @IBInspectable public var onlyAudio:Bool {
+        get { return !remonConfig.videoCall }
+        set(value) { remonConfig.videoCall = (!value) }
+    }
     
     /// 비디오 가로 크기
-    @IBInspectable public var videoWidth:Int = 640
+    @IBInspectable public var videoWidth:Int {
+        get { return remonConfig.videoWidth }
+        set(value) { remonConfig.videoWidth = value }
+    }
     
     /// 비디오 세로 크기
-    @IBInspectable public var videoHeight:Int = 480
+    @IBInspectable public var videoHeight:Int{
+        get { return remonConfig.videoHeight }
+        set(value) { remonConfig.videoHeight = value }
+    }
     
     /// 초당 프레임 수
-    @IBInspectable public var fps:Int = 24
+    @IBInspectable public var fps:Int{
+        get { return remonConfig.videoFps }
+        set(value) { remonConfig.videoFps = value }
+    }
     
     /// 서비스 아이디
-    @IBInspectable public var serviceId:String = ""
+    @IBInspectable public var serviceId:String{
+        get { return remonConfig.serviceId }
+        set(value) { remonConfig.serviceId = value }
+    }
     
     /// 서비스키
-    @IBInspectable public var serviceKey:String = ""
+    @IBInspectable public var serviceKey:String {
+        get { return remonConfig.key }
+        set(value) { remonConfig.key = value }
+    }
     
     /// 서비스 토큰
-    @IBInspectable public var serviceToken:String = ""
+    @IBInspectable public var serviceToken:String {
+        get { return remonConfig.serviceToken }
+        set(value) { remonConfig.serviceToken = value }
+    }
     
     /// rest api 주소
-    @IBInspectable public var restUrl:String = RemonConfig.REMON_REST_HOST_URL
+    @IBInspectable public var restUrl:String {
+        get { return remonConfig.restUrl }
+        set(value) { remonConfig.restUrl = value }
+    }
     
     /// 웹소켓 주소
-    @IBInspectable public var wsUrl:String = RemonConfig.REMON_WS_URL
+    @IBInspectable public var wsUrl:String {
+        get { return remonConfig.wsUrl }
+        set(value) { remonConfig.wsUrl = value }
+    }
     
     /// log 서버 주소
-    @IBInspectable public var logUrl:String = RemonConfig.REMON_REST_LOG_SERVER
+    @IBInspectable public var logUrl:String {
+        get { return remonConfig.logUrl }
+        set(value) { remonConfig.logUrl = value }
+    }
     
     /// 전면 카메라 시작
-    @IBInspectable public var frontCamera:Bool = true {
-        didSet( isFront ) {
-            if let config = self.remonConfig {
-                config.frontCamera = isFront
-            }
-        }
+    @IBInspectable public var frontCamera:Bool {
+        set( isFront ) { remonConfig.frontCamera = isFront }
+        get { return remonConfig.frontCamera }
     }
     
     /// 카메라 화면 미러모드 동작여부, 화면만 미러로 동작하며, 실제 데이터는 정상 전송
-    @IBInspectable public var mirrorMode:Bool = false {
-        didSet(isMirror) {
-            if let config = self.remonConfig {
-                config.mirrorMode = isMirror
-            }
-        }
+    @IBInspectable public var mirrorMode:Bool {
+        get { return remonConfig.mirrorMode }
+        set( isMirror) { remonConfig.mirrorMode = isMirror }
     }
     
     /**
@@ -138,32 +194,23 @@ public class RemonClient:NSObject {
      false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
      단, 앱이 하나의 방향만을 지원하는 경우 회전이 발생하지 않습니다.
      */
-    @IBInspectable public var fixedCameraRotation:Bool = false
+    @IBInspectable public var fixedCameraRotation:Bool {
+        get { return remonConfig.fixedCameraRotation }
+        set(value) { remonConfig.fixedCameraRotation = value }
+    }
     
     // @IBInspectable public var autoReJoin:Bool
     // @IBInspectable public var audioType:RemonAudioMode
     
     // IBOutlet
-    @IBOutlet dynamic public weak var remoteView:UIView?
-    @IBOutlet dynamic public weak var localView:UIView?
+    @IBOutlet public weak var remoteView:UIView?
+    @IBOutlet public weak var localView:UIView?
     
     
     /// 시뮬레이터에서 사용할 동영상 파일명
-    @IBInspectable public var videoFilePathForSimulator:String?
-    
-    
-    
-    
-    
-    internal override init() {
-        print("[RemonClient.init]")
-        super.init()
-        self.controller = RemonClientController()
-    }
-    
-    
-    deinit {
-        print("[RemonClient.deinit]")
+    @IBInspectable public var videoFilePathForSimulator:String? {
+        get { return remonConfig.videoFilePathForSimulator }
+        set(value) { remonConfig.videoFilePathForSimulator = value }
     }
     
     
@@ -184,6 +231,9 @@ public class RemonClient:NSObject {
  클라이언트에서 호출하는 메쏘드들에 대한 인터페이스 확장 클래스
  */
 extension RemonClient {
+    @objc public func setConfig( config:RemonConfig ) {
+        remonConfig.setConfig(other: config)
+    }
     
     /**
      */
@@ -322,26 +372,16 @@ extension RemonClient {
         type:RemonSearchType,
         roomName:String?,
         complete: @escaping (_ error:RemonError?, _ results:Array<RemonSearchResult>?)->Void) {
-        
-        
-            var restUrl:String = ""
-            if let config = self.remonConfig {
-                restUrl = config.restUrl
-            } else {
-                restUrl = self.restUrl
-            }
-            
             RemonRestManager.fetchChannel(
                 type: type,
                 serviceID: self.serviceId,
                 roomName: roomName,
-                restUrl: restUrl ) { (results) in
+                restUrl: remonConfig.restUrl ) { (results) in
                     DispatchQueue.main.async {
                         complete(nil, results)
                     }
                     
                 }
-        
     }
     
     

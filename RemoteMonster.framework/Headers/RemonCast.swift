@@ -10,13 +10,16 @@ import UIKit
 
 /***/
 @objc public class RemonCast: RemonClient {
+    public override init() {
+        super.init()
+    }
+    
+    
+    
     /// 시물캐스트 여부 : 방송
     @IBInspectable public var simulcast:Bool = false
     
-    
-    override public init() {
-        super.init()
-    }
+
     
     /**방송에 접속 합니다.
      - Parameters:
