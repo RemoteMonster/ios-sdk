@@ -1,3 +1,6 @@
+## 2.6.19
+- Suport XCode 11.4
+
 ## 2.6.18
 - Add a checking for unsupported command type
 - Migrate error handling of websocket to OnError command

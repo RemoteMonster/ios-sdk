@@ -25,7 +25,7 @@ class SampleSerchTableViewController: UIViewController, UITableViewDataSource, U
             }
 
             // 설정된 config를 지정
-            remonCast.remonConfig = customConfig
+            remonCast.remonConfig = customConfig!
         }
         
         remonCast.fetchCasts(complete: { (results) in
