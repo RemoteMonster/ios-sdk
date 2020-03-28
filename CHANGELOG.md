@@ -1,3 +1,8 @@
+## 2.7.0
+- Migrate RemoteMonster.framework to RemoteMonster.xcframework 
+  (xcframework is supported on cooapods 1.9.0 and higher)
+- Change conference api, interface
+
 ## 2.6.19
 - Suport XCode 11.4
 

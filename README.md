@@ -8,13 +8,13 @@ RemoteMonster - Livecast Management in the Cloud
 
 ## Get SDK
 
-### Package Manager - Cocoapods
+### Package Manager - Cocoapods 1.9.0 or higher
 
 ```ruby
 # Podfile
 use_frameworks!
 target 'MyApp' do
-  pod 'RemoteMonster', '~> 2.6.18'
+pod 'RemoteMonster', '~> 2.7.0'
 end
 ```
 

@@ -9,12 +9,14 @@
 import UIKit
 import RemoteMonster
 
-// 이 샘플은 iOS SDK 2.6.13 이상 버전이 필요합니다.
+// 이 샘플은 iOS SDK 2.7.0 이상 버전이 필요합니다.
 class ConferenceViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var buttonAudio: UIButton!
     
     @IBOutlet weak var roomIdField: UITextField!
     @IBOutlet var viewArray: [UIView]!
+    var availableViews:[Bool]?
+    var error:RemonError?
     
     @IBOutlet weak var messageBottomConstraint: NSLayoutConstraint!
     
@@ -24,11 +26,7 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        UIApplication.shared.isIdleTimerDisabled = true
-         NotificationCenter.default.addObserver(self, selector: #selector(ConferenceViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-         NotificationCenter.default.addObserver(self, selector: #selector(ConferenceViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
+
         RemonClient.setAudioSessionConfiguration(
                    category: AVAudioSession.Category.playAndRecord,
                    mode: AVAudioSession.Mode.videoChat,
@@ -53,63 +51,80 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
         self.remonConference = nil
     }
     
-
-
-    func initRemonConference() {
-        // 객체생성
-        self.remonConference = RemonConference()
-        
-        self.remonConference?.create{ participant in
-            // init master channel
-            
-            // 일반적인 RemonClient 설정
-            participant.serviceId = "SERVICEID1"
-            participant.serviceKey = "1234567890"
-            participant.videoWidth = 640
-            participant.videoHeight = 480
-            
-            // 마스터유저의 localView 지정
-            participant.localView = self.viewArray[0]
-            
-            // 시뮬레이터의 경우 카메라가 없으므로 대체 재생할 mov 파일을 지정해 줍니다.
-            //participant.videoFilePathForSimulator = "samples.mov"
-        }.then { channelName in
-            // 마스터유저가 송출 채널에 접속하면 호출됩니다.
-            print("[ConferenceViewController] master=\(channelName!)")
-        }.close {
-            // 마스터유저가 끊어진 경우 호출됩니다.
-            // 그룹통화에서 끊어진 것이므로, 다른 유저와의 연결도 모두 끊어집니다.
-        }.error { error in
-            // 마스터유저의 채널에 오류가 있는 경우 호출됩니다.
-            self.showAlert(title: "onError:\(error.localizedDescription)")
-        }
-    }
     
     func joinConference( roomName:String ) {
+        // 공통적으로 사용될 기본 설정
+        let config = RemonConfig()
+        config.serviceId = "SERVICEID1"
+        config.key = "1234567890"
+        config.videoWidth = 640
+        config.videoHeight = 480
         
-        // 그룹통화에 참여합니다.
-        self.remonConference?
-            .join(roomName: roomName)
-            .on { [weak self] channelName, index, participant in
-                // 다른 사용자가 접속한 경우 호출됩니다.
-                // 그룹통화는 특정 인원의 slot이 존재하고, 참여한 사용자의 slot 번호가 index로 전달됩니다.
-                print("[ConferenceViewController] ch=\(channelName),index=\(index)")
-                
-                // 다른 사용자와 연결할 정보를 설정합니다.
-                
-                // 다른 사용자의 화면을 표시할 remoteView설정
+        // 시뮬레이터의 경우 카메라가 없으므로 대체 재생할 mov 파일을 지정해 줍니다.
+        //config.videoFilePathForSimulator = "samples.mov"
+    
+        self.remonConference = RemonConference()
+        self.remonConference?.create( roomName: roomName, config: config) { (participant) in
+            // 마스터 유저(송출자,나자신) 초기화
+            participant.localView = self.viewArray[0]
+            
+            // 뷰 설정용
+            availableViews?[0] = true
+            
+        }.on( eventName: "onRoomCreated") { participant in
+            // 마스터 유저가 접속된 이후에 호출(실제 송출 시작)
+            // TODO: 실제 유저 정보는 각 서비스에서 관리하므로, 서비스에서 채널과 실제 유저 매핑 작업 진행
+            
+            
+            
+            // tag 객체에 holder 형태로 객체를 지정해 사용할 수 있습니다.
+            // 예제에서는 단순히 view의 index를 저장합니다.
+            participant.tag = 0
+            self.showToast(message: "\(participant.id)")
+            
+        }.on(eventName: "onUserJoined" ) { [weak self] participant in
+            // 다른 사용자가 입장한 경우 초기화를 위해 호출됨
+            // TODO: 실제 유저 매핑 : participant.id 값으로 연결된 실제 유저를 얻습니다.
+            
+            
+            // 뷰 설정
+            if let index = self?.getAvailableView() {
+                participant.localView = nil
                 participant.remoteView = self?.viewArray[index]
+                participant.tag = index
+            }
+            
+            // 다른 사용자에 대한 RemonClient 콜백이 필요한 경우 아래와 같이 등록
+            // 룸 콜백으로 참여, 퇴장 이벤트가 전달되므로 특별한 경우가 아니면 등록할 필요는 없습니다.
+            participant.on( event: "onClose" ) { _ in
                 
-        }.then { channelName in
-            print("[ConferenceViewController] onJoin")
-            // 다른 사용자와 연결되면 호출됩니다.
+            }.on(event:"onError") { e in
+                
+            }
+            
+            self?.showToast(message: "\(participant.id) has joined")
+            
+        }.on(eventName: "onUserLeaved") { [weak self] participant in
+            // 다른 사용자가 퇴장한 경우
+            // participant.id 와 participant.tag 를 참조해 어떤 사용자가 퇴장했는지 확인후 퇴장 처리를 합니다.
+            if let index = participant.tag as? Int {
+                self?.availableViews?[index] = false
+            }
+            
+            self?.showToast(message: "\(participant.id) has leaved")
         }.close {
-            print("[ConferenceViewController] onClose")
-            // 다른 사용자와의 연결이 끊어지면 호출됩니다.
+            // 마스터 유저가 종료된 경우 호출됩니다.
+            // 송출이 중단되면 그룹통화에서 끊어진 것이므로, 다른 유저와의 연결도 모두 끊어집니다.
+            if( self.error != nil ) {
+                // 에러로 종료됨
+            } else {
+                // 종료됨
+            }
+            
         }.error { err in
-            print("[ConferenceViewController] onError. err=\(err.localizedDescription)")
-            // 다른 사용자와위 연결에  오류 발생시 호출됩니다.
-            self.showAlert(title: "onError:\(err.localizedDescription)")
+            // 마스터유저(송출 채널)의 오류 발생시 호출됩니다.
+            // 오류로 연결이 종료되면 error -> close 순으로 호출됩니다.
+            self.error = err
         }
     }
 
@@ -118,8 +133,7 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
     @IBAction func touchConnectRoom(_ sender: Any) {
         self.hideKeyboard()
         
-        // 객체 초기화
-        initRemonConference()
+        self.availableViews = [Bool](repeating: false, count: self.viewArray.count)
         
         // 방 이름
         self.roomId = self.roomIdField.text
@@ -137,7 +151,10 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
     // 그룹통화 떠나기
     @IBAction func touchLeaveRoom(_ sender: Any) {
         self.hideKeyboard()
-
+            
+        self.availableViews?.removeAll()
+        self.availableViews = nil
+        
         self.remonConference?.leave()
         self.remonConference = nil
     }
@@ -147,65 +164,46 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
     @IBAction func touchAudio(_ sender: Any) {
         buttonAudio.isSelected = !buttonAudio.isSelected
         
-        let participant = self.remonConference?.getClient(index: 0)
-        participant?.setLocalAudioEnabled(isEnabled: buttonAudio.isSelected)
+        if let participant = self.remonConference?.me {
+            participant.setLocalAudioEnabled(isEnabled: buttonAudio.isSelected)
+        }
     }
     
     @IBAction func onClickedSend(_ sender: Any) {
     }
     
+
+    func getAvailableView() ->Int {
+        if let views = self.availableViews {
+            for i in 0 ... views.count {
+                if views[i] == false {
+                    self.availableViews?[i] = true
+                    return i
+                }
+            }
+        }
+        
+        return 0
+    }
     
-    // MARK: - 아래는 기존 RemonCall 샘플 코드
-    // ConferenceCall 의 경우 현재 메시지 송수신을 지원하지 않습니다.
     func hideKeyboard() -> Void {
         self.view.endEditing(true)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.hideKeyboard()
-        return true
-    }
-    
-    func updateKeyboardConstraint( notification: NSNotification ) {
-        let userInfo = notification.userInfo!
-        
-        let animationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        let convertedKeyboardEndFrame = self.view.convert(keyboardFrame, from: self.view.window)
-        let rawAnimationCurve = (userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as! NSNumber).uintValue << 16
-        let animationCurve = UIView.AnimationOptions(rawValue: UInt( rawAnimationCurve ))
-        
-        messageBottomConstraint.constant = self.view.bounds.maxY - convertedKeyboardEndFrame.minY
-        
-        UIView.animate(withDuration: animationDuration, delay: 0.0,
-                       options: UIView.AnimationOptions(rawValue: UIView.AnimationOptions.beginFromCurrentState.rawValue|animationCurve.rawValue),
-                       animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-        
-    }
-    
-    
-    @objc func keyboardWillShow( notification: NSNotification ) {
-        updateKeyboardConstraint(notification: notification)
-    }
-    
-    @objc func keyboardWillHide( notification: NSNotification ) {
-        updateKeyboardConstraint(notification: notification)
-    }
     
     func showToast(message : String) {
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        let toastLabel = UILabel(frame: CGRect(x: 50, y: self.view.frame.size.height-100, width: self.view.frame.size.width - 100, height: 70))
+        toastLabel.numberOfLines = 2
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
         toastLabel.textAlignment = .center;
-        toastLabel.font = UIFont(name: "Montserrat-Light", size: 12.0)
+        toastLabel.font = UIFont(name: "Montserrat-Light", size: 10.0)
         toastLabel.text = message
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 10;
         toastLabel.clipsToBounds  =  true
         self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 5.0, delay: 0.1, options: .curveEaseOut, animations: {
             toastLabel.alpha = 0.0
         }, completion: {(isCompleted) in
             toastLabel.removeFromSuperview()
