@@ -273,6 +273,10 @@ SWIFT_CLASS_NAMED("RemonClient")
 @property (nonatomic, copy) NSString * _Nullable channelID;
 /// 갭처러 객체
 @property (nonatomic, readonly, strong) RTCVideoCapturer * _Nullable localCapturer;
+/// 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부
+@property (nonatomic) BOOL autoCaptureStart;
+/// debug mode.  default is false
+@property (nonatomic) BOOL debugMode;
 @property (nonatomic, copy) NSString * _Nonnull userMeta;
 /// 외부 캡처러 사용 여부 설정
 @property (nonatomic) BOOL useExternalCapturer;
@@ -406,6 +410,14 @@ typedef SWIFT_ENUM(NSInteger, RemonChannelType, open) {
 
 
 
+@interface RemonClient (SWIFT_EXTENSION(RemoteMonster))
+/// sdk 의 기본 오디오 설정
+/// - Parameters
+/// + category: AVAudioSession.Category
+/// + mode: AVAudioSession.Mode
+/// + options: AVAudioSession.CategoryOptions
++ (void)setAudioSessionConfigurationWithCategory:(AVAudioSessionCategory _Nonnull)category mode:(AVAudioSessionMode _Nonnull)mode options:(AVAudioSessionCategoryOptions)options;
+@end
 
 
 
@@ -472,6 +484,7 @@ enum objc_RemonBandwidth : NSInteger;
 - (void)stopDump;
 - (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName avPreset:(enum REMON_AECUNPACK_PRESET)avPreset progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
 - (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
+- (void)showLocalVideo;
 - (void)muteRemoteAudioWithMute:(BOOL)mute SWIFT_DEPRECATED_MSG("Use setRemoteAudioEnabled( isEnabled: Bool )");
 - (void)muteLocalAudioWithMute:(BOOL)mute SWIFT_DEPRECATED_MSG("Use setLocalAudioEnabled( isEnabled: Bool )");
 - (void)startRemoteVideoCapture SWIFT_DEPRECATED_MSG("Use setRemoteVideoEnabled( isEnabled: true)");
@@ -1061,6 +1074,10 @@ SWIFT_CLASS_NAMED("RemonClient")
 @property (nonatomic, copy) NSString * _Nullable channelID;
 /// 갭처러 객체
 @property (nonatomic, readonly, strong) RTCVideoCapturer * _Nullable localCapturer;
+/// 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부
+@property (nonatomic) BOOL autoCaptureStart;
+/// debug mode.  default is false
+@property (nonatomic) BOOL debugMode;
 @property (nonatomic, copy) NSString * _Nonnull userMeta;
 /// 외부 캡처러 사용 여부 설정
 @property (nonatomic) BOOL useExternalCapturer;
@@ -1194,6 +1211,14 @@ typedef SWIFT_ENUM(NSInteger, RemonChannelType, open) {
 
 
 
+@interface RemonClient (SWIFT_EXTENSION(RemoteMonster))
+/// sdk 의 기본 오디오 설정
+/// - Parameters
+/// + category: AVAudioSession.Category
+/// + mode: AVAudioSession.Mode
+/// + options: AVAudioSession.CategoryOptions
++ (void)setAudioSessionConfigurationWithCategory:(AVAudioSessionCategory _Nonnull)category mode:(AVAudioSessionMode _Nonnull)mode options:(AVAudioSessionCategoryOptions)options;
+@end
 
 
 
@@ -1260,6 +1285,7 @@ enum objc_RemonBandwidth : NSInteger;
 - (void)stopDump;
 - (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName avPreset:(enum REMON_AECUNPACK_PRESET)avPreset progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
 - (void)unpackAecDumpWithDumpName:(NSString * _Nullable)dumpName resultFileName:(NSString * _Nonnull)resultFileName progress:(void (^ _Nonnull)(NSError * _Nullable, enum REMON_AECUNPACK_STATE))progress;
+- (void)showLocalVideo;
 - (void)muteRemoteAudioWithMute:(BOOL)mute SWIFT_DEPRECATED_MSG("Use setRemoteAudioEnabled( isEnabled: Bool )");
 - (void)muteLocalAudioWithMute:(BOOL)mute SWIFT_DEPRECATED_MSG("Use setLocalAudioEnabled( isEnabled: Bool )");
 - (void)startRemoteVideoCapture SWIFT_DEPRECATED_MSG("Use setRemoteVideoEnabled( isEnabled: true)");

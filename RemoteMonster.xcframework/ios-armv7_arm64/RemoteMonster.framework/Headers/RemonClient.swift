@@ -73,13 +73,13 @@ public class RemonClient:NSObject {
     
     
     /** 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부 */
-    public var autoCaptureStart:Bool {
+    @objc public var autoCaptureStart:Bool {
         get { return remonConfig.autoCaptureStart }
         set(value) { remonConfig.autoCaptureStart = value }
     }
     
     /** debug mode.  default is false */
-    public var debugMode:Bool {
+    @objc public var debugMode:Bool {
         get { return remonConfig.debugMode }
         set(value) { remonConfig.debugMode = value }
     }
@@ -111,79 +111,79 @@ public class RemonClient:NSObject {
     
     // IBInspectable
     /** video codec H264 | VP8. default is H264 */
-    @IBInspectable public var videoCodec:String {
+    @IBInspectable @objc public var videoCodec:String {
         get { return remonConfig.videoCodec }
         set(value) { remonConfig.videoCodec = value }
     }
     
     /// 오디오 전용 여부 선택
-    @IBInspectable public var onlyAudio:Bool {
+    @IBInspectable @objc public var onlyAudio:Bool {
         get { return !remonConfig.videoCall }
         set(value) { remonConfig.videoCall = (!value) }
     }
     
     /// 비디오 가로 크기
-    @IBInspectable public var videoWidth:Int {
+    @IBInspectable @objc public var videoWidth:Int {
         get { return remonConfig.videoWidth }
         set(value) { remonConfig.videoWidth = value }
     }
     
     /// 비디오 세로 크기
-    @IBInspectable public var videoHeight:Int{
+    @IBInspectable @objc public var videoHeight:Int{
         get { return remonConfig.videoHeight }
         set(value) { remonConfig.videoHeight = value }
     }
     
     /// 초당 프레임 수
-    @IBInspectable public var fps:Int{
+    @IBInspectable @objc public var fps:Int{
         get { return remonConfig.videoFps }
         set(value) { remonConfig.videoFps = value }
     }
     
     /// 서비스 아이디
-    @IBInspectable public var serviceId:String{
+    @IBInspectable @objc public var serviceId:String{
         get { return remonConfig.serviceId }
         set(value) { remonConfig.serviceId = value }
     }
     
     /// 서비스키
-    @IBInspectable public var serviceKey:String {
+    @IBInspectable @objc public var serviceKey:String {
         get { return remonConfig.key }
         set(value) { remonConfig.key = value }
     }
     
     /// 서비스 토큰
-    @IBInspectable public var serviceToken:String {
+    @IBInspectable @objc public var serviceToken:String {
         get { return remonConfig.serviceToken }
         set(value) { remonConfig.serviceToken = value }
     }
     
     /// rest api 주소
-    @IBInspectable public var restUrl:String {
+    @IBInspectable @objc public var restUrl:String {
         get { return remonConfig.restUrl }
         set(value) { remonConfig.restUrl = value }
     }
     
     /// 웹소켓 주소
-    @IBInspectable public var wsUrl:String {
+    @IBInspectable @objc public var wsUrl:String {
         get { return remonConfig.wsUrl }
         set(value) { remonConfig.wsUrl = value }
     }
     
     /// log 서버 주소
-    @IBInspectable public var logUrl:String {
+    @IBInspectable @objc public var logUrl:String {
         get { return remonConfig.logUrl }
         set(value) { remonConfig.logUrl = value }
     }
     
     /// 전면 카메라 시작
-    @IBInspectable public var frontCamera:Bool {
+    @IBInspectable @objc public var frontCamera:Bool {
         set( isFront ) { remonConfig.frontCamera = isFront }
         get { return remonConfig.frontCamera }
     }
     
     /// 카메라 화면 미러모드 동작여부, 화면만 미러로 동작하며, 실제 데이터는 정상 전송
-    @IBInspectable public var mirrorMode:Bool {
+    @IBInspectable @objc public var mirrorMode:Bool {
         get { return remonConfig.mirrorMode }
         set( isMirror) { remonConfig.mirrorMode = isMirror }
     }
@@ -194,7 +194,7 @@ public class RemonClient:NSObject {
      false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
      단, 앱이 하나의 방향만을 지원하는 경우 회전이 발생하지 않습니다.
      */
-    @IBInspectable public var fixedCameraRotation:Bool {
+    @IBInspectable @objc public var fixedCameraRotation:Bool {
         get { return remonConfig.fixedCameraRotation }
         set(value) { remonConfig.fixedCameraRotation = value }
     }
@@ -208,7 +208,7 @@ public class RemonClient:NSObject {
     
     
     /// 시뮬레이터에서 사용할 동영상 파일명
-    @IBInspectable public var videoFilePathForSimulator:String? {
+    @IBInspectable @objc public var videoFilePathForSimulator:String? {
         get { return remonConfig.videoFilePathForSimulator }
         set(value) { remonConfig.videoFilePathForSimulator = value }
     }
@@ -402,7 +402,7 @@ extension RemonClient {
     }
     
     
-    public func showLocalVideo() -> Void {
+    @objc public func showLocalVideo() -> Void {
         self.controller?.showLocalVideo(client: self)
     }
     
@@ -592,7 +592,7 @@ extension RemonClient {
      + mode: AVAudioSession.Mode
      + options: AVAudioSession.CategoryOptions
      */
-    public static func setAudioSessionConfiguration(
+    @objc public static func setAudioSessionConfiguration(
         category: AVAudioSession.Category,
         mode: AVAudioSession.Mode,
         options:AVAudioSession.CategoryOptions) {

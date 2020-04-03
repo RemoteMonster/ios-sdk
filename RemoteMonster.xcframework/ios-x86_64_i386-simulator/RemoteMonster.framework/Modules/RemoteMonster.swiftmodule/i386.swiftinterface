@@ -270,13 +270,13 @@ public typealias OnParticipantEventCallback = (RemoteMonster.RemonParticipant) -
   @objc public var localCapturer: WebRTC.RTCVideoCapturer? {
     @objc get
   }
-  public var autoCaptureStart: Swift.Bool {
-    get
-    set(value)
+  @objc public var autoCaptureStart: Swift.Bool {
+    @objc get
+    @objc set(value)
   }
-  public var debugMode: Swift.Bool {
-    get
-    set(value)
+  @objc public var debugMode: Swift.Bool {
+    @objc get
+    @objc set(value)
   }
   @objc public var userMeta: Swift.String {
     @objc get
@@ -294,65 +294,65 @@ public typealias OnParticipantEventCallback = (RemoteMonster.RemonParticipant) -
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var videoCodec: Swift.String {
+  @IBInspectable @objc public var videoCodec: Swift.String {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var onlyAudio: Swift.Bool {
+  @IBInspectable @objc public var onlyAudio: Swift.Bool {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var videoWidth: Swift.Int {
+  @IBInspectable @objc public var videoWidth: Swift.Int {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var videoHeight: Swift.Int {
+  @IBInspectable @objc public var videoHeight: Swift.Int {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var fps: Swift.Int {
+  @IBInspectable @objc public var fps: Swift.Int {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var serviceId: Swift.String {
+  @IBInspectable @objc public var serviceId: Swift.String {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var serviceKey: Swift.String {
+  @IBInspectable @objc public var serviceKey: Swift.String {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var serviceToken: Swift.String {
+  @IBInspectable @objc public var serviceToken: Swift.String {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var restUrl: Swift.String {
+  @IBInspectable @objc public var restUrl: Swift.String {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var wsUrl: Swift.String {
+  @IBInspectable @objc public var wsUrl: Swift.String {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var logUrl: Swift.String {
+  @IBInspectable @objc public var logUrl: Swift.String {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var frontCamera: Swift.Bool {
+  @IBInspectable @objc public var frontCamera: Swift.Bool {
     @objc get
     @objc set(isFront)
   }
-  @objc @IBInspectable public var mirrorMode: Swift.Bool {
+  @IBInspectable @objc public var mirrorMode: Swift.Bool {
     @objc get
     @objc set(isMirror)
   }
-  @objc @IBInspectable public var fixedCameraRotation: Swift.Bool {
+  @IBInspectable @objc public var fixedCameraRotation: Swift.Bool {
     @objc get
     @objc set(value)
   }
   @objc @IBOutlet weak public var remoteView: UIKit.UIView?
   @objc @IBOutlet weak public var localView: UIKit.UIView?
-  @objc @IBInspectable public var videoFilePathForSimulator: Swift.String? {
+  @IBInspectable @objc public var videoFilePathForSimulator: Swift.String? {
     @objc get
     @objc set(value)
   }
@@ -384,7 +384,7 @@ extension RemonClient {
   @objc dynamic public func stopDump()
   @objc dynamic public func unpackAecDump(dumpName: Swift.String? = "audio.aecdump", resultFileName: Swift.String, avPreset: RemoteMonster.REMON_AECUNPACK_PRESET, progress: @escaping (Swift.Error?, RemoteMonster.REMON_AECUNPACK_STATE) -> Swift.Void)
   @objc dynamic public func unpackAecDump(dumpName: Swift.String? = "audio.aecdump", resultFileName: Swift.String, progress: @escaping (Swift.Error?, RemoteMonster.REMON_AECUNPACK_STATE) -> Swift.Void)
-  public func showLocalVideo()
+  @objc dynamic public func showLocalVideo()
   @available(*, deprecated, message: "Use setRemoteAudioEnabled( isEnabled: Bool )")
   @objc dynamic public func muteRemoteAudio(mute: Swift.Bool = true)
   @available(*, deprecated, message: "Use setLocalAudioEnabled( isEnabled: Bool )")
@@ -430,7 +430,7 @@ extension RemonClient {
   }
 }
 extension RemonClient {
-  public static func setAudioSessionConfiguration(category: AVFoundation.AVAudioSession.Category, mode: AVFoundation.AVAudioSession.Mode, options: AVFoundation.AVAudioSession.CategoryOptions)
+  @objc public static func setAudioSessionConfiguration(category: AVFoundation.AVAudioSession.Category, mode: AVFoundation.AVAudioSession.Mode, options: AVFoundation.AVAudioSession.CategoryOptions)
 }
 public let ErrorDomain: Swift.String
 public let ErrorUnsupportedType: Swift.Int
