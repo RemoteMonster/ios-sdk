@@ -1,3 +1,6 @@
+## 2.7.1
+- Fix a issue to set audioSessionConfiguration in ObjectiveC 
+
 ## 2.7.0
 - Migrate RemoteMonster.framework to RemoteMonster.xcframework 
   (xcframework is supported on cooapods 1.9.0 and higher)
