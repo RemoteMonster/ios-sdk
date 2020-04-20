@@ -878,6 +878,8 @@ public typealias OnConferenceEventCallback = (RemoteMonster.RemonParticipant) ->
   @objc override dynamic public init()
   public func create(roomName: Swift.String, config: RemoteMonster.RemonConfig, callback: (RemoteMonster.RemonParticipant) -> Swift.Void) -> RemoteMonster.RemonConferenceCallbacks
   public func leave()
+  public func getParticipant(id: Swift.String) -> RemoteMonster.RemonParticipant?
+  public func getParticipants() -> [Swift.String : RemoteMonster.RemonParticipant]
   @objc deinit
 }
 public enum RemonError : Swift.Error, Foundation.LocalizedError {

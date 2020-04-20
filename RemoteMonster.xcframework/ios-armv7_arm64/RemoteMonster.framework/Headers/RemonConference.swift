@@ -60,12 +60,10 @@ public class RemonConferenceCallbacks {
 public class RemonConference : NSObject {
     let log = OSLog(subsystem: "RemonConference", category: "RemonClient")
 
-    private var participants = Dictionary<String, RemonParticipant>()
     public var me:RemonParticipant?
-    
+    private var participants = Dictionary<String, RemonParticipant>()
     private var roomName:String?
     private var defaultConfig:RemonConfig?
-    
     private var conferenceCallbacks = RemonConferenceCallbacks()
     
 
@@ -106,7 +104,13 @@ public class RemonConference : NSObject {
         self.me = nil
     }
     
-
+    public func getParticipant(id:String) -> RemonParticipant? {
+        return self.participants[id]
+    }
+    
+    public func getParticipants() -> [String:RemonParticipant] {
+        return self.participants
+    }
     
     func fetchChannelsInRoom() {
         print("[RemonConference] fetchChannels")
