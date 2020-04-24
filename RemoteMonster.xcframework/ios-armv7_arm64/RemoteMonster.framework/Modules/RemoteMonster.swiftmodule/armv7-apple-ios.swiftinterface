@@ -404,10 +404,12 @@ extension RemonClient {
   @objc dynamic public func onMessage(block: @escaping RemoteMonster.RemonStringBlock)
   public func onError(block: @escaping RemoteMonster.RemonErrorBlock)
   @objc dynamic public func onObjcError(block: @escaping ((Foundation.NSError) -> Swift.Void))
-  @objc dynamic public func onRemonStatReport(block: @escaping (RemoteMonster.RemonStatReport) -> Swift.Void)
+  @objc dynamic public func onStat(block: @escaping (RemoteMonster.RemonStatReport) -> Swift.Void)
   @objc dynamic public func onRemoteVideoSizeChanged(block: @escaping (UIKit.UIView?, CoreGraphics.CGSize) -> Swift.Void)
   @objc dynamic public func onLocalVideoSizeChanged(block: @escaping (UIKit.UIView?, CoreGraphics.CGSize) -> Swift.Void)
   @objc dynamic public func onRoomEvent(block: @escaping (Swift.String, Swift.String) -> Swift.Void)
+  @available(*, deprecated, message: "use onStat")
+  @objc dynamic public func onRemonStatReport(block: @escaping (RemoteMonster.RemonStatReport) -> Swift.Void)
 }
 extension RemonClient {
   @available(*, deprecated, message: "use remoteVideoView")

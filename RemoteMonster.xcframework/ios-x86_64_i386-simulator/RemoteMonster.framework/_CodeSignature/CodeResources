@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/RemonClient.swift</key>
 		<data>
-		86uvLRBfm7SKq4GBAZcXGBa3IOE=
+		CvuyHPs1eMdBJ+43UlBoTPSxWa0=
 		</data>
 		<key>Headers/RemonConference.swift</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/RemoteMonster-Swift.h</key>
 		<data>
-		x8h1SOrle60lC+K8ZWGI0jQsVOQ=
+		K6NfQWp37x6wxSISDAAi9wrWx0A=
 		</data>
 		<key>Headers/RemoteMonster.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ekXHhYRpWuZN9uMVwXqLISYGV0g=
+		Dlwuh0K9PpqNRL696Eitc/VRQXk=
 		</data>
 		<key>Modules/RemoteMonster.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/RemoteMonster.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		6buq4MabvYbhitzh9hHWfcMlhF8=
+		4fH2g7dB+uIuCWV9WeIrBU64HXs=
 		</data>
 		<key>Modules/RemoteMonster.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		DiU7irauA40kbuAVdgBC6evcneM=
+		NcixxFxwzwaObysB3ak/Q8z+Y4w=
 		</data>
 		<key>Modules/RemoteMonster.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -62,11 +62,11 @@
 		</data>
 		<key>Modules/RemoteMonster.swiftmodule/i386.swiftinterface</key>
 		<data>
-		6buq4MabvYbhitzh9hHWfcMlhF8=
+		4fH2g7dB+uIuCWV9WeIrBU64HXs=
 		</data>
 		<key>Modules/RemoteMonster.swiftmodule/i386.swiftmodule</key>
 		<data>
-		DiU7irauA40kbuAVdgBC6evcneM=
+		NcixxFxwzwaObysB3ak/Q8z+Y4w=
 		</data>
 		<key>Modules/RemoteMonster.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -74,11 +74,11 @@
 		</data>
 		<key>Modules/RemoteMonster.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		NAtTNOqxJBpU5AinHBJneljtCng=
+		0KgyiufIOsGsOUkni9U3LYLWe4I=
 		</data>
 		<key>Modules/RemoteMonster.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		D89aBDmypnoYpfbFuQbacpSJ80M=
+		/FauisugJgRCTJc79/bnbDD6gs0=
 		</data>
 		<key>Modules/RemoteMonster.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -86,11 +86,11 @@
 		</data>
 		<key>Modules/RemoteMonster.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		NAtTNOqxJBpU5AinHBJneljtCng=
+		0KgyiufIOsGsOUkni9U3LYLWe4I=
 		</data>
 		<key>Modules/RemoteMonster.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		D89aBDmypnoYpfbFuQbacpSJ80M=
+		/FauisugJgRCTJc79/bnbDD6gs0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -140,11 +140,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			86uvLRBfm7SKq4GBAZcXGBa3IOE=
+			CvuyHPs1eMdBJ+43UlBoTPSxWa0=
 			</data>
 			<key>hash2</key>
 			<data>
-			p0XH3D1w4fJ0mb0rhtI4weIdFJSKqgpcwOLP5CmUxqg=
+			72NT/1reQ87e7hdnZE7UnmS2qF9yQGH/YkdTSDyWMKU=
 			</data>
 		</dict>
 		<key>Headers/RemonConference.swift</key>
@@ -173,11 +173,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			x8h1SOrle60lC+K8ZWGI0jQsVOQ=
+			K6NfQWp37x6wxSISDAAi9wrWx0A=
 			</data>
 			<key>hash2</key>
 			<data>
-			4ucfmNY/x46DD5l2uFNe+K3juFiVViV+Ek4ENVDYGw4=
+			EgXbXKKsEYRgfP/x75mklIQGGNOIKpOK7EIuYLQFANg=
 			</data>
 		</dict>
 		<key>Headers/RemoteMonster.h</key>
@@ -217,22 +217,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6buq4MabvYbhitzh9hHWfcMlhF8=
+			4fH2g7dB+uIuCWV9WeIrBU64HXs=
 			</data>
 			<key>hash2</key>
 			<data>
-			ll2w0LBFrmQk6SuUz+z1xVuUzfvyX8WHr7y2LMnq5T4=
+			0w7Jljx5H8b0dVjmoOF/HCKCWgNgbmvKyWPWuArn1HQ=
 			</data>
 		</dict>
 		<key>Modules/RemoteMonster.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DiU7irauA40kbuAVdgBC6evcneM=
+			NcixxFxwzwaObysB3ak/Q8z+Y4w=
 			</data>
 			<key>hash2</key>
 			<data>
-			Pk1LR/BLmFyrjpdQdX5EXxkiJALlRLGmb4At1zNXPfE=
+			uvsqF4gLzuNSpEX/cvX7ei/4fZmXTguuhi1RlaN5SWc=
 			</data>
 		</dict>
 		<key>Modules/RemoteMonster.swiftmodule/i386.swiftdoc</key>
@@ -250,22 +250,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6buq4MabvYbhitzh9hHWfcMlhF8=
+			4fH2g7dB+uIuCWV9WeIrBU64HXs=
 			</data>
 			<key>hash2</key>
 			<data>
-			ll2w0LBFrmQk6SuUz+z1xVuUzfvyX8WHr7y2LMnq5T4=
+			0w7Jljx5H8b0dVjmoOF/HCKCWgNgbmvKyWPWuArn1HQ=
 			</data>
 		</dict>
 		<key>Modules/RemoteMonster.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DiU7irauA40kbuAVdgBC6evcneM=
+			NcixxFxwzwaObysB3ak/Q8z+Y4w=
 			</data>
 			<key>hash2</key>
 			<data>
-			Pk1LR/BLmFyrjpdQdX5EXxkiJALlRLGmb4At1zNXPfE=
+			uvsqF4gLzuNSpEX/cvX7ei/4fZmXTguuhi1RlaN5SWc=
 			</data>
 		</dict>
 		<key>Modules/RemoteMonster.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -283,22 +283,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NAtTNOqxJBpU5AinHBJneljtCng=
+			0KgyiufIOsGsOUkni9U3LYLWe4I=
 			</data>
 			<key>hash2</key>
 			<data>
-			P6PZOGrZ6e2uk8kA9KcTMkAADsG88ST/ilpee2kSlPA=
+			JqtOVypYgfFd3ITBEK788gtktV/zgF1BgDYC/iyMAf0=
 			</data>
 		</dict>
 		<key>Modules/RemoteMonster.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			D89aBDmypnoYpfbFuQbacpSJ80M=
+			/FauisugJgRCTJc79/bnbDD6gs0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Kf32jIlk8qKRYrDMXo1saFu22QH2qAVWDLobvxyJmFI=
+			NzhV+wIiH5NmPSd41UGWddXlQdm1y8W/CejwwhDRns4=
 			</data>
 		</dict>
 		<key>Modules/RemoteMonster.swiftmodule/x86_64.swiftdoc</key>
@@ -316,22 +316,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NAtTNOqxJBpU5AinHBJneljtCng=
+			0KgyiufIOsGsOUkni9U3LYLWe4I=
 			</data>
 			<key>hash2</key>
 			<data>
-			P6PZOGrZ6e2uk8kA9KcTMkAADsG88ST/ilpee2kSlPA=
+			JqtOVypYgfFd3ITBEK788gtktV/zgF1BgDYC/iyMAf0=
 			</data>
 		</dict>
 		<key>Modules/RemoteMonster.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			D89aBDmypnoYpfbFuQbacpSJ80M=
+			/FauisugJgRCTJc79/bnbDD6gs0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Kf32jIlk8qKRYrDMXo1saFu22QH2qAVWDLobvxyJmFI=
+			NzhV+wIiH5NmPSd41UGWddXlQdm1y8W/CejwwhDRns4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

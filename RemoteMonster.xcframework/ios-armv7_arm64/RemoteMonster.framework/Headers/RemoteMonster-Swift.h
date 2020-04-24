@@ -436,12 +436,13 @@ enum RemonCloseType : NSInteger;
 /// 메시지 수신 콜백
 - (void)onMessageWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
-- (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
+- (void)onStatWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
 /// 원격측 비디오 사이즈 변경시 호출
 - (void)onRemoteVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
 /// 로컬 비디오 사이즈 변경시 호출
 - (void)onLocalVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
 - (void)onRoomEventWithBlock:(void (^ _Nonnull)(NSString * _Nonnull, NSString * _Nonnull))block;
+- (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block SWIFT_DEPRECATED_MSG("use onStat");
 @end
 
 enum objc_RemonBandwidth : NSInteger;
@@ -1237,12 +1238,13 @@ enum RemonCloseType : NSInteger;
 /// 메시지 수신 콜백
 - (void)onMessageWithBlock:(void (^ _Nonnull)(NSString * _Nullable))block;
 - (void)onObjcErrorWithBlock:(void (^ _Nonnull)(NSError * _Nonnull))block;
-- (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
+- (void)onStatWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block;
 /// 원격측 비디오 사이즈 변경시 호출
 - (void)onRemoteVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
 /// 로컬 비디오 사이즈 변경시 호출
 - (void)onLocalVideoSizeChangedWithBlock:(void (^ _Nonnull)(UIView * _Nullable, CGSize))block;
 - (void)onRoomEventWithBlock:(void (^ _Nonnull)(NSString * _Nonnull, NSString * _Nonnull))block;
+- (void)onRemonStatReportWithBlock:(void (^ _Nonnull)(RemonStatReport * _Nonnull))block SWIFT_DEPRECATED_MSG("use onStat");
 @end
 
 enum objc_RemonBandwidth : NSInteger;

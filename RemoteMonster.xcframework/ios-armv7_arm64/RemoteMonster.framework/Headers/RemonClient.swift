@@ -490,9 +490,11 @@ extension RemonClient : RemonControllerBlockSettable{
         controller?.observerBlock.objc_errorRemonBlock = block
     }
     
-    @objc public func onRemonStatReport(block:@escaping (_:RemonStatReport)->Void) {
+    @objc public func onStat(block:@escaping (_:RemonStatReport)->Void) {
         controller?.observerBlock.remonStatBlock = block
     }
+    
+    
     
     /** 원격측 비디오 사이즈 변경시 호출 */
     @objc public func onRemoteVideoSizeChanged(block: @escaping (_ remoteView:UIView?, _ videoSize:CGSize) -> Void) {
@@ -506,6 +508,11 @@ extension RemonClient : RemonControllerBlockSettable{
 
     @objc public func onRoomEvent(block: @escaping (_ type:String, _ channel:String) -> Void) {
         controller?.observerBlock.roomEventBlock = block
+    }
+    
+    @available(*, deprecated, message: "use onStat")
+    @objc public func onRemonStatReport(block:@escaping (_:RemonStatReport)->Void) {
+        controller?.observerBlock.remonStatBlock = block
     }
 }
 
