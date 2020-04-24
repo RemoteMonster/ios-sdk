@@ -1,3 +1,8 @@
+## 2.7.2
+- Add getter method for RemonParticipant in RemonConference
+- Revise a method name of onRemonStatReport to onStat
+- Fix a issue that onStat callback is not called
+
 ## 2.7.1
 - Fix a issue to set audioSessionConfiguration in ObjectiveC 
 
@@ -7,7 +12,7 @@
 - Change conference api, interface
 
 ## 2.6.19
-- Suport XCode 11.4
+- Merge fixed issues from 2.7.1 and 2.7.2 
 
 ## 2.6.18
 - Add a checking for unsupported command type
