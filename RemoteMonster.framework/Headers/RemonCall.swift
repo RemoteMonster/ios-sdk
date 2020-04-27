@@ -8,49 +8,38 @@
 
 import UIKit
 
-/***/
-@objc public protocol RemonCallBlockSettable {
-    func onConnect(block:@escaping RemonStringBlock)
-    func onComplete(block:@escaping RemonVoidBlock)
-    func onFetch(block:@escaping RemonArrayBlock)
-}
-
-/***/
-@objc public class RemonCall: RemonIBController, RemonControllBlockSettable, RemonCallBlockSettable {
-    override public init() {
+/**
+ P2P 영상통화 클래스
+ */
+@objc public class RemonCall: RemonClient {
+    public override init() {
+        print("[RemonCall.init]")
         super.init()
-        self.channelType = 0
     }
+    
     
     /***/
     @objc public func connect(_ ch: String, _ config:RemonConfig? = nil) {
-        self.connectCall(ch, config)
+        print("[RemonCall.connect]" )
+        controller?.connectCall( client:self, ch:ch, config:config)
     }
     
     /***/
     @objc public func fetchCalls(complete: @escaping (Array<RemonSearchResult>?) -> Void) {
-        self.fetchChannel(type: .call) { (error, chs) in
+        self.fetchChannel(type: .call, roomName: nil) { (error, chs) in
             complete(chs)
         }
     }
-    
-    @objc public func fetchCalls(isTest:Bool, complete: @escaping (Array<RemonSearchResult>?) -> Void) {
-        self.fetchChannel(type: .call, isTest:isTest){ (error, chs) in
-            complete(chs)
-        }
-    }
-    
+}
+
+@objc extension RemonCall {
     /***/
     @objc public func onConnect(block: @escaping RemonStringBlock) {
-        self.onCreate(block_: block)
+        self.onCreateInternal(block: block)
     }
     
     /***/
     @objc public func onFetch(block: @escaping RemonArrayBlock) {
         self.onFetchChannels(block: block)
-    }
-    
-    @objc override public func onComplete(block: @escaping RemonVoidBlock) {
-        super.onComplete(block: block)
     }
 }

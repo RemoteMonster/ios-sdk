@@ -6,7 +6,7 @@
 //  Copyright © 2017년 Remote Monster. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for remoniosv2.
 FOUNDATION_EXPORT double remoniosv2VersionNumber;
