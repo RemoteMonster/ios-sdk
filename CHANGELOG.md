@@ -1,3 +1,7 @@
+## 2.7.3
+- Fix a issue creating wrong multiple connection in RemonConference
+- Add a 'complete' callback for participant in RemonConference
+
 ## 2.7.2
 - Add getter method for RemonParticipant in RemonConference
 - Revise a method name of onRemonStatReport to onStat

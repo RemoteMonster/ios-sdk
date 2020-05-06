@@ -9,7 +9,7 @@
 import UIKit
 import RemoteMonster
 
-// 이 샘플은 iOS SDK 2.7.0 이상 버전이 필요합니다.
+// 이 샘플은 iOS SDK 2.7.3 이상 버전이 필요합니다.
 class ConferenceViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var buttonAudio: UIButton!
     
@@ -71,19 +71,21 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
             // 뷰 설정용
             availableViews?[0] = true
             
-        }.on( eventName: "onRoomCreated") { participant in
+        }.on( eventName: "onRoomCreated") {
+            participant in
             // 마스터 유저가 접속된 이후에 호출(실제 송출 시작)
+            participant.setLocalAudioEnabled(isEnabled: self.buttonAudio.isSelected)
             // TODO: 실제 유저 정보는 각 서비스에서 관리하므로, 서비스에서 채널과 실제 유저 매핑 작업 진행
-            
-            
             
             // tag 객체에 holder 형태로 객체를 지정해 사용할 수 있습니다.
             // 예제에서는 단순히 view의 index를 저장합니다.
             participant.tag = 0
             self.showToast(message: "\(participant.id)")
             
-        }.on(eventName: "onUserJoined" ) { [weak self] participant in
+        }.on(eventName: "onUserJoined" ) {
+            [weak self] participant in
             // 다른 사용자가 입장한 경우 초기화를 위해 호출됨
+            // 초기화와 유저 매핑 등을 위해 호출되는 이벤트로 실제 peer 연결전에 호출됩니다.
             // TODO: 실제 유저 매핑 : participant.id 값으로 연결된 실제 유저를 얻습니다.
             
             
@@ -94,21 +96,37 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
                 participant.tag = index
             }
             
-            // 다른 사용자에 대한 RemonClient 콜백이 필요한 경우 아래와 같이 등록
-            // 룸 콜백으로 참여, 퇴장 이벤트가 전달되므로 특별한 경우가 아니면 등록할 필요는 없습니다.
-            participant.on( event: "onClose" ) { _ in
-                
-            }.on(event:"onError") { e in
-                
+            // 접속한 상대방의 RemonClient 콜백이 필요한 경우 아래와 같이 등록
+            // 룸 콜백으로 참여,연결,퇴장 이벤트가 전달되므로 특별한 경우가 아니면 등록할 필요는 없습니다.
+            participant.on(event: "onComplete" ) {
+                _ in
+                // onUserStreamConnected 와 동일
+            }.on(event: "onClose") {
+                _ in
+                // onUserLeaved 호출된 이후 호출됨
+            }.on(event: "onError") {
+                _ in
             }
             
             self?.showToast(message: "\(participant.id) has joined")
             
-        }.on(eventName: "onUserLeaved") { [weak self] participant in
+        }.on(eventName: "onUserConnected") {
+            participant in
+            // v2.7.3 추가
+            // 실제 스트림세션 연결이 이루어지면 호출됩니다.
+            
+            
+        }.on(eventName: "onUserLeaved") {
+            [weak self] participant in
             // 다른 사용자가 퇴장한 경우
             // participant.id 와 participant.tag 를 참조해 어떤 사용자가 퇴장했는지 확인후 퇴장 처리를 합니다.
             if let index = participant.tag as? Int {
                 self?.availableViews?[index] = false
+            }
+            
+            if participant.getLatestError() != nil {
+                // 에러로 끊어진 경우
+                // 재시도 처리 등은 각 서비스 상황에 맞게 구현
             }
             
             self?.showToast(message: "\(participant.id) has leaved")
