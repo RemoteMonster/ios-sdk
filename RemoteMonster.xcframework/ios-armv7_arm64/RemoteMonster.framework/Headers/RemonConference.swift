@@ -160,7 +160,11 @@ public class RemonConference : NSObject {
     func onParticipant( type:String, channelName:String ) {
         if type == "leave" {
             if let participant = self.participants.removeValue(forKey: channelName) {
-                let eventCallback = self.conferenceCallbacks.eventCallbacks["onUserLeaved"]
+                var eventCallback = self.conferenceCallbacks.eventCallbacks["onUserLeft"]
+                if eventCallback == nil {
+                    eventCallback = self.conferenceCallbacks.eventCallbacks["onUserLeaved"]
+                }
+                
                 if eventCallback != nil {
                     eventCallback!(participant)
                 }
