@@ -1,3 +1,7 @@
+## 2.7.4
+- Refactor some codes
+- Change a callback name in RemonConference
+
 ## 2.7.3
 - Fix a issue creating wrong multiple connection in RemonConference
 - Add a 'complete' callback for participant in RemonConference

@@ -116,7 +116,7 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
             // 실제 스트림세션 연결이 이루어지면 호출됩니다.
             
             
-        }.on(eventName: "onUserLeaved") {
+        }.on(eventName: "onUserLeft") {
             [weak self] participant in
             // 다른 사용자가 퇴장한 경우
             // participant.id 와 participant.tag 를 참조해 어떤 사용자가 퇴장했는지 확인후 퇴장 처리를 합니다.
@@ -129,7 +129,7 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
                 // 재시도 처리 등은 각 서비스 상황에 맞게 구현
             }
             
-            self?.showToast(message: "\(participant.id) has leaved")
+            self?.showToast(message: "\(participant.id) has left")
         }.close {
             // 마스터 유저가 종료된 경우 호출됩니다.
             // 송출이 중단되면 그룹통화에서 끊어진 것이므로, 다른 유저와의 연결도 모두 끊어집니다.
