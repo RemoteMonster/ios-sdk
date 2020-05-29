@@ -1,3 +1,6 @@
+## 2.7.5
+- Fix an unpacking aecdump
+
 ## 2.7.4
 - Refactor some codes
 - Change a callback name in RemonConference
