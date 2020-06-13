@@ -1,0 +1,1094 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
+// swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name RemoteMonster
+import AVFoundation
+import AVKit
+import AudioToolbox
+import CoreAudioKit
+import CoreTelephony
+import Foundation
+@_exported import RemoteMonster
+import Swift
+import SwiftProtobuf
+import UIKit
+import WebRTC
+import os
+@_inheritsConvenienceInitializers @objc public class RemonCall : RemoteMonster.RemonClient {
+  @objc override dynamic public init()
+  @objc public func connect(_ ch: Swift.String, _ config: RemoteMonster.RemonConfig? = nil)
+  @objc public func fetchCalls(complete: @escaping (Swift.Array<RemoteMonster.RemonSearchResult>?) -> Swift.Void)
+  @objc deinit
+}
+@objc extension RemonCall {
+  @objc dynamic public func onConnect(block: @escaping RemoteMonster.RemonStringBlock)
+  @objc dynamic public func onFetch(block: @escaping RemoteMonster.RemonArrayBlock)
+}
+public struct WebSocketEvents {
+  public var open: () -> ()
+  public var close: (Swift.Int, Swift.String, Swift.Bool) -> ()
+  public var error: (Swift.Error) -> ()
+  public var message: (Any) -> ()
+  public var pong: (Any) -> ()
+  public var end: (Swift.Int, Swift.String, Swift.Bool, Swift.Error?) -> ()
+}
+public enum WebSocketBinaryType : Swift.CustomStringConvertible {
+  case uInt8Array
+  case nsData
+  case uInt8UnsafeBufferPointer
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: RemoteMonster.WebSocketBinaryType, b: RemoteMonster.WebSocketBinaryType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@objc public enum WebSocketReadyState : Swift.Int, Swift.CustomStringConvertible {
+  case connecting = 0
+  case open = 1
+  case closing = 2
+  case closed = 3
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct WebSocketCompression {
+  public var on: Swift.Bool
+  public var noContextTakeover: Swift.Bool
+  public var maxWindowBits: Swift.Int
+}
+public struct WebSocketService : Swift.OptionSet {
+  public typealias RawValue = Swift.UInt
+  public init(rawValue value: Swift.UInt)
+  public init(nilLiteral: ())
+  public static var allZeros: RemoteMonster.WebSocketService {
+    get
+  }
+  public var rawValue: Swift.UInt {
+    get
+  }
+  public static var None: RemoteMonster.WebSocketService {
+    get
+  }
+  public static var VoIP: RemoteMonster.WebSocketService {
+    get
+  }
+  public static var Video: RemoteMonster.WebSocketService {
+    get
+  }
+  public static var Background: RemoteMonster.WebSocketService {
+    get
+  }
+  public static var Voice: RemoteMonster.WebSocketService {
+    get
+  }
+  public typealias Element = RemoteMonster.WebSocketService
+  public typealias ArrayLiteralElement = RemoteMonster.WebSocketService
+}
+public enum WebSocketError : Swift.Error, Swift.CustomStringConvertible {
+  case memory
+  case needMoreInput
+  case invalidHeader
+  case invalidAddress
+  case network(Swift.String)
+  case libraryError(Swift.String)
+  case payloadError(Swift.String)
+  case protocolError(Swift.String)
+  case invalidResponse(Swift.String)
+  case invalidCompressionOptions(Swift.String)
+  public var description: Swift.String {
+    get
+  }
+  public var details: Swift.String {
+    get
+  }
+}
+@objc public protocol WebSocketDelegate {
+  @objc func webSocketOpen()
+  @objc func webSocketClose(_ code: Swift.Int, reason: Swift.String, wasClean: Swift.Bool)
+  @objc func webSocketError(_ error: Foundation.NSError)
+  @objc optional func webSocketMessageText(_ text: Swift.String)
+  @objc optional func webSocketMessageData(_ data: Foundation.Data)
+  @objc optional func webSocketPong()
+  @objc optional func webSocketEnd(_ code: Swift.Int, reason: Swift.String, wasClean: Swift.Bool, error: Foundation.NSError?)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class WebSocket : ObjectiveC.NSObject {
+  @objc override dynamic open var hash: Swift.Int {
+    @objc get
+  }
+  @objc override dynamic open func isEqual(_ other: Any?) -> Swift.Bool
+  @objc convenience public init(_ url: Swift.String)
+  @objc convenience public init(url: Foundation.URL)
+  @objc convenience public init(_ url: Swift.String, subProtocols: [Swift.String])
+  @objc convenience public init(_ url: Swift.String, subProtocol: Swift.String)
+  @objc public init(request: Foundation.URLRequest, subProtocols: [Swift.String] = [])
+  @objc convenience override dynamic public init()
+  @objc open var url: Swift.String {
+    @objc get
+  }
+  @objc open var subProtocol: Swift.String {
+    @objc get
+  }
+  open var compression: RemoteMonster.WebSocketCompression {
+    get
+    set
+  }
+  @objc open var allowSelfSignedSSL: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  open var services: RemoteMonster.WebSocketService {
+    get
+    set
+  }
+  open var event: RemoteMonster.WebSocketEvents {
+    get
+    set
+  }
+  @objc open var eventQueue: Dispatch.DispatchQueue? {
+    @objc get
+    @objc set
+  }
+  open var binaryType: RemoteMonster.WebSocketBinaryType {
+    get
+    set
+  }
+  @objc open var readyState: RemoteMonster.WebSocketReadyState {
+    @objc get
+  }
+  @objc open func open(_ url: Swift.String)
+  @objc open func open(nsurl url: Foundation.URL)
+  @objc open func open(_ url: Swift.String, subProtocols: [Swift.String])
+  @objc open func open(_ url: Swift.String, subProtocol: Swift.String)
+  @objc open func open(request: Foundation.URLRequest, subProtocols: [Swift.String] = [])
+  @objc open func open()
+  @objc open func close(_ code: Swift.Int = 1000, reason: Swift.String = "Normal Closure")
+  @objc open func send(_ message: Any)
+  @objc open func ping(_ message: Any)
+  @objc open func ping()
+  @objc deinit
+}
+public func == (lhs: RemoteMonster.WebSocket, rhs: RemoteMonster.WebSocket) -> Swift.Bool
+extension WebSocket {
+  @objc dynamic public var delegate: RemoteMonster.WebSocketDelegate? {
+    @objc get
+    @objc set
+  }
+  @objc dynamic public func send(text: Swift.String)
+  @objc dynamic public func send(data: Foundation.Data)
+}
+@_inheritsConvenienceInitializers @objc public class RemonCast : RemoteMonster.RemonClient {
+  @objc override dynamic public init()
+  @objc @IBInspectable public var simulcast: Swift.Bool
+  @objc(joinWithChId:AndConfig:) public func join(chId: Swift.String, _ config: RemoteMonster.RemonConfig?)
+  @objc(joinWithChId:) public func join(chId: Swift.String)
+  @objc public func create(name: Swift.String, channelId: Swift.String, config: RemoteMonster.RemonConfig? = nil)
+  @objc public func create(_ config: RemoteMonster.RemonConfig? = nil)
+  @objc public func fetchCasts(complete: @escaping (Swift.Array<RemoteMonster.RemonSearchResult>?) -> Swift.Void)
+  @objc deinit
+}
+@objc extension RemonCast {
+  @objc dynamic public func onCreate(block: @escaping RemoteMonster.RemonStringBlock)
+  @objc dynamic public func onJoin(block: @escaping RemoteMonster.RemonStringBlock)
+  @objc dynamic public func onFetch(block: @escaping RemoteMonster.RemonArrayBlock)
+}
+@objc public enum RemonAudioMode : Swift.Int {
+  case voice
+  case music
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum RemonSearchType : Swift.Int {
+  case call
+  case cast
+  case room
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class PeerConnectionManager {
+  @objc deinit
+  public func dummysdp()
+}
+public typealias OnParticipantEventCallback = (RemoteMonster.RemonParticipant) -> Swift.Void
+@objc public class RemonParticipant : RemoteMonster.RemonClient {
+  @objc public enum ParticipantType : Swift.Int {
+    case PUBLISH
+    case SUBSCRIBE
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public var id: Swift.String
+  public var type: RemoteMonster.RemonParticipant.ParticipantType
+  public var tag: Any?
+  public var simulcast: Swift.Bool
+  public init(conference: RemoteMonster.RemonConference, type: RemoteMonster.RemonParticipant.ParticipantType, config: RemoteMonster.RemonConfig?, channelId: Swift.String)
+  @discardableResult
+  public func on(event: Swift.String, callback: @escaping RemoteMonster.OnParticipantEventCallback) -> RemoteMonster.RemonParticipant
+  public func getLatestError() -> RemoteMonster.RemonError?
+  public func close()
+  @objc public func fetchChannelsInRoom(roomName: Swift.String, complete: @escaping (Swift.Array<RemoteMonster.RemonSearchResult>?) -> Swift.Void)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class RemonSampleCapturer : WebRTC.RTCVideoCapturer {
+  public func willOutputPixelBuffer(_ pixelBuffer: CoreVideo.CVPixelBuffer!, time: CoreMedia.CMTime, orientation: UIKit.UIInterfaceOrientation = UIInterfaceOrientation.unknown)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc(RemonClient) @IBDesignable public class RemonClient : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+  @objc public var remonConfig: RemoteMonster.RemonConfig
+  @objc public var volumeRatio: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc public var showRemoteVideoStat: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var showLocalVideoStat: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var channelID: Swift.String?
+  @objc public var localCapturer: WebRTC.RTCVideoCapturer? {
+    @objc get
+  }
+  @objc public var autoCaptureStart: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var debugMode: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var userMeta: Swift.String {
+    @objc get
+    @objc set(meta)
+  }
+  @objc public var useExternalCapturer: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var iceServers: [WebRTC.RTCIceServer] {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var selectiveCandidate: RemoteMonster.RemonConfig.SelectiveCandidate {
+    @objc get
+    @objc set(value)
+  }
+  @IBInspectable @objc public var videoCodec: Swift.String {
+    @objc get
+    @objc set(value)
+  }
+  @IBInspectable @objc public var onlyAudio: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @IBInspectable @objc public var videoWidth: Swift.Int {
+    @objc get
+    @objc set(value)
+  }
+  @IBInspectable @objc public var videoHeight: Swift.Int {
+    @objc get
+    @objc set(value)
+  }
+  @IBInspectable @objc public var fps: Swift.Int {
+    @objc get
+    @objc set(value)
+  }
+  @IBInspectable @objc public var serviceId: Swift.String {
+    @objc get
+    @objc set(value)
+  }
+  @IBInspectable @objc public var serviceKey: Swift.String {
+    @objc get
+    @objc set(value)
+  }
+  @IBInspectable @objc public var serviceToken: Swift.String {
+    @objc get
+    @objc set(value)
+  }
+  @IBInspectable @objc public var restUrl: Swift.String {
+    @objc get
+    @objc set(value)
+  }
+  @IBInspectable @objc public var wsUrl: Swift.String {
+    @objc get
+    @objc set(value)
+  }
+  @IBInspectable @objc public var logUrl: Swift.String {
+    @objc get
+    @objc set(value)
+  }
+  @IBInspectable @objc public var frontCamera: Swift.Bool {
+    @objc get
+    @objc set(isFront)
+  }
+  @IBInspectable @objc public var mirrorMode: Swift.Bool {
+    @objc get
+    @objc set(isMirror)
+  }
+  @IBInspectable @objc public var fixedCameraRotation: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc @IBOutlet weak public var remoteView: UIKit.UIView?
+  @objc @IBOutlet weak public var localView: UIKit.UIView?
+  @IBInspectable @objc public var videoFilePathForSimulator: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @available(*, deprecated, message: "use localCapturer")
+  public var localCameraCapturer: WebRTC.RTCCameraVideoCapturer?
+  @available(*, deprecated, message: "use localCapturer")
+  public var localSampleCapturer: RemoteMonster.RemonSampleCapturer?
+  @available(*, deprecated, message: "use localView")
+  weak public var localPreView: UIKit.UIView?
+}
+extension RemonClient {
+  @objc dynamic public func setConfig(config: RemoteMonster.RemonConfig)
+  @objc dynamic public func getCurrentRemonState() -> Swift.Int
+  @objc dynamic public func getCurruntStateString() -> Swift.String
+  @objc dynamic public func closeRemon()
+  public func switchSimulcastLayer(bandwidth: RemoteMonster.RemonBandwidth)
+  @objc dynamic public func switchSimulcastLayer(bandwidth: RemoteMonster.objc_RemonBandwidth)
+  @objc dynamic public func setRemoteAudioEnabled(isEnabled: Swift.Bool = true)
+  @objc dynamic public func setLocalAudioEnabled(isEnabled: Swift.Bool = true)
+  @objc dynamic public func setLocalVideoEnabled(isEnabled: Swift.Bool = true)
+  @objc dynamic public func setRemoteVideoEnabled(isEnabled: Swift.Bool = true)
+  @objc dynamic public func startLocalVideoCapture(completion: @escaping () -> Swift.Void) -> Swift.Bool
+  @objc dynamic public func stopLocalVideoCapture() -> Swift.Bool
+  @objc dynamic public func sendMessage(message: Swift.String)
+  @objc dynamic public func switchCamera(isMirror: Swift.Bool = false, isToggle: Swift.Bool = true) -> Swift.Bool
+  @objc dynamic public func setVolume(volume: Swift.Float)
+  public func fetchChannel(type: RemoteMonster.RemonSearchType, roomName: Swift.String?, complete: @escaping (RemoteMonster.RemonError?, Swift.Array<RemoteMonster.RemonSearchResult>?) -> Swift.Void)
+  @objc dynamic public func startDump(withFileName: Swift.String, maxSizeInBytes: Swift.Int64)
+  @objc dynamic public func stopDump()
+  @objc public static func unpackAecDump(dumpName: Swift.String? = "audio.aecdump", resultFileName: Swift.String, avPreset: RemoteMonster.REMON_AECUNPACK_PRESET, progress: @escaping (Swift.Error?, RemoteMonster.REMON_AECUNPACK_STATE) -> Swift.Void)
+  @objc public static func unpackAecDump(dumpName: Swift.String? = "audio.aecdump", resultFileName: Swift.String, progress: @escaping (Swift.Error?, RemoteMonster.REMON_AECUNPACK_STATE) -> Swift.Void)
+  @objc dynamic public func showLocalVideo()
+  @available(*, deprecated, message: "Use setRemoteAudioEnabled( isEnabled: Bool )")
+  @objc dynamic public func muteRemoteAudio(mute: Swift.Bool = true)
+  @available(*, deprecated, message: "Use setLocalAudioEnabled( isEnabled: Bool )")
+  @objc dynamic public func muteLocalAudio(mute: Swift.Bool = true)
+  @available(*, deprecated, message: "Use setRemoteVideoEnabled( isEnabled: true)")
+  @objc dynamic public func startRemoteVideoCapture()
+  @available(*, deprecated, message: "Use setRemoteVideoEnabled( isEnabled: false)")
+  @objc dynamic public func stopRemoteVideoCapture()
+  public func switchBandWidth(bandwidth: RemoteMonster.RemonBandwidth)
+  @objc dynamic public func switchBandWidth(bandwidth: RemoteMonster.objc_RemonBandwidth)
+}
+extension RemonClient {
+  @objc dynamic public func onInit(block: @escaping RemoteMonster.RemonVoidBlock)
+  @objc dynamic public func onComplete(block: @escaping RemoteMonster.RemonVoidBlock)
+  @objc dynamic public func onClose(block: @escaping RemoteMonster.RemonCloseBlock)
+  @objc dynamic public func onDisConnect(block: @escaping RemoteMonster.RemonStringBlock)
+  @objc dynamic public func onMessage(block: @escaping RemoteMonster.RemonStringBlock)
+  public func onError(block: @escaping RemoteMonster.RemonErrorBlock)
+  @objc dynamic public func onObjcError(block: @escaping ((Foundation.NSError) -> Swift.Void))
+  @objc dynamic public func onStat(block: @escaping (RemoteMonster.RemonStatReport) -> Swift.Void)
+  @objc dynamic public func onRemoteVideoSizeChanged(block: @escaping (UIKit.UIView?, CoreGraphics.CGSize) -> Swift.Void)
+  @objc dynamic public func onLocalVideoSizeChanged(block: @escaping (UIKit.UIView?, CoreGraphics.CGSize) -> Swift.Void)
+  @objc dynamic public func onRoomEvent(block: @escaping (Swift.String, Swift.String) -> Swift.Void)
+  @available(*, deprecated, message: "use onStat")
+  @objc dynamic public func onRemonStatReport(block: @escaping (RemoteMonster.RemonStatReport) -> Swift.Void)
+}
+extension RemonClient {
+  @available(*, deprecated, message: "use remoteVideoView")
+  public var remoteRTCEAGLVideoView: WebRTC.RTCEAGLVideoView? {
+    get
+  }
+  @available(*, deprecated, message: "use localVideoView")
+  public var localRTCEAGLVideoView: WebRTC.RTCEAGLVideoView? {
+    get
+  }
+  public var remoteVideoView: WebRTC.RTCEAGLVideoView? {
+    get
+  }
+  public var localVideoView: WebRTC.RTCEAGLVideoView? {
+    get
+  }
+  @available(*, deprecated, message: "use localVideoView")
+  public var localRTCCameraPreviewView: RemoteMonster.RemonCameraPreviewView? {
+    get
+  }
+}
+extension RemonClient {
+  @objc public static func setAudioSessionConfiguration(category: AVFoundation.AVAudioSession.Category, mode: AVFoundation.AVAudioSession.Mode, options: AVFoundation.AVAudioSession.CategoryOptions)
+}
+public let ErrorDomain: Swift.String
+public let ErrorUnsupportedType: Swift.Int
+public let ErrorIndexOutOfBounds: Swift.Int
+public let ErrorWrongType: Swift.Int
+public let ErrorNotExist: Swift.Int
+public let ErrorInvalidJSON: Swift.Int
+public enum JsonType : Swift.Int {
+  case number
+  case string
+  case bool
+  case array
+  case dictionary
+  case null
+  case unknown
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct JSON {
+  public init(data: Foundation.Data, options opt: Foundation.JSONSerialization.ReadingOptions = .allowFragments, error: Foundation.NSErrorPointer = nil)
+  public init(_ object: Any)
+  public init(parseJSON jsonString: Swift.String)
+  @available(*, deprecated, message: "Use instead `init(parseJSON: )`")
+  public static func parse(_ json: Swift.String) -> RemoteMonster.JSON
+  public mutating func merge(with other: RemoteMonster.JSON) throws
+  public func merged(with other: RemoteMonster.JSON) throws -> RemoteMonster.JSON
+  public var object: Any {
+    get
+    set
+  }
+  public var type: RemoteMonster.JsonType {
+    get
+  }
+  public var error: Foundation.NSError? {
+    get
+  }
+  @available(*, unavailable, renamed: "null")
+  public static var nullJSON: RemoteMonster.JSON {
+    get
+  }
+  public static var null: RemoteMonster.JSON {
+    get
+  }
+}
+public enum Index<T> : Swift.Comparable {
+  case array(Swift.Int)
+  case dictionary(Swift.DictionaryIndex<Swift.String, T>)
+  case null
+  public static func == (lhs: RemoteMonster.Index<T>, rhs: RemoteMonster.Index<T>) -> Swift.Bool
+  public static func < (lhs: RemoteMonster.Index<T>, rhs: RemoteMonster.Index<T>) -> Swift.Bool
+}
+public typealias JSONIndex = RemoteMonster.Index<RemoteMonster.JSON>
+public typealias JSONRawIndex = RemoteMonster.Index<Any>
+extension JSON : Swift.Collection {
+  public typealias Index = RemoteMonster.JSONRawIndex
+  public var startIndex: RemoteMonster.JSON.Index {
+    get
+  }
+  public var endIndex: RemoteMonster.JSON.Index {
+    get
+  }
+  public func index(after i: RemoteMonster.JSON.Index) -> RemoteMonster.JSON.Index
+  public subscript(position: RemoteMonster.JSON.Index) -> (Swift.String, RemoteMonster.JSON) {
+    get
+  }
+  public typealias Element = (Swift.String, RemoteMonster.JSON)
+  public typealias Iterator = Swift.IndexingIterator<RemoteMonster.JSON>
+  public typealias SubSequence = Swift.Slice<RemoteMonster.JSON>
+  public typealias Indices = Swift.DefaultIndices<RemoteMonster.JSON>
+}
+public enum JSONKey {
+  case index(Swift.Int)
+  case key(Swift.String)
+}
+public protocol JSONSubscriptType {
+  var jsonKey: RemoteMonster.JSONKey { get }
+}
+extension Int : RemoteMonster.JSONSubscriptType {
+  public var jsonKey: RemoteMonster.JSONKey {
+    get
+  }
+}
+extension String : RemoteMonster.JSONSubscriptType {
+  public var jsonKey: RemoteMonster.JSONKey {
+    get
+  }
+}
+extension JSON {
+  public subscript(path: [RemoteMonster.JSONSubscriptType]) -> RemoteMonster.JSON {
+    get
+    set
+  }
+  public subscript(path: RemoteMonster.JSONSubscriptType...) -> RemoteMonster.JSON {
+    get
+    set
+  }
+}
+extension JSON : Swift.ExpressibleByStringLiteral {
+  public init(stringLiteral value: Swift.StringLiteralType)
+  public init(extendedGraphemeClusterLiteral value: Swift.StringLiteralType)
+  public init(unicodeScalarLiteral value: Swift.StringLiteralType)
+  public typealias StringLiteralType = Swift.StringLiteralType
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.StringLiteralType
+  public typealias UnicodeScalarLiteralType = Swift.StringLiteralType
+}
+extension JSON : Swift.ExpressibleByIntegerLiteral {
+  public init(integerLiteral value: Swift.IntegerLiteralType)
+  public typealias IntegerLiteralType = Swift.IntegerLiteralType
+}
+extension JSON : Swift.ExpressibleByBooleanLiteral {
+  public init(booleanLiteral value: Swift.BooleanLiteralType)
+  public typealias BooleanLiteralType = Swift.BooleanLiteralType
+}
+extension JSON : Swift.ExpressibleByFloatLiteral {
+  public init(floatLiteral value: Swift.FloatLiteralType)
+  public typealias FloatLiteralType = Swift.FloatLiteralType
+}
+extension JSON : Swift.ExpressibleByDictionaryLiteral {
+  public init(dictionaryLiteral elements: (Swift.String, Any)...)
+  public init(dictionaryLiteral elements: [(Swift.String, Any)])
+  public typealias Key = Swift.String
+  public typealias Value = Any
+}
+extension JSON : Swift.ExpressibleByArrayLiteral {
+  public init(arrayLiteral elements: Any...)
+  public typealias ArrayLiteralElement = Any
+}
+extension JSON : Swift.ExpressibleByNilLiteral {
+  @available(*, deprecated, message: "use JSON.null instead. Will be removed in future versions")
+  public init(nilLiteral: ())
+}
+extension JSON : Swift.RawRepresentable {
+  public init?(rawValue: Any)
+  public var rawValue: Any {
+    get
+  }
+  public func rawData(options opt: Foundation.JSONSerialization.WritingOptions = JSONSerialization.WritingOptions(rawValue: 0)) throws -> Foundation.Data
+  public func rawString(_ encoding: Swift.String.Encoding = .utf8, options opt: Foundation.JSONSerialization.WritingOptions = .prettyPrinted) -> Swift.String?
+  public func rawString(_ options: [RemoteMonster.writingOptionsKeys : Any]) -> Swift.String?
+  public typealias RawValue = Any
+}
+extension JSON : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension JSON {
+  public var array: [RemoteMonster.JSON]? {
+    get
+  }
+  public var arrayValue: [RemoteMonster.JSON] {
+    get
+  }
+  public var arrayObject: [Any]? {
+    get
+    set
+  }
+}
+extension JSON {
+  public var dictionary: [Swift.String : RemoteMonster.JSON]? {
+    get
+  }
+  public var dictionaryValue: [Swift.String : RemoteMonster.JSON] {
+    get
+  }
+  public var dictionaryObject: [Swift.String : Any]? {
+    get
+    set
+  }
+}
+extension JSON {
+  public var bool: Swift.Bool? {
+    get
+    set
+  }
+  public var boolValue: Swift.Bool {
+    get
+    set
+  }
+}
+extension JSON {
+  public var string: Swift.String? {
+    get
+    set
+  }
+  public var stringValue: Swift.String {
+    get
+    set
+  }
+}
+extension JSON {
+  public var number: Foundation.NSNumber? {
+    get
+    set
+  }
+  public var numberValue: Foundation.NSNumber {
+    get
+    set
+  }
+}
+extension JSON {
+  public var null: Foundation.NSNull? {
+    get
+    set
+  }
+  public func exists() -> Swift.Bool
+}
+extension JSON {
+  public var url: Foundation.URL? {
+    get
+    set
+  }
+}
+extension JSON {
+  public var double: Swift.Double? {
+    get
+    set
+  }
+  public var doubleValue: Swift.Double {
+    get
+    set
+  }
+  public var float: Swift.Float? {
+    get
+    set
+  }
+  public var floatValue: Swift.Float {
+    get
+    set
+  }
+  public var int: Swift.Int? {
+    get
+    set
+  }
+  public var intValue: Swift.Int {
+    get
+    set
+  }
+  public var uInt: Swift.UInt? {
+    get
+    set
+  }
+  public var uIntValue: Swift.UInt {
+    get
+    set
+  }
+  public var int8: Swift.Int8? {
+    get
+    set
+  }
+  public var int8Value: Swift.Int8 {
+    get
+    set
+  }
+  public var uInt8: Swift.UInt8? {
+    get
+    set
+  }
+  public var uInt8Value: Swift.UInt8 {
+    get
+    set
+  }
+  public var int16: Swift.Int16? {
+    get
+    set
+  }
+  public var int16Value: Swift.Int16 {
+    get
+    set
+  }
+  public var uInt16: Swift.UInt16? {
+    get
+    set
+  }
+  public var uInt16Value: Swift.UInt16 {
+    get
+    set
+  }
+  public var int32: Swift.Int32? {
+    get
+    set
+  }
+  public var int32Value: Swift.Int32 {
+    get
+    set
+  }
+  public var uInt32: Swift.UInt32? {
+    get
+    set
+  }
+  public var uInt32Value: Swift.UInt32 {
+    get
+    set
+  }
+  public var int64: Swift.Int64? {
+    get
+    set
+  }
+  public var int64Value: Swift.Int64 {
+    get
+    set
+  }
+  public var uInt64: Swift.UInt64? {
+    get
+    set
+  }
+  public var uInt64Value: Swift.UInt64 {
+    get
+    set
+  }
+}
+extension JSON : Swift.Comparable {
+}
+public func == (lhs: RemoteMonster.JSON, rhs: RemoteMonster.JSON) -> Swift.Bool
+public func <= (lhs: RemoteMonster.JSON, rhs: RemoteMonster.JSON) -> Swift.Bool
+public func >= (lhs: RemoteMonster.JSON, rhs: RemoteMonster.JSON) -> Swift.Bool
+public func > (lhs: RemoteMonster.JSON, rhs: RemoteMonster.JSON) -> Swift.Bool
+public func < (lhs: RemoteMonster.JSON, rhs: RemoteMonster.JSON) -> Swift.Bool
+public enum writingOptionsKeys {
+  case jsonSerialization
+  case castNilToNSNull
+  case maxObjextDepth
+  case encoding
+  public static func == (a: RemoteMonster.writingOptionsKeys, b: RemoteMonster.writingOptionsKeys) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@objc public enum RemonChannelType : Swift.Int {
+  case p2p
+  case viewer
+  case broadcast
+  case room
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class FractionLost : ObjectiveC.NSObject {
+  @objc public var level: Swift.Int
+  @objc public var max: Swift.Float
+  @objc public var min: Swift.Float
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class RatingValue : ObjectiveC.NSObject {
+  @objc public var level: Swift.Int
+  @objc public var value: Swift.Float
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class RemonStatReport : ObjectiveC.NSObject {
+  @objc public var localCandidate: Swift.String
+  @objc public var remoteCandidate: Swift.String
+  @objc public var localFrameWidth: Swift.Int
+  @objc public var localFrameHeight: Swift.Int
+  @objc public var remoteFrameWidth: Swift.Int
+  @objc public var remoteFrameHeight: Swift.Int
+  @objc public var localFrameRate: Swift.Int
+  @objc public var remoteFrameRate: Swift.Int
+  @objc public var availableSendBandwidth: Swift.Int
+  @objc public var availableReceiveBandwidth: Swift.Int
+  @objc public var rtt: Swift.Float
+  @objc public var localAudioFractionLost: Swift.Float
+  @objc public var localVideoFractionLost: Swift.Float
+  @objc public var remoteAudioFractionLost: Swift.Float
+  @objc public var remoteVideoFractionLost: Swift.Float
+  @objc public var bytesReceived: Swift.Float
+  @objc public var fullStatReport: Swift.String
+  @objc deinit
+  @objc public func getHealthRating() -> RemoteMonster.RatingValue
+  @objc public func getFpsRating() -> RemoteMonster.RatingValue
+  @objc public func getRemoteAudioFractionLost() -> RemoteMonster.RatingValue
+  @objc public func getLocalAudioFractionLost() -> RemoteMonster.RatingValue
+  @objc public func getRemoteVideoFractionLost() -> RemoteMonster.RatingValue
+  @objc public func getLoaclVideoFractionLost() -> RemoteMonster.RatingValue
+  @objc public func getRttRating() -> RemoteMonster.RatingValue
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class StatResult : ObjectiveC.NSObject {
+  @objc public var availableReceiveBandwidth: Swift.Int
+  @objc public var availableSendBandwidth: Swift.Int
+  @objc public var fractionRating: Swift.Int
+  @objc public var localAudioFractionLost: Swift.Int
+  @objc public var localAudioFractionRating: Swift.Int
+  @objc public var localCandidate: Swift.String
+  @objc public var localFrameHeight: Swift.Int
+  @objc public var localFrameRate: Swift.Int
+  @objc public var localFrameWidth: Swift.Int
+  @objc public var localVideoFractionLost: Swift.Int
+  @objc public var localVideoFractionRating: Swift.Int
+  @objc public var remoteAudioFractionLost: Swift.Int
+  @objc public var remoteAudioFractionRating: Swift.Int
+  @objc public var remoteCandidate: Swift.String
+  @objc public var remoteFrameHeight: Swift.Int
+  @objc public var remoteFrameRate: Swift.Int
+  @objc public var remoteFrameWidth: Swift.Int
+  @objc public var remoteVideoFractionLost: Swift.Int
+  @objc public var remoteVideoFractionRating: Swift.Int
+  @objc public var rtt: Swift.Int
+  @objc public var rttRating: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class RemonSearchResult : ObjectiveC.NSObject {
+  @objc public var chId: Swift.String
+  @objc public var serviceId: Swift.String
+  @objc public var status: Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(*, deprecated, message: "use localView")
+@objc public class RemonCameraPreviewView : UIKit.UIView {
+  @objc deinit
+  @objc override dynamic public class var layerClass: Swift.AnyClass {
+    @objc get
+  }
+  public var captureSession: AVFoundation.AVCaptureSession? {
+    get
+    set(newVal)
+  }
+  @objc override dynamic public func layoutSubviews()
+}
+public typealias OnConferenceErrorCallback = (RemoteMonster.RemonError) -> Swift.Void
+public typealias OnConferenceCloseCallback = () -> Swift.Void
+public typealias OnConferenceEventCallback = (RemoteMonster.RemonParticipant) -> Swift.Void
+@_hasMissingDesignatedInitializers public class RemonConferenceCallbacks {
+  @discardableResult
+  public func on(eventName: Swift.String, callback: @escaping RemoteMonster.OnConferenceEventCallback) -> RemoteMonster.RemonConferenceCallbacks
+  @discardableResult
+  public func close(callback: @escaping RemoteMonster.OnConferenceCloseCallback) -> RemoteMonster.RemonConferenceCallbacks
+  @discardableResult
+  public func error(callback: @escaping RemoteMonster.OnConferenceErrorCallback) -> RemoteMonster.RemonConferenceCallbacks
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class RemonConference : ObjectiveC.NSObject {
+  public var me: RemoteMonster.RemonParticipant?
+  @objc override dynamic public init()
+  public func create(roomName: Swift.String, config: RemoteMonster.RemonConfig, callback: (RemoteMonster.RemonParticipant) -> Swift.Void) -> RemoteMonster.RemonConferenceCallbacks
+  public func leave()
+  public func getParticipant(id: Swift.String) -> RemoteMonster.RemonParticipant?
+  public func getParticipants() -> [Swift.String : RemoteMonster.RemonParticipant]
+  @objc deinit
+}
+public enum RemonError : Swift.Error, Foundation.LocalizedError {
+  case Unknown(Swift.Int, Swift.String)
+  case InitError(Swift.Int, Swift.String)
+  case RestInitError(Swift.Int, Swift.String)
+  case WebSocketError(Swift.Int, Swift.String)
+  case WebSocketResponseError(Swift.Int, Swift.String)
+  case IceFailed(Swift.Int, Swift.String)
+  case MediaDeviceError(Swift.Int, Swift.String)
+  public var localizedDescription: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class RemonConfig : ObjectiveC.NSObject {
+  @objc public enum SelectiveCandidate : Swift.Int {
+    case Default
+    case Relay
+    case Route
+    case Auto
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public var restUrl: Swift.String
+  @objc public var wsUrl: Swift.String
+  @objc public var logUrl: Swift.String
+  @objc public var iceServers: [WebRTC.RTCIceServer]
+  @objc public var selectiveCandidate: RemoteMonster.RemonConfig.SelectiveCandidate
+  @objc public var key: Swift.String
+  @objc public var serviceId: Swift.String
+  @objc public var serviceToken: Swift.String
+  @objc public var token: Swift.String
+  @objc public var videoCall: Swift.Bool
+  @objc public var videoStartBitrate: Swift.String
+  @available(*, deprecated, message: "renamed to videoStartBitrate instead")
+  @objc public var startVideoBitrate: Swift.String
+  @objc public var videoCodec: Swift.String
+  @objc public var videoWidth: Swift.Int
+  @objc public var videoHeight: Swift.Int
+  @objc public var videoFps: Swift.Int
+  @objc public var autoCaptureStart: Swift.Bool
+  @objc public var id: Swift.String
+  @objc public var debugMode: Swift.Bool
+  @objc public var frontCamera: Swift.Bool
+  @objc public var mirrorMode: Swift.Bool
+  @objc public var fixedCameraRotation: Swift.Bool
+  @objc public var useExternalCapturer: Swift.Bool
+  @objc public var userMeta: Swift.String
+  @objc public var debugLevel: WebRTC.RTCLoggingSeverity
+  @objc public var videoFilePathForSimulator: Swift.String?
+  @objc public var simulcast: Swift.Bool
+  @objc public var iceDisconnectedTimeout: Swift.Int
+  @objc override dynamic public init()
+  public init(other: RemoteMonster.RemonConfig)
+  public init(client: RemoteMonster.RemonClient)
+  @objc deinit
+}
+@objc public enum RemonCloseType : Swift.Int {
+  case MINE
+  case OTHER
+  case UNKNOWN
+  case OTHER_UNEXPECTED
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+}
+public typealias RemonVoidBlock = () -> Swift.Void
+public typealias RemonCloseBlock = (RemoteMonster.RemonCloseType) -> Swift.Void
+public typealias RemonStringBlock = (Swift.String?) -> Swift.Void
+public typealias RemonErrorBlock = (RemoteMonster.RemonError) -> Swift.Void
+public typealias RemonArrayBlock = (Swift.Array<[Swift.String : Swift.String]>) -> Swift.Void
+@objc public enum REMON_AECUNPACK_STATE : Swift.Int {
+  case START = 0
+  case WARNING
+  case ERROR
+  case WROTE
+  case COMPLTE
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum REMON_AECUNPACK_PRESET : Swift.Int {
+  case M4A
+  case MP4LOW
+  case MP4MEDIUM
+  case MP4HIGH
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class aecunpack : ObjectiveC.NSObject {
+  public var filename: Swift.String?
+  public var STREAM_numChannels: Swift.Int32
+  public var REVERSE_numChannels: Swift.Int32
+  public var input: Foundation.InputStream?
+  public var STREAM_inputStreamBytes: Foundation.OutputStream
+  public var REVERSE_inputStreamBytes: Foundation.OutputStream
+  public var STREAM_inputStreamData: Foundation.Data
+  public var REVERSE_inputStreamData: Foundation.Data
+  public var MIX_Data: Foundation.Data
+  public var STREAM_frameCount: Swift.Int32
+  public var REVERSE_frameCount: Swift.Int32
+  public var isRuning: Swift.Bool
+  public var completeBlock: (Swift.Error?, RemoteMonster.REMON_AECUNPACK_STATE) -> Swift.Void
+  public func byteToInteger(b: Swift.UnsafeMutablePointer<Swift.UInt8>) -> Swift.Int
+  public func byteToShort(bytes: [Swift.UInt8]) -> Swift.UInt16
+  public func shortToByte(a: Swift.UInt16) -> [Swift.UInt8]
+  public func run(dumpName: Swift.String? = "audio.aecdump", resultFileName: Swift.String, progress: @escaping (Swift.Error?, RemoteMonster.REMON_AECUNPACK_STATE) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol RemonCameraCapturerBufferDelegate : AnyObject {
+  func didReceiveCameraData(inputImage: CoreImage.CIImage) -> CoreImage.CIImage?
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class RemonCameraCapturer : WebRTC.RTCCameraVideoCapturer {
+  weak public var imageDelegate: RemoteMonster.RemonCameraCapturerBufferDelegate?
+  @objc deinit
+}
+extension RemonCameraCapturer : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+}
+public enum RemonBandwidth : Swift.String {
+  case HIGH
+  case MEDIUM
+  case LOW
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc public enum objc_RemonBandwidth : Swift.Int {
+  case HIGH
+  case MEDIUM
+  case LOW
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum RemonState : Swift.Int, Swift.CustomStringConvertible {
+  case READY
+  case INIT
+  case CREATE
+  case CONNECT
+  case COMPLETE
+  case CLOSE
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+}
+public func JSONStringify(value: Swift.AnyObject, prettyPrinted: Swift.Bool = false) -> Swift.String
+extension RemoteMonster.WebSocketBinaryType : Swift.Equatable {}
+extension RemoteMonster.WebSocketBinaryType : Swift.Hashable {}
+extension RemoteMonster.WebSocketReadyState : Swift.Equatable {}
+extension RemoteMonster.WebSocketReadyState : Swift.Hashable {}
+extension RemoteMonster.WebSocketReadyState : Swift.RawRepresentable {}
+extension RemoteMonster.RemonAudioMode : Swift.Equatable {}
+extension RemoteMonster.RemonAudioMode : Swift.Hashable {}
+extension RemoteMonster.RemonAudioMode : Swift.RawRepresentable {}
+extension RemoteMonster.RemonSearchType : Swift.Equatable {}
+extension RemoteMonster.RemonSearchType : Swift.Hashable {}
+extension RemoteMonster.RemonSearchType : Swift.RawRepresentable {}
+extension RemoteMonster.RemonParticipant.ParticipantType : Swift.Equatable {}
+extension RemoteMonster.RemonParticipant.ParticipantType : Swift.Hashable {}
+extension RemoteMonster.RemonParticipant.ParticipantType : Swift.RawRepresentable {}
+extension RemoteMonster.JsonType : Swift.Equatable {}
+extension RemoteMonster.JsonType : Swift.Hashable {}
+extension RemoteMonster.JsonType : Swift.RawRepresentable {}
+extension RemoteMonster.writingOptionsKeys : Swift.Equatable {}
+extension RemoteMonster.writingOptionsKeys : Swift.Hashable {}
+extension RemoteMonster.RemonChannelType : Swift.Equatable {}
+extension RemoteMonster.RemonChannelType : Swift.Hashable {}
+extension RemoteMonster.RemonChannelType : Swift.RawRepresentable {}
+extension RemoteMonster.RemonConfig.SelectiveCandidate : Swift.Equatable {}
+extension RemoteMonster.RemonConfig.SelectiveCandidate : Swift.Hashable {}
+extension RemoteMonster.RemonConfig.SelectiveCandidate : Swift.RawRepresentable {}
+extension RemoteMonster.RemonCloseType : Swift.Equatable {}
+extension RemoteMonster.RemonCloseType : Swift.Hashable {}
+extension RemoteMonster.RemonCloseType : Swift.RawRepresentable {}
+extension RemoteMonster.REMON_AECUNPACK_STATE : Swift.Equatable {}
+extension RemoteMonster.REMON_AECUNPACK_STATE : Swift.Hashable {}
+extension RemoteMonster.REMON_AECUNPACK_STATE : Swift.RawRepresentable {}
+extension RemoteMonster.REMON_AECUNPACK_PRESET : Swift.Equatable {}
+extension RemoteMonster.REMON_AECUNPACK_PRESET : Swift.Hashable {}
+extension RemoteMonster.REMON_AECUNPACK_PRESET : Swift.RawRepresentable {}
+extension RemoteMonster.RemonBandwidth : Swift.Equatable {}
+extension RemoteMonster.RemonBandwidth : Swift.Hashable {}
+extension RemoteMonster.RemonBandwidth : Swift.RawRepresentable {}
+extension RemoteMonster.objc_RemonBandwidth : Swift.Equatable {}
+extension RemoteMonster.objc_RemonBandwidth : Swift.Hashable {}
+extension RemoteMonster.objc_RemonBandwidth : Swift.RawRepresentable {}
+extension RemoteMonster.RemonState : Swift.Equatable {}
+extension RemoteMonster.RemonState : Swift.Hashable {}
+extension RemoteMonster.RemonState : Swift.RawRepresentable {}

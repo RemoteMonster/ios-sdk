@@ -1,0 +1,11 @@
+framework module RemoteMonster {
+  umbrella header "RemoteMonster.h"
+
+  export *
+  module * { export * }
+}
+
+module RemoteMonster.Swift {
+    header "RemoteMonster-Swift.h"
+    requires objc
+}
