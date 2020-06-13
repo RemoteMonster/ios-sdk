@@ -1,3 +1,6 @@
+## 2.7.6
+- Revert xcframework to fat framework because the sdk has some trouble to linking with other framework
+
 ## 2.7.5
 - Fix an unpacking aecdump
 
