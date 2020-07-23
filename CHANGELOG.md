@@ -1,10 +1,13 @@
+## 2.7.8
+- 컨퍼런스 초기화 api 수정
+- 비디오 렌더러를 동적으로 추가할 경우 기존 미러모드 설정이 해제되는 이슈 수정
+
 ## 2.7.7
 -  비디오 렌더러를 동작 중에 추가하거나 제거할 수 있도록 메쏘드 추가
    attachLocalVideoTo, detachLocalVideo
    attachRemoteVideoTo, detachRemoteVideo
 - 프레임워크 배포 형식을 xcframework 에서 framework 로 변경
 - videoStartBitrate 제한이 정상적으로 반영되지 않던 문제 수정
-
 
 ## 2.7.6
 - Revert xcframework to fat framework because the sdk has some trouble to linking with other framework

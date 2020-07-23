@@ -352,6 +352,10 @@ public typealias OnParticipantEventCallback = (RemoteMonster.RemonParticipant) -
     @objc get
     @objc set(value)
   }
+  @objc public var useDeviceOrientation: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
   @IBInspectable @objc public var videoStartBitrate: Swift.String {
     @objc get
     @objc set(value)
@@ -895,6 +899,7 @@ public typealias OnConferenceEventCallback = (RemoteMonster.RemonParticipant) ->
   public var me: RemoteMonster.RemonParticipant?
   @objc override dynamic public init()
   public func create(roomName: Swift.String, config: RemoteMonster.RemonConfig, callback: (RemoteMonster.RemonParticipant) -> Swift.Void) -> RemoteMonster.RemonConferenceCallbacks
+  public func create(roomName: Swift.String, config: RemoteMonster.RemonConfig, priority: [Swift.String]?, callback: (RemoteMonster.RemonParticipant) -> Swift.Void) -> RemoteMonster.RemonConferenceCallbacks
   public func leave()
   public func getParticipant(id: Swift.String) -> RemoteMonster.RemonParticipant?
   public func getParticipants() -> [Swift.String : RemoteMonster.RemonParticipant]
@@ -947,6 +952,7 @@ public enum RemonError : Swift.Error, Foundation.LocalizedError {
   @objc public var frontCamera: Swift.Bool
   @objc public var mirrorMode: Swift.Bool
   @objc public var fixedCameraRotation: Swift.Bool
+  @objc public var useDeviceOrientation: Swift.Bool
   @objc public var useExternalCapturer: Swift.Bool
   @objc public var userMeta: Swift.String
   @objc public var debugLevel: WebRTC.RTCLoggingSeverity

@@ -317,6 +317,7 @@ SWIFT_CLASS_NAMED("RemonClient")
 /// false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
 /// 단, 앱이 하나의 방향만을 지원하는 경우 회전이 발생하지 않습니다.
 @property (nonatomic) IBInspectable BOOL fixedCameraRotation;
+@property (nonatomic) BOOL useDeviceOrientation;
 @property (nonatomic, copy) IBInspectable NSString * _Nonnull videoStartBitrate;
 /// 시뮬레이터에서 사용할 동영상 파일명
 @property (nonatomic, copy) IBInspectable NSString * _Nullable videoFilePathForSimulator;
@@ -560,6 +561,7 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic) BOOL mirrorMode;
 /// 송출 방향 고정 여부. 단말의 orientation에 영향을 받지 않고 단일 방향으로 고정할 때 사용.
 @property (nonatomic) BOOL fixedCameraRotation;
+@property (nonatomic) BOOL useDeviceOrientation;
 /// 외부 캡처러 사용. 내부 카메라 모듈을 사용하지 않고, 외부에서 별도로 구성하는 경우 사용.
 @property (nonatomic) BOOL useExternalCapturer;
 /// 추가 메타 정보
@@ -1129,6 +1131,7 @@ SWIFT_CLASS_NAMED("RemonClient")
 /// false 인 경우 앱이 지원하는 방향으로 회전이 이루어집니다.
 /// 단, 앱이 하나의 방향만을 지원하는 경우 회전이 발생하지 않습니다.
 @property (nonatomic) IBInspectable BOOL fixedCameraRotation;
+@property (nonatomic) BOOL useDeviceOrientation;
 @property (nonatomic, copy) IBInspectable NSString * _Nonnull videoStartBitrate;
 /// 시뮬레이터에서 사용할 동영상 파일명
 @property (nonatomic, copy) IBInspectable NSString * _Nullable videoFilePathForSimulator;
@@ -1372,6 +1375,7 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic) BOOL mirrorMode;
 /// 송출 방향 고정 여부. 단말의 orientation에 영향을 받지 않고 단일 방향으로 고정할 때 사용.
 @property (nonatomic) BOOL fixedCameraRotation;
+@property (nonatomic) BOOL useDeviceOrientation;
 /// 외부 캡처러 사용. 내부 카메라 모듈을 사용하지 않고, 외부에서 별도로 구성하는 경우 사용.
 @property (nonatomic) BOOL useExternalCapturer;
 /// 추가 메타 정보
