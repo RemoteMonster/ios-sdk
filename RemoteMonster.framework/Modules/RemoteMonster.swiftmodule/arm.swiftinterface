@@ -959,6 +959,7 @@ public enum RemonError : Swift.Error, Foundation.LocalizedError {
   @objc public var videoFilePathForSimulator: Swift.String?
   @objc public var simulcast: Swift.Bool
   @objc public var statIntervalTime: Swift.Int
+  @objc public var qualityLogSending: Swift.Bool
   @objc public var iceDisconnectedTimeout: Swift.Int
   @objc override dynamic public init()
   public init(other: RemoteMonster.RemonConfig)

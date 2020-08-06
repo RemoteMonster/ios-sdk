@@ -572,6 +572,7 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 /// 시뮬캐스트 동작을 위한 플래그(방송)
 @property (nonatomic) BOOL simulcast;
 @property (nonatomic) NSInteger statIntervalTime;
+@property (nonatomic) BOOL qualityLogSending;
 @property (nonatomic) NSInteger iceDisconnectedTimeout;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1386,6 +1387,7 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 /// 시뮬캐스트 동작을 위한 플래그(방송)
 @property (nonatomic) BOOL simulcast;
 @property (nonatomic) NSInteger statIntervalTime;
+@property (nonatomic) BOOL qualityLogSending;
 @property (nonatomic) NSInteger iceDisconnectedTimeout;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
