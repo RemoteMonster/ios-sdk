@@ -55,7 +55,6 @@
 #import <WebRTC/RTCFieldTrials.h>
 #import <WebRTC/RTCIceCandidate.h>
 #import <WebRTC/RTCIceServer.h>
-#import <WebRTC/RTCIntervalRange.h>
 #import <WebRTC/RTCLegacyStatsReport.h>
 #import <WebRTC/RTCMediaConstraints.h>
 #import <WebRTC/RTCMediaSource.h>
@@ -77,6 +76,7 @@
 #import <WebRTC/RTCDtmfSender.h>
 #import <WebRTC/RTCSSLAdapter.h>
 #import <WebRTC/RTCSessionDescription.h>
+#import <WebRTC/RTCStatisticsReport.h>
 #import <WebRTC/RTCTracing.h>
 #import <WebRTC/RTCCertificate.h>
 #import <WebRTC/RTCCryptoOptions.h>

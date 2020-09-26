@@ -214,16 +214,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
-SWIFT_CLASS("_TtC13RemoteMonster12FractionLost")
-@interface FractionLost : NSObject
-@property (nonatomic) NSInteger level;
-@property (nonatomic) float max;
-@property (nonatomic) float min;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
 
 typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_PRESET, open) {
   REMON_AECUNPACK_PRESETM4A = 0,
@@ -242,22 +232,13 @@ typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_STATE, open) {
 
 
 
-
-SWIFT_CLASS("_TtC13RemoteMonster11RatingValue")
-@interface RatingValue : NSObject
-@property (nonatomic) NSInteger level;
-@property (nonatomic) float value;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 typedef SWIFT_ENUM(NSInteger, RemonAudioMode, open) {
   RemonAudioModeVoice = 0,
   RemonAudioModeMusic = 1,
 };
 
-@class UIView;
 @class RemonConfig;
+@class UIView;
 @class RTCIceServer;
 enum SelectiveCandidate : NSInteger;
 
@@ -266,13 +247,11 @@ IB_DESIGNABLE
 SWIFT_CLASS_NAMED("RemonClient")
 @interface RemonClient : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, copy) NSString * _Nullable channelID;
+@property (nonatomic, strong) RemonConfig * _Nonnull remonConfig;
 @property (nonatomic, weak) IBOutlet UIView * _Nullable remoteView;
 @property (nonatomic, weak) IBOutlet UIView * _Nullable localView;
-@property (nonatomic, strong) RemonConfig * _Nonnull remonConfig;
 @property (nonatomic) double volumeRatio;
-@property (nonatomic) BOOL showRemoteVideoStat;
-@property (nonatomic) BOOL showLocalVideoStat;
-@property (nonatomic, copy) NSString * _Nullable channelID;
 /// 갭처러 객체
 @property (nonatomic, readonly, strong) RTCVideoCapturer * _Nullable localCapturer;
 /// 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부
@@ -322,6 +301,14 @@ SWIFT_CLASS_NAMED("RemonClient")
 /// 시뮬레이터에서 사용할 동영상 파일명
 @property (nonatomic, copy) IBInspectable NSString * _Nullable videoFilePathForSimulator;
 @property (nonatomic) NSInteger statIntervalTime;
+@property (nonatomic, copy) NSString * _Nonnull audioType;
+@property (nonatomic) BOOL audioAutoGain;
+/// 현재 오디오 레벨 정보를 얻어옵니다.
+/// 지원버전 : 2.7.10+
+/// 방송송출, p2p 연결시는 로컬 입력레벨이고, 방송수신자, 컨퍼런스 참여자는 리모트의 출력레벨입니다.
+@property (nonatomic, readonly) NSInteger currentAudioLevel;
+@property (nonatomic) BOOL showRemoteVideoStat SWIFT_DEPRECATED_MSG("use onStat instead");
+@property (nonatomic) BOOL showLocalVideoStat SWIFT_DEPRECATED_MSG("use onStat instead");
 @end
 
 @class RemonSearchResult;
@@ -420,6 +407,10 @@ typedef SWIFT_ENUM(NSInteger, RemonChannelType, open) {
 /// + mode: AVAudioSession.Mode
 /// + options: AVAudioSession.CategoryOptions
 + (void)setAudioSessionConfigurationWithCategory:(AVAudioSessionCategory _Nonnull)category mode:(AVAudioSessionMode _Nonnull)mode options:(AVAudioSessionCategoryOptions)options;
+/// 여러 피어를 동시에 사용할 경우 특정 피어 종료시 오디오세션 정보가 초기화 됩니다.
+/// 여러 피어를 사용하는 환경에서는 setAudioSessionConfiguration() 으로 기본적인 오디오 세션을 설정하고,
+/// 각 피어의 연결과 해제시에 setAudioSessionWithCurrentCategory() 를 호출해주어야 기존 설정이 유지됩니다.
++ (void)setAudioSessionWithCurrentCategory;
 @end
 
 
@@ -458,7 +449,7 @@ enum objc_RemonBandwidth : NSInteger;
 /// 현재 상태를 문자열로 얻어옵니다.
 - (NSString * _Nonnull)getCurruntStateString SWIFT_WARN_UNUSED_RESULT;
 /// webrtc 연결 종료
-- (void)closeRemon;
+- (void)closeRemonWithType:(enum RemonCloseType)type;
 - (void)switchSimulcastLayerWithBandwidth:(enum objc_RemonBandwidth)bandwidth;
 /// 원격지 사운드 켜거나 끄기
 - (void)setRemoteAudioEnabledWithIsEnabled:(BOOL)isEnabled;
@@ -574,6 +565,9 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic) NSInteger statIntervalTime;
 @property (nonatomic) BOOL qualityLogSending;
 @property (nonatomic) NSInteger iceDisconnectedTimeout;
+/// 오디오 타입 : voice, music
+@property (nonatomic, copy) NSString * _Nonnull audioType;
+@property (nonatomic) BOOL audioAutoGain;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -599,6 +593,12 @@ typedef SWIFT_ENUM(NSInteger, ParticipantType, open) {
   ParticipantTypePUBLISH = 0,
   ParticipantTypeSUBSCRIBE = 1,
 };
+
+
+@interface RemonParticipant (SWIFT_EXTENSION(RemoteMonster))
+- (void)onCloseWithBlock:(void (^ _Nonnull)(enum RemonCloseType))block SWIFT_UNAVAILABLE_MSG("use participant.on(event: \"onClose\"){ }");
+- (void)onCompleteWithBlock:(void (^ _Nonnull)(void))block SWIFT_UNAVAILABLE_MSG("use participant.on(event: \"onComplete\"){ }");
+@end
 
 
 SWIFT_CLASS("_TtC13RemoteMonster19RemonSampleCapturer")
@@ -636,17 +636,15 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonStatReport")
 @property (nonatomic) float localVideoFractionLost;
 @property (nonatomic) float remoteAudioFractionLost;
 @property (nonatomic) float remoteVideoFractionLost;
-@property (nonatomic) float bytesReceived;
+@property (nonatomic) NSInteger bytesReceived;
+@property (nonatomic) NSInteger bytesSent;
 @property (nonatomic, copy) NSString * _Nonnull fullStatReport;
 @property (nonatomic) NSInteger localAudioInputLevel;
 @property (nonatomic) NSInteger remoteAudioOuputLevel;
-- (RatingValue * _Nonnull)getHealthRating SWIFT_WARN_UNUSED_RESULT;
-- (RatingValue * _Nonnull)getFpsRating SWIFT_WARN_UNUSED_RESULT;
-- (RatingValue * _Nonnull)getRemoteAudioFractionLost SWIFT_WARN_UNUSED_RESULT;
-- (RatingValue * _Nonnull)getLocalAudioFractionLost SWIFT_WARN_UNUSED_RESULT;
-- (RatingValue * _Nonnull)getRemoteVideoFractionLost SWIFT_WARN_UNUSED_RESULT;
-- (RatingValue * _Nonnull)getLoaclVideoFractionLost SWIFT_WARN_UNUSED_RESULT;
-- (RatingValue * _Nonnull)getRttRating SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, copy) NSString * _Nonnull ssrcSendVideo;
+@property (nonatomic, copy) NSString * _Nonnull ssrcRecvVideo;
+@property (nonatomic, copy) NSString * _Nonnull ssrcSendAudio;
+@property (nonatomic, copy) NSString * _Nonnull ssrcRecvAudio;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1029,16 +1027,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
-SWIFT_CLASS("_TtC13RemoteMonster12FractionLost")
-@interface FractionLost : NSObject
-@property (nonatomic) NSInteger level;
-@property (nonatomic) float max;
-@property (nonatomic) float min;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
 
 typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_PRESET, open) {
   REMON_AECUNPACK_PRESETM4A = 0,
@@ -1057,22 +1045,13 @@ typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_STATE, open) {
 
 
 
-
-SWIFT_CLASS("_TtC13RemoteMonster11RatingValue")
-@interface RatingValue : NSObject
-@property (nonatomic) NSInteger level;
-@property (nonatomic) float value;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 typedef SWIFT_ENUM(NSInteger, RemonAudioMode, open) {
   RemonAudioModeVoice = 0,
   RemonAudioModeMusic = 1,
 };
 
-@class UIView;
 @class RemonConfig;
+@class UIView;
 @class RTCIceServer;
 enum SelectiveCandidate : NSInteger;
 
@@ -1081,13 +1060,11 @@ IB_DESIGNABLE
 SWIFT_CLASS_NAMED("RemonClient")
 @interface RemonClient : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, copy) NSString * _Nullable channelID;
+@property (nonatomic, strong) RemonConfig * _Nonnull remonConfig;
 @property (nonatomic, weak) IBOutlet UIView * _Nullable remoteView;
 @property (nonatomic, weak) IBOutlet UIView * _Nullable localView;
-@property (nonatomic, strong) RemonConfig * _Nonnull remonConfig;
 @property (nonatomic) double volumeRatio;
-@property (nonatomic) BOOL showRemoteVideoStat;
-@property (nonatomic) BOOL showLocalVideoStat;
-@property (nonatomic, copy) NSString * _Nullable channelID;
 /// 갭처러 객체
 @property (nonatomic, readonly, strong) RTCVideoCapturer * _Nullable localCapturer;
 /// 연결이 완료 된 후 로컬 비디오 캡쳐를 자동으로 시작 할 지 여부
@@ -1137,6 +1114,14 @@ SWIFT_CLASS_NAMED("RemonClient")
 /// 시뮬레이터에서 사용할 동영상 파일명
 @property (nonatomic, copy) IBInspectable NSString * _Nullable videoFilePathForSimulator;
 @property (nonatomic) NSInteger statIntervalTime;
+@property (nonatomic, copy) NSString * _Nonnull audioType;
+@property (nonatomic) BOOL audioAutoGain;
+/// 현재 오디오 레벨 정보를 얻어옵니다.
+/// 지원버전 : 2.7.10+
+/// 방송송출, p2p 연결시는 로컬 입력레벨이고, 방송수신자, 컨퍼런스 참여자는 리모트의 출력레벨입니다.
+@property (nonatomic, readonly) NSInteger currentAudioLevel;
+@property (nonatomic) BOOL showRemoteVideoStat SWIFT_DEPRECATED_MSG("use onStat instead");
+@property (nonatomic) BOOL showLocalVideoStat SWIFT_DEPRECATED_MSG("use onStat instead");
 @end
 
 @class RemonSearchResult;
@@ -1235,6 +1220,10 @@ typedef SWIFT_ENUM(NSInteger, RemonChannelType, open) {
 /// + mode: AVAudioSession.Mode
 /// + options: AVAudioSession.CategoryOptions
 + (void)setAudioSessionConfigurationWithCategory:(AVAudioSessionCategory _Nonnull)category mode:(AVAudioSessionMode _Nonnull)mode options:(AVAudioSessionCategoryOptions)options;
+/// 여러 피어를 동시에 사용할 경우 특정 피어 종료시 오디오세션 정보가 초기화 됩니다.
+/// 여러 피어를 사용하는 환경에서는 setAudioSessionConfiguration() 으로 기본적인 오디오 세션을 설정하고,
+/// 각 피어의 연결과 해제시에 setAudioSessionWithCurrentCategory() 를 호출해주어야 기존 설정이 유지됩니다.
++ (void)setAudioSessionWithCurrentCategory;
 @end
 
 
@@ -1273,7 +1262,7 @@ enum objc_RemonBandwidth : NSInteger;
 /// 현재 상태를 문자열로 얻어옵니다.
 - (NSString * _Nonnull)getCurruntStateString SWIFT_WARN_UNUSED_RESULT;
 /// webrtc 연결 종료
-- (void)closeRemon;
+- (void)closeRemonWithType:(enum RemonCloseType)type;
 - (void)switchSimulcastLayerWithBandwidth:(enum objc_RemonBandwidth)bandwidth;
 /// 원격지 사운드 켜거나 끄기
 - (void)setRemoteAudioEnabledWithIsEnabled:(BOOL)isEnabled;
@@ -1389,6 +1378,9 @@ SWIFT_CLASS("_TtC13RemoteMonster11RemonConfig")
 @property (nonatomic) NSInteger statIntervalTime;
 @property (nonatomic) BOOL qualityLogSending;
 @property (nonatomic) NSInteger iceDisconnectedTimeout;
+/// 오디오 타입 : voice, music
+@property (nonatomic, copy) NSString * _Nonnull audioType;
+@property (nonatomic) BOOL audioAutoGain;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1414,6 +1406,12 @@ typedef SWIFT_ENUM(NSInteger, ParticipantType, open) {
   ParticipantTypePUBLISH = 0,
   ParticipantTypeSUBSCRIBE = 1,
 };
+
+
+@interface RemonParticipant (SWIFT_EXTENSION(RemoteMonster))
+- (void)onCloseWithBlock:(void (^ _Nonnull)(enum RemonCloseType))block SWIFT_UNAVAILABLE_MSG("use participant.on(event: \"onClose\"){ }");
+- (void)onCompleteWithBlock:(void (^ _Nonnull)(void))block SWIFT_UNAVAILABLE_MSG("use participant.on(event: \"onComplete\"){ }");
+@end
 
 
 SWIFT_CLASS("_TtC13RemoteMonster19RemonSampleCapturer")
@@ -1451,17 +1449,15 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonStatReport")
 @property (nonatomic) float localVideoFractionLost;
 @property (nonatomic) float remoteAudioFractionLost;
 @property (nonatomic) float remoteVideoFractionLost;
-@property (nonatomic) float bytesReceived;
+@property (nonatomic) NSInteger bytesReceived;
+@property (nonatomic) NSInteger bytesSent;
 @property (nonatomic, copy) NSString * _Nonnull fullStatReport;
 @property (nonatomic) NSInteger localAudioInputLevel;
 @property (nonatomic) NSInteger remoteAudioOuputLevel;
-- (RatingValue * _Nonnull)getHealthRating SWIFT_WARN_UNUSED_RESULT;
-- (RatingValue * _Nonnull)getFpsRating SWIFT_WARN_UNUSED_RESULT;
-- (RatingValue * _Nonnull)getRemoteAudioFractionLost SWIFT_WARN_UNUSED_RESULT;
-- (RatingValue * _Nonnull)getLocalAudioFractionLost SWIFT_WARN_UNUSED_RESULT;
-- (RatingValue * _Nonnull)getRemoteVideoFractionLost SWIFT_WARN_UNUSED_RESULT;
-- (RatingValue * _Nonnull)getLoaclVideoFractionLost SWIFT_WARN_UNUSED_RESULT;
-- (RatingValue * _Nonnull)getRttRating SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, copy) NSString * _Nonnull ssrcSendVideo;
+@property (nonatomic, copy) NSString * _Nonnull ssrcRecvVideo;
+@property (nonatomic, copy) NSString * _Nonnull ssrcSendAudio;
+@property (nonatomic, copy) NSString * _Nonnull ssrcRecvAudio;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
