@@ -48,7 +48,7 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
         
         // close remon room
         self.remonConference?.leave()
-        self.remonConference = nil
+        
     }
     
     
@@ -110,7 +110,7 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
             
             self?.showToast(message: "\(participant.id) has joined")
             
-        }.on(eventName: "onUserConnected") {
+        }.on(eventName: "onUserStreamConnected" ) {
             participant in
             // v2.7.3 추가
             // 실제 스트림세션 연결이 이루어지면 호출됩니다.
@@ -124,7 +124,7 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
                 self?.availableViews?[index] = false
             }
             
-            if participant.getLatestError() != nil {
+            if participant.latestError != nil {
                 // 에러로 끊어진 경우
                 // 재시도 처리 등은 각 서비스 상황에 맞게 구현
             }
@@ -138,6 +138,8 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
             } else {
                 // 종료됨
             }
+            
+            self.remonConference = nil
             
         }.error { err in
             // 마스터유저(송출 채널)의 오류 발생시 호출됩니다.
