@@ -6,7 +6,7 @@ PODS:
   - SwiftProtobuf (1.9.0)
 
 DEPENDENCIES:
-  - RemoteMonster (~> 2.7.4)
+  - RemoteMonster (~> 2.7.10)
 
 SPEC REPOS:
   trunk:
@@ -19,6 +19,6 @@ SPEC CHECKSUMS:
   RemoteMonster: 9b64d7441d3a86afef2292811f095dfa05ec66b5
   SwiftProtobuf: ecbec1be9036d15655f6b3443a1c4ea693c97932
 
-PODFILE CHECKSUM: 3240dce782af19acf0a430c3e9c66bbc3a5be1dc
+PODFILE CHECKSUM: 756fc3101a17dac1da7ba6dd7b830f2ffc4dbee7
 
 COCOAPODS: 1.9.3

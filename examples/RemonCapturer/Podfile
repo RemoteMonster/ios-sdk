@@ -6,7 +6,7 @@ target 'RemonCapturer' do
   use_frameworks!
 
   # Pods for SampleV2
-  pod 'RemoteMonster', '~> 2.7.0'
+  pod 'RemoteMonster', '~> 2.7.10'
   pod 'GPUImage'
 end
 

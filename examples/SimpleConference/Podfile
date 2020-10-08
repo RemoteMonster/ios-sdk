@@ -6,5 +6,5 @@ target 'SimpleConference' do
   use_frameworks!
 
   # Pods for SimpleConference
-  pod 'RemoteMonster', '~>2.7.4'
+  pod 'RemoteMonster', '~>2.7.10'
 end
