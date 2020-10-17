@@ -373,6 +373,7 @@ extension RemonClient {
      로컬 비디오를 사용하는 모든 연결에 영향이 있으므로, 특정 연결된 세션의 비디오를 켜거나 끄는 경우
      setLocalVideoEnabled( isEnabled: true ) 메쏘드 사용.
      */
+    @discardableResult
     @objc public func startLocalVideoCapture(completion:@escaping ()->Void) -> Bool {
         return self.controller.startLocalVideoCapture(completion: completion)
     }
@@ -380,6 +381,7 @@ extension RemonClient {
     /**
      로컬 비디오(카메라) 중지
      */
+    @discardableResult
     @objc public func stopLocalVideoCapture() -> Bool {
         return self.controller.stopLocalVideoCapture()
     }
@@ -400,6 +402,7 @@ extension RemonClient {
      
      -Return:변경된 카메라가 전면이면 true, 후면이면 false
      */
+    @discardableResult
     @objc public func switchCamera( isMirror:Bool = false, isToggle:Bool = true) -> Bool {
         return self.controller.switchCamera( isMirror:isMirror, isToggle:isToggle)
     }
@@ -673,8 +676,8 @@ extension RemonClient {
         ac.category = category.rawValue
         ac.mode = mode.rawValue
         ac.categoryOptions =  options
-        
-        //ac.sampleRate = 44100
+        ac.ioBufferDuration = 0.093
+        //ac.sampleRate = 44_100
         RTCAudioSessionConfiguration.setWebRTC(ac)
         
         #if DEBUG
@@ -684,7 +687,7 @@ extension RemonClient {
         #endif
  
         let session = RTCAudioSession.sharedInstance()
-       
+        
         session.lockForConfiguration()
         do {
             try session.setConfiguration(ac)

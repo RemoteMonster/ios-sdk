@@ -409,9 +409,12 @@ extension RemonClient {
   @objc dynamic public func setLocalAudioEnabled(isEnabled: Swift.Bool = true)
   @objc dynamic public func setLocalVideoEnabled(isEnabled: Swift.Bool = true)
   @objc dynamic public func setRemoteVideoEnabled(isEnabled: Swift.Bool = true)
+  @discardableResult
   @objc dynamic public func startLocalVideoCapture(completion: @escaping () -> Swift.Void) -> Swift.Bool
+  @discardableResult
   @objc dynamic public func stopLocalVideoCapture() -> Swift.Bool
   @objc dynamic public func sendMessage(message: Swift.String)
+  @discardableResult
   @objc dynamic public func switchCamera(isMirror: Swift.Bool = false, isToggle: Swift.Bool = true) -> Swift.Bool
   @objc dynamic public func setVolume(volume: Swift.Float)
   public func fetchChannel(type: RemoteMonster.RemonSearchType, roomName: Swift.String?, complete: @escaping (RemoteMonster.RemonError?, Swift.Array<RemoteMonster.RemonSearchResult>?) -> Swift.Void)

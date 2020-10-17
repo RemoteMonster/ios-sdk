@@ -462,9 +462,9 @@ enum objc_RemonBandwidth : NSInteger;
 /// 로컬 비디오(카메라) 시작
 /// 로컬 비디오를 사용하는 모든 연결에 영향이 있으므로, 특정 연결된 세션의 비디오를 켜거나 끄는 경우
 /// setLocalVideoEnabled( isEnabled: true ) 메쏘드 사용.
-- (BOOL)startLocalVideoCaptureWithCompletion:(void (^ _Nonnull)(void))completion SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)startLocalVideoCaptureWithCompletion:(void (^ _Nonnull)(void))completion;
 /// 로컬 비디오(카메라) 중지
-- (BOOL)stopLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)stopLocalVideoCapture;
 /// 채널이 연결된 상태에서 상대편에게 메시지를 전달한다.
 - (void)sendMessageWithMessage:(NSString * _Nonnull)message;
 /// 카메라 전환
@@ -473,7 +473,7 @@ enum objc_RemonBandwidth : NSInteger;
 /// +isMirror: 미러모드 적용 여부
 /// +isToggle: 카메라 전면,후면 전환 여부
 /// -Return:변경된 카메라가 전면이면 true, 후면이면 false
-- (BOOL)switchCameraWithIsMirror:(BOOL)isMirror isToggle:(BOOL)isToggle SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)switchCameraWithIsMirror:(BOOL)isMirror isToggle:(BOOL)isToggle;
 /// 볼륨설정
 - (void)setVolumeWithVolume:(float)volume;
 - (void)startDumpWithFileName:(NSString * _Nonnull)withFileName maxSizeInBytes:(int64_t)maxSizeInBytes;
@@ -1275,9 +1275,9 @@ enum objc_RemonBandwidth : NSInteger;
 /// 로컬 비디오(카메라) 시작
 /// 로컬 비디오를 사용하는 모든 연결에 영향이 있으므로, 특정 연결된 세션의 비디오를 켜거나 끄는 경우
 /// setLocalVideoEnabled( isEnabled: true ) 메쏘드 사용.
-- (BOOL)startLocalVideoCaptureWithCompletion:(void (^ _Nonnull)(void))completion SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)startLocalVideoCaptureWithCompletion:(void (^ _Nonnull)(void))completion;
 /// 로컬 비디오(카메라) 중지
-- (BOOL)stopLocalVideoCapture SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)stopLocalVideoCapture;
 /// 채널이 연결된 상태에서 상대편에게 메시지를 전달한다.
 - (void)sendMessageWithMessage:(NSString * _Nonnull)message;
 /// 카메라 전환
@@ -1286,7 +1286,7 @@ enum objc_RemonBandwidth : NSInteger;
 /// +isMirror: 미러모드 적용 여부
 /// +isToggle: 카메라 전면,후면 전환 여부
 /// -Return:변경된 카메라가 전면이면 true, 후면이면 false
-- (BOOL)switchCameraWithIsMirror:(BOOL)isMirror isToggle:(BOOL)isToggle SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)switchCameraWithIsMirror:(BOOL)isMirror isToggle:(BOOL)isToggle;
 /// 볼륨설정
 - (void)setVolumeWithVolume:(float)volume;
 - (void)startDumpWithFileName:(NSString * _Nonnull)withFileName maxSizeInBytes:(int64_t)maxSizeInBytes;
