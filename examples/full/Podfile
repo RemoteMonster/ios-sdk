@@ -6,7 +6,7 @@ target 'RemonFull' do
   use_frameworks!
 
   # Pods for SampleV2
-  pod 'RemoteMonster', '~>2.7.10'
+  pod 'RemoteMonster', '~>2.7.11'
 
 end
 
@@ -15,7 +15,7 @@ target 'RemonCall' do
   use_frameworks!
 
   # Pods for SampleV2
-  pod 'RemoteMonster', '~>2.7.10'
+  pod 'RemoteMonster', '~>2.7.11'
 #  pod 'Firebase/Core'
 #  pod 'Firebase/Database'
 
@@ -26,14 +26,14 @@ target 'RemonEx-objc' do
     use_frameworks!
     
     # Pods for SampleV2
-    pod 'RemoteMonster', '~>2.7.10'
+    pod 'RemoteMonster', '~>2.7.11'
 end
 
 target 'externalSampler' do
     # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
     use_frameworks!
     # Pods for SampleV2
-    pod 'RemoteMonster', '~>2.7.10'
+    pod 'RemoteMonster', '~>2.7.11'
     pod 'GPUImage', '~> 0.1'
 
 end
@@ -42,6 +42,6 @@ target 'meshCall' do
     # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
     use_frameworks!
     # Pods for SampleV2
-    pod 'RemoteMonster', '~>2.7.10'
+    pod 'RemoteMonster', '~>2.7.11'
     pod 'GPUImage', '~> 0.1'
 end

@@ -868,8 +868,8 @@
 			baseConfigurationReference = 7CA5660B94705913FE97BC3C /* Pods-RemonFull.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -879,6 +879,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.SampleV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -889,8 +890,8 @@
 			baseConfigurationReference = 41FA9D86BC59C24ECE49B567 /* Pods-RemonFull.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -900,6 +901,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.SampleV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -937,7 +939,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -997,7 +999,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1024,8 +1026,6 @@
 			baseConfigurationReference = 0562E04820BF9D01DB8D718C /* Pods-RemonEx-objc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "RemonEx-objc/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -1044,8 +1044,6 @@
 			baseConfigurationReference = E6FEC8F6C95903AEC7D6D8A9 /* Pods-RemonEx-objc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "RemonEx-objc/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -1064,8 +1062,6 @@
 			baseConfigurationReference = 4EFED3282B89D6374ABEDA49 /* Pods-externalSampler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1091,8 +1087,6 @@
 			baseConfigurationReference = 7BCAB032182713BBBB9B977A /* Pods-externalSampler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1117,8 +1111,6 @@
 			baseConfigurationReference = D2D3AB140091E753B8148A06 /* Pods-meshCall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = meshCall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1140,8 +1132,6 @@
 			baseConfigurationReference = E7DC0705251F6FCFC9F6A06E /* Pods-meshCall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = meshCall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1163,8 +1153,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RemonCall/RemonCall.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RemonCall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
@@ -1185,8 +1173,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RemonCall/RemonCall.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JQ6TYMKLC;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RemonCall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
