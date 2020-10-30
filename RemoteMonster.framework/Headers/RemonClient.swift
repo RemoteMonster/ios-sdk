@@ -28,10 +28,11 @@ public class RemonClient:NSObject {
     
     
     internal var controller: RemonClientController = RemonClientController()
-    @objc public var channelID:String?
+    @objc public var channelID:String? {
+        get { self.controller.context.channelId }
+    }
     @objc public var remonConfig:RemonConfig = RemonConfig()
     
-    internal var autoReJoin_:Bool = false
     internal var firstInit:Bool = false
     
     
@@ -316,7 +317,11 @@ extension RemonClient {
     /**
      webrtc 연결 종료
      */
-    @objc public func closeRemon(type: RemonCloseType = .MINE) {
+    @objc public func closeRemon() {
+        self.closeRemon(type: .MINE)
+    }
+    
+    @objc public func closeRemon(type: RemonCloseType ) {
         if controller.context.state != RemonState.CLOSE {
             controller.context.requestClose(type: type)
         }
@@ -507,6 +512,8 @@ extension RemonClient {
     @objc public func stopRemoteVideoCapture() -> Void {
         self.controller.setRemoteAudioEnabled(isEnabled: false)
     }
+    
+    
 }
 
 
@@ -669,7 +676,16 @@ extension RemonClient {
     @objc public static func setAudioSessionConfiguration(
         category: AVAudioSession.Category,
         mode: AVAudioSession.Mode,
-        options:AVAudioSession.CategoryOptions) {
+        options:AVAudioSession.CategoryOptions ) {
+        RemonClient.setAudioSessionConfiguration(category: category, mode: mode, options: options,delegate: nil)
+    }
+    
+    
+    public static func setAudioSessionConfiguration(
+        category: AVAudioSession.Category,
+        mode: AVAudioSession.Mode,
+        options:AVAudioSession.CategoryOptions,
+        delegate:RTCAudioSessionDelegate?) {
         
         // webrtc 전역 오디오세션 카테고리 설정
         let ac = RTCAudioSessionConfiguration.webRTC()
@@ -677,16 +693,19 @@ extension RemonClient {
         ac.mode = mode.rawValue
         ac.categoryOptions =  options
         ac.ioBufferDuration = 0.093
-        //ac.sampleRate = 44_100
+        
         RTCAudioSessionConfiguration.setWebRTC(ac)
         
         #if DEBUG
-        print("[RemonClient] setAudioSessionConfiguration: category=\(ac.category)")
-        print("[RemonClient] setAudioSessionConfiguration: mode=\(ac.mode)")
-        print("[RemonClient] setAudioSessionConfiguration: options=\(ac.categoryOptions)")
+        print("[RemonClient.setAudioSessionConfiguration] category=\(ac.category)")
+        print("[RemonClient.setAudioSessionConfiguration] mode=\(ac.mode)")
+        print("[RemonClient.setAudioSessionConfiguration] options=\(ac.categoryOptions)")
         #endif
  
         let session = RTCAudioSession.sharedInstance()
+        if delegate != nil {
+            session.add(delegate!)
+        }
         
         session.lockForConfiguration()
         do {
@@ -705,6 +724,15 @@ extension RemonClient {
      */
     @objc public static func setAudioSessionWithCurrentCategory() {
         let ac = RTCAudioSessionConfiguration.current()
+        
+        #if DEBUG
+        print("[RemonClient.setAudioSessionWithCurrentCategory] category=\(ac.category)")
+        print("[RemonClient.setAudioSessionWithCurrentCategory] mode=\(ac.mode)")
+        print("[RemonClient.setAudioSessionWithCurrentCategory] options=\(ac.categoryOptions)")
+        print("[RemonClient.setAudioSessionWithCurrentCategory] sampleRate=\(ac.sampleRate)")
+        print("[RemonClient.setAudioSessionWithCurrentCategory] ioBufferDuration=\(ac.ioBufferDuration)")
+        #endif
+        
         let session = RTCAudioSession.sharedInstance()
         session.lockForConfiguration()
         try? session.setCategory(ac.category, with: ac.categoryOptions)
