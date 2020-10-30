@@ -25,9 +25,8 @@ pod install
 ```
 
 ```
-사소한 변경사항의 경우 동일한 버전으로 빌드버전만 증가합니다.
-기존 버전으로 install 된 경우 새로 업데이트된 SDK를 사용할 수 없습니다. 
-저장소의 SDK Build Version 과 다른 버전이 설치되는 경우 cocoapods 캐시를 삭제하고 다시 설치하시기 바랍니다.
+사소한 변경사항, Hot fix의 경우 버전은 동일하며 빌드버전만 증가.
+버전이 동일한 SDK를 사용시 기존 캐시 삭제 후 사용.
 캐시위치 : ~/Library/Caches/CocoaPods/Pods/Release/RemoteMonster
 프로젝트 : Podfile.lock, Pods 폴더 삭제
 ```
