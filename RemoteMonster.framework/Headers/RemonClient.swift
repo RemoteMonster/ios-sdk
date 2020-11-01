@@ -723,7 +723,7 @@ extension RemonClient {
      각 피어의 연결과 해제시에 setAudioSessionWithCurrentCategory() 를 호출해주어야 기존 설정이 유지됩니다.
      */
     @objc public static func setAudioSessionWithCurrentCategory() {
-        let ac = RTCAudioSessionConfiguration.current()
+        let ac = RTCAudioSessionConfiguration.webRTC()
         
         #if DEBUG
         print("[RemonClient.setAudioSessionWithCurrentCategory] category=\(ac.category)")
