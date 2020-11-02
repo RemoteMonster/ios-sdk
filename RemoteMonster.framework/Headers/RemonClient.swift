@@ -688,11 +688,11 @@ extension RemonClient {
         delegate:RTCAudioSessionDelegate?) {
         
         // webrtc 전역 오디오세션 카테고리 설정
-        let ac = RTCAudioSessionConfiguration.webRTC()
+        let ac = RTCAudioSessionConfiguration()
         ac.category = category.rawValue
         ac.mode = mode.rawValue
         ac.categoryOptions =  options
-        ac.ioBufferDuration = 0.093
+        ac.ioBufferDuration = 0.06
         
         RTCAudioSessionConfiguration.setWebRTC(ac)
         
