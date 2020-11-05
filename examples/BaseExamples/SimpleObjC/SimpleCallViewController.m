@@ -105,8 +105,8 @@ BOOL muted = NO;
     }];
 
     
-    [self.remonCall onRemonStatReportWithBlock:^(RemonStatReport * _Nonnull stat) {
-        RatingValue *remonRating = [stat getHealthRating];
+    [self.remonCall onStatWithBlock:^(RemonStatReport * _Nonnull stat) {
+        
     }];
     
     [self.remonCall onRemoteVideoSizeChangedWithBlock:^(UIView * _Nullable view, CGSize size) {
