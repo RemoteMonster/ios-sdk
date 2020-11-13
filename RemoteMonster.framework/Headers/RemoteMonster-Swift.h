@@ -215,6 +215,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+typedef SWIFT_ENUM(NSInteger, ConferenceEvent, open) {
+  ConferenceEventUnknown = 0,
+  ConferenceEventOnRoomCreated = 1,
+  ConferenceEventOnUserStreamConnected = 2,
+  ConferenceEventOnUserLeft = 3,
+  ConferenceEventOnUserJoined = 4,
+};
+
 
 typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_PRESET, open) {
   REMON_AECUNPACK_PRESETM4A = 0,
@@ -400,6 +408,7 @@ typedef SWIFT_ENUM(NSInteger, RemonChannelType, open) {
 };
 
 
+@protocol RTCAudioSessionDelegate;
 
 @interface RemonClient (SWIFT_EXTENSION(RemoteMonster))
 /// sdk 의 기본 오디오 설정
@@ -408,6 +417,7 @@ typedef SWIFT_ENUM(NSInteger, RemonChannelType, open) {
 /// + mode: AVAudioSession.Mode
 /// + options: AVAudioSession.CategoryOptions
 + (void)setAudioSessionConfigurationWithCategory:(AVAudioSessionCategory _Nonnull)category mode:(AVAudioSessionMode _Nonnull)mode options:(AVAudioSessionCategoryOptions)options;
++ (void)setAudioSessionConfigurationWithCategory:(AVAudioSessionCategory _Nonnull)category mode:(AVAudioSessionMode _Nonnull)mode options:(AVAudioSessionCategoryOptions)options delegate:(id <RTCAudioSessionDelegate> _Nullable)delegate;
 /// 여러 피어를 동시에 사용할 경우 특정 피어 종료시 오디오세션 정보가 초기화 됩니다.
 /// 여러 피어를 사용하는 환경에서는 setAudioSessionConfiguration() 으로 기본적인 오디오 세션을 설정하고,
 /// 각 피어의 연결과 해제시에 setAudioSessionWithCurrentCategory() 를 호출해주어야 기존 설정이 유지됩니다.
@@ -500,10 +510,29 @@ typedef SWIFT_ENUM(NSInteger, RemonCloseType, open) {
   RemonCloseTypeOTHER_UNEXPECTED = 3,
 };
 
+@class RemonParticipant;
+@class RemonConferenceCallbacks;
 
 ///
 SWIFT_CLASS("_TtC13RemoteMonster15RemonConference")
 @interface RemonConference : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (RemonConferenceCallbacks * _Nonnull)createWithRoomName:(NSString * _Nonnull)roomName config:(RemonConfig * _Nonnull)config callback:(SWIFT_NOESCAPE void (^ _Nonnull)(RemonParticipant * _Nonnull))callback SWIFT_WARN_UNUSED_RESULT;
+- (void)leave;
+- (RemonParticipant * _Nullable)getParticipantWithId:(NSString * _Nonnull)id SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, RemonParticipant *> * _Nonnull)getParticipants SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+///
+SWIFT_CLASS("_TtC13RemoteMonster24RemonConferenceCallbacks")
+@interface RemonConferenceCallbacks : NSObject
+///
+- (RemonConferenceCallbacks * _Nonnull)onEventName:(NSString * _Nonnull)eventName callback:(void (^ _Nonnull)(RemonParticipant * _Nonnull))callback;
+- (RemonConferenceCallbacks * _Nonnull)onEvent:(enum ConferenceEvent)event callback:(void (^ _Nonnull)(RemonParticipant * _Nonnull))callback;
+///
+- (RemonConferenceCallbacks * _Nonnull)closeWithCallback:(void (^ _Nonnull)(void))callback;
+- (RemonConferenceCallbacks * _Nonnull)errorWithCallback:(void (^ _Nonnull)(NSError * _Nonnull))callback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -583,6 +612,8 @@ typedef SWIFT_ENUM(NSInteger, SelectiveCandidate, open) {
 
 SWIFT_CLASS("_TtC13RemoteMonster16RemonParticipant")
 @interface RemonParticipant : RemonClient
+@property (nonatomic, copy) NSString * _Nonnull id;
+@property (nonatomic) id _Nullable tag;
 /// 목록을 가져 옵니다.
 /// \param complete 패치 완료 블럭. error 인자가 nil 이라면 RemonSearchResult 목록을 전달 합니다.
 ///
@@ -1031,6 +1062,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+typedef SWIFT_ENUM(NSInteger, ConferenceEvent, open) {
+  ConferenceEventUnknown = 0,
+  ConferenceEventOnRoomCreated = 1,
+  ConferenceEventOnUserStreamConnected = 2,
+  ConferenceEventOnUserLeft = 3,
+  ConferenceEventOnUserJoined = 4,
+};
+
 
 typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_PRESET, open) {
   REMON_AECUNPACK_PRESETM4A = 0,
@@ -1216,6 +1255,7 @@ typedef SWIFT_ENUM(NSInteger, RemonChannelType, open) {
 };
 
 
+@protocol RTCAudioSessionDelegate;
 
 @interface RemonClient (SWIFT_EXTENSION(RemoteMonster))
 /// sdk 의 기본 오디오 설정
@@ -1224,6 +1264,7 @@ typedef SWIFT_ENUM(NSInteger, RemonChannelType, open) {
 /// + mode: AVAudioSession.Mode
 /// + options: AVAudioSession.CategoryOptions
 + (void)setAudioSessionConfigurationWithCategory:(AVAudioSessionCategory _Nonnull)category mode:(AVAudioSessionMode _Nonnull)mode options:(AVAudioSessionCategoryOptions)options;
++ (void)setAudioSessionConfigurationWithCategory:(AVAudioSessionCategory _Nonnull)category mode:(AVAudioSessionMode _Nonnull)mode options:(AVAudioSessionCategoryOptions)options delegate:(id <RTCAudioSessionDelegate> _Nullable)delegate;
 /// 여러 피어를 동시에 사용할 경우 특정 피어 종료시 오디오세션 정보가 초기화 됩니다.
 /// 여러 피어를 사용하는 환경에서는 setAudioSessionConfiguration() 으로 기본적인 오디오 세션을 설정하고,
 /// 각 피어의 연결과 해제시에 setAudioSessionWithCurrentCategory() 를 호출해주어야 기존 설정이 유지됩니다.
@@ -1316,10 +1357,29 @@ typedef SWIFT_ENUM(NSInteger, RemonCloseType, open) {
   RemonCloseTypeOTHER_UNEXPECTED = 3,
 };
 
+@class RemonParticipant;
+@class RemonConferenceCallbacks;
 
 ///
 SWIFT_CLASS("_TtC13RemoteMonster15RemonConference")
 @interface RemonConference : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (RemonConferenceCallbacks * _Nonnull)createWithRoomName:(NSString * _Nonnull)roomName config:(RemonConfig * _Nonnull)config callback:(SWIFT_NOESCAPE void (^ _Nonnull)(RemonParticipant * _Nonnull))callback SWIFT_WARN_UNUSED_RESULT;
+- (void)leave;
+- (RemonParticipant * _Nullable)getParticipantWithId:(NSString * _Nonnull)id SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, RemonParticipant *> * _Nonnull)getParticipants SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+///
+SWIFT_CLASS("_TtC13RemoteMonster24RemonConferenceCallbacks")
+@interface RemonConferenceCallbacks : NSObject
+///
+- (RemonConferenceCallbacks * _Nonnull)onEventName:(NSString * _Nonnull)eventName callback:(void (^ _Nonnull)(RemonParticipant * _Nonnull))callback;
+- (RemonConferenceCallbacks * _Nonnull)onEvent:(enum ConferenceEvent)event callback:(void (^ _Nonnull)(RemonParticipant * _Nonnull))callback;
+///
+- (RemonConferenceCallbacks * _Nonnull)closeWithCallback:(void (^ _Nonnull)(void))callback;
+- (RemonConferenceCallbacks * _Nonnull)errorWithCallback:(void (^ _Nonnull)(NSError * _Nonnull))callback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1399,6 +1459,8 @@ typedef SWIFT_ENUM(NSInteger, SelectiveCandidate, open) {
 
 SWIFT_CLASS("_TtC13RemoteMonster16RemonParticipant")
 @interface RemonParticipant : RemonClient
+@property (nonatomic, copy) NSString * _Nonnull id;
+@property (nonatomic) id _Nullable tag;
 /// 목록을 가져 옵니다.
 /// \param complete 패치 완료 블럭. error 인자가 nil 이라면 RemonSearchResult 목록을 전달 합니다.
 ///

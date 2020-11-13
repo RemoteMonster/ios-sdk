@@ -232,10 +232,9 @@ public typealias OnParticipantEventCallback = (RemoteMonster.RemonParticipant) -
       get
     }
   }
-  public var id: Swift.String
+  @objc public var id: Swift.String
   public var type: RemoteMonster.RemonParticipant.ParticipantType
-  public var tag: Any?
-  public var simulcast: Swift.Bool
+  @objc public var tag: Any?
   public init(conference: RemoteMonster.RemonConference, type: RemoteMonster.RemonParticipant.ParticipantType, config: RemoteMonster.RemonConfig, channelId: Swift.String)
   @objc deinit
   @discardableResult
@@ -479,7 +478,7 @@ extension RemonClient {
 }
 extension RemonClient {
   @objc public static func setAudioSessionConfiguration(category: AVFoundation.AVAudioSession.Category, mode: AVFoundation.AVAudioSession.Mode, options: AVFoundation.AVAudioSession.CategoryOptions)
-  public static func setAudioSessionConfiguration(category: AVFoundation.AVAudioSession.Category, mode: AVFoundation.AVAudioSession.Mode, options: AVFoundation.AVAudioSession.CategoryOptions, delegate: WebRTC.RTCAudioSessionDelegate?)
+  @objc public static func setAudioSessionConfiguration(category: AVFoundation.AVAudioSession.Category, mode: AVFoundation.AVAudioSession.Mode, options: AVFoundation.AVAudioSession.CategoryOptions, delegate: WebRTC.RTCAudioSessionDelegate?)
   @objc public static func setAudioSessionWithCurrentCategory()
 }
 public let ErrorDomain: Swift.String
@@ -916,26 +915,44 @@ public struct RatingValue {
   @objc override dynamic public func layoutSubviews()
 }
 public typealias OnConferenceErrorCallback = (RemoteMonster.RemonError) -> Swift.Void
+public typealias OnConferenceErrorCallbackOC = (Foundation.NSError) -> Swift.Void
 public typealias OnConferenceCloseCallback = () -> Swift.Void
 public typealias OnConferenceEventCallback = (RemoteMonster.RemonParticipant) -> Swift.Void
-@_hasMissingDesignatedInitializers public class RemonConferenceCallbacks {
+@objc public enum ConferenceEvent : Swift.Int {
+  case unknown
+  case onRoomCreated
+  case onUserStreamConnected
+  case onUserLeft
+  case onUserJoined
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class RemonConferenceCallbacks : ObjectiveC.NSObject {
   @discardableResult
-  public func on(eventName: Swift.String, callback: @escaping RemoteMonster.OnConferenceEventCallback) -> RemoteMonster.RemonConferenceCallbacks
+  @objc public func on(eventName: Swift.String, callback: @escaping RemoteMonster.OnConferenceEventCallback) -> RemoteMonster.RemonConferenceCallbacks
   @discardableResult
-  public func close(callback: @escaping RemoteMonster.OnConferenceCloseCallback) -> RemoteMonster.RemonConferenceCallbacks
+  @objc public func on(event: RemoteMonster.ConferenceEvent, callback: @escaping RemoteMonster.OnConferenceEventCallback) -> RemoteMonster.RemonConferenceCallbacks
+  @discardableResult
+  @objc public func close(callback: @escaping RemoteMonster.OnConferenceCloseCallback) -> RemoteMonster.RemonConferenceCallbacks
   @discardableResult
   public func error(callback: @escaping RemoteMonster.OnConferenceErrorCallback) -> RemoteMonster.RemonConferenceCallbacks
+  @discardableResult
+  @objc public func error(callback: @escaping RemoteMonster.OnConferenceErrorCallbackOC) -> RemoteMonster.RemonConferenceCallbacks
   @objc deinit
+  @objc override dynamic public init()
 }
 @_inheritsConvenienceInitializers @objc public class RemonConference : ObjectiveC.NSObject {
   public var me: RemoteMonster.RemonParticipant?
   @objc override dynamic public init()
   @objc deinit
-  public func create(roomName: Swift.String, config: RemoteMonster.RemonConfig, callback: (RemoteMonster.RemonParticipant) -> Swift.Void) -> RemoteMonster.RemonConferenceCallbacks
+  @objc public func create(roomName: Swift.String, config: RemoteMonster.RemonConfig, callback: (RemoteMonster.RemonParticipant) -> Swift.Void) -> RemoteMonster.RemonConferenceCallbacks
   public func create(roomName: Swift.String, config: RemoteMonster.RemonConfig, priority: [Swift.String]?, callback: (RemoteMonster.RemonParticipant) -> Swift.Void) -> RemoteMonster.RemonConferenceCallbacks
-  public func leave()
-  public func getParticipant(id: Swift.String) -> RemoteMonster.RemonParticipant?
-  public func getParticipants() -> [Swift.String : RemoteMonster.RemonParticipant]
+  @objc public func leave()
+  @objc public func getParticipant(id: Swift.String) -> RemoteMonster.RemonParticipant?
+  @objc public func getParticipants() -> [Swift.String : RemoteMonster.RemonParticipant]
 }
 public enum RemonError : Swift.Error, Foundation.LocalizedError {
   case Unknown(Swift.Int, Swift.String)
@@ -1130,6 +1147,9 @@ extension RemoteMonster.writingOptionsKeys : Swift.Hashable {}
 extension RemoteMonster.RemonChannelType : Swift.Equatable {}
 extension RemoteMonster.RemonChannelType : Swift.Hashable {}
 extension RemoteMonster.RemonChannelType : Swift.RawRepresentable {}
+extension RemoteMonster.ConferenceEvent : Swift.Equatable {}
+extension RemoteMonster.ConferenceEvent : Swift.Hashable {}
+extension RemoteMonster.ConferenceEvent : Swift.RawRepresentable {}
 extension RemoteMonster.RemonConfig.SelectiveCandidate : Swift.Equatable {}
 extension RemoteMonster.RemonConfig.SelectiveCandidate : Swift.Hashable {}
 extension RemoteMonster.RemonConfig.SelectiveCandidate : Swift.RawRepresentable {}

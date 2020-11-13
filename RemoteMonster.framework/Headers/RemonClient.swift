@@ -681,7 +681,7 @@ extension RemonClient {
     }
     
     
-    public static func setAudioSessionConfiguration(
+    @objc public static func setAudioSessionConfiguration(
         category: AVAudioSession.Category,
         mode: AVAudioSession.Mode,
         options:AVAudioSession.CategoryOptions,
