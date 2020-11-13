@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C43118A255BCD7000DFDD03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C431189255BCD7000DFDD03 /* AppDelegate.m */; };
+		4C43118D255BCD7000DFDD03 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C43118C255BCD7000DFDD03 /* SceneDelegate.m */; };
+		4C431190255BCD7000DFDD03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C43118F255BCD7000DFDD03 /* ViewController.m */; };
+		4C431193255BCD7000DFDD03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C431191255BCD7000DFDD03 /* Main.storyboard */; };
+		4C431195255BCD7100DFDD03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C431194255BCD7100DFDD03 /* Assets.xcassets */; };
+		4C431198255BCD7100DFDD03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C431196255BCD7100DFDD03 /* LaunchScreen.storyboard */; };
+		4C43119B255BCD7100DFDD03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C43119A255BCD7100DFDD03 /* main.m */; };
 		4CD1AB64237BF062001B3127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1AB63237BF062001B3127 /* AppDelegate.swift */; };
 		4CD1AB66237BF062001B3127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1AB65237BF062001B3127 /* SceneDelegate.swift */; };
 		4CD1AB68237BF062001B3127 /* ConferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1AB67237BF062001B3127 /* ConferenceViewController.swift */; };
 		4CD1AB6B237BF062001B3127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD1AB69237BF062001B3127 /* Main.storyboard */; };
 		4CD1AB6D237BF063001B3127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD1AB6C237BF063001B3127 /* Assets.xcassets */; };
 		4CD1AB70237BF063001B3127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD1AB6E237BF063001B3127 /* LaunchScreen.storyboard */; };
+		8EC6B1C1E960E2B33BFD335F /* Pods_SimpleConferenceOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A8185707ABFAA19B553B98 /* Pods_SimpleConferenceOC.framework */; };
 		9E1BD1AB00E1F7C4726B3694 /* Pods_SimpleConference.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7884C15AE067B59669979DBB /* Pods_SimpleConference.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +37,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03A8185707ABFAA19B553B98 /* Pods_SimpleConferenceOC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleConferenceOC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21ACAF578CC06E9DB0007AB5 /* Pods-SimpleConferenceOC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleConferenceOC.debug.xcconfig"; path = "Target Support Files/Pods-SimpleConferenceOC/Pods-SimpleConferenceOC.debug.xcconfig"; sourceTree = "<group>"; };
+		4C431186255BCD7000DFDD03 /* SimpleConferenceOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleConferenceOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C431188255BCD7000DFDD03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C431189255BCD7000DFDD03 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C43118B255BCD7000DFDD03 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		4C43118C255BCD7000DFDD03 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		4C43118E255BCD7000DFDD03 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4C43118F255BCD7000DFDD03 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4C431192255BCD7000DFDD03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C431194255BCD7100DFDD03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C431197255BCD7100DFDD03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C431199255BCD7100DFDD03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C43119A255BCD7100DFDD03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4CD1AB60237BF062001B3127 /* SimpleConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD1AB63237BF062001B3127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CD1AB65237BF062001B3127 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,11 +60,20 @@
 		4CD1AB6F237BF063001B3127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CD1AB71237BF063001B3127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		695C38BE0D60143B72F27DBE /* Pods-SimpleConference.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleConference.debug.xcconfig"; path = "Target Support Files/Pods-SimpleConference/Pods-SimpleConference.debug.xcconfig"; sourceTree = "<group>"; };
+		700C1777DE3C3031ACD8A758 /* Pods-SimpleConferenceOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleConferenceOC.release.xcconfig"; path = "Target Support Files/Pods-SimpleConferenceOC/Pods-SimpleConferenceOC.release.xcconfig"; sourceTree = "<group>"; };
 		7884C15AE067B59669979DBB /* Pods_SimpleConference.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleConference.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A4EA13573886C5692DFE92 /* Pods-SimpleConference.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleConference.release.xcconfig"; path = "Target Support Files/Pods-SimpleConference/Pods-SimpleConference.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4C431183255BCD7000DFDD03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC6B1C1E960E2B33BFD335F /* Pods_SimpleConferenceOC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CD1AB5D237BF062001B3127 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -54,10 +85,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C431187255BCD7000DFDD03 /* SimpleConferenceOC */ = {
+			isa = PBXGroup;
+			children = (
+				4C431188255BCD7000DFDD03 /* AppDelegate.h */,
+				4C431189255BCD7000DFDD03 /* AppDelegate.m */,
+				4C43118B255BCD7000DFDD03 /* SceneDelegate.h */,
+				4C43118C255BCD7000DFDD03 /* SceneDelegate.m */,
+				4C43118E255BCD7000DFDD03 /* ViewController.h */,
+				4C43118F255BCD7000DFDD03 /* ViewController.m */,
+				4C431191255BCD7000DFDD03 /* Main.storyboard */,
+				4C431194255BCD7100DFDD03 /* Assets.xcassets */,
+				4C431196255BCD7100DFDD03 /* LaunchScreen.storyboard */,
+				4C431199255BCD7100DFDD03 /* Info.plist */,
+				4C43119A255BCD7100DFDD03 /* main.m */,
+			);
+			path = SimpleConferenceOC;
+			sourceTree = "<group>";
+		};
 		4CD1AB57237BF062001B3127 = {
 			isa = PBXGroup;
 			children = (
 				4CD1AB62237BF062001B3127 /* SimpleConference */,
+				4C431187255BCD7000DFDD03 /* SimpleConferenceOC */,
 				4CD1AB61237BF062001B3127 /* Products */,
 				4CD1AB7A237C01C5001B3127 /* Frameworks */,
 				8F100F366FEF004FFA7316F5 /* Pods */,
@@ -68,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				4CD1AB60237BF062001B3127 /* SimpleConference.app */,
+				4C431186255BCD7000DFDD03 /* SimpleConferenceOC.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				7884C15AE067B59669979DBB /* Pods_SimpleConference.framework */,
+				03A8185707ABFAA19B553B98 /* Pods_SimpleConferenceOC.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,6 +159,8 @@
 			children = (
 				695C38BE0D60143B72F27DBE /* Pods-SimpleConference.debug.xcconfig */,
 				C0A4EA13573886C5692DFE92 /* Pods-SimpleConference.release.xcconfig */,
+				21ACAF578CC06E9DB0007AB5 /* Pods-SimpleConferenceOC.debug.xcconfig */,
+				700C1777DE3C3031ACD8A758 /* Pods-SimpleConferenceOC.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -114,6 +168,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4C431185255BCD7000DFDD03 /* SimpleConferenceOC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C43119C255BCD7100DFDD03 /* Build configuration list for PBXNativeTarget "SimpleConferenceOC" */;
+			buildPhases = (
+				025BBF9D0696490173A2D657 /* [CP] Check Pods Manifest.lock */,
+				4C431182255BCD7000DFDD03 /* Sources */,
+				4C431183255BCD7000DFDD03 /* Frameworks */,
+				4C431184255BCD7000DFDD03 /* Resources */,
+				6DB894E6C736186A2B589E3E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleConferenceOC;
+			productName = SimpleConferenceOC;
+			productReference = 4C431186255BCD7000DFDD03 /* SimpleConferenceOC.app */;
+			productType = "com.apple.product-type.application";
+		};
 		4CD1AB5F237BF062001B3127 /* SimpleConference */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CD1AB74237BF063001B3127 /* Build configuration list for PBXNativeTarget "SimpleConference" */;
@@ -144,6 +217,9 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "remote monster";
 				TargetAttributes = {
+					4C431185255BCD7000DFDD03 = {
+						CreatedOnToolsVersion = 12.1;
+					};
 					4CD1AB5F237BF062001B3127 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -163,11 +239,22 @@
 			projectRoot = "";
 			targets = (
 				4CD1AB5F237BF062001B3127 /* SimpleConference */,
+				4C431185255BCD7000DFDD03 /* SimpleConferenceOC */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4C431184255BCD7000DFDD03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C431198255BCD7100DFDD03 /* LaunchScreen.storyboard in Resources */,
+				4C431195255BCD7100DFDD03 /* Assets.xcassets in Resources */,
+				4C431193255BCD7000DFDD03 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CD1AB5E237BF062001B3127 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -181,6 +268,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		025BBF9D0696490173A2D657 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleConferenceOC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		44EC032E7022ED43AC9CF812 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,9 +329,37 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6DB894E6C736186A2B589E3E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleConferenceOC/Pods-SimpleConferenceOC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleConferenceOC/Pods-SimpleConferenceOC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleConferenceOC/Pods-SimpleConferenceOC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4C431182255BCD7000DFDD03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C431190255BCD7000DFDD03 /* ViewController.m in Sources */,
+				4C43118A255BCD7000DFDD03 /* AppDelegate.m in Sources */,
+				4C43119B255BCD7100DFDD03 /* main.m in Sources */,
+				4C43118D255BCD7000DFDD03 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CD1AB5C237BF062001B3127 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,6 +373,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4C431191255BCD7000DFDD03 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C431192255BCD7000DFDD03 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C431196255BCD7100DFDD03 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C431197255BCD7100DFDD03 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		4CD1AB69237BF062001B3127 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -255,6 +408,57 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4C43119D255BCD7100DFDD03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21ACAF578CC06E9DB0007AB5 /* Pods-SimpleConferenceOC.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = SimpleConferenceOC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.sample.SimpleConferenceOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C43119E255BCD7100DFDD03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 700C1777DE3C3031ACD8A758 /* Pods-SimpleConferenceOC.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = SimpleConferenceOC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.sample.SimpleConferenceOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		4CD1AB72237BF063001B3127 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -306,7 +510,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -361,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -376,13 +580,12 @@
 			baseConfigurationReference = 695C38BE0D60143B72F27DBE /* Pods-SimpleConference.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../../ExternalLibrary",
-				);
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SimpleConference/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -397,9 +600,10 @@
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.sample.SimpleConference;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 arm64e";
+				VALID_ARCHS = "arm64 x86_64";
 			};
 			name = Debug;
 		};
@@ -408,13 +612,12 @@
 			baseConfigurationReference = C0A4EA13573886C5692DFE92 /* Pods-SimpleConference.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../../ExternalLibrary",
-				);
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SimpleConference/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,15 +631,25 @@
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.remotemonster.sample.SimpleConference;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 arm64e";
+				VALID_ARCHS = "arm64 x86_64";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4C43119C255BCD7100DFDD03 /* Build configuration list for PBXNativeTarget "SimpleConferenceOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C43119D255BCD7100DFDD03 /* Debug */,
+				4C43119E255BCD7100DFDD03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4CD1AB5B237BF062001B3127 /* Build configuration list for PBXProject "SimpleConference" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

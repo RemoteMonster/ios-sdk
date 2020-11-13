@@ -9,7 +9,7 @@
 import UIKit
 import RemoteMonster
 
-// 이 샘플은 iOS SDK 2.7.3 이상 버전이 필요합니다.
+// 이 샘플은 iOS SDK 2.7.13 이상 버전에서 정상 동작합니다.
 class ConferenceViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var buttonAudio: UIButton!
     
@@ -26,14 +26,11 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        RemonClient.setAudioSessionConfiguration(
-                   category: AVAudioSession.Category.playAndRecord,
-                   mode: AVAudioSession.Mode.videoChat,
-                   options:[.defaultToSpeaker]);
         
+        RemonClient.setAudioSessionConfiguration( category: .playAndRecord, mode: .videoChat, options:[.defaultToSpeaker, .allowBluetooth], delegate: self)
+
         // 아래 설정은 music 모드로 목소리,주변음,디바이스에서 재생되는 사운드를 그대로 전달할 때 사용합니다.
-        // 프로젝트 폴더의 RemonSettings.plist에 AudioType이 music으로 설정되어야 정상 동작합니다.
+        // 프로젝트 폴더의 RemonConfig or RemonSettings.plist에 AudioType이 music으로 설정되어야 정상 동작합니다.
         /*
         RemonClient.setAudioSessionConfiguration(
             category: AVAudioSession.Category.playAndRecord,
@@ -59,20 +56,22 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
         config.key = "1234567890"
         config.videoWidth = 640
         config.videoHeight = 480
-        
+
         // 시뮬레이터의 경우 카메라가 없으므로 대체 재생할 mov 파일을 지정해 줍니다.
         //config.videoFilePathForSimulator = "samples.mov"
     
         self.remonConference = RemonConference()
         self.remonConference?.create( roomName: roomName, config: config) { (participant) in
+            
             // 마스터 유저(송출자,나자신) 초기화
             participant.localView = self.viewArray[0]
             
             // 뷰 설정용
             availableViews?[0] = true
             
-        }.on( eventName: "onRoomCreated") {
+        }.on(event: .onRoomCreated) {
             participant in
+
             // 마스터 유저가 접속된 이후에 호출(실제 송출 시작)
             participant.setLocalAudioEnabled(isEnabled: self.buttonAudio.isSelected)
             // TODO: 실제 유저 정보는 각 서비스에서 관리하므로, 서비스에서 채널과 실제 유저 매핑 작업 진행
@@ -82,12 +81,13 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
             participant.tag = 0
             self.showToast(message: "\(participant.id)")
             
-        }.on(eventName: "onUserJoined" ) {
+        }.on(event: .onUserJoined ) {
             [weak self] participant in
+            
+            
             // 다른 사용자가 입장한 경우 초기화를 위해 호출됨
             // 초기화와 유저 매핑 등을 위해 호출되는 이벤트로 실제 peer 연결전에 호출됩니다.
             // TODO: 실제 유저 매핑 : participant.id 값으로 연결된 실제 유저를 얻습니다.
-            
             
             // 뷰 설정
             if let index = self?.getAvailableView() {
@@ -110,13 +110,10 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
             
             self?.showToast(message: "\(participant.id) has joined")
             
-        }.on(eventName: "onUserStreamConnected" ) {
+        }.on(event: .onUserStreamConnected ) {
             participant in
-            // v2.7.3 추가
-            // 실제 스트림세션 연결이 이루어지면 호출됩니다.
             
-            
-        }.on(eventName: "onUserLeft") {
+        }.on(event: .onUserLeft) {
             [weak self] participant in
             // 다른 사용자가 퇴장한 경우
             // participant.id 와 participant.tag 를 참조해 어떤 사용자가 퇴장했는지 확인후 퇴장 처리를 합니다.
@@ -128,7 +125,6 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
                 // 에러로 끊어진 경우
                 // 재시도 처리 등은 각 서비스 상황에 맞게 구현
             }
-            
             self?.showToast(message: "\(participant.id) has left")
         }.close {
             // 마스터 유저가 종료된 경우 호출됩니다.
@@ -149,8 +145,8 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
     }
 
     
-    // 그룹통화 연결 버튼 이벤트
-    @IBAction func touchConnectRoom(_ sender: Any) {
+    
+    func startConference() {
         self.hideKeyboard()
         
         self.availableViews = [Bool](repeating: false, count: self.viewArray.count)
@@ -165,7 +161,11 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
         } else {
             self.showToast(message: "Please enter room name")
         }
-        
+    }
+    
+    // 그룹통화 연결 버튼 이벤트
+    @IBAction func touchConnectRoom(_ sender: Any) {
+        self.startConference()
     }
     
     // 그룹통화 떠나기
@@ -238,3 +238,26 @@ class ConferenceViewController: UIViewController , UITextFieldDelegate{
     }
 }
 
+
+extension ConferenceViewController:RTCAudioSessionDelegate {
+    
+    func audioSessionDidBeginInterruption( _ session:RTCAudioSession ) {
+        print("*********************** 오디오 인터럽트 *********************************")
+    }
+    
+    func audioSessionDidEndInterruption(_ session: RTCAudioSession, shouldResumeSession: Bool) {
+        print("*********************** 오디오 인터럽트 종료 ******************************")
+
+    }
+    
+    func audioSessionMediaServerTerminated(_ session: RTCAudioSession) {
+        // ios의 미디어 서버가 종료(초기화 준비 등)
+    }
+    
+    func audioSessionMediaServerReset(_ session: RTCAudioSession) {
+        print("*********************** 미디어서버 리셋 *********************************")
+        // ios의 미디어 서버가 초기화 되었으므로 앱 초기화 필요
+        // AVAudioSession 도 다시 설정
+        RemonClient.setAudioSessionConfiguration( category: .playAndRecord, mode: .videoChat, options:[.defaultToSpeaker, .allowBluetooth])
+    }
+}

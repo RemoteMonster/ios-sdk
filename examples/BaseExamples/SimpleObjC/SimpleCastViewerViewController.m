@@ -36,7 +36,6 @@
         self.tryRejoin = YES;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.channelLabel setText:chId];
-            [self.remonCast setShowRemoteVideoStat:YES];
         });
         
         @try {
@@ -70,7 +69,7 @@
     }];
     
 
-    [self.remonCast onRemonStatReportWithBlock:^(RemonStatReport * _Nonnull stat) {
+    [self.remonCast onStatWithBlock:^(RemonStatReport * _Nonnull stat) {
         NSLog(@"remonStat.remoteFrameRate %ld", [stat remoteFrameRate]);
         
         NSLog(@"[self.remonCast getCurruntStateString] %@", [self.remonCast getCurruntStateString]);
