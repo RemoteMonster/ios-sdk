@@ -826,14 +826,16 @@ public enum writingOptionsKeys {
     get
   }
 }
-public struct FractionLost {
-  public var level: Swift.Int
-  public var max: Swift.Float
-  public var min: Swift.Float
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class FractionLost : ObjectiveC.NSObject {
+  @objc public var level: Swift.Int
+  @objc public var max: Swift.Float
+  @objc public var min: Swift.Float
+  @objc deinit
 }
-public struct RatingValue {
-  public var level: Swift.Int
-  public var value: Swift.Float
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class RatingValue : ObjectiveC.NSObject {
+  @objc public var level: Swift.Int
+  @objc public var value: Swift.Float
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class RemonStatReport : ObjectiveC.NSObject {
   @objc public var localCandidate: Swift.String
@@ -861,13 +863,14 @@ public struct RatingValue {
   @objc public var ssrcSendAudio: Swift.String
   @objc public var ssrcRecvAudio: Swift.String
   @objc deinit
-  public func getHealthRating(channelType: RemoteMonster.RemonChannelType, isVideoCall: Swift.Bool) -> RemoteMonster.RatingValue
-  public func getFpsRating() -> RemoteMonster.RatingValue
-  public func getRemoteAudioFractionLost() -> RemoteMonster.RatingValue
-  public func getLocalAudioFractionLost() -> RemoteMonster.RatingValue
-  public func getRemoteVideoFractionLost() -> RemoteMonster.RatingValue
-  public func getLoaclVideoFractionLost() -> RemoteMonster.RatingValue
-  public func getRttRating() -> RemoteMonster.RatingValue
+  @objc public func getHealthRating(client: RemoteMonster.RemonClient) -> RemoteMonster.RatingValue
+  @objc public func getHealthRating(channelType: RemoteMonster.RemonChannelType, isVideoCall: Swift.Bool) -> RemoteMonster.RatingValue
+  @objc public func getFpsRating() -> RemoteMonster.RatingValue
+  @objc public func getRemoteAudioFractionLost() -> RemoteMonster.RatingValue
+  @objc public func getLocalAudioFractionLost() -> RemoteMonster.RatingValue
+  @objc public func getRemoteVideoFractionLost() -> RemoteMonster.RatingValue
+  @objc public func getLoaclVideoFractionLost() -> RemoteMonster.RatingValue
+  @objc public func getRttRating() -> RemoteMonster.RatingValue
 }
 @_hasMissingDesignatedInitializers @available(*, deprecated)
 @objc public class StatResult : ObjectiveC.NSObject {

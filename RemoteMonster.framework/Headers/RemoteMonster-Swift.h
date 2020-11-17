@@ -224,6 +224,16 @@ typedef SWIFT_ENUM(NSInteger, ConferenceEvent, open) {
 };
 
 
+SWIFT_CLASS("_TtC13RemoteMonster12FractionLost")
+@interface FractionLost : NSObject
+@property (nonatomic) NSInteger level;
+@property (nonatomic) float max;
+@property (nonatomic) float min;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_PRESET, open) {
   REMON_AECUNPACK_PRESETM4A = 0,
   REMON_AECUNPACK_PRESETMP4LOW = 1,
@@ -239,6 +249,15 @@ typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_STATE, open) {
   REMON_AECUNPACK_STATECOMPLTE = 4,
 };
 
+
+
+SWIFT_CLASS("_TtC13RemoteMonster11RatingValue")
+@interface RatingValue : NSObject
+@property (nonatomic) NSInteger level;
+@property (nonatomic) float value;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 typedef SWIFT_ENUM(NSInteger, RemonAudioMode, open) {
   RemonAudioModeVoice = 0,
@@ -680,6 +699,14 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonStatReport")
 @property (nonatomic, copy) NSString * _Nonnull ssrcRecvAudio;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (RatingValue * _Nonnull)getHealthRatingWithClient:(RemonClient * _Nonnull)client SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getHealthRatingWithChannelType:(enum RemonChannelType)channelType isVideoCall:(BOOL)isVideoCall SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getFpsRating SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getRemoteAudioFractionLost SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getLocalAudioFractionLost SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getRemoteVideoFractionLost SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getLoaclVideoFractionLost SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getRttRating SWIFT_WARN_UNUSED_RESULT;
 @end
 
 /// Remon의 상태
@@ -1071,6 +1098,16 @@ typedef SWIFT_ENUM(NSInteger, ConferenceEvent, open) {
 };
 
 
+SWIFT_CLASS("_TtC13RemoteMonster12FractionLost")
+@interface FractionLost : NSObject
+@property (nonatomic) NSInteger level;
+@property (nonatomic) float max;
+@property (nonatomic) float min;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_PRESET, open) {
   REMON_AECUNPACK_PRESETM4A = 0,
   REMON_AECUNPACK_PRESETMP4LOW = 1,
@@ -1086,6 +1123,15 @@ typedef SWIFT_ENUM(NSInteger, REMON_AECUNPACK_STATE, open) {
   REMON_AECUNPACK_STATECOMPLTE = 4,
 };
 
+
+
+SWIFT_CLASS("_TtC13RemoteMonster11RatingValue")
+@interface RatingValue : NSObject
+@property (nonatomic) NSInteger level;
+@property (nonatomic) float value;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 typedef SWIFT_ENUM(NSInteger, RemonAudioMode, open) {
   RemonAudioModeVoice = 0,
@@ -1527,6 +1573,14 @@ SWIFT_CLASS("_TtC13RemoteMonster15RemonStatReport")
 @property (nonatomic, copy) NSString * _Nonnull ssrcRecvAudio;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (RatingValue * _Nonnull)getHealthRatingWithClient:(RemonClient * _Nonnull)client SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getHealthRatingWithChannelType:(enum RemonChannelType)channelType isVideoCall:(BOOL)isVideoCall SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getFpsRating SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getRemoteAudioFractionLost SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getLocalAudioFractionLost SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getRemoteVideoFractionLost SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getLoaclVideoFractionLost SWIFT_WARN_UNUSED_RESULT;
+- (RatingValue * _Nonnull)getRttRating SWIFT_WARN_UNUSED_RESULT;
 @end
 
 /// Remon의 상태
