@@ -26,10 +26,6 @@ class SimpleCastViewerViewController: UIViewController {
     var socketErr = false
     
     
-    @IBAction func showStat(_ sender: Any) {
-        self.remonCast.showRemoteVideoStat = true
-    }
-    
     
     // 종료버튼 액션
     @IBAction func closeRemonManager(_ sender: Any) {
@@ -43,14 +39,7 @@ class SimpleCastViewerViewController: UIViewController {
     
     // 테스트버튼 액션
     @IBAction func test(_ sender: Any) {
-//        self.remonCast.reconnectRoom()
-        
-//        if let chID = self.toChID {
-//            //config is nilable
-//            self.remonCast.join(chId: chID, customConfig)
-//        }
-        
-        print("orientation: = \(UIDevice.current.orientation.rawValue)")
+
     }
     
     
@@ -73,21 +62,11 @@ class SimpleCastViewerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        RemonClient.setAudioSessionConfiguration(
+            category: AVAudioSession.Category.playback,
+            mode: AVAudioSession.Mode.default,
+            options: []);
         
-        do {
-            // 오디오세션 카테고리 설정
-            if #available(iOS 10.0, *) {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default)
-            }
-            else {
-                AVAudioSession.sharedInstance().perform(NSSelectorFromString("setCategory:error:"), with: AVAudioSession.Category.playback)
-            }
-            
-            try AVAudioSession.sharedInstance().setActive(true, options: [])
-            try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
-        } catch {
-            print(error)
-        }
         
         // SDK 콜백 등록
         initRemonCallbacks()
@@ -129,7 +108,7 @@ class SimpleCastViewerViewController: UIViewController {
     
         
         
-        self.remonCast.onRemonStatReport { [weak self](report) in
+        self.remonCast.onStat { [weak self](report) in
            print(self?.debugDescription ?? "")
             
             _ = report.remoteFrameRate

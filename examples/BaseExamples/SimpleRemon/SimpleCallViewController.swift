@@ -38,12 +38,10 @@ class SimpleCallViewController: UIViewController {
         self.remonCall.volumeRatio = self.remonCall.volumeRatio - 0.1
     }
     
-    @IBAction func ewf(_ sender: Any) {
-        self.remonCall.showLocalVideoStat = true
-        self.remonCall.showRemoteVideoStat = true
+    @IBAction func buttonTest1(_ sender: Any) {
     }
     
-    @IBAction func awedawef(_ sender: Any) {
+    @IBAction func buttonTest2(_ sender: Any) {
         self.remonCall.setLocalAudioEnabled(isEnabled: !self.muted)
         self.muted = !self.muted
     }
