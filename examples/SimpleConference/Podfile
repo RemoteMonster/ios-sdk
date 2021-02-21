@@ -6,7 +6,7 @@ target 'SimpleConference' do
   use_frameworks!
 
   # Pods for SimpleConference
-  pod 'RemoteMonster', '~>2.7.13'
+  pod 'RemoteMonster', '~>2.7.15'
 end
 
 target 'SimpleConferenceOC' do
@@ -14,5 +14,5 @@ target 'SimpleConferenceOC' do
   use_frameworks!
 
   # Pods for SimpleConferenceOC
-  pod 'RemoteMonster', '~>2.7.13'
+  pod 'RemoteMonster', '~>2.7.15'
 end

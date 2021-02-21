@@ -6,7 +6,7 @@ target 'SimpleRemon' do
   use_frameworks!
 
   # Pods for SampleV2
-  pod 'RemoteMonster', '~>2.7.12'
+  pod 'RemoteMonster', '~>2.7.15'
 
 end
 
@@ -16,7 +16,7 @@ target 'SimpleRemonObjC' do
     use_frameworks!
     
     # Pods for SampleV2
-    pod 'RemoteMonster', '~>2.7.12'
+    pod 'RemoteMonster', '~>2.7.15'
 end
 
 
