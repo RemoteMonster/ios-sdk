@@ -1,3 +1,12 @@
+## 2.7.15
+- 블루투스 핸즈프리 착용/해제 시 샘플링 레이트 변경 기능 추가
+- RemonClient.setAudioSessionConfiguration 파라미터 추가
+- iOS13 orientation 프로퍼티 수정
+- 에러코드 및 웹소켓 데이터 처리 개선
+- 서버 api 변경사항 반영
+
+
+
 ## 2.7.14
 - P2P 웹과 연결시 스트림이 전송되지 않는 이슈 수정
 - WebRTC 코어 라이브러리 업데이트 : 1.86.2

@@ -15,6 +15,9 @@ import Foundation
 @objc(RemonClient)
 @IBDesignable
 public class RemonClient:NSObject {
+    @objc public var tag:Any?
+    
+    
     public override init() {
         print("[RemonClient.init]")
         super.init()
@@ -345,33 +348,45 @@ extension RemonClient {
      원격지 사운드 켜거나 끄기
      */
     @objc public func setRemoteAudioEnabled(isEnabled:Bool = true) -> Void {
-        controller.setRemoteAudioEnabled(isEnabled: isEnabled)
+        controller.remoteAudioEnabled = isEnabled
     }
     
     /**
      로컬 사운드 켜거나 끄기
      */
     @objc public func setLocalAudioEnabled(isEnabled:Bool = true ) -> Void {
-        controller.setLocalAudioEnabled(isEnabled: isEnabled)
+        controller.localAudioEnabled = isEnabled
+        
+        // 2.7.15 이상 컨퍼런스 신규 미디어서버 spec
+        if controller.context.channelType == .room {
+            controller.configureStream(video: controller.localVideoEnabled, audio: isEnabled)
+        }
+        
     }
     
     /**
         로컬 비디오 켜거나 끄기
      */
     @objc public func setLocalVideoEnabled(isEnabled:Bool = true ) -> Void {
-        controller.setLocalVideoEnabled(isEnabled: isEnabled)
+        controller.localVideoEnabled = isEnabled
+        
+        // 2.7.15 이상 컨퍼런스 신규 미디어서버 spec
+        if controller.context.channelType == .room {
+            controller.configureStream(video: isEnabled, audio: controller.localAudioEnabled)
+        }
     }
     
     /**
         원격지 비디오 켜거나 끄기
      */
     @objc public func setRemoteVideoEnabled(isEnabled:Bool = true) -> Void {
-        controller.setRemoteVideoEnabled(isEnabled: isEnabled)
+        controller.remoteVideoEnabled = isEnabled
         
         if controller.context.channelType == .viewer {
             controller.configureStream(video: isEnabled, audio: true)
         }
     }
+    
     
     /**
      로컬 비디오(카메라) 시작
@@ -493,24 +508,24 @@ extension RemonClient {
     // android 와 인터페이스 맞추기 위해 deprecated
     @available(*, deprecated, message: "Use setRemoteAudioEnabled( isEnabled: Bool )")
     @objc public func muteRemoteAudio(mute:Bool = true) -> Void {
-        self.controller.setRemoteAudioEnabled(isEnabled: !mute)
+        self.controller.remoteAudioEnabled = !mute
     }
     
     // android 와 인터페이스 맞춤
     @available(*, deprecated, message: "Use setLocalAudioEnabled( isEnabled: Bool )")
     @objc public func muteLocalAudio(mute:Bool = true) -> Void {
-        self.controller.setLocalAudioEnabled(isEnabled: !mute)
+        self.controller.localAudioEnabled = !mute
     }
     
 
     @available(*, deprecated, message: "Use setRemoteVideoEnabled( isEnabled: true)")
     @objc public func startRemoteVideoCapture() -> Void {
-        self.controller.setRemoteVideoEnabled(isEnabled: true)
+        self.controller.remoteVideoEnabled = true
     }
     
     @available(*, deprecated, message: "Use setRemoteVideoEnabled( isEnabled: false)")
     @objc public func stopRemoteVideoCapture() -> Void {
-        self.controller.setRemoteAudioEnabled(isEnabled: false)
+        self.controller.remoteAudioEnabled = false
     }
     
     
@@ -521,75 +536,80 @@ extension RemonClient {
 extension RemonClient: RemonControllerBlockSettable{
     //set oberserver block
     internal func onFetchChannels(block:@escaping RemonArrayBlock) {
-        self.controller.observerBlock.fetchRemonChannelBlock = block
+        self.controller.callbacks.fetchRemonChannelBlock = block
     }
     
     internal func onCreateInternal(block:@escaping RemonStringBlock) {
-        self.controller.observerBlock.createRemonChannelBlock = block
+        self.controller.callbacks.createRemonChannelBlock = block
     }
     
     internal func onConnectInternal(block:@escaping RemonVoidBlock) {
-        self.controller.observerBlock.connectRemonChannelBlock = block
+        self.controller.callbacks.connectRemonChannelBlock = block
     }
     
     /** 초기화 콜백 */
     @objc public func onInit(block:@escaping RemonVoidBlock) {
-        self.controller.observerBlock.initRemonBlock = block
+        self.controller.callbacks.initRemonBlock = block
     }
     
     /** Peer간 접속 완료 콜백. webrtc 접속이 완료된 이후에 호출 */
     @objc public func onComplete(block:@escaping RemonVoidBlock) {
-        self.controller.observerBlock.completeRemonChannelBlock = block
+        self.controller.callbacks.completeRemonChannelBlock = block
     }
     
     /** 연결 종료 콜백 */
     @objc public func onClose(block:@escaping RemonCloseBlock) {
-        self.controller.observerBlock.closeRemonChannelBlock = block
+        self.controller.callbacks.closeRemonChannelBlock = block
     }
     
     @objc public func onDisConnect(block:@escaping RemonStringBlock) {
-        self.controller.observerBlock.disConnectRemonChannelBlock = block
+        self.controller.callbacks.disconnectRemonChannelBlock = block
     }
     
     /** 메시지 수신 콜백 */
     @objc public func onMessage(block:@escaping RemonStringBlock) {
-        self.controller.observerBlock.messageRemonChannelBlock = block
+        self.controller.callbacks.messageRemonChannelBlock = block
     }
     
     /** 에러 콜백 */
     public func onError(block:@escaping RemonErrorBlock) {
-        self.controller.observerBlock.errorRemonBlock = block
+        self.controller.callbacks.errorRemonBlock = block
     }
     
-    @objc public func onObjcError(block:@escaping ((_:NSError) -> Void)) {
-        self.controller.observerBlock.objc_errorRemonBlock = block
+    @objc public func onObjcError(block:@escaping ((NSError) -> Void)) {
+        self.controller.callbacks.errorRemonBlockObjC = block
     }
     
     @objc public func onStat(block:@escaping (_:RemonStatReport)->Void) {
-        self.controller.observerBlock.remonStatBlock = block
+        self.controller.callbacks.remonStatBlock = block
     }
     
     @objc public func onReconnect(block: @escaping RemonVoidBlock) {
-        self.controller.observerBlock.reconnectRemonChannelBlock = block
+        self.controller.callbacks.reconnectRemonChannelBlock = block
     }
     
     /** 원격측 비디오 사이즈 변경시 호출 */
-    @objc public func onRemoteVideoSizeChanged(block: @escaping (_ remoteView:UIView?, _ videoSize:CGSize) -> Void) {
-        self.controller.observerBlock.didChangeRemoteVideoSize = block
+    @objc public func onRemoteVideoSizeChanged(block: @escaping (UIView?, CGSize) -> Void) {
+        self.controller.callbacks.didChangeRemoteVideoSize = block
     }
     
     /** 로컬 비디오 사이즈 변경시 호출 */
-    @objc public func onLocalVideoSizeChanged(block: @escaping (_ localView:UIView?, _ videoSize:CGSize) -> Void) {
-        self.controller.observerBlock.didChangeLocalVideoSize = block
+    @objc public func onLocalVideoSizeChanged(block: @escaping (UIView?, CGSize) -> Void) {
+        self.controller.callbacks.didChangeLocalVideoSize = block
     }
 
-    @objc public func onRoomEvent(block: @escaping (_ type:String, _ channel:String) -> Void) {
-        self.controller.observerBlock.roomEventBlock = block
+    @objc public func onRoomEvent(block: @escaping (String,String) -> Void) {
+        self.controller.callbacks.roomEventBlock = block
+    }
+    
+    
+    public func onChannelEvent(block: @escaping (String,String)->Void) {
+        self.controller.callbacks.channelEventBlock = block
     }
     
     @available(*, deprecated, message: "use onStat")
-    @objc public func onRemonStatReport(block:@escaping (_:RemonStatReport)->Void) {
-        self.controller.observerBlock.remonStatBlock = block
+    @objc public func onRemonStatReport(block:@escaping (RemonStatReport)->Void) {
+        self.controller.callbacks.remonStatBlock = block
     }
 }
 
@@ -677,14 +697,24 @@ extension RemonClient {
         category: AVAudioSession.Category,
         mode: AVAudioSession.Mode,
         options:AVAudioSession.CategoryOptions ) {
-        RemonClient.setAudioSessionConfiguration(category: category, mode: mode, options: options,delegate: nil)
+        RemonClient.setAudioSessionConfiguration(category: category, mode: mode, options: options, ioBufferDuration: 0.06, delegate: nil)
     }
+    
+    @objc public static func setAudioSessionConfiguration(
+        category: AVAudioSession.Category,
+        mode: AVAudioSession.Mode,
+        options:AVAudioSession.CategoryOptions,
+        delegate:RTCAudioSessionDelegate?) {
+        RemonClient.setAudioSessionConfiguration(category: category, mode: mode, options: options, ioBufferDuration: 0.06, delegate: nil)
+    }
+    
     
     
     @objc public static func setAudioSessionConfiguration(
         category: AVAudioSession.Category,
         mode: AVAudioSession.Mode,
         options:AVAudioSession.CategoryOptions,
+        ioBufferDuration: TimeInterval,
         delegate:RTCAudioSessionDelegate?) {
         
         // webrtc 전역 오디오세션 카테고리 설정
@@ -692,14 +722,18 @@ extension RemonClient {
         ac.category = category.rawValue
         ac.mode = mode.rawValue
         ac.categoryOptions =  options
-        ac.ioBufferDuration = 0.06
-        
+        ac.ioBufferDuration = ioBufferDuration
+        if (AVAudioSession.sharedInstance().availableInputs?.filter({ $0.portType == .bluetoothHFP }).isEmpty ?? true) == false {
+            ac.sampleRate = 16_000
+            ac.ioBufferDuration = 0.064
+        }
         RTCAudioSessionConfiguration.setWebRTC(ac)
         
         #if DEBUG
         print("[RemonClient.setAudioSessionConfiguration] category=\(ac.category)")
         print("[RemonClient.setAudioSessionConfiguration] mode=\(ac.mode)")
         print("[RemonClient.setAudioSessionConfiguration] options=\(ac.categoryOptions)")
+        print("[RemonClient.setAudioSessionConfiguration] sampleRate=\(ac.sampleRate)")
         #endif
  
         let session = RTCAudioSession.sharedInstance()

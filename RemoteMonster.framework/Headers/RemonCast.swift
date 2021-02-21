@@ -21,7 +21,8 @@ import UIKit
     
 
     
-    /**방송에 접속 합니다.
+    /**
+     방송에 접속 합니다.
      - Parameters:
         - chId: 접속 하려는 방송의 채널 ID
         - config: 이 인자를 전달 하면 RemonCast의 설정이 무시 되고, config의 설정 값을 따릅니다.
@@ -35,7 +36,8 @@ import UIKit
         self.controller.joinCast(client:self, channelID: chId, config: nil)
     }
     
-    /**방송을 생성 합니다.
+    /**
+     방송을 생성 합니다.
      - Parameters:
         - name: 목록에 표시할 이름
         - channelId: 채널 아이디
@@ -45,13 +47,16 @@ import UIKit
         self.controller.createCast(client:self,name:name,channelID:channelId,config: config)
     }
     
-    /**방송을 생성합니다.*/
+    /**
+     방송을 생성합니다.
+     */
     @objc public func create(_ config:RemonConfig? = nil) {
         create( name:"iOS", channelId: "", config: config)
     }
     
     
-    /**방송 목록을 가져 옵니다.
+    /**
+     방송 목록을 가져 옵니다.
      - Parameter complete: 패치 완료 블럭. error 인자가 nil 이라면 RemonSearchResult 목록을 전달 합니다.
      */
     @objc public func fetchCasts(complete: @escaping (Array<RemonSearchResult>?) -> Void) {
@@ -60,17 +65,25 @@ import UIKit
         }
     }
     
+    /**
+     컨퍼런스를 위한 회의실을 생성합니다.
+     */
+    public func createRoom(name:String, config:RemonConfig? = nil) {
+        self.controller.createRoom(client: self, name: name, config: config)
+    }
+    
 }
 
 
 @objc extension RemonCast{
     @objc public func onCreate(block: @escaping RemonStringBlock) {
-        self.onComplete { [weak self] in
+        self.onComplete {
+            [weak self] in
             if let cast = self {
                 let chType = cast.controller.context.channelType
 
                 
-                if chType == .broadcast {
+                if chType == .broadcast || chType == .room {
                     block(cast.channelID)
                 }
             }

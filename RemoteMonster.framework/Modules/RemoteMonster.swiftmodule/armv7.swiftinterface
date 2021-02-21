@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
 // swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name RemoteMonster
 import AVFoundation
 import AVKit
@@ -191,6 +191,7 @@ extension WebSocket {
   @objc public func create(name: Swift.String, channelId: Swift.String, config: RemoteMonster.RemonConfig? = nil)
   @objc public func create(_ config: RemoteMonster.RemonConfig? = nil)
   @objc public func fetchCasts(complete: @escaping (Swift.Array<RemoteMonster.RemonSearchResult>?) -> Swift.Void)
+  public func createRoom(name: Swift.String, config: RemoteMonster.RemonConfig? = nil)
   @objc deinit
 }
 @objc extension RemonCast {
@@ -234,7 +235,6 @@ public typealias OnParticipantEventCallback = (RemoteMonster.RemonParticipant) -
   }
   @objc public var id: Swift.String
   public var type: RemoteMonster.RemonParticipant.ParticipantType
-  @objc public var tag: Any?
   public init(conference: RemoteMonster.RemonConference, type: RemoteMonster.RemonParticipant.ParticipantType, config: RemoteMonster.RemonConfig, channelId: Swift.String)
   @objc deinit
   @discardableResult
@@ -255,6 +255,7 @@ extension RemonParticipant {
   @objc override dynamic public init()
 }
 @_inheritsConvenienceInitializers @objc(RemonClient) @IBDesignable public class RemonClient : ObjectiveC.NSObject {
+  @objc public var tag: Any?
   @objc override dynamic public init()
   @objc deinit
   @objc public var channelID: Swift.String? {
@@ -453,6 +454,7 @@ extension RemonClient {
   @objc dynamic public func onRemoteVideoSizeChanged(block: @escaping (UIKit.UIView?, CoreGraphics.CGSize) -> Swift.Void)
   @objc dynamic public func onLocalVideoSizeChanged(block: @escaping (UIKit.UIView?, CoreGraphics.CGSize) -> Swift.Void)
   @objc dynamic public func onRoomEvent(block: @escaping (Swift.String, Swift.String) -> Swift.Void)
+  public func onChannelEvent(block: @escaping (Swift.String, Swift.String) -> Swift.Void)
   @available(*, deprecated, message: "use onStat")
   @objc dynamic public func onRemonStatReport(block: @escaping (RemoteMonster.RemonStatReport) -> Swift.Void)
 }
@@ -479,6 +481,7 @@ extension RemonClient {
 extension RemonClient {
   @objc public static func setAudioSessionConfiguration(category: AVFoundation.AVAudioSession.Category, mode: AVFoundation.AVAudioSession.Mode, options: AVFoundation.AVAudioSession.CategoryOptions)
   @objc public static func setAudioSessionConfiguration(category: AVFoundation.AVAudioSession.Category, mode: AVFoundation.AVAudioSession.Mode, options: AVFoundation.AVAudioSession.CategoryOptions, delegate: WebRTC.RTCAudioSessionDelegate?)
+  @objc public static func setAudioSessionConfiguration(category: AVFoundation.AVAudioSession.Category, mode: AVFoundation.AVAudioSession.Mode, options: AVFoundation.AVAudioSession.CategoryOptions, ioBufferDuration: Foundation.TimeInterval, delegate: WebRTC.RTCAudioSessionDelegate?)
   @objc public static func setAudioSessionWithCurrentCategory()
 }
 public let ErrorDomain: Swift.String
@@ -968,6 +971,35 @@ public enum RemonError : Swift.Error, Foundation.LocalizedError {
   public var localizedDescription: Swift.String {
     get
   }
+  public var errorCode: Swift.Int {
+    get
+  }
+}
+public enum RemonErrorCode : Swift.Int {
+  case COMMON_ERROR
+  case CONFIG_SERVICE_ID_OR_KEY_ERROR
+  case REMON_CONTEXT_ERROR
+  case IOS_VIDEO_CAPTURER_ERROR
+  case REST_INIT_ERROR
+  case REST_INIT_SERVER_ERROR
+  case REST_INIT_DATA_ERROR
+  case ICE_CREATE_PEER_CONNECTION_ERROR
+  case ICE_CREATE_DESCRIPTION_ERROR
+  case ICE_SET_DESCRIPTION_ERROR
+  case ICE_SET_REMOTE_DESCRIPTION_ERROR
+  case ICE_FAILED
+  case ICE_ADD_CANDIDATE_ERROR
+  case ICE_CLOSED
+  case WEB_SOCKET_INIT_ERROR
+  case WEB_SOCKET_ERROR
+  case WEB_SOCKET_RETRY_ERROR
+  case WEB_SOCKET_DATA_ERROR
+  case WEB_SOCKET_CONNECT_CHANNEL_ERROR
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
 }
 @_inheritsConvenienceInitializers @objc public class RemonConfig : ObjectiveC.NSObject {
   @objc public enum SelectiveCandidate : Swift.Int {
@@ -1016,6 +1048,7 @@ public enum RemonError : Swift.Error, Foundation.LocalizedError {
   @objc public var audioType: Swift.String
   @objc public var audioAutoGain: Swift.Bool
   @objc public var sharding: Swift.Bool
+  @objc public var sharable: Swift.Bool
   @objc override dynamic public init()
   public init(other: RemoteMonster.RemonConfig)
   convenience public init(client: RemoteMonster.RemonClient)
@@ -1153,6 +1186,9 @@ extension RemoteMonster.RemonChannelType : Swift.RawRepresentable {}
 extension RemoteMonster.ConferenceEvent : Swift.Equatable {}
 extension RemoteMonster.ConferenceEvent : Swift.Hashable {}
 extension RemoteMonster.ConferenceEvent : Swift.RawRepresentable {}
+extension RemoteMonster.RemonErrorCode : Swift.Equatable {}
+extension RemoteMonster.RemonErrorCode : Swift.Hashable {}
+extension RemoteMonster.RemonErrorCode : Swift.RawRepresentable {}
 extension RemoteMonster.RemonConfig.SelectiveCandidate : Swift.Equatable {}
 extension RemoteMonster.RemonConfig.SelectiveCandidate : Swift.Hashable {}
 extension RemoteMonster.RemonConfig.SelectiveCandidate : Swift.RawRepresentable {}
