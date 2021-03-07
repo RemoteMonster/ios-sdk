@@ -19,13 +19,11 @@
 		0B5CB60D20B5563B00FB2BFE /* SimpleVideoCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB60120B5563B00FB2BFE /* SimpleVideoCast.swift */; };
 		0B5CB60F20B5563B00FB2BFE /* SimpleVoiceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CB60320B5563B00FB2BFE /* SimpleVoiceCast.swift */; };
 		0BD78A5420BB9B760017E2F0 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */; };
-		408B9EC0C25CBE761EE6B8CD /* Pods_meshCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235F160877997B192D55E2A8 /* Pods_meshCall.framework */; };
 		6069E4E120EB4526000B3AA5 /* SimpleAudioSessionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6069E4E020EB4526000B3AA5 /* SimpleAudioSessionObserver.swift */; };
 		60B27F6820DB94BD00BB97C8 /* RemonSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60B27F6720DB94BD00BB97C8 /* RemonSettings.plist */; };
 		63DC033411862F621A4F958E /* Pods_RemonCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98DB5808B1B972342BF7A3D /* Pods_RemonCall.framework */; };
 		6B8EEADB3F2E89D6E9E3717D /* Pods_RemonEx_objc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEDB2D9D3082E3C50AACF46 /* Pods_RemonEx_objc.framework */; };
 		754AF784A248CF1A28D8E29D /* Pods_RemonFull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */; };
-		8BECC11036F337AB125A456E /* Pods_externalSampler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4501A5A6E8EA6B557726E06E /* Pods_externalSampler.framework */; };
 		A30573902148C19700680F65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A305738F2148C19700680F65 /* AppDelegate.m */; };
 		A30573962148C19800680F65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30573942148C19800680F65 /* Main.storyboard */; };
 		A30573982148C19800680F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A30573972148C19800680F65 /* Assets.xcassets */; };
@@ -36,16 +34,6 @@
 		A30573AE2148C25300680F65 /* SimpleCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A30573A52148C25200680F65 /* SimpleCallViewController.m */; };
 		A30573AF2148C25300680F65 /* SimpleSerchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A30573A72148C25300680F65 /* SimpleSerchTableViewController.m */; };
 		A30573B02148C25300680F65 /* SimpleCastViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A30573A92148C25300680F65 /* SimpleCastViewerViewController.m */; };
-		A30D22E121EC241700771E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D22E021EC241700771E59 /* AppDelegate.swift */; };
-		A30D22E621EC241700771E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30D22E421EC241700771E59 /* Main.storyboard */; };
-		A30D22E821EC241800771E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A30D22E721EC241800771E59 /* Assets.xcassets */; };
-		A30D22EB21EC241800771E59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30D22E921EC241800771E59 /* LaunchScreen.storyboard */; };
-		A30D22F321EC245700771E59 /* EXSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D22F121EC245700771E59 /* EXSViewController.swift */; };
-		A32FCCD221EC5C4500C3E4FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FCCD121EC5C4500C3E4FC /* AppDelegate.swift */; };
-		A32FCCD421EC5C4500C3E4FC /* MeshCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32FCCD321EC5C4500C3E4FC /* MeshCallViewController.swift */; };
-		A32FCCD721EC5C4500C3E4FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32FCCD521EC5C4500C3E4FC /* Main.storyboard */; };
-		A32FCCD921EC5C4600C3E4FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32FCCD821EC5C4600C3E4FC /* Assets.xcassets */; };
-		A32FCCDC21EC5C4600C3E4FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32FCCDA21EC5C4600C3E4FC /* LaunchScreen.storyboard */; };
 		A36A798E214601A1002D580C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A798D214601A1002D580C /* AppDelegate.swift */; };
 		A36A7990214601A2002D580C /* RemonCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A798F214601A2002D580C /* RemonCallViewController.swift */; };
 		A36A7993214601A2002D580C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36A7991214601A2002D580C /* Main.storyboard */; };
@@ -73,14 +61,10 @@
 		0B5CB60320B5563B00FB2BFE /* SimpleVoiceCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleVoiceCast.swift; sourceTree = "<group>"; };
 		0B5CB61020B5566400FB2BFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BD78A5320BB9B760017E2F0 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
-		235F160877997B192D55E2A8 /* Pods_meshCall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meshCall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FA9D86BC59C24ECE49B567 /* Pods-RemonFull.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonFull.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull.release.xcconfig"; sourceTree = "<group>"; };
-		4501A5A6E8EA6B557726E06E /* Pods_externalSampler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_externalSampler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EFED3282B89D6374ABEDA49 /* Pods-externalSampler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-externalSampler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-externalSampler/Pods-externalSampler.debug.xcconfig"; sourceTree = "<group>"; };
 		509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemonFull.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6069E4E020EB4526000B3AA5 /* SimpleAudioSessionObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAudioSessionObserver.swift; sourceTree = "<group>"; };
 		60B27F6720DB94BD00BB97C8 /* RemonSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RemonSettings.plist; sourceTree = "<group>"; };
-		7BCAB032182713BBBB9B977A /* Pods-externalSampler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-externalSampler.release.xcconfig"; path = "Pods/Target Support Files/Pods-externalSampler/Pods-externalSampler.release.xcconfig"; sourceTree = "<group>"; };
 		7CA5660B94705913FE97BC3C /* Pods-RemonFull.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonFull.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemonFull/Pods-RemonFull.debug.xcconfig"; sourceTree = "<group>"; };
 		836F57194BDB8B7817E30781 /* Pods-RemonCall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonCall.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemonCall/Pods-RemonCall.release.xcconfig"; sourceTree = "<group>"; };
 		A305738C2148C19700680F65 /* RemonEx-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RemonEx-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,20 +85,6 @@
 		A30573A92148C25300680F65 /* SimpleCastViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCastViewerViewController.m; sourceTree = "<group>"; };
 		A30573AA2148C25300680F65 /* SimpleCastViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCastViewerViewController.h; sourceTree = "<group>"; };
 		A30573AB2148C25300680F65 /* SimpleSerchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSerchTableViewController.h; sourceTree = "<group>"; };
-		A30D22DE21EC241600771E59 /* externalSampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = externalSampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A30D22E021EC241700771E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A30D22E521EC241700771E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A30D22E721EC241800771E59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A30D22EA21EC241800771E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A30D22EC21EC241800771E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A30D22F121EC245700771E59 /* EXSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXSViewController.swift; sourceTree = "<group>"; };
-		A32FCCCF21EC5C4500C3E4FC /* meshCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meshCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A32FCCD121EC5C4500C3E4FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A32FCCD321EC5C4500C3E4FC /* MeshCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshCallViewController.swift; sourceTree = "<group>"; };
-		A32FCCD621EC5C4500C3E4FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A32FCCD821EC5C4600C3E4FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A32FCCDB21EC5C4600C3E4FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A32FCCDD21EC5C4600C3E4FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A36A79852146015B002D580C /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
 		A36A798B214601A1002D580C /* RemonCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemonCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36A798D214601A1002D580C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,10 +97,8 @@
 		A36A79A021462529002D580C /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		A36A79A221462D16002D580C /* RemonCall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RemonCall.entitlements; sourceTree = "<group>"; };
 		A98DB5808B1B972342BF7A3D /* Pods_RemonCall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemonCall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2D3AB140091E753B8148A06 /* Pods-meshCall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meshCall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meshCall/Pods-meshCall.debug.xcconfig"; sourceTree = "<group>"; };
 		E5F63BDED5FF2F50ECFA591A /* Pods-RemonCall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonCall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemonCall/Pods-RemonCall.debug.xcconfig"; sourceTree = "<group>"; };
 		E6FEC8F6C95903AEC7D6D8A9 /* Pods-RemonEx-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemonEx-objc.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemonEx-objc/Pods-RemonEx-objc.release.xcconfig"; sourceTree = "<group>"; };
-		E7DC0705251F6FCFC9F6A06E /* Pods-meshCall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meshCall.release.xcconfig"; path = "Pods/Target Support Files/Pods-meshCall/Pods-meshCall.release.xcconfig"; sourceTree = "<group>"; };
 		FEEDB2D9D3082E3C50AACF46 /* Pods_RemonEx_objc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemonEx_objc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,22 +116,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B8EEADB3F2E89D6E9E3717D /* Pods_RemonEx_objc.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A30D22DB21EC241600771E59 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8BECC11036F337AB125A456E /* Pods_externalSampler.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A32FCCCC21EC5C4500C3E4FC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				408B9EC0C25CBE761EE6B8CD /* Pods_meshCall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +160,6 @@
 				0B5CB5F520B5563B00FB2BFE /* RemonFull */,
 				A36A798C214601A1002D580C /* RemonCall */,
 				A305738D2148C19700680F65 /* RemonEx-objc */,
-				A30D22DF21EC241700771E59 /* externalSampler */,
-				A32FCCD021EC5C4500C3E4FC /* meshCall */,
 				0BA0AF9120A9700700DEA203 /* Products */,
 				8322D69B4586F7A47D8D4D87 /* Pods */,
 				61506248230B4EAB7E317792 /* Frameworks */,
@@ -223,8 +173,6 @@
 				0B5CB5F320B555BE00FB2BFE /* RemonFull.app */,
 				A36A798B214601A1002D580C /* RemonCall.app */,
 				A305738C2148C19700680F65 /* RemonEx-objc.app */,
-				A30D22DE21EC241600771E59 /* externalSampler.app */,
-				A32FCCCF21EC5C4500C3E4FC /* meshCall.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,8 +185,6 @@
 				509639A79415C4970E1CBA11 /* Pods_RemonFull.framework */,
 				A98DB5808B1B972342BF7A3D /* Pods_RemonCall.framework */,
 				FEEDB2D9D3082E3C50AACF46 /* Pods_RemonEx_objc.framework */,
-				4501A5A6E8EA6B557726E06E /* Pods_externalSampler.framework */,
-				235F160877997B192D55E2A8 /* Pods_meshCall.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -252,10 +198,6 @@
 				836F57194BDB8B7817E30781 /* Pods-RemonCall.release.xcconfig */,
 				0562E04820BF9D01DB8D718C /* Pods-RemonEx-objc.debug.xcconfig */,
 				E6FEC8F6C95903AEC7D6D8A9 /* Pods-RemonEx-objc.release.xcconfig */,
-				4EFED3282B89D6374ABEDA49 /* Pods-externalSampler.debug.xcconfig */,
-				7BCAB032182713BBBB9B977A /* Pods-externalSampler.release.xcconfig */,
-				D2D3AB140091E753B8148A06 /* Pods-meshCall.debug.xcconfig */,
-				E7DC0705251F6FCFC9F6A06E /* Pods-meshCall.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -282,32 +224,6 @@
 				A305739D2148C19800680F65 /* main.m */,
 			);
 			path = "RemonEx-objc";
-			sourceTree = "<group>";
-		};
-		A30D22DF21EC241700771E59 /* externalSampler */ = {
-			isa = PBXGroup;
-			children = (
-				A30D22F121EC245700771E59 /* EXSViewController.swift */,
-				A30D22E021EC241700771E59 /* AppDelegate.swift */,
-				A30D22E421EC241700771E59 /* Main.storyboard */,
-				A30D22E721EC241800771E59 /* Assets.xcassets */,
-				A30D22E921EC241800771E59 /* LaunchScreen.storyboard */,
-				A30D22EC21EC241800771E59 /* Info.plist */,
-			);
-			path = externalSampler;
-			sourceTree = "<group>";
-		};
-		A32FCCD021EC5C4500C3E4FC /* meshCall */ = {
-			isa = PBXGroup;
-			children = (
-				A32FCCD121EC5C4500C3E4FC /* AppDelegate.swift */,
-				A32FCCD321EC5C4500C3E4FC /* MeshCallViewController.swift */,
-				A32FCCD521EC5C4500C3E4FC /* Main.storyboard */,
-				A32FCCD821EC5C4600C3E4FC /* Assets.xcassets */,
-				A32FCCDA21EC5C4600C3E4FC /* LaunchScreen.storyboard */,
-				A32FCCDD21EC5C4600C3E4FC /* Info.plist */,
-			);
-			path = meshCall;
 			sourceTree = "<group>";
 		};
 		A36A798C214601A1002D580C /* RemonCall */ = {
@@ -366,44 +282,6 @@
 			productReference = A305738C2148C19700680F65 /* RemonEx-objc.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A30D22DD21EC241600771E59 /* externalSampler */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A30D22EF21EC241800771E59 /* Build configuration list for PBXNativeTarget "externalSampler" */;
-			buildPhases = (
-				ABD3AE88A3B517B39D8AFD6E /* [CP] Check Pods Manifest.lock */,
-				A30D22DA21EC241600771E59 /* Sources */,
-				A30D22DB21EC241600771E59 /* Frameworks */,
-				A30D22DC21EC241600771E59 /* Resources */,
-				7DE386CD2BFBF3C39FE9C74A /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = externalSampler;
-			productName = externalSampler;
-			productReference = A30D22DE21EC241600771E59 /* externalSampler.app */;
-			productType = "com.apple.product-type.application";
-		};
-		A32FCCCE21EC5C4500C3E4FC /* meshCall */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A32FCCE021EC5C4600C3E4FC /* Build configuration list for PBXNativeTarget "meshCall" */;
-			buildPhases = (
-				2E749092E4D9C0324883BFF1 /* [CP] Check Pods Manifest.lock */,
-				A32FCCCB21EC5C4500C3E4FC /* Sources */,
-				A32FCCCC21EC5C4500C3E4FC /* Frameworks */,
-				A32FCCCD21EC5C4500C3E4FC /* Resources */,
-				40CD6B5216C737CD544E3769 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = meshCall;
-			productName = meshCall;
-			productReference = A32FCCCF21EC5C4500C3E4FC /* meshCall.app */;
-			productType = "com.apple.product-type.application";
-		};
 		A36A798A214601A1002D580C /* RemonCall */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A36A799A214601A2002D580C /* Build configuration list for PBXNativeTarget "RemonCall" */;
@@ -436,12 +314,6 @@
 					A305738B2148C19700680F65 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					A30D22DD21EC241600771E59 = {
-						CreatedOnToolsVersion = 10.1;
-					};
-					A32FCCCE21EC5C4500C3E4FC = {
-						CreatedOnToolsVersion = 10.1;
-					};
 					A36A798A214601A1002D580C = {
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
@@ -471,8 +343,6 @@
 				0B5CB5DD20B555BE00FB2BFE /* RemonFull */,
 				A36A798A214601A1002D580C /* RemonCall */,
 				A305738B2148C19700680F65 /* RemonEx-objc */,
-				A30D22DD21EC241600771E59 /* externalSampler */,
-				A32FCCCE21EC5C4500C3E4FC /* meshCall */,
 			);
 		};
 /* End PBXProject section */
@@ -496,26 +366,6 @@
 				A305739B2148C19800680F65 /* LaunchScreen.storyboard in Resources */,
 				A30573982148C19800680F65 /* Assets.xcassets in Resources */,
 				A30573962148C19800680F65 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A30D22DC21EC241600771E59 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A30D22EB21EC241800771E59 /* LaunchScreen.storyboard in Resources */,
-				A30D22E821EC241800771E59 /* Assets.xcassets in Resources */,
-				A30D22E621EC241700771E59 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A32FCCCD21EC5C4500C3E4FC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A32FCCDC21EC5C4600C3E4FC /* LaunchScreen.storyboard in Resources */,
-				A32FCCD921EC5C4600C3E4FC /* Assets.xcassets in Resources */,
-				A32FCCD721EC5C4500C3E4FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,28 +418,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RemonFull/Pods-RemonFull-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2E749092E4D9C0324883BFF1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-meshCall-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3EBFC27D4FAFBD8A16A188D6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -608,23 +436,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		40CD6B5216C737CD544E3769 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-meshCall/Pods-meshCall-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-meshCall/Pods-meshCall-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-meshCall/Pods-meshCall-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		58666B9E91C27DDC965EF460 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -640,45 +451,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RemonEx-objc/Pods-RemonEx-objc-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7DE386CD2BFBF3C39FE9C74A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-externalSampler/Pods-externalSampler-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-externalSampler/Pods-externalSampler-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-externalSampler/Pods-externalSampler-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ABD3AE88A3B517B39D8AFD6E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-externalSampler-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C6C7A0B6B939725E2ED33DFC /* [CP] Check Pods Manifest.lock */ = {
@@ -750,24 +522,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A30D22DA21EC241600771E59 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A30D22E121EC241700771E59 /* AppDelegate.swift in Sources */,
-				A30D22F321EC245700771E59 /* EXSViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A32FCCCB21EC5C4500C3E4FC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A32FCCD421EC5C4500C3E4FC /* MeshCallViewController.swift in Sources */,
-				A32FCCD221EC5C4500C3E4FC /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A36A7987214601A1002D580C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -808,38 +562,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				A305739A2148C19800680F65 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		A30D22E421EC241700771E59 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A30D22E521EC241700771E59 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A30D22E921EC241800771E59 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A30D22EA21EC241800771E59 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		A32FCCD521EC5C4500C3E4FC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A32FCCD621EC5C4500C3E4FC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A32FCCDA21EC5C4600C3E4FC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A32FCCDB21EC5C4600C3E4FC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1057,96 +779,6 @@
 			};
 			name = Release;
 		};
-		A30D22ED21EC241800771E59 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EFED3282B89D6374ABEDA49 /* Pods-externalSampler.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/externalSampler",
-				);
-				INFOPLIST_FILE = externalSampler/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Remotemonster.externalSampler;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A30D22EE21EC241800771E59 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BCAB032182713BBBB9B977A /* Pods-externalSampler.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/externalSampler",
-				);
-				INFOPLIST_FILE = externalSampler/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Remotemonster.externalSampler;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		A32FCCDE21EC5C4600C3E4FC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2D3AB140091E753B8148A06 /* Pods-meshCall.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = meshCall/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Remotemonster.meshCall;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A32FCCDF21EC5C4600C3E4FC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7DC0705251F6FCFC9F6A06E /* Pods-meshCall.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = meshCall/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Remotemonster.meshCall;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		A36A799B214601A2002D580C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E5F63BDED5FF2F50ECFA591A /* Pods-RemonCall.debug.xcconfig */;
@@ -1213,24 +845,6 @@
 			buildConfigurations = (
 				A305739F2148C19800680F65 /* Debug */,
 				A30573A02148C19800680F65 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A30D22EF21EC241800771E59 /* Build configuration list for PBXNativeTarget "externalSampler" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A30D22ED21EC241800771E59 /* Debug */,
-				A30D22EE21EC241800771E59 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A32FCCE021EC5C4600C3E4FC /* Build configuration list for PBXNativeTarget "meshCall" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A32FCCDE21EC5C4600C3E4FC /* Debug */,
-				A32FCCDF21EC5C4600C3E4FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
