@@ -251,6 +251,7 @@ extension RemonParticipant {
 }
 @_hasMissingDesignatedInitializers @objc public class RemonSampleCapturer : WebRTC.RTCVideoCapturer {
   public func willOutputPixelBuffer(_ pixelBuffer: CoreVideo.CVPixelBuffer!, time: CoreMedia.CMTime, orientation: UIKit.UIInterfaceOrientation = UIInterfaceOrientation.unknown)
+  public func willOutputSampleBuffer(_ sampleBuffer: CoreMedia.CMSampleBuffer!)
   @objc deinit
   @objc override dynamic public init()
 }
