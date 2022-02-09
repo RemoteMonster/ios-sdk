@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name RemoteMonster
 import AVFoundation
 import AVKit
@@ -12,6 +12,7 @@ import Swift
 import SwiftProtobuf
 import UIKit
 import WebRTC
+import _Concurrency
 import os
 @_inheritsConvenienceInitializers @objc public class RemonCall : RemoteMonster.RemonClient {
   @objc override dynamic public init()
@@ -19,17 +20,17 @@ import os
   @objc public func fetchCalls(complete: @escaping (Swift.Array<RemoteMonster.RemonSearchResult>?) -> Swift.Void)
   @objc deinit
 }
-@objc extension RemonCall {
+@objc extension RemoteMonster.RemonCall {
   @objc dynamic public func onConnect(block: @escaping RemoteMonster.RemonStringBlock)
   @objc dynamic public func onFetch(block: @escaping RemoteMonster.RemonArrayBlock)
 }
 public struct WebSocketEvents {
   public var open: () -> ()
-  public var close: (Swift.Int, Swift.String, Swift.Bool) -> ()
-  public var error: (Swift.Error) -> ()
-  public var message: (Any) -> ()
-  public var pong: (Any) -> ()
-  public var end: (Swift.Int, Swift.String, Swift.Bool, Swift.Error?) -> ()
+  public var close: (_ code: Swift.Int, _ reason: Swift.String, _ wasClean: Swift.Bool) -> ()
+  public var error: (_ error: Swift.Error) -> ()
+  public var message: (_ data: Any) -> ()
+  public var pong: (_ data: Any) -> ()
+  public var end: (_ code: Swift.Int, _ reason: Swift.String, _ wasClean: Swift.Bool, _ error: Swift.Error?) -> ()
 }
 public enum WebSocketBinaryType : Swift.CustomStringConvertible {
   case uInt8Array
@@ -39,10 +40,10 @@ public enum WebSocketBinaryType : Swift.CustomStringConvertible {
     get
   }
   public static func == (a: RemoteMonster.WebSocketBinaryType, b: RemoteMonster.WebSocketBinaryType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @objc public enum WebSocketReadyState : Swift.Int, Swift.CustomStringConvertible {
   case connecting = 0
@@ -52,8 +53,8 @@ public enum WebSocketBinaryType : Swift.CustomStringConvertible {
   public var description: Swift.String {
     get
   }
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -88,8 +89,8 @@ public struct WebSocketService : Swift.OptionSet {
   public static var Voice: RemoteMonster.WebSocketService {
     get
   }
-  public typealias Element = RemoteMonster.WebSocketService
   public typealias ArrayLiteralElement = RemoteMonster.WebSocketService
+  public typealias Element = RemoteMonster.WebSocketService
 }
 public enum WebSocketError : Swift.Error, Swift.CustomStringConvertible {
   case memory
@@ -175,7 +176,7 @@ public enum WebSocketError : Swift.Error, Swift.CustomStringConvertible {
   @objc deinit
 }
 public func == (lhs: RemoteMonster.WebSocket, rhs: RemoteMonster.WebSocket) -> Swift.Bool
-extension WebSocket {
+extension RemoteMonster.WebSocket {
   @objc dynamic public var delegate: RemoteMonster.WebSocketDelegate? {
     @objc get
     @objc set
@@ -194,7 +195,7 @@ extension WebSocket {
   public func createRoom(name: Swift.String, config: RemoteMonster.RemonConfig? = nil)
   @objc deinit
 }
-@objc extension RemonCast {
+@objc extension RemoteMonster.RemonCast {
   @objc dynamic public func onCreate(block: @escaping RemoteMonster.RemonStringBlock)
   @objc dynamic public func onJoin(block: @escaping RemoteMonster.RemonStringBlock)
   @objc dynamic public func onFetch(block: @escaping RemoteMonster.RemonArrayBlock)
@@ -202,8 +203,8 @@ extension WebSocket {
 @objc public enum RemonAudioMode : Swift.Int {
   case voice
   case music
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -212,8 +213,8 @@ public enum RemonSearchType : Swift.Int {
   case call
   case cast
   case room
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -222,13 +223,13 @@ public enum RemonSearchType : Swift.Int {
   @objc deinit
   public func dummysdp()
 }
-public typealias OnParticipantEventCallback = (RemoteMonster.RemonParticipant) -> Swift.Void
+public typealias OnParticipantEventCallback = (_ participant: RemoteMonster.RemonParticipant) -> Swift.Void
 @objc public class RemonParticipant : RemoteMonster.RemonClient {
   @objc public enum ParticipantType : Swift.Int {
     case PUBLISH
     case SUBSCRIBE
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -241,9 +242,8 @@ public typealias OnParticipantEventCallback = (RemoteMonster.RemonParticipant) -
   public func on(event: Swift.String, callback: @escaping RemoteMonster.OnParticipantEventCallback) -> RemoteMonster.RemonParticipant
   public func close(type: RemoteMonster.RemonCloseType = .MINE)
   @objc public func fetchChannelsInRoom(roomName: Swift.String, complete: @escaping (Swift.Array<RemoteMonster.RemonSearchResult>?) -> Swift.Void)
-  @objc override dynamic public init()
 }
-extension RemonParticipant {
+extension RemoteMonster.RemonParticipant {
   @available(*, unavailable, message: "use participant.on(event: \"onClose\"){ }")
   @objc final override public func onClose(block: @escaping RemoteMonster.RemonCloseBlock)
   @available(*, unavailable, message: "use participant.on(event: \"onComplete\"){ }")
@@ -253,7 +253,6 @@ extension RemonParticipant {
   public func willOutputPixelBuffer(_ pixelBuffer: CoreVideo.CVPixelBuffer!, time: CoreMedia.CMTime, orientation: UIKit.UIInterfaceOrientation = UIInterfaceOrientation.unknown)
   public func willOutputSampleBuffer(_ sampleBuffer: CoreMedia.CMSampleBuffer!)
   @objc deinit
-  @objc override dynamic public init()
 }
 @_inheritsConvenienceInitializers @objc(RemonClient) @IBDesignable public class RemonClient : ObjectiveC.NSObject {
   @objc public var tag: Any?
@@ -401,7 +400,7 @@ extension RemonParticipant {
   @available(*, deprecated, message: "use latestError property instead")
   public func getLatestError() -> RemoteMonster.RemonError?
 }
-extension RemonClient {
+extension RemoteMonster.RemonClient {
   @objc dynamic public func setConfig(config: RemoteMonster.RemonConfig)
   @objc dynamic public func getCurrentRemonState() -> Swift.Int
   @objc dynamic public func getCurruntStateString() -> Swift.String
@@ -421,7 +420,7 @@ extension RemonClient {
   @discardableResult
   @objc dynamic public func switchCamera(isMirror: Swift.Bool = false, isToggle: Swift.Bool = true) -> Swift.Bool
   @objc dynamic public func setVolume(volume: Swift.Float)
-  public func fetchChannel(type: RemoteMonster.RemonSearchType, roomName: Swift.String?, complete: @escaping (RemoteMonster.RemonError?, Swift.Array<RemoteMonster.RemonSearchResult>?) -> Swift.Void)
+  public func fetchChannel(type: RemoteMonster.RemonSearchType, roomName: Swift.String?, complete: @escaping (_ error: RemoteMonster.RemonError?, _ results: Swift.Array<RemoteMonster.RemonSearchResult>?) -> Swift.Void)
   @objc dynamic public func startDump(withFileName: Swift.String, maxSizeInBytes: Swift.Int64)
   @objc dynamic public func stopDump()
   @objc public static func unpackAecDump(dumpName: Swift.String? = "audio.aecdump", resultFileName: Swift.String, avPreset: RemoteMonster.REMON_AECUNPACK_PRESET, progress: @escaping (Swift.Error?, RemoteMonster.REMON_AECUNPACK_STATE) -> Swift.Void)
@@ -442,7 +441,7 @@ extension RemonClient {
   @available(*, deprecated, message: "Use setRemoteVideoEnabled( isEnabled: false)")
   @objc dynamic public func stopRemoteVideoCapture()
 }
-extension RemonClient {
+extension RemoteMonster.RemonClient {
   @objc dynamic public func onInit(block: @escaping RemoteMonster.RemonVoidBlock)
   @objc dynamic public func onComplete(block: @escaping RemoteMonster.RemonVoidBlock)
   @objc dynamic public func onClose(block: @escaping RemoteMonster.RemonCloseBlock)
@@ -459,7 +458,7 @@ extension RemonClient {
   @available(*, deprecated, message: "use onStat")
   @objc dynamic public func onRemonStatReport(block: @escaping (RemoteMonster.RemonStatReport) -> Swift.Void)
 }
-extension RemonClient {
+extension RemoteMonster.RemonClient {
   @available(*, deprecated, message: "use remoteVideoView")
   public var remoteRTCEAGLVideoView: WebRTC.RTCMTLVideoView? {
     get
@@ -479,10 +478,10 @@ extension RemonClient {
     get
   }
 }
-extension RemonClient {
-  @objc public static func setAudioSessionConfiguration(category: AVFoundation.AVAudioSession.Category, mode: AVFoundation.AVAudioSession.Mode, options: AVFoundation.AVAudioSession.CategoryOptions)
-  @objc public static func setAudioSessionConfiguration(category: AVFoundation.AVAudioSession.Category, mode: AVFoundation.AVAudioSession.Mode, options: AVFoundation.AVAudioSession.CategoryOptions, delegate: WebRTC.RTCAudioSessionDelegate?)
-  @objc public static func setAudioSessionConfiguration(category: AVFoundation.AVAudioSession.Category, mode: AVFoundation.AVAudioSession.Mode, options: AVFoundation.AVAudioSession.CategoryOptions, ioBufferDuration: Foundation.TimeInterval, delegate: WebRTC.RTCAudioSessionDelegate?)
+extension RemoteMonster.RemonClient {
+  @objc public static func setAudioSessionConfiguration(category: AVFAudio.AVAudioSession.Category, mode: AVFAudio.AVAudioSession.Mode, options: AVFAudio.AVAudioSession.CategoryOptions)
+  @objc public static func setAudioSessionConfiguration(category: AVFAudio.AVAudioSession.Category, mode: AVFAudio.AVAudioSession.Mode, options: AVFAudio.AVAudioSession.CategoryOptions, delegate: WebRTC.RTCAudioSessionDelegate?)
+  @objc public static func setAudioSessionConfiguration(category: AVFAudio.AVAudioSession.Category, mode: AVFAudio.AVAudioSession.Mode, options: AVFAudio.AVAudioSession.CategoryOptions, ioBufferDuration: Foundation.TimeInterval, delegate: WebRTC.RTCAudioSessionDelegate?)
   @objc public static func setAudioSessionWithCurrentCategory()
 }
 public let ErrorDomain: Swift.String
@@ -499,8 +498,8 @@ public enum JsonType : Swift.Int {
   case dictionary
   case null
   case unknown
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -540,7 +539,7 @@ public enum Index<T> : Swift.Comparable {
 }
 public typealias JSONIndex = RemoteMonster.Index<RemoteMonster.JSON>
 public typealias JSONRawIndex = RemoteMonster.Index<Any>
-extension JSON : Swift.Collection {
+extension RemoteMonster.JSON : Swift.Collection {
   public typealias Index = RemoteMonster.JSONRawIndex
   public var startIndex: RemoteMonster.JSON.Index {
     get
@@ -553,9 +552,9 @@ extension JSON : Swift.Collection {
     get
   }
   public typealias Element = (Swift.String, RemoteMonster.JSON)
+  public typealias Indices = Swift.DefaultIndices<RemoteMonster.JSON>
   public typealias Iterator = Swift.IndexingIterator<RemoteMonster.JSON>
   public typealias SubSequence = Swift.Slice<RemoteMonster.JSON>
-  public typealias Indices = Swift.DefaultIndices<RemoteMonster.JSON>
 }
 public enum JSONKey {
   case index(Swift.Int)
@@ -564,17 +563,17 @@ public enum JSONKey {
 public protocol JSONSubscriptType {
   var jsonKey: RemoteMonster.JSONKey { get }
 }
-extension Int : RemoteMonster.JSONSubscriptType {
+extension Swift.Int : RemoteMonster.JSONSubscriptType {
   public var jsonKey: RemoteMonster.JSONKey {
     get
   }
 }
-extension String : RemoteMonster.JSONSubscriptType {
+extension Swift.String : RemoteMonster.JSONSubscriptType {
   public var jsonKey: RemoteMonster.JSONKey {
     get
   }
 }
-extension JSON {
+extension RemoteMonster.JSON {
   public subscript(path: [RemoteMonster.JSONSubscriptType]) -> RemoteMonster.JSON {
     get
     set
@@ -584,41 +583,41 @@ extension JSON {
     set
   }
 }
-extension JSON : Swift.ExpressibleByStringLiteral {
+extension RemoteMonster.JSON : Swift.ExpressibleByStringLiteral {
   public init(stringLiteral value: Swift.StringLiteralType)
   public init(extendedGraphemeClusterLiteral value: Swift.StringLiteralType)
   public init(unicodeScalarLiteral value: Swift.StringLiteralType)
-  public typealias StringLiteralType = Swift.StringLiteralType
   public typealias ExtendedGraphemeClusterLiteralType = Swift.StringLiteralType
+  public typealias StringLiteralType = Swift.StringLiteralType
   public typealias UnicodeScalarLiteralType = Swift.StringLiteralType
 }
-extension JSON : Swift.ExpressibleByIntegerLiteral {
+extension RemoteMonster.JSON : Swift.ExpressibleByIntegerLiteral {
   public init(integerLiteral value: Swift.IntegerLiteralType)
   public typealias IntegerLiteralType = Swift.IntegerLiteralType
 }
-extension JSON : Swift.ExpressibleByBooleanLiteral {
+extension RemoteMonster.JSON : Swift.ExpressibleByBooleanLiteral {
   public init(booleanLiteral value: Swift.BooleanLiteralType)
   public typealias BooleanLiteralType = Swift.BooleanLiteralType
 }
-extension JSON : Swift.ExpressibleByFloatLiteral {
+extension RemoteMonster.JSON : Swift.ExpressibleByFloatLiteral {
   public init(floatLiteral value: Swift.FloatLiteralType)
   public typealias FloatLiteralType = Swift.FloatLiteralType
 }
-extension JSON : Swift.ExpressibleByDictionaryLiteral {
+extension RemoteMonster.JSON : Swift.ExpressibleByDictionaryLiteral {
   public init(dictionaryLiteral elements: (Swift.String, Any)...)
   public init(dictionaryLiteral elements: [(Swift.String, Any)])
   public typealias Key = Swift.String
   public typealias Value = Any
 }
-extension JSON : Swift.ExpressibleByArrayLiteral {
+extension RemoteMonster.JSON : Swift.ExpressibleByArrayLiteral {
   public init(arrayLiteral elements: Any...)
   public typealias ArrayLiteralElement = Any
 }
-extension JSON : Swift.ExpressibleByNilLiteral {
+extension RemoteMonster.JSON : Swift.ExpressibleByNilLiteral {
   @available(*, deprecated, message: "use JSON.null instead. Will be removed in future versions")
   public init(nilLiteral: ())
 }
-extension JSON : Swift.RawRepresentable {
+extension RemoteMonster.JSON : Swift.RawRepresentable {
   public init?(rawValue: Any)
   public var rawValue: Any {
     get
@@ -628,7 +627,7 @@ extension JSON : Swift.RawRepresentable {
   public func rawString(_ options: [RemoteMonster.writingOptionsKeys : Any]) -> Swift.String?
   public typealias RawValue = Any
 }
-extension JSON : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+extension RemoteMonster.JSON : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
   public var description: Swift.String {
     get
   }
@@ -636,7 +635,7 @@ extension JSON : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertib
     get
   }
 }
-extension JSON {
+extension RemoteMonster.JSON {
   public var array: [RemoteMonster.JSON]? {
     get
   }
@@ -648,7 +647,7 @@ extension JSON {
     set
   }
 }
-extension JSON {
+extension RemoteMonster.JSON {
   public var dictionary: [Swift.String : RemoteMonster.JSON]? {
     get
   }
@@ -660,7 +659,7 @@ extension JSON {
     set
   }
 }
-extension JSON {
+extension RemoteMonster.JSON {
   public var bool: Swift.Bool? {
     get
     set
@@ -670,7 +669,7 @@ extension JSON {
     set
   }
 }
-extension JSON {
+extension RemoteMonster.JSON {
   public var string: Swift.String? {
     get
     set
@@ -680,7 +679,7 @@ extension JSON {
     set
   }
 }
-extension JSON {
+extension RemoteMonster.JSON {
   public var number: Foundation.NSNumber? {
     get
     set
@@ -690,20 +689,20 @@ extension JSON {
     set
   }
 }
-extension JSON {
+extension RemoteMonster.JSON {
   public var null: Foundation.NSNull? {
     get
     set
   }
   public func exists() -> Swift.Bool
 }
-extension JSON {
+extension RemoteMonster.JSON {
   public var url: Foundation.URL? {
     get
     set
   }
 }
-extension JSON {
+extension RemoteMonster.JSON {
   public var double: Swift.Double? {
     get
     set
@@ -801,7 +800,7 @@ extension JSON {
     set
   }
 }
-extension JSON : Swift.Comparable {
+extension RemoteMonster.JSON : Swift.Comparable {
 }
 public func == (lhs: RemoteMonster.JSON, rhs: RemoteMonster.JSON) -> Swift.Bool
 public func <= (lhs: RemoteMonster.JSON, rhs: RemoteMonster.JSON) -> Swift.Bool
@@ -814,18 +813,18 @@ public enum writingOptionsKeys {
   case maxObjextDepth
   case encoding
   public static func == (a: RemoteMonster.writingOptionsKeys, b: RemoteMonster.writingOptionsKeys) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @objc public enum RemonChannelType : Swift.Int {
   case p2p
   case viewer
   case broadcast
   case room
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -899,7 +898,6 @@ public enum writingOptionsKeys {
   @objc public var remoteVideoFractionRating: Swift.Int
   @objc public var rtt: Swift.Int
   @objc public var rttRating: Swift.Int
-  @objc override dynamic public init()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class RemonSearchResult : ObjectiveC.NSObject {
@@ -907,32 +905,31 @@ public enum writingOptionsKeys {
   @objc public var serviceId: Swift.String
   @objc public var status: Swift.String
   @objc deinit
-  @objc override dynamic public init()
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(*, deprecated, message: "use localView")
-@objc public class RemonCameraPreviewView : UIKit.UIView {
+@objc @_Concurrency.MainActor(unsafe) public class RemonCameraPreviewView : UIKit.UIView {
   @objc deinit
-  @objc override dynamic public class var layerClass: Swift.AnyClass {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public class var layerClass: Swift.AnyClass {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  public var captureSession: AVFoundation.AVCaptureSession? {
+  @_Concurrency.MainActor(unsafe) public var captureSession: AVFoundation.AVCaptureSession? {
     get
     set(newVal)
   }
-  @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
 }
-public typealias OnConferenceErrorCallback = (RemoteMonster.RemonError) -> Swift.Void
-public typealias OnConferenceErrorCallbackOC = (Foundation.NSError) -> Swift.Void
+public typealias OnConferenceErrorCallback = (_ error: RemoteMonster.RemonError) -> Swift.Void
+public typealias OnConferenceErrorCallbackOC = (_ error: Foundation.NSError) -> Swift.Void
 public typealias OnConferenceCloseCallback = () -> Swift.Void
-public typealias OnConferenceEventCallback = (RemoteMonster.RemonParticipant) -> Swift.Void
+public typealias OnConferenceEventCallback = (_ participant: RemoteMonster.RemonParticipant) -> Swift.Void
 @objc public enum ConferenceEvent : Swift.Int {
   case unknown
   case onRoomCreated
   case onUserStreamConnected
   case onUserLeft
   case onUserJoined
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -948,15 +945,15 @@ public typealias OnConferenceEventCallback = (RemoteMonster.RemonParticipant) ->
   public func error(callback: @escaping RemoteMonster.OnConferenceErrorCallback) -> RemoteMonster.RemonConferenceCallbacks
   @discardableResult
   @objc public func error(callback: @escaping RemoteMonster.OnConferenceErrorCallbackOC) -> RemoteMonster.RemonConferenceCallbacks
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class RemonConference : ObjectiveC.NSObject {
   public var me: RemoteMonster.RemonParticipant?
   @objc override dynamic public init()
   @objc deinit
-  @objc public func create(roomName: Swift.String, config: RemoteMonster.RemonConfig, callback: (RemoteMonster.RemonParticipant) -> Swift.Void) -> RemoteMonster.RemonConferenceCallbacks
-  public func create(roomName: Swift.String, config: RemoteMonster.RemonConfig, priority: [Swift.String]?, callback: (RemoteMonster.RemonParticipant) -> Swift.Void) -> RemoteMonster.RemonConferenceCallbacks
+  @objc public func create(roomName: Swift.String, config: RemoteMonster.RemonConfig, callback: (_ participant: RemoteMonster.RemonParticipant) -> Swift.Void) -> RemoteMonster.RemonConferenceCallbacks
+  public func create(roomName: Swift.String, config: RemoteMonster.RemonConfig, priority: [Swift.String]?, callback: (_ participant: RemoteMonster.RemonParticipant) -> Swift.Void) -> RemoteMonster.RemonConferenceCallbacks
   @objc public func leave()
   @objc public func getParticipant(id: Swift.String) -> RemoteMonster.RemonParticipant?
   @objc public func getParticipants() -> [Swift.String : RemoteMonster.RemonParticipant]
@@ -996,11 +993,11 @@ public enum RemonErrorCode : Swift.Int {
   case WEB_SOCKET_RETRY_ERROR
   case WEB_SOCKET_DATA_ERROR
   case WEB_SOCKET_CONNECT_CHANNEL_ERROR
+  public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
-  public init?(rawValue: Swift.Int)
 }
 @_inheritsConvenienceInitializers @objc public class RemonConfig : ObjectiveC.NSObject {
   @objc public enum SelectiveCandidate : Swift.Int {
@@ -1008,8 +1005,8 @@ public enum RemonErrorCode : Swift.Int {
     case Relay
     case Route
     case Auto
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -1059,8 +1056,8 @@ public enum RemonBandwidth : Swift.String {
   case HIGH
   case MEDIUM
   case LOW
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1069,8 +1066,8 @@ public enum RemonBandwidth : Swift.String {
   case HIGH
   case MEDIUM
   case LOW
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -1085,22 +1082,22 @@ public enum RemonBandwidth : Swift.String {
   public var description: Swift.String {
     get
   }
+  public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
-  public init?(rawValue: Swift.Int)
 }
 @objc public enum RemonCloseType : Swift.Int {
   case MINE
   case OTHER
   case UNKNOWN
   case OTHER_UNEXPECTED
+  public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
-  public init?(rawValue: Swift.Int)
 }
 public typealias RemonVoidBlock = () -> Swift.Void
 public typealias RemonCloseBlock = (RemoteMonster.RemonCloseType) -> Swift.Void
@@ -1113,8 +1110,8 @@ public typealias RemonArrayBlock = (Swift.Array<[Swift.String : Swift.String]>) 
   case ERROR
   case WROTE
   case COMPLTE
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -1124,8 +1121,8 @@ public typealias RemonArrayBlock = (Swift.Array<[Swift.String : Swift.String]>) 
   case MP4LOW
   case MP4MEDIUM
   case MP4HIGH
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -1158,7 +1155,7 @@ public protocol RemonCameraCapturerBufferDelegate : AnyObject {
   weak public var imageDelegate: RemoteMonster.RemonCameraCapturerBufferDelegate?
   @objc deinit
 }
-extension RemonCameraCapturer : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+extension RemoteMonster.RemonCameraCapturer : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
   @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
 }
 public func JSONStringify(value: Swift.AnyObject, prettyPrinted: Swift.Bool = false) -> Swift.String
