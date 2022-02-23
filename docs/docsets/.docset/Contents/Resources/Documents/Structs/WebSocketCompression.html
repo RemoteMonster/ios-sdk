@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RemonConferenceMasterCallbacks Class Reference</title>
+    <title>WebSocketCompression Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
     
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/RemonConferenceMasterCallbacks" class="dashAnchor"></a>
-    <a title="RemonConferenceMasterCallbacks Class Reference"></a>
+    <a name="//apple_ref/swift/Struct/WebSocketCompression" class="dashAnchor"></a>
+    <a title="WebSocketCompression Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (45% documented)</p>
-        <p class="header-right"><a href="https://github.com/remotemonster/ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p><a href="../index.html"> Docs</a> (51% documented)</p>
+        <p class="header-right"><a href="https://github.com/remotemonster/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
-        <img id="carat" src="../img/carat.png" />
-        RemonConferenceMasterCallbacks Class Reference
+        <img id="carat" src="../img/carat.png" alt=""/>
+        WebSocketCompression Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -31,6 +39,9 @@
           <li class="nav-group-name">
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:@M@RemoteMonster@objc(cs)RatingValue">RatingValue</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Classes/RemonCall.html">RemonCall</a>
               </li>
@@ -44,13 +55,16 @@
                 <a href="../Classes/RemonConference.html">RemonConference</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/RemonConferenceMasterCallbacks.html">RemonConferenceMasterCallbacks</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes.html#/s:13RemoteMonster30RemonConferenceViewerCallbacksC">RemonConferenceViewerCallbacks</a>
+                <a href="../Classes/RemonConferenceCallbacks.html">RemonConferenceCallbacks</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/RemonConfig.html">RemonConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RemonParticipant.html">RemonParticipant</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WebSocket.html">WebSocket</a>
               </li>
             </ul>
           </li>
@@ -72,7 +86,22 @@
                 <a href="../Enums.html#/s:13RemoteMonster7JSONKeyO">JSONKey</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums.html#/s:13RemoteMonster8JsonTypeO">JsonType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RemonAudioMode.html">RemonAudioMode</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums.html#/s:13RemoteMonster14RemonBandwidthO">RemonBandwidth</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RemonCloseType.html">RemonCloseType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RemonError.html">RemonError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums.html#/s:13RemoteMonster14RemonErrorCodeO">RemonErrorCode</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums.html#/s:13RemoteMonster15RemonSearchTypeO">RemonSearchType</a>
@@ -81,7 +110,24 @@
                 <a href="../Enums/RemonState.html">RemonState</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Enums.html#/s:13RemoteMonster4TypeO">Type</a>
+                <a href="../Enums/WebSocketBinaryType.html">WebSocketBinaryType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WebSocketReadyState.html">WebSocketReadyState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums.html#/c:@M@RemoteMonster@E@objc_RemonBandwidth">objc_RemonBandwidth</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/s:Si">Int</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/s:SS">String</a>
               </li>
             </ul>
           </li>
@@ -89,27 +135,21 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Protocols.html#/s:13RemoteMonster21RemonConferenceViewerP">RemonConferenceViewer</a>
+                <a href="../Protocols/WebSocketDelegate.html">WebSocketDelegate</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Typealiases.html">Type Aliases</a>
+            <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Typealiases.html#/s:13RemoteMonster15RemonArrayBlocka">RemonArrayBlock</a>
+                <a href="../Structs/WebSocketCompression.html">WebSocketCompression</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Typealiases.html#/s:13RemoteMonster15RemonCloseBlocka">RemonCloseBlock</a>
+                <a href="../Structs/WebSocketEvents.html">WebSocketEvents</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Typealiases.html#/s:13RemoteMonster15RemonErrorBlocka">RemonErrorBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Typealiases.html#/s:13RemoteMonster16RemonStringBlocka">RemonStringBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Typealiases.html#/s:13RemoteMonster14RemonVoidBlocka">RemonVoidBlock</a>
+                <a href="../Structs/WebSocketService.html">WebSocketService</a>
               </li>
             </ul>
           </li>
@@ -118,14 +158,16 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>RemonConferenceMasterCallbacks</h1>
+            <h1>WebSocketCompression</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RemonConferenceMasterCallbacks</span></code></pre>
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">WebSocketCompression</span></code></pre>
 
                 </div>
               </div>
-            
+            <p>The WebSocketCompression struct is used by the compression property and manages the compression options for the WebSocket connection.</p>
+
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -133,9 +175,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster30RemonConferenceMasterCallbacksC4then8callbackACySSSgc_tF"></a>
-                    <a name="//apple_ref/swift/Method/then(callback:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster30RemonConferenceMasterCallbacksC4then8callbackACySSSgc_tF">then(callback:)</a>
+                    <a name="/s:13RemoteMonster20WebSocketCompressionV2onSbvp"></a>
+                    <a name="//apple_ref/swift/Property/on" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13RemoteMonster20WebSocketCompressionV2onSbvp">on</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -143,14 +185,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Used to accept compressed messages from the server. Default is true.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">then</span><span class="p">(</span> <span class="nv">callback</span><span class="p">:</span><span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:13RemoteMonster16RemonStringBlocka">RemonStringBlock</a></span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RemonConferenceMasterCallbacks</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">on</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -160,9 +202,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster30RemonConferenceMasterCallbacksC5close8callbackACyyc_tF"></a>
-                    <a name="//apple_ref/swift/Method/close(callback:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster30RemonConferenceMasterCallbacksC5close8callbackACyyc_tF">close(callback:)</a>
+                    <a name="/s:13RemoteMonster20WebSocketCompressionV17noContextTakeoverSbvp"></a>
+                    <a name="//apple_ref/swift/Property/noContextTakeover" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13RemoteMonster20WebSocketCompressionV17noContextTakeoverSbvp">noContextTakeover</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -170,14 +212,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>request no context takeover.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">close</span><span class="p">(</span> <span class="nv">callback</span><span class="p">:</span><span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:13RemoteMonster14RemonVoidBlocka">RemonVoidBlock</a></span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RemonConferenceMasterCallbacks</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">noContextTakeover</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -187,9 +229,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13RemoteMonster30RemonConferenceMasterCallbacksC5error8callbackACyAA0C5ErrorOc_tF"></a>
-                    <a name="//apple_ref/swift/Method/error(callback:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster30RemonConferenceMasterCallbacksC5error8callbackACyAA0C5ErrorOc_tF">error(callback:)</a>
+                    <a name="/s:13RemoteMonster20WebSocketCompressionV13maxWindowBitsSivp"></a>
+                    <a name="//apple_ref/swift/Property/maxWindowBits" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13RemoteMonster20WebSocketCompressionV13maxWindowBitsSivp">maxWindowBits</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -197,14 +239,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>request max window bits.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">error</span><span class="p">(</span> <span class="nv">callback</span><span class="p">:</span><span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:13RemoteMonster15RemonErrorBlocka">RemonErrorBlock</a></span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RemonConferenceMasterCallbacks</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxWindowBits</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -216,11 +258,10 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2019-12-04)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2022 <a class="link" href="https://remotemonster.com" target="_blank" rel="external noopener">RemoteMonster</a>. All rights reserved. (Last updated: 2022-02-23)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
   </body>
-</div>
 </html>

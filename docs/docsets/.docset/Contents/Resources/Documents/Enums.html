@@ -8,20 +8,28 @@
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
     
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
     <a name="//apple_ref/swift/Section/Enumerations" class="dashAnchor"></a>
     <a title="Enumerations  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (45% documented)</p>
-        <p class="header-right"><a href="https://github.com/remotemonster/ios-sdk"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p><a href="index.html"> Docs</a> (48% documented)</p>
+        <p class="header-right"><a href="https://github.com/remotemonster/ios-sdk"><img src="img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="index.html"> Reference</a>
-        <img id="carat" src="img/carat.png" />
+        <img id="carat" src="img/carat.png" alt=""/>
         Enumerations  Reference
       </p>
     </div>
@@ -31,6 +39,9 @@
           <li class="nav-group-name">
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes.html#/c:@M@RemoteMonster@objc(cs)RatingValue">RatingValue</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Classes/RemonCall.html">RemonCall</a>
               </li>
@@ -44,24 +55,13 @@
                 <a href="Classes/RemonConference.html">RemonConference</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/RemonConferenceMasterCallbacks.html">RemonConferenceMasterCallbacks</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes.html#/s:13RemoteMonster30RemonConferenceViewerCallbacksC">RemonConferenceViewerCallbacks</a>
+                <a href="Classes/RemonConferenceCallbacks.html">RemonConferenceCallbacks</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/RemonConfig.html">RemonConfig</a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Global%20Variables.html">Global Variables</a>
-            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Global%20Variables.html#/s:13RemoteMonster11ErrorDomainSSvp">ErrorDomain</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Global%20Variables.html#/s:13RemoteMonster20ErrorUnsupportedTypeSivp">ErrorUnsupportedType</a>
+                <a href="Classes/RemonParticipant.html">RemonParticipant</a>
               </li>
             </ul>
           </li>
@@ -69,47 +69,22 @@
             <a href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Enums.html#/s:13RemoteMonster7JSONKeyO">JSONKey</a>
+                <a href="Enums/RemonAudioMode.html">RemonAudioMode</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums.html#/s:13RemoteMonster14RemonBandwidthO">RemonBandwidth</a>
+                <a href="Enums/RemonCloseType.html">RemonCloseType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RemonError.html">RemonError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums.html#/s:13RemoteMonster14RemonErrorCodeO">RemonErrorCode</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums.html#/s:13RemoteMonster15RemonSearchTypeO">RemonSearchType</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/RemonState.html">RemonState</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Enums.html#/s:13RemoteMonster4TypeO">Type</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Protocols.html">Protocols</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Protocols.html#/s:13RemoteMonster21RemonConferenceViewerP">RemonConferenceViewer</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Typealiases.html">Type Aliases</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Typealiases.html#/s:13RemoteMonster15RemonArrayBlocka">RemonArrayBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Typealiases.html#/s:13RemoteMonster15RemonCloseBlocka">RemonCloseBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Typealiases.html#/s:13RemoteMonster15RemonErrorBlocka">RemonErrorBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Typealiases.html#/s:13RemoteMonster16RemonStringBlocka">RemonStringBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Typealiases.html#/s:13RemoteMonster14RemonVoidBlocka">RemonVoidBlock</a>
               </li>
             </ul>
           </li>
@@ -125,33 +100,6 @@
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:13RemoteMonster14RemonBandwidthO"></a>
-                    <a name="//apple_ref/swift/Enum/RemonBandwidth" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster14RemonBandwidthO">RemonBandwidth</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>RemonBandWidth</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RemonBandwidth</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -175,17 +123,126 @@ INIT: Remon을 생성하여 서버와 연결되기까지 과정을 의미</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RemonState</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RemonState</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RemoteMonster@E@RemonCloseType"></a>
+                    <a name="//apple_ref/swift/Enum/RemonCloseType" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@E@RemonCloseType">RemonCloseType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>종료시 타입</p>
+
+                        <a href="Enums/RemonCloseType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RemonCloseType</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13RemoteMonster10RemonErrorO"></a>
+                    <a name="//apple_ref/swift/Enum/RemonError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13RemoteMonster10RemonErrorO">RemonError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>RemonError 타입</p>
+
+                        <a href="Enums/RemonError.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RemonError</span> <span class="p">:</span> <span class="kt">Error</span><span class="p">,</span> <span class="kt">LocalizedError</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13RemoteMonster14RemonErrorCodeO"></a>
+                    <a name="//apple_ref/swift/Enum/RemonErrorCode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13RemoteMonster14RemonErrorCodeO">RemonErrorCode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>에러코드</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RemonErrorCode</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RemoteMonster@E@RemonAudioMode"></a>
+                    <a name="//apple_ref/swift/Enum/RemonAudioMode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RemoteMonster@E@RemonAudioMode">RemonAudioMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>오디오 모드</p>
+
+                        <a href="Enums/RemonAudioMode.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RemonAudioMode</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -199,7 +256,7 @@ INIT: Remon을 생성하여 서버와 연결되기까지 과정을 의미</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>RemonSearchType</p>
+                        <p>채널 검색시 사용할 타입</p>
 
                       </div>
                       <div class="declaration">
@@ -215,92 +272,13 @@ INIT: Remon을 생성하여 서버와 연결되기까지 과정을 의미</p>
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/JSON%20Type"></a>
-                <a name="//apple_ref/swift/Section/JSON Type" class="dashAnchor"></a>
-                <a href="#/JSON%20Type">
-                  <h3 class="section-name">JSON Type</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:13RemoteMonster4TypeO"></a>
-                    <a name="//apple_ref/swift/Enum/Type" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster4TypeO">Type</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>JSON&rsquo;s type definitions.</p>
-
-<p>See <a href="http://www.json.org">http://www.json.org</a></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="k">Type</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Subscript"></a>
-                <a name="//apple_ref/swift/Section/Subscript" class="dashAnchor"></a>
-                <a href="#/Subscript">
-                  <h3 class="section-name">Subscript</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:13RemoteMonster7JSONKeyO"></a>
-                    <a name="//apple_ref/swift/Enum/JSONKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13RemoteMonster7JSONKeyO">JSONKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>To mark both String and Int can be used in subscript.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">JSONKey</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://remotemonster.com" target="_blank" rel="external">RemoteMonster</a>. All rights reserved. (Last updated: 2019-12-04)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2022 <a class="link" href="https://remotemonster.com" target="_blank" rel="external noopener">RemoteMonster</a>. All rights reserved. (Last updated: 2022-02-23)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
   </body>
-</div>
 </html>
