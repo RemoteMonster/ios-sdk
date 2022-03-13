@@ -1,3 +1,11 @@
+## 2.7.17
+- xcframework 아카이빙
+- SwiftProtobuf static 으로 내부 임베딩
+- cocoapods dependency에서 SwiftProtobuf 제거
+
+## 2.7.16
+- xcode 13.2.1 빌드
+
 ## 2.7.15
 - 블루투스 핸즈프리 착용/해제 시 샘플링 레이트 변경 기능 추가
 - RemonClient.setAudioSessionConfiguration 파라미터 추가
